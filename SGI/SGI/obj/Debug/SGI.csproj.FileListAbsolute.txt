@@ -1,0 +1,10 @@
+C:\Users\adminesp\Desktop\git\SGI\SGI\bin\Debug\SGI.exe.config
+C:\Users\adminesp\Desktop\git\SGI\SGI\bin\Debug\SGI.exe
+C:\Users\adminesp\Desktop\git\SGI\SGI\bin\Debug\SGI.pdb
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.csprojAssemblyReference.cache
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.FMain.resources
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Properties.Resources.resources
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.csproj.GenerateResource.cache
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.csproj.CoreCompileInputs.cache
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.exe
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.pdb
