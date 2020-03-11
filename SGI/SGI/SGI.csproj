@@ -46,16 +46,88 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CDatabase.cs" />
-    <Compile Include="FMain.cs">
+    <Compile Include="CEnum.cs" />
+    <Compile Include="Controller\ProductContoller.cs" />
+    <Compile Include="Model\CDatabase.cs" />
+    <Compile Include="Model\Classes\Category.cs" />
+    <Compile Include="Model\Classes\Department.cs" />
+    <Compile Include="Model\Classes\MeasuringUnit.cs" />
+    <Compile Include="Model\Classes\Product.cs" />
+    <Compile Include="SGISettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>SGISettings.settings</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Views\FMain.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FMain.Designer.cs">
+    <Compile Include="Views\FMain.Designer.cs">
       <DependentUpon>FMain.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FMain.resx">
+    <Compile Include="Views\SubViews\Transaction\FInventoryOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Transaction\FInventoryOut.Designer.cs">
+      <DependentUpon>FInventoryOut.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Transaction\FInventoryIn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Transaction\FInventoryIn.Designer.cs">
+      <DependentUpon>FInventoryIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FItemsTooMuch.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FItemsTooMuch.Designer.cs">
+      <DependentUpon>FItemsTooMuch.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FOrdersToDo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FOrdersToDo.Designer.cs">
+      <DependentUpon>FOrdersToDo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FLocStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FLocStock.Designer.cs">
+      <DependentUpon>FLocStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FGeneralStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Visualization\FGeneralStock.Designer.cs">
+      <DependentUpon>FGeneralStock.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FMeasuringUnit.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FMeasuringUnit.Designer.cs">
+      <DependentUpon>FMeasuringUnit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FDepartment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FDepartment.Designer.cs">
+      <DependentUpon>FDepartment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FCategory.Designer.cs">
+      <DependentUpon>FCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Management\FProduct.Designer.cs">
+      <DependentUpon>FProduct.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Views\FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -67,6 +139,36 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryOut.resx">
+      <DependentUpon>FInventoryOut.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryIn.resx">
+      <DependentUpon>FInventoryIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Visualization\FItemsTooMuch.resx">
+      <DependentUpon>FItemsTooMuch.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Visualization\FOrdersToDo.resx">
+      <DependentUpon>FOrdersToDo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Visualization\FLocStock.resx">
+      <DependentUpon>FLocStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Visualization\FGeneralStock.resx">
+      <DependentUpon>FGeneralStock.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Management\FMeasuringUnit.resx">
+      <DependentUpon>FMeasuringUnit.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Management\FDepartment.resx">
+      <DependentUpon>FDepartment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Management\FCategory.resx">
+      <DependentUpon>FCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Management\FProduct.resx">
+      <DependentUpon>FProduct.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -76,9 +178,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="SGISettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>SGISettings.Designer.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

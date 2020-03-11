@@ -10,18 +10,18 @@ namespace SGI
 {
     public static class CDatabase
     {
+        public static SqlConnection Connection;
         public static bool ConnectToData()
         {
             bool ConnectionSuccessfull = false;
-            string connectionString = @"Data Source=10.4.1.182;Initial Catalog=DATA_MANOIRQUARTIER;User ID=sa;Password=Espesp2020";
-            SqlConnection cnn = new SqlConnection(connectionString);
+            string connectionString = "Data Source=" + SGISettings.Default.DataSource + ";Initial Catalog=DATA_MANOIRQUARTIER;User ID=sa;Password=Espesp2020";
+            Connection = new SqlConnection(connectionString);
             try
             {
-                cnn.Open();
+                Connection.Open();
                 ConnectionSuccessfull = true;
-                cnn.Close();
             }
-            catch (Exception ex)
+            catch
             {
                 ConnectionSuccessfull = false;
             }
