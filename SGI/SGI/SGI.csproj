@@ -47,10 +47,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CEnum.cs" />
+    <Compile Include="Controller\InventoryInController.cs" />
+    <Compile Include="Controller\LocationController.cs" />
     <Compile Include="Controller\ProductContoller.cs" />
     <Compile Include="Model\CDatabase.cs" />
     <Compile Include="Model\Classes\Category.cs" />
     <Compile Include="Model\Classes\Department.cs" />
+    <Compile Include="Model\Classes\Location.cs" />
     <Compile Include="Model\Classes\MeasuringUnit.cs" />
     <Compile Include="Model\Classes\Product.cs" />
     <Compile Include="SGISettings.Designer.cs">

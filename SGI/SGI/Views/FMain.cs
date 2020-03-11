@@ -33,12 +33,6 @@ namespace SGI
 
         #region SubFormLoads
 
-        private void TPIn_Enter(object sender, EventArgs e)
-        {
-            FInventoryIn form = new FInventoryIn();
-            ShowSubForm(form, InPanel);
-        }
-
         private void TPOut_Enter(object sender, EventArgs e)
         {
             FInventoryOut form = new FInventoryOut();
@@ -87,15 +81,25 @@ namespace SGI
         {
             switch (TCMain.SelectedIndex)
             {
+                case 0:
+                    FInventoryIn form = new FInventoryIn();
+                    ShowSubForm(form, InPanel);
+                    break;
                 case 1:
-                    FProduct form = new FProduct();
-                    ShowSubForm(form, ProductPanel);
+                    FProduct form1 = new FProduct();
+                    ShowSubForm(form1, ProductPanel);
                     break;
                 case 2:
                     FGeneralStock form2 = new FGeneralStock();
                     ShowSubForm(form2, GeneralStockPanel);
                     break;
             }
+        }
+
+        private void FMain_Load(object sender, EventArgs e)
+        {
+            FInventoryIn form = new FInventoryIn();
+            ShowSubForm(form, InPanel);
         }
     }
 }

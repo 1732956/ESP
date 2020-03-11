@@ -7,6 +7,7 @@ using SGI.Model.Classes;
 using System.Data.SqlClient;
 using System.Data;
 
+
 namespace SGI.Controller
 {
     public class ProductContoller
@@ -22,11 +23,27 @@ namespace SGI.Controller
                 dt.Load(dr);
                 foreach(DataRow row in dt.Rows)
                 {
-                    Product newProduct = new Product(row);
+                    Product newProduct = new Product(row,false);
                     products.Add(newProduct);
                 }
             }
             return products;
         }
+        public Product GetSingleProductInfo(String BarCodeId)
+        {
+            Product Product = new Product();
+            SqlCommand cmd = new SqlCommand("SingleProductInfo_sp", CDatabase.Connection);
+            cmd.Parameters.Add("@barCode", SqlDbType.VarChar).Value = BarCodeId;
+            cmd.CommandType = System.Data.CommandType.StoredProcedure;
+            SqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+            foreach (DataRow row in dt.Rows)
+            {
+                Product = new Product(row,true);
+            }
+            return Product;
+        }
     }
+   
 }

@@ -106,7 +106,6 @@
             resources.ApplyResources(this.TPIn, "TPIn");
             this.TPIn.Name = "TPIn";
             this.TPIn.UseVisualStyleBackColor = true;
-            this.TPIn.Enter += new System.EventHandler(this.TPIn_Enter);
             // 
             // InPanel
             // 
@@ -270,6 +269,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FMain_Load);
             this.TCMain.ResumeLayout(false);
             this.TPTransaction.ResumeLayout(false);
             this.TCTransaction.ResumeLayout(false);

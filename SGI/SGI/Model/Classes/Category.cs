@@ -19,5 +19,11 @@ namespace SGI.Model.Classes
             Active = pActive;
         }
 
+        public Category()
+        {
+            CategoryID  = 0;
+            Description = "";
+            Active      = false;
+        }
     }
 }

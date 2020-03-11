@@ -3,29 +3,31 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Data;
 namespace SGI.Model.Classes
 {
-    public class Department
+    public class Location
     {
-        public int DepartmentId { get; set; }
+
+        public int LocationId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public bool Active { get; set; }
 
-        public Department(int pId, string pName, string pDescription, bool pActive)
+        public Location(int pId, string pName, string pDescription, bool pActive)
         {
-            DepartmentId = pId;
+            LocationId = pId;
             Name = pName;
             Description = pDescription;
             Active = pActive;
         }
-        public Department()
+
+        public Location(DataRow row)
         {
-            DepartmentId = 0;
-            Name = "";
-            Description = "";
-            Active = false;
+            this.LocationId = Convert.ToInt32(row["LocationId"]);
+            this.Description = row["Descr"].ToString(); ;
+            this.Name = row["Name"].ToString();
         }
+       
     }
 }
