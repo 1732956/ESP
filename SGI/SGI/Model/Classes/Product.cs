@@ -32,10 +32,10 @@ namespace SGI.Model.Classes
             this.Name = row["Name"].ToString();
             this.Brand = row["Brand"].ToString();
             this.Description = row["Description"].ToString();
-            //this.Supplier = row["Supplier"].ToString();
-            //this.SupplierCode = row["SupplierCode"].ToString();
+            this.Supplier = row["SupplierName"].ToString();
+            this.SupplierCode = row["SupplierCode"].ToString();
             this.Price = Convert.ToDouble(row["Price"]);
-            //this.LastUpdate = Convert.ToDateTime(row["LastUpdate"]);
+            this.LastUpdate = Convert.ToDateTime(row["LastUpdate"]);
             this.Active = Convert.ToBoolean(row["isActive"]);
             this.UnitCount = Convert.ToInt32(row["UnitNbr"]);
             this.MaxQty = Convert.ToInt32(row["QtyMax"]);

@@ -19,3 +19,4 @@ C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.SubViews.FDepartment.r
 C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.SubViews.FCategory.resources
 C:\Users\adminesp\Desktop\git\SGI\SGI\bin\Debug\SGISettings.Designer.cs
 C:\Users\adminesp\Desktop\git\SGI\SGI\bin\Debug\SGISettings.settings
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.UCManagementAction.resources

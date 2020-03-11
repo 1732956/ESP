@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -19,5 +20,11 @@ namespace SGI.Model.Classes
             Active = pActive;
         }
 
+        public Category(DataRow row)
+        {
+            this.CategoryID = Convert.ToInt32(row["CategoryId"]);
+            this.Description = row["Descr"].ToString();
+            this.Active = Convert.ToBoolean(row["isActive"]);
+        }
     }
 }

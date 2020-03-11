@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CEnum.cs" />
+    <Compile Include="Controller\CategoryController.cs" />
+    <Compile Include="Controller\DepartmentController.cs" />
     <Compile Include="Controller\ProductContoller.cs" />
     <Compile Include="Model\CDatabase.cs" />
     <Compile Include="Model\Classes\Category.cs" />
@@ -127,6 +129,12 @@
     <Compile Include="Views\SubViews\Management\FProduct.Designer.cs">
       <DependentUpon>FProduct.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\SubViews\Others\UCManagementAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Others\UCManagementAction.Designer.cs">
+      <DependentUpon>UCManagementAction.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Views\FMain.resx">
       <DependentUpon>FMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -168,6 +176,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Management\FProduct.resx">
       <DependentUpon>FProduct.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Others\UCManagementAction.resx">
+      <DependentUpon>UCManagementAction.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
