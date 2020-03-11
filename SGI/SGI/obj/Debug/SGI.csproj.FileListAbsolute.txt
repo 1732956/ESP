@@ -42,3 +42,4 @@ C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.csproj.CoreCompileInputs.c
 C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.pdb
 C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.UCManagementAction.resources
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.SubViews.Management.FLocation.resources

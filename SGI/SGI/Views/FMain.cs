@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SGI.Views.SubViews;
+using SGI.Views.SubViews.Management;
 
 namespace SGI
 {
@@ -43,6 +44,12 @@ namespace SGI
         {
             FCategory form = new FCategory();
             ShowSubForm(form, CategoryPanel);
+        }
+
+        private void TPLocation_Enter(object sender, EventArgs e)
+        {
+            FLocation form = new FLocation();
+            ShowSubForm(form, LocationPanel);
         }
 
         private void TPDepartment_Enter(object sender, EventArgs e)
