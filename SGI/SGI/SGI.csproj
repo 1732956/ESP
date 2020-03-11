@@ -47,6 +47,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CEnum.cs" />
+    <Compile Include="Controller\CategoryController.cs" />
+    <Compile Include="Controller\DepartmentController.cs" />
     <Compile Include="Controller\InventoryInController.cs" />
     <Compile Include="Controller\LocationController.cs" />
     <Compile Include="Controller\ProductContoller.cs" />
@@ -81,6 +83,12 @@
     </Compile>
     <Compile Include="Views\SubViews\Transaction\FInventoryIn.Designer.cs">
       <DependentUpon>FInventoryIn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Others\UCManagementAction.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\Others\UCManagementAction.Designer.cs">
+      <DependentUpon>UCManagementAction.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SubViews\Visualization\FItemsTooMuch.cs">
       <SubType>Form</SubType>
@@ -147,6 +155,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryIn.resx">
       <DependentUpon>FInventoryIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Others\UCManagementAction.resx">
+      <DependentUpon>UCManagementAction.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Visualization\FItemsTooMuch.resx">
       <DependentUpon>FItemsTooMuch.cs</DependentUpon>

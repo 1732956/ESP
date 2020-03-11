@@ -41,3 +41,4 @@ C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.csproj.GenerateResource.ca
 C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.csproj.CoreCompileInputs.cache
 C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.pdb
+C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.UCManagementAction.resources
