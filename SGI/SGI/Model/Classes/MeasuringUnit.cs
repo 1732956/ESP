@@ -19,5 +19,13 @@ namespace SGI.Model.Classes
             Description = pDescription;
             Active = pActive;
         }
+
+        public MeasuringUnit()
+        {
+            UnitId      = 0;
+            UnitCode    = "";
+            Description = "";
+            Active      = false;
+        }
     }
 }

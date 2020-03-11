@@ -29,5 +29,12 @@ namespace SGI.Model.Classes
             this.Description = row["Description"].ToString();
             this.Active = Convert.ToBoolean(row["isActive"]);
         }
+        public Department()
+        {
+            DepartmentId = 0;
+            Name = "";
+            Description = "";
+            Active = false;
+        }
     }
 }

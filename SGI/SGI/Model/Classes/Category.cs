@@ -21,10 +21,18 @@ namespace SGI.Model.Classes
         }
 
         public Category(DataRow row)
-        {
-            this.CategoryID = Convert.ToInt32(row["CategoryId"]);
-            this.Description = row["Descr"].ToString();
-            this.Active = Convert.ToBoolean(row["isActive"]);
+        {     
+           	this.CategoryID = Convert.ToInt32(row["CategoryId"]);
+           	this.Description = row["Descr"].ToString();
+           	this.Active = Convert.ToBoolean(row["isActive"]);
         }
+        public Category()
+        {
+        	CategoryID = 0;
+        	Description = "";
+        	Active = false;
+        }
+        
+
     }
 }
