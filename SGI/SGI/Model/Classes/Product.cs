@@ -54,10 +54,8 @@ namespace SGI.Model.Classes
                 this.Name = row["ProductName"].ToString();
                 this.Brand = row["Brand"].ToString();
                 this.Description = row["DescrProduct"].ToString();
-                //this.Supplier = row["Supplier"].ToString();
-                //this.SupplierCode = row["SupplierCode"].ToString();
                 this.Price = Convert.ToDouble(row["Price"]);
-                //this.LastUpdate = Convert.ToDateTime(row["LastUpdate"]);
+                this.BarCodeId = row["BarCodeId"].ToString();
                 this.Category = new Category(0, row["CatDescr"].ToString(), true);
                 this.Department = new Department(0, row["DepNom"].ToString(), "",true);
                 this.MeasuringUnit = new MeasuringUnit();
@@ -74,7 +72,7 @@ namespace SGI.Model.Classes
             SupplierCode = "";
             Price = 0;
             LastUpdate = DateTime.Now;
-            Active = false;
+            Active = true;
             UnitCount = 0;
             MaxQty = 0;
             MinQty = 0;

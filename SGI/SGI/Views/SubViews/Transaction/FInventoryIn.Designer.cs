@@ -41,12 +41,12 @@
             this.txt_cat = new System.Windows.Forms.TextBox();
             this.txt_dep = new System.Windows.Forms.TextBox();
             this.grp_product = new System.Windows.Forms.GroupBox();
+            this.txt_productid = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txt_productid = new System.Windows.Forms.TextBox();
             this.grp_product.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,6 +57,7 @@
             this.txt_produit.Size = new System.Drawing.Size(186, 25);
             this.txt_produit.TabIndex = 0;
             this.txt_produit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_produit_KeyPress);
+            this.txt_produit.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_produit_Validating);
             // 
             // txt_qte
             // 
@@ -180,6 +181,14 @@
             this.grp_product.Text = "Information produit";
             this.grp_product.Visible = false;
             // 
+            // txt_productid
+            // 
+            this.txt_productid.Location = new System.Drawing.Point(156, 236);
+            this.txt_productid.Name = "txt_productid";
+            this.txt_productid.ReadOnly = true;
+            this.txt_productid.Size = new System.Drawing.Size(170, 25);
+            this.txt_productid.TabIndex = 19;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
@@ -224,14 +233,6 @@
             this.label1.Size = new System.Drawing.Size(46, 19);
             this.label1.TabIndex = 14;
             this.label1.Text = "Nom :";
-            // 
-            // txt_productid
-            // 
-            this.txt_productid.Location = new System.Drawing.Point(156, 236);
-            this.txt_productid.Name = "txt_productid";
-            this.txt_productid.ReadOnly = true;
-            this.txt_productid.Size = new System.Drawing.Size(170, 25);
-            this.txt_productid.TabIndex = 19;
             // 
             // FInventoryIn
             // 

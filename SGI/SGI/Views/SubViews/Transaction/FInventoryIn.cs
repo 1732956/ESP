@@ -57,7 +57,7 @@ namespace SGI.Views.SubViews
                 else
                 {
                     MessageBox.Show("Le produit est invalide");
-                    ClearScreen();
+                    ClearScreenProduct();
                 }
             }
         }
@@ -107,6 +107,7 @@ namespace SGI.Views.SubViews
                 {
                     vError = true;
                     MessageBox.Show("La quantité doit être numérique");
+                    txt_qte.Text = "";
                     txt_qte.Focus();
                 }
             }
@@ -117,6 +118,7 @@ namespace SGI.Views.SubViews
                 {
                     vError = true;
                     MessageBox.Show("La quantité doit être plus grande que zéro");
+                    txt_qte.Text = "";
                     txt_qte.Focus();
                 }
             }
@@ -125,9 +127,12 @@ namespace SGI.Views.SubViews
             {
                 try
                 {
-                    ControllerInvIn.InventoryIn(Convert.ToInt32(txt_productid.Text), Convert.ToInt32(txt_qte.Text), Convert.ToInt32(cbo_loc.SelectedValue));
-                    MessageBox.Show("Traitement effectué");
-                    ClearScreen();
+                    if (!vError)
+                    {
+                        ControllerInvIn.InventoryIn(Convert.ToInt32(txt_productid.Text), Convert.ToInt32(txt_qte.Text), Convert.ToInt32(cbo_loc.SelectedValue));
+                        MessageBox.Show("Traitement effectué");
+                        ClearScreen();
+                    }
                 }
                 catch (Exception)
                 {
@@ -155,5 +160,35 @@ namespace SGI.Views.SubViews
             btn_confirm.Visible = false;
         }
 
+        void ClearScreenProduct()
+        {
+            txt_nom.Text = "";
+            txt_produit.Text = "";
+            txt_productid.Text = "";
+            txt_descr.Text = "";
+            txt_nom.Text = "";
+            txt_marque.Text = "";
+            txt_cat.Text = "";
+            txt_dep.Text = "";
+            txt_produit.Focus();
+        }
+
+        private void Txt_produit_Validating(object sender, CancelEventArgs e)
+        {
+            if (txt_produit.Text == "")
+            {
+                ClearScreenProduct();
+            }
+            else
+            if (txt_produit.Text != CurrentProduct.BarCodeId)
+            {
+                CurrentProduct = ControllerProduct.GetSingleProductInfo(txt_produit.Text);
+                if (CurrentProduct.ProductId == 0)
+                {
+                    MessageBox.Show("Le produit est invalide");
+                    ClearScreenProduct();
+                }
+            }
+        }
     }
 }
