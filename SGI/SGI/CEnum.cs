@@ -10,6 +10,7 @@ namespace SGI
     {
         public enum State
         {
+            VIEW,
             ADD,
             UPDATE,
             DELETE

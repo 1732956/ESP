@@ -159,6 +159,582 @@
   <data name="&gt;&gt;TPTransaction.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
+  <data name="&gt;&gt;TCManagement.Name" xml:space="preserve">
+    <value>TCManagement</value>
+  </data>
+  <data name="&gt;&gt;TCManagement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TCManagement.Parent" xml:space="preserve">
+    <value>TPManagement</value>
+  </data>
+  <data name="&gt;&gt;TCManagement.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPManagement.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPManagement.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPManagement.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPManagement.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1111, 631</value>
+  </data>
+  <data name="TPManagement.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TPManagement.Text" xml:space="preserve">
+    <value>Gestion</value>
+  </data>
+  <data name="&gt;&gt;TPManagement.Name" xml:space="preserve">
+    <value>TPManagement</value>
+  </data>
+  <data name="&gt;&gt;TPManagement.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPManagement.Parent" xml:space="preserve">
+    <value>TCMain</value>
+  </data>
+  <data name="&gt;&gt;TPManagement.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;GeneralStockPanel.Name" xml:space="preserve">
+    <value>GeneralStockPanel</value>
+  </data>
+  <data name="&gt;&gt;GeneralStockPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;GeneralStockPanel.Parent" xml:space="preserve">
+    <value>TPStockGeneral</value>
+  </data>
+  <data name="&gt;&gt;GeneralStockPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPStockGeneral.ImageKey" xml:space="preserve">
+    <value>GeneralStock.png</value>
+  </data>
+  <data name="TPStockGeneral.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPStockGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TPStockGeneral.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1095, 593</value>
+  </data>
+  <data name="TPStockGeneral.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TPStockGeneral.Text" xml:space="preserve">
+    <value>Stock général</value>
+  </data>
+  <data name="&gt;&gt;TPStockGeneral.Name" xml:space="preserve">
+    <value>TPStockGeneral</value>
+  </data>
+  <data name="&gt;&gt;TPStockGeneral.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPStockGeneral.Parent" xml:space="preserve">
+    <value>TCVisuzalization</value>
+  </data>
+  <data name="&gt;&gt;TPStockGeneral.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="LocStcokPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="LocStcokPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 3</value>
+  </data>
+  <data name="LocStcokPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1089, 587</value>
+  </data>
+  <data name="LocStcokPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;LocStcokPanel.Name" xml:space="preserve">
+    <value>LocStcokPanel</value>
+  </data>
+  <data name="&gt;&gt;LocStcokPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;LocStcokPanel.Parent" xml:space="preserve">
+    <value>TPStockByLoc</value>
+  </data>
+  <data name="&gt;&gt;LocStcokPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPStockByLoc.ImageKey" xml:space="preserve">
+    <value>LocStock.png</value>
+  </data>
+  <data name="TPStockByLoc.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPStockByLoc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>3, 3, 3, 3</value>
+  </data>
+  <data name="TPStockByLoc.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1095, 593</value>
+  </data>
+  <data name="TPStockByLoc.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TPStockByLoc.Text" xml:space="preserve">
+    <value>Stock par localisation</value>
+  </data>
+  <data name="&gt;&gt;TPStockByLoc.Name" xml:space="preserve">
+    <value>TPStockByLoc</value>
+  </data>
+  <data name="&gt;&gt;TPStockByLoc.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPStockByLoc.Parent" xml:space="preserve">
+    <value>TCVisuzalization</value>
+  </data>
+  <data name="&gt;&gt;TPStockByLoc.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;OrdersToDoPanel.Name" xml:space="preserve">
+    <value>OrdersToDoPanel</value>
+  </data>
+  <data name="&gt;&gt;OrdersToDoPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OrdersToDoPanel.Parent" xml:space="preserve">
+    <value>TPOrdersToMake</value>
+  </data>
+  <data name="&gt;&gt;OrdersToDoPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPOrdersToMake.ImageKey" xml:space="preserve">
+    <value>OrdersToDo.png</value>
+  </data>
+  <data name="TPOrdersToMake.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPOrdersToMake.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1095, 593</value>
+  </data>
+  <data name="TPOrdersToMake.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="TPOrdersToMake.Text" xml:space="preserve">
+    <value>Commandes à faire</value>
+  </data>
+  <data name="&gt;&gt;TPOrdersToMake.Name" xml:space="preserve">
+    <value>TPOrdersToMake</value>
+  </data>
+  <data name="&gt;&gt;TPOrdersToMake.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPOrdersToMake.Parent" xml:space="preserve">
+    <value>TCVisuzalization</value>
+  </data>
+  <data name="&gt;&gt;TPOrdersToMake.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="ItemsTooMuchPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="ItemsTooMuchPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="ItemsTooMuchPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1095, 593</value>
+  </data>
+  <data name="ItemsTooMuchPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;ItemsTooMuchPanel.Name" xml:space="preserve">
+    <value>ItemsTooMuchPanel</value>
+  </data>
+  <data name="&gt;&gt;ItemsTooMuchPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;ItemsTooMuchPanel.Parent" xml:space="preserve">
+    <value>TPItemsTooMuch</value>
+  </data>
+  <data name="&gt;&gt;ItemsTooMuchPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPItemsTooMuch.ImageKey" xml:space="preserve">
+    <value>ItemsTooMuch.png</value>
+  </data>
+  <data name="TPItemsTooMuch.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPItemsTooMuch.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1095, 593</value>
+  </data>
+  <data name="TPItemsTooMuch.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="TPItemsTooMuch.Text" xml:space="preserve">
+    <value>Items en trop</value>
+  </data>
+  <data name="&gt;&gt;TPItemsTooMuch.Name" xml:space="preserve">
+    <value>TPItemsTooMuch</value>
+  </data>
+  <data name="&gt;&gt;TPItemsTooMuch.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPItemsTooMuch.Parent" xml:space="preserve">
+    <value>TCVisuzalization</value>
+  </data>
+  <data name="&gt;&gt;TPItemsTooMuch.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="TCVisuzalization.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <metadata name="VidualizationImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>333, 17</value>
+  </metadata>
+  <data name="VidualizationImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAADo
+        CwAAAk1TRnQBSQFMAgEBBAEAARABAAEQAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
+        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
+        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
+        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
+        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
+        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
+        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
+        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
+        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
+        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
+        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
+        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
+        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
+        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
+        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
+        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
+        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
+        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
+        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
+        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
+        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
+        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
+        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
+        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
+        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
+        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
+        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD//8A/wD/AP8ABgAOEgHq
+        EQABvAFFAfMC/wMAAf8B8wEHAfEB/xMAARwBeQErARwG9AT/ARIBAAimBMcDrAHzAXkBUgErARwB7wH0
+        Af8B8QF0AioBcwEHAf8BABD/AQABHAF6AVIBKwHtAW0B9AJtAfQCbQHsAf8BEgEAAv8I9APzAfQBrAG8
+        AnoBUgErASoB7QFRASoCMQFSAioBkgL/AdUCrQHcAdUJ1AH0AQAB8QFKAXoCUgHqAfQCbQH0Am0BkgH/
+        ARIBAAH/AfQC4wEgAfMCOQFOAfEC+wEsAfMBrAH0AUsCegFSASsBKgQxAVkDKgHyAfQB2wGtAbMBGQnc
+        AdsB9AEAAfEB6gFKAXkBBwFLAfECiwHdAuoBbQH/ARIBAAH/AfQCFwEgAfMCVgFOAfECOAEsAfMBxwGZ
+        ATEBSwJ6AVIBdAMxATcBWQExAioB8AH0AdwCswEZAfcC7QGSAbQDswLcAfQBAAHxARIB6gFKAUsBtAHV
+        AtwB2wGnAeoBbQH0ARIBAAH/AfQCRwEgAfMDTgHxAjgBLAHzAccBeQIxAUsBegGZAe0BRAE4AVIB6wF0
+        AjEBKgG8AfQB3AKzAfQBdAJLAVIBugO0AdUB3AH0AQAB8wESA+oB1QEJAhkBCQHcAWYB6gH0ARIBAAL/
+        AvkBIAH0BPMCOAEsAfQBxwF0AzgBSwFSAQcBrgHIAdwC2wHVAYYBKgEHAfQB3AKzAfQBUgJLAVIFtAEJ
+        AfQBAAHzARMCEgFmAdwEGQEJAYsBEgH0ARIBAAP/BPQD8wIyASwB9AHHAVIBOAH7AV4BoAEqARMB5gHb
+        BAkB2wGmAQcB9AEJArMB9AFSAisBUgEJBLQBGQH0AQAB8wEUAhMBZgHcBBkBCQGLARMB9AESAQAE/wT0
+        AvMDLAH0AaYBUgFeAzgBKwGnAdsBCQQZAQkB3AL0AQkBtAGzAf8BGgKZARoBtAKzAbQB9AEZAfQBAAH0
+        BBQB3AEZA/QB3AFmARQB9AESAQAF/wT0BPMB9AGmAQABGgExATgCMQHOAdwFGQEJAdsBtQH0AQkBtAGz
+        Cv8BGQH0AQAB9AQVAWYB3AEZAfQBCQGGARUBFAH0ARIBAAXbBtUD1AGmAwABUgIxAdUB3AYZAdsBzwH0
+        AQkB2wGzAbQJ1QHcAf8BAAH0AUMDFQFDAQcChgG1AxUB9AESAQAB1QnUAc4DzQGmAwABUgI3AacB3AIZ
+        AfQDGQHbAbwB9AEJBdsB3AYJAf8CAAH/BUMB8QJDAfMDQwHzARIBAAHcCdQBzgPNAaYDAAExAjgB6wHc
+        BfQBCQG0AQAB9AHwBdwB1QLxAxkB/wMAAf8E8ATxBfMBEgEAAfMC9AMZAgkD3APbAYsDAAExAzgBpwHc
+        A/8BGQEJAfABAAH0BbsBCQG7Af8IAA7/ARIBAAHzDQkEAAFSAfsBXgHlAV4BrgHPAQkBtQGGAfQCAAj/
+        LAAB9AEaAXkBUgF0AZkBGgH0Af8TAAFCAU0BPgcAAT4DAAEoAwABQAMAASADAAEBAQABAQYAAQEWAAP/
+        gQABgAEAAv8CgwL/AYABAAGAAgABAQIAAYABAAGABQABgAEAAYAFAAGAAQABgAUAAYABAAGABQABgAEA
+        AYAFAAGAAQABgAUAAYABAAGABQABgAEAAYABAAGAAwABgAEAAYABAAHgAwABgAEAAYABAAHgAgABAQGA
+        AQABgAEAAeABAQEAAQMBgAEAAYABAAHgAQEBAAF/AYABAAGAAQEB4AEDAQAF/wHwAQcC/ws=
+</value>
+  </data>
+  <data name="TCVisuzalization.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="TCVisuzalization.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1103, 623</value>
+  </data>
+  <data name="TCVisuzalization.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TCVisuzalization.Name" xml:space="preserve">
+    <value>TCVisuzalization</value>
+  </data>
+  <data name="&gt;&gt;TCVisuzalization.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TCVisuzalization.Parent" xml:space="preserve">
+    <value>TPVisualization</value>
+  </data>
+  <data name="&gt;&gt;TCVisuzalization.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPVisualization.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPVisualization.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPVisualization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPVisualization.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1111, 631</value>
+  </data>
+  <data name="TPVisualization.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TPVisualization.Text" xml:space="preserve">
+    <value>Visualisation</value>
+  </data>
+  <data name="&gt;&gt;TPVisualization.Name" xml:space="preserve">
+    <value>TPVisualization</value>
+  </data>
+  <data name="&gt;&gt;TPVisualization.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPVisualization.Parent" xml:space="preserve">
+    <value>TCMain</value>
+  </data>
+  <data name="&gt;&gt;TPVisualization.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TCMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="TCMain.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TCMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TCMain.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1119, 661</value>
+  </data>
+  <data name="TCMain.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;TCMain.Name" xml:space="preserve">
+    <value>TCMain</value>
+  </data>
+  <data name="&gt;&gt;TCMain.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TCMain.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TCMain.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;InPanel.Name" xml:space="preserve">
+    <value>InPanel</value>
+  </data>
+  <data name="&gt;&gt;InPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InPanel.Parent" xml:space="preserve">
+    <value>TPIn</value>
+  </data>
+  <data name="&gt;&gt;InPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPIn.ImageKey" xml:space="preserve">
+    <value>InventoryIn.png</value>
+  </data>
+  <data name="TPIn.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPIn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPIn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPIn.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1103, 601</value>
+  </data>
+  <data name="TPIn.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TPIn.Text" xml:space="preserve">
+    <value>Entrée d'inventaire</value>
+  </data>
+  <data name="&gt;&gt;TPIn.Name" xml:space="preserve">
+    <value>TPIn</value>
+  </data>
+  <data name="&gt;&gt;TPIn.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPIn.Parent" xml:space="preserve">
+    <value>TCTransaction</value>
+  </data>
+  <data name="&gt;&gt;TPIn.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="OutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="OutPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="OutPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1095, 593</value>
+  </data>
+  <data name="OutPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;OutPanel.Name" xml:space="preserve">
+    <value>OutPanel</value>
+  </data>
+  <data name="&gt;&gt;OutPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;OutPanel.Parent" xml:space="preserve">
+    <value>TPOut</value>
+  </data>
+  <data name="&gt;&gt;OutPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="TPOut.ImageKey" xml:space="preserve">
+    <value>InventoryOut.png</value>
+  </data>
+  <data name="TPOut.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 26</value>
+  </data>
+  <data name="TPOut.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPOut.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TPOut.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1103, 601</value>
+  </data>
+  <data name="TPOut.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TPOut.Text" xml:space="preserve">
+    <value>Sortie d'inventaire</value>
+  </data>
+  <data name="&gt;&gt;TPOut.Name" xml:space="preserve">
+    <value>TPOut</value>
+  </data>
+  <data name="&gt;&gt;TPOut.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TPOut.Parent" xml:space="preserve">
+    <value>TCTransaction</value>
+  </data>
+  <data name="&gt;&gt;TPOut.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="TCTransaction.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <metadata name="TransactionImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
+  <data name="TransactionImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
+        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD6
+        CQAAAk1TRnQBSQFMAgEBAgEAARgBAAEYAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
+        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
+        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
+        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
+        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
+        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
+        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
+        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
+        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
+        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
+        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
+        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
+        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
+        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
+        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
+        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
+        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
+        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
+        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
+        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
+        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
+        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
+        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
+        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
+        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
+        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
+        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
+        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/wYAAfQBBwHxA/8BBwH3
+        AQcCAAH/AbwB8wL/AfMBBwHxAv8qAAH0ASoBKwFLAZIB7wH0AVYBVQH3Av8BbwFHAe0BBwEgAR8BUgFL
+        AZIB7wH0Af8nAAH/ASoBWAIxAnQB7wF9AVUB7AH3AgcCTQEfAiYBmQExASsBKgHtAZIB8QL/IwAB9AFS
+        AVgBWQIxAXQCVgF9AVYCVQH3AQAB6QNNAUYCMQIrASkCKgGSAfEB/yEAAf8BMQFKAVgBWQIxAXQFfQFW
+        AQcBAAH0A00BdAIxAisBKQMqAZIB/yEAATEBWQFLAVkBegIxAnQBHAF9AVUBdAHvAf8BAAHpAU0BRQFH
+        ASUBeQIxASsBIwMqARwB/yEAAVIBWQFRAVkB6gFLARQCMQHvAX0BVgF0AXMC/wFGASUBdAGaAUcBHAEU
+        AjEBRAMqAXMB/yAAAf8BUgFZAUsBUgGaAzEBKgHvARwBeQF0AXMC/wFSAZoBSwFSARoDMQEqAUMBKgIx
+        AXMB/yAAAf8BWQFKAVIBWQGaBDEBRAIxAUQBHAH0Af8BWQFKAVIBWQGaBDEBRAIxAUQBHAH0IAAB/wEw
+        A1kBmgQxAUQDMQEqAfMB/wEwA1kBmgQxAUQDMQEqAfMgAAH0BFkBwwQxAUQDMQEqAfIB9ARZAcMEMQFE
+        AzEBKgHyIAABGwRZAfYEMQFEAzEBKgHwARsEWQH2BDEBRAMxASoB8CAAARoDegGaAlkBegGaAXoBFAQx
+        AbwBGgN6AZoCWQF6AZoBegEUBDEBvCAAAZkCegFRAUoBSwFSAVkBSgFSAVkDWAEqAf8BmQJ6AVEBSgFL
+        AVIBWQFKAVIBWQNYASoB/yAAAf8BUgExAVIBWQJRAVkBUgFLAUoBMQF5AfQB/wEAAf8BUgExAVIBWQJR
+        AVkBUgFLAUoBMQF5AfQB/yUAAv8BGwGZAVIBGgL/CAAC/wEbAZkBUgEaAv8kAAFCAU0BPgcAAT4DAAEo
+        AwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAB+AEDAQABPwQAAfACAAEPBAAB4AIAAQEEAAHAAQABgAUA
+        AYABAAGABQABgAEAAYAFAAGAQAABAQEAAQEEAAHwAQ8B8AEPBAAL
+</value>
+  </data>
+  <data name="TCTransaction.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="TCTransaction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
+    <value>4, 4, 4, 4</value>
+  </data>
+  <data name="TCTransaction.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1111, 631</value>
+  </data>
+  <data name="TCTransaction.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;TCTransaction.Name" xml:space="preserve">
+    <value>TCTransaction</value>
+  </data>
+  <data name="&gt;&gt;TCTransaction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TCTransaction.Parent" xml:space="preserve">
+    <value>TPTransaction</value>
+  </data>
+  <data name="&gt;&gt;TCTransaction.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="InPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
+    <value>Fill</value>
+  </data>
+  <data name="InPanel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 4</value>
+  </data>
+  <data name="InPanel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>1095, 593</value>
+  </data>
+  <data name="InPanel.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;InPanel.Name" xml:space="preserve">
+    <value>InPanel</value>
+  </data>
+  <data name="&gt;&gt;InPanel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;InPanel.Parent" xml:space="preserve">
+    <value>TPIn</value>
+  </data>
+  <data name="&gt;&gt;InPanel.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;ProductPanel.Name" xml:space="preserve">
     <value>ProductPanel</value>
   </data>
@@ -379,8 +955,8 @@
     <value>
         AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
         LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACS
-        DQAAAk1TRnQBSQFMAgEBBQEAAQgBAAEIAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
+        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAACK
+        DQAAAk1TRnQBSQFMAgEBBQEAARABAAEQAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
         AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
         AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
         AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
@@ -411,33 +987,33 @@
         AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/wYAAf8BBwHxAfQB/zkA
         Af8B8gFGAUwBRgEcAe8B8gL/NQAB/wGTAU0BdQNNARIBRgGSAe8B8gL/MAAB/wHzAUwDdQNNARMB6gFt
         AUwBRQHtAfQwAAHzAeMEdQNNARQBEwESAU0BTAElAfIwAAGTApoCdQF6AXUETQFMAU0BTAFGAfEwAAGT
-        A5oB6wJtAXUBTQHtA00BTAFGAbwwAAEWAZoB7QHrAvgC7AF0AesBdAFNAewBTAFGAQcwAAEcAfgE7ALt
-        AZIC7AF0AesBdAFGAQcxAAHsA5IC9wHsAe0CkgLsAe0BbwHxMgAB7AHvApID9wHtAZIB9wGSAQcB8wH/
-        MwABBwH/Ae8B7QH4Au8B6wH0Af8BAAH/OQABBwHzAQAB/z4AAv8BAAL/ewAB/0sAAfQBRAHuCAAB/wHy
-        AQcB8wL/CgAOEgHqCAABbgFGASABJQMmAfMFAAH0AXQBoAF6AXkBSwFzAfQDAAH/AfcB7AFSAXQBkgHw
-        AfQC/wcAAfAC8wf0AfUD/wESCAABbgFGAiABJQImAfMEAAHxAXkBmgGgARsBGgF6AVkBWAErAgAB9wHz
-        AfIBMQI4ASoB9wGSAbwB9AH/BQAB8AFtAe0B8gHuAW0B9AJtAfQCbQHsAf8BEggAAW4BbwJGAkcBJgHz
-        AwAB8AF6AZoBegGgARsC9AEZAXQBMQIAAfcB8QH4ATEBOAExATcBCQG1Aa4C9wHyAv8CAAHxAW0BkgEc
-        AUoB6gH0Am0B9AJtAZIB/wESCAABbgYeAfMCAAGTBHoBoAEbAfUC9AGZATEDAAL/AbwBzwGuAbUECQHP
-        Aa4BkgHwAf8BAAHxAeoCbQESAZkBSwLqAfQC6gFtAfUBEgHzAesB8w8AAUQEegGgARoB8gG1AYYBGwEx
-        BQABtQKuBQkC3QG1AfcB/wEAAfEBEgLqAW4BGwEjASQBEgH0AuoBbQH0ARIB8wLvAesDAAEWAVkEOAH7
-        AfQDAAFEBHoBoAF6AXkBSwFzAZkBMQUAAbUD3QMJBN0BrgH0AQAB8wESAuoBEgFYAQ8CKgHyAhIB6gH0
-        ARIB8wHvAgcBkgHwAQABFgFZATIEOAH0AwABRAR6AaACGwF6AVkBWAExBQABtQPdAgkBrgH0AfEC3QGu
-        AfQBAAHzARMDEgFEAVgBQwFSAUsCEwESAfQBEgH0AgcB8QH3AfEBAAEWAXoDWQI4AfQDAAFEAnoBeQFY
-        AaABGwH1AfQBGQGTATEFAAG1AxkBCQG1AvMB9AHwAQkBrgH0AQAB8wEUAxMBFAFLAVEBEwFSAUQCEwH0
-        ARIB9AHuAfMB7AMAARYGJgH0AwABRAF5AVgCUgGgARsB/wGnAfQB7gExBQABtQMZArUB8QHyAfMB9AEJ
-        Aa4B9AEAAfQFFAHxAVIBUQESAVgBSgEUAfQBEgH0AfcB9A8AAUUEUgGgARoBzwH/AacBGwExBQABtQPz
-        ArUB9AHxAvIBCQGuAfQBAAH0BRUB8wEVAVIBSgESAVgBRAH0ARIIAALVAdQC1QHbAdwB8wIAAUUEUgGg
-        AXoBeQFSAksBMQUAAbUD9AO1AfEB8AG1AQkBrgH0AQAB9AFDAxUBQwHxAUMBFQFYARQBEgFYAQcBEggA
-        AtUC1ALVAdsB8wIAAUUCUgGaA8MCoAHDAZoBWAUAAbUC9QH/B7UB7QH0AQAB9QVDAfECQwHvAVgBFAFL
-        AXMBEggAAdUB2wPVAtsB8wIAAUUBeQXDAqABmQFLAfYFAAHuA/8BCQa1Ae0B9AEAAf8E8ATxAfMBHAFZ
-        AXMB7gESCAAB1QZCAfMCAAEHAUUBSwJ0AZkBwwF5AXMJAAK1AfEC9AHzAt0CtQEHAf8BAAv/AbwB8wH/
-        ARImAAH/AfQB7gK1AQcB8gL/EQABQgFNAT4HAAE+AwABKAMAAUADAAEgAwABAQEAAQEGAAEBFgAD/wEA
-        AfgBPwYAAeABBwYAAcA3AAGABwABwAcAAeABBQYAAf8BLwYAAf8ByQYAAv8GAAH/Ad8GAAL/AfwBfwGB
-        Af8BgAEAAf8BAAH4AQcBAAE/AYABAAH/AQAB8AEDAQABDwGAAQAB/wEAAeABAwEAAQEBgAEAAf8BAAHA
-        AQMBgAEAAYABAAEfAf8BwAEDAeABAAGAAQABDgEBAcABAwHgAQABgAEAAQIBAQHAAQMB4AEAAYABAAEC
-        AQEBwAEDAeABAAGAAQABDgEBAcABAwHgAQABgAEAAR8B/wHAAQMB4AEAAYABAAH/AQABwAEDAeABAAGA
-        AQAB/wEAAcABAwHgAQABgAEAAf8BAAHAAQMB4AEAAYABAAH/AQABwAEfAfABAAGAAQAE/wH8AQEC/ws=
+        A5oB6wJtAXUBTQHtA00BTAFGAbwwAAEWAZoB7QHrBOwBdAHrAXQBTQHsAUwBRgEHMAABHAXsAu0BkgLs
+        AXQB6wF0AUYBBzEAAewDkgL3AewB7QKSAuwB7QFvAfEyAAHsAe8CkgP3Ae0BkgH3AZIBBwHzAf8zAAEH
+        Af8B7wHtAewC7wHrAfQB/wEAAf85AAEHAfMBAAH/PgAC/wEAAv97AAH/SwAB9AFEAbwIAAH/AfIBBwHz
+        Av8KAA4SAeoIAAFuAUYBIAElAyYB8wUAAfQBdAGgAXoBeQFLAXMB9AMAAf8B9wHsAVIBdAGSAfAB9AL/
+        BwAB8ALzB/QE/wESCAABbgFGAiABJQImAfMEAAHxAXkBmgGgARsBGgF6AVkBWAErAgAB9wHzAfIBMQI4
+        ASoB9wGSAbwB9AH/BQAB8AFtAe0B8gG8AW0B9AJtAfQCbQHsAf8BEggAAW4BbwJGAkcBJgHzAwAB8AF6
+        AZoBegGgARsC9AEZAXQBMQIAAfcB8QHsATEBOAExATcBCQG1Aa4C9wHyAv8CAAHxAW0BkgEcAUoB6gH0
+        Am0B9AJtAZIB/wESCAABbgYeAfMCAAGTBHoBoAEbAf8C9AGZATEDAAL/AbwBzwGuAbUECQHPAa4BkgHw
+        Af8BAAHxAeoCbQESAZkBSwLqAfQC6gFtAf8BEgHzAesB8w8AAUQEegGgARoB8gG1AYYBGwExBQABtQKu
+        BQkC3QG1AfcB/wEAAfEBEgLqAW4BGwEjASQBEgH0AuoBbQH0ARIB8wLvAesDAAEWAVkEOAH7AfQDAAFE
+        BHoBoAF6AXkBSwFzAZkBMQUAAbUD3QMJBN0BrgH0AQAB8wESAuoBEgFYAQ8CKgHyAhIB6gH0ARIB8wHv
+        AgcBkgHwAQABFgFZATIEOAH0AwABRAR6AaACGwF6AVkBWAExBQABtQPdAgkBrgH0AfEC3QGuAfQBAAHz
+        ARMDEgFEAVgBQwFSAUsCEwESAfQBEgH0AgcB8QH3AfEBAAEWAXoDWQI4AfQDAAFEAnoBeQFYAaABGwH/
+        AfQBGQGTATEFAAG1AxkBCQG1AvMB9AHwAQkBrgH0AQAB8wEUAxMBFAFLAVEBEwFSAUQCEwH0ARIB9AG8
+        AfMB7AMAARYGJgH0AwABRAF5AVgCUgGgARsB/wGnAfQBvAExBQABtQMZArUB8QHyAfMB9AEJAa4B9AEA
+        AfQFFAHxAVIBUQESAVgBSgEUAfQBEgH0AfcB9A8AAUUEUgGgARoBzwH/AacBGwExBQABtQPzArUB9AHx
+        AvIBCQGuAfQBAAH0BRUB8wEVAVIBSgESAVgBRAH0ARIIAALVAdQC1QHbAdwB8wIAAUUEUgGgAXoBeQFS
+        AksBMQUAAbUD9AO1AfEB8AG1AQkBrgH0AQAB9AFDAxUBQwHxAUMBFQFYARQBEgFYAQcBEggAAtUC1ALV
+        AdsB8wIAAUUCUgGaA8MCoAHDAZoBWAUAAbUD/we1Ae0B9AEAAf8FQwHxAkMB7wFYARQBSwFzARIIAAHV
+        AdsD1QLbAfMCAAFFAXkFwwKgAZkBSwH2BQABvAP/AQkGtQHtAfQBAAH/BPAE8QHzARwBWQFzAbwBEggA
+        AdUGQgHzAgABBwFFAUsCdAGZAcMBeQFzCQACtQHxAvQB8wLdArUBBwH/AQAL/wG8AfMB/wESJgAB/wH0
+        AbwCtQEHAfIC/xEAAUIBTQE+BwABPgMAASgDAAFAAwABIAMAAQEBAAEBBgABARYAA/8BAAH4AT8GAAHg
+        AQcGAAHANwABgAcAAcAHAAHgAQUGAAH/AS8GAAH/AckGAAL/BgAB/wHfBgAC/wH8AX8BgQH/AYABAAH/
+        AQAB+AEHAQABPwGAAQAB/wEAAfABAwEAAQ8BgAEAAf8BAAHgAQMBAAEBAYABAAH/AQABwAEDAYABAAGA
+        AQABHwH/AcABAwHgAQABgAEAAQ4BAQHAAQMB4AEAAYABAAECAQEBwAEDAeABAAGAAQABAgEBAcABAwHg
+        AQABgAEAAQ4BAQHAAQMB4AEAAYABAAEfAf8BwAEDAeABAAGAAQAB/wEAAcABAwHgAQABgAEAAf8BAAHA
+        AQMB4AEAAYABAAH/AQABwAEDAeABAAGAAQAB/wEAAcABHwHwAQABgAEABP8B/AEBAv8L
 </value>
   </data>
   <data name="TCManagement.Location" type="System.Drawing.Point, System.Drawing">
@@ -462,323 +1038,6 @@
     <value>TPManagement</value>
   </data>
   <data name="&gt;&gt;TCManagement.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPManagement.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPManagement.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPManagement.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPManagement.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1111, 631</value>
-  </data>
-  <data name="TPManagement.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TPManagement.Text" xml:space="preserve">
-    <value>Gestion</value>
-  </data>
-  <data name="&gt;&gt;TPManagement.Name" xml:space="preserve">
-    <value>TPManagement</value>
-  </data>
-  <data name="&gt;&gt;TPManagement.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPManagement.Parent" xml:space="preserve">
-    <value>TCMain</value>
-  </data>
-  <data name="&gt;&gt;TPManagement.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.Name" xml:space="preserve">
-    <value>TCVisuzalization</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.Parent" xml:space="preserve">
-    <value>TPVisualization</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPVisualization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPVisualization.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPVisualization.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPVisualization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1111, 631</value>
-  </data>
-  <data name="TPVisualization.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TPVisualization.Text" xml:space="preserve">
-    <value>Visualisation</value>
-  </data>
-  <data name="&gt;&gt;TPVisualization.Name" xml:space="preserve">
-    <value>TPVisualization</value>
-  </data>
-  <data name="&gt;&gt;TPVisualization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPVisualization.Parent" xml:space="preserve">
-    <value>TCMain</value>
-  </data>
-  <data name="&gt;&gt;TPVisualization.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="TCMain.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="TCMain.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="TCMain.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TCMain.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1119, 661</value>
-  </data>
-  <data name="TCMain.TabIndex" type="System.Int32, mscorlib">
-    <value>4</value>
-  </data>
-  <data name="&gt;&gt;TCMain.Name" xml:space="preserve">
-    <value>TCMain</value>
-  </data>
-  <data name="&gt;&gt;TCMain.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TCMain.Parent" xml:space="preserve">
-    <value>$this</value>
-  </data>
-  <data name="&gt;&gt;TCMain.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;InPanel.Name" xml:space="preserve">
-    <value>InPanel</value>
-  </data>
-  <data name="&gt;&gt;InPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InPanel.Parent" xml:space="preserve">
-    <value>TPIn</value>
-  </data>
-  <data name="&gt;&gt;InPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPIn.ImageKey" xml:space="preserve">
-    <value>InventoryIn.png</value>
-  </data>
-  <data name="TPIn.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPIn.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPIn.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPIn.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1103, 601</value>
-  </data>
-  <data name="TPIn.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TPIn.Text" xml:space="preserve">
-    <value>Entrée d'inventaire</value>
-  </data>
-  <data name="&gt;&gt;TPIn.Name" xml:space="preserve">
-    <value>TPIn</value>
-  </data>
-  <data name="&gt;&gt;TPIn.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPIn.Parent" xml:space="preserve">
-    <value>TCTransaction</value>
-  </data>
-  <data name="&gt;&gt;TPIn.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.Name" xml:space="preserve">
-    <value>OutPanel</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.Parent" xml:space="preserve">
-    <value>TPOut</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPOut.ImageKey" xml:space="preserve">
-    <value>InventoryOut.png</value>
-  </data>
-  <data name="TPOut.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPOut.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPOut.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TPOut.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1103, 601</value>
-  </data>
-  <data name="TPOut.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TPOut.Text" xml:space="preserve">
-    <value>Sortie d'inventaire</value>
-  </data>
-  <data name="&gt;&gt;TPOut.Name" xml:space="preserve">
-    <value>TPOut</value>
-  </data>
-  <data name="&gt;&gt;TPOut.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPOut.Parent" xml:space="preserve">
-    <value>TCTransaction</value>
-  </data>
-  <data name="&gt;&gt;TPOut.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="TCTransaction.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <metadata name="TransactionImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <data name="TransactionImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD6
-        CQAAAk1TRnQBSQFMAgEBAgEAARABAAEQAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
-        AwABQAMAARADAAEBAQABCAYAAQQYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
-        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
-        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
-        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
-        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
-        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
-        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
-        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
-        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
-        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
-        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
-        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
-        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
-        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
-        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
-        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
-        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
-        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
-        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
-        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
-        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
-        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
-        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
-        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
-        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
-        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
-        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD/wYAAfQBBwHxA/8BBwH3
-        AQcCAAH/AbwB8wL/AfMBBwHxAv8qAAH0ASoBKwFLAZIB7wH0AVYBVQH3Av8BbwFHAe0BBwEgAR8BUgFL
-        AZIB7wH0Af8nAAH/ASoBWAIxAnQB7wF9AVUB7AH3AgcCTQEfAiYBmQExASsBKgHtAZIB8QL/IwAB9AFS
-        AVgBWQIxAXQCVgF9AVYCVQH3AQAB6QNNAUYCMQIrASkCKgGSAfEB/yEAAf8BMQFKAVgBWQIxAXQFfQFW
-        AQcBAAH0A00BdAIxAisBKQMqAZIB/yEAATEBWQFLAVkBegIxAnQBHAF9AVUBdAHvAf8BAAHpAU0BRQFH
-        ASUBeQIxASsBIwMqARwB/yEAAVIBWQFRAVkB6gFLARQCMQHvAX0BVgF0AXMC/wFGASUBdAGaAUcBHAEU
-        AjEBRAMqAXMB/yAAAf8BUgFZAUsBUgGaAzEBKgHvARwBeQF0AXMC/wFSAZoBSwFSARoDMQEqAUMBKgIx
-        AXMB/yAAAf8BWQFKAVIBWQGaBDEBRAIxAUQBHAH0Af8BWQFKAVIBWQGaBDEBRAIxAUQBHAH0IAAB/wEw
-        A1kBmgQxAUQDMQEqAfMB/wEwA1kBmgQxAUQDMQEqAfMgAAH0BFkBwwQxAUQDMQEqAfIB9ARZAcMEMQFE
-        AzEBKgHyIAABGwRZAfYEMQFEAzEBKgHwARsEWQH2BDEBRAMxASoB8CAAARoDegGaAlkBegGaAXoBFAQx
-        AbwBGgN6AZoCWQF6AZoBegEUBDEBvCAAAZkCegFRAUoBSwFSAVkBSgFSAVkDWAEqAf8BmQJ6AVEBSgFL
-        AVIBWQFKAVIBWQNYASoB/yAAAf8BUgExAVIBWQJRAVkBUgFLAUoBMQF5AfQB/wEAAf8BUgExAVIBWQJR
-        AVkBUgFLAUoBMQF5AfQB/yUAAv8BGwGZAVIBGgL/CAAC/wEbAZkBUgEaAv8kAAFCAU0BPgcAAT4DAAEo
-        AwABQAMAARADAAEBAQABAQUAAYAXAAP/AQAB+AEDAQABPwQAAfACAAEPBAAB4AIAAQEEAAHAAQABgAUA
-        AYABAAGABQABgAEAAYAFAAGAQAABAQEAAQEEAAHwAQ8B8AEPBAAL
-</value>
-  </data>
-  <data name="TCTransaction.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="TCTransaction.Margin" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>4, 4, 4, 4</value>
-  </data>
-  <data name="TCTransaction.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1111, 631</value>
-  </data>
-  <data name="TCTransaction.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TCTransaction.Name" xml:space="preserve">
-    <value>TCTransaction</value>
-  </data>
-  <data name="&gt;&gt;TCTransaction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TCTransaction.Parent" xml:space="preserve">
-    <value>TPTransaction</value>
-  </data>
-  <data name="&gt;&gt;TCTransaction.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="InPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="InPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="InPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 593</value>
-  </data>
-  <data name="InPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;InPanel.Name" xml:space="preserve">
-    <value>InPanel</value>
-  </data>
-  <data name="&gt;&gt;InPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;InPanel.Parent" xml:space="preserve">
-    <value>TPIn</value>
-  </data>
-  <data name="&gt;&gt;InPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="OutPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="OutPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="OutPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 593</value>
-  </data>
-  <data name="OutPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.Name" xml:space="preserve">
-    <value>OutPanel</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.Parent" xml:space="preserve">
-    <value>TPOut</value>
-  </data>
-  <data name="&gt;&gt;OutPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <data name="ProductPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
@@ -877,254 +1136,6 @@
   <data name="&gt;&gt;MeasuringUnitPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;GeneralStockPanel.Name" xml:space="preserve">
-    <value>GeneralStockPanel</value>
-  </data>
-  <data name="&gt;&gt;GeneralStockPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;GeneralStockPanel.Parent" xml:space="preserve">
-    <value>TPStockGeneral</value>
-  </data>
-  <data name="&gt;&gt;GeneralStockPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPStockGeneral.ImageKey" xml:space="preserve">
-    <value>GeneralStock.png</value>
-  </data>
-  <data name="TPStockGeneral.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPStockGeneral.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TPStockGeneral.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 593</value>
-  </data>
-  <data name="TPStockGeneral.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="TPStockGeneral.Text" xml:space="preserve">
-    <value>Stock général</value>
-  </data>
-  <data name="&gt;&gt;TPStockGeneral.Name" xml:space="preserve">
-    <value>TPStockGeneral</value>
-  </data>
-  <data name="&gt;&gt;TPStockGeneral.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPStockGeneral.Parent" xml:space="preserve">
-    <value>TCVisuzalization</value>
-  </data>
-  <data name="&gt;&gt;TPStockGeneral.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.Name" xml:space="preserve">
-    <value>LocStcokPanel</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.Parent" xml:space="preserve">
-    <value>TPStockByLoc</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPStockByLoc.ImageKey" xml:space="preserve">
-    <value>LocStock.png</value>
-  </data>
-  <data name="TPStockByLoc.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPStockByLoc.Padding" type="System.Windows.Forms.Padding, System.Windows.Forms">
-    <value>3, 3, 3, 3</value>
-  </data>
-  <data name="TPStockByLoc.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 593</value>
-  </data>
-  <data name="TPStockByLoc.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="TPStockByLoc.Text" xml:space="preserve">
-    <value>Stock par localisation</value>
-  </data>
-  <data name="&gt;&gt;TPStockByLoc.Name" xml:space="preserve">
-    <value>TPStockByLoc</value>
-  </data>
-  <data name="&gt;&gt;TPStockByLoc.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPStockByLoc.Parent" xml:space="preserve">
-    <value>TCVisuzalization</value>
-  </data>
-  <data name="&gt;&gt;TPStockByLoc.ZOrder" xml:space="preserve">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;OrdersToDoPanel.Name" xml:space="preserve">
-    <value>OrdersToDoPanel</value>
-  </data>
-  <data name="&gt;&gt;OrdersToDoPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;OrdersToDoPanel.Parent" xml:space="preserve">
-    <value>TPOrdersToMake</value>
-  </data>
-  <data name="&gt;&gt;OrdersToDoPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPOrdersToMake.ImageKey" xml:space="preserve">
-    <value>OrdersToDo.png</value>
-  </data>
-  <data name="TPOrdersToMake.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPOrdersToMake.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 593</value>
-  </data>
-  <data name="TPOrdersToMake.TabIndex" type="System.Int32, mscorlib">
-    <value>2</value>
-  </data>
-  <data name="TPOrdersToMake.Text" xml:space="preserve">
-    <value>Commandes à faire</value>
-  </data>
-  <data name="&gt;&gt;TPOrdersToMake.Name" xml:space="preserve">
-    <value>TPOrdersToMake</value>
-  </data>
-  <data name="&gt;&gt;TPOrdersToMake.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPOrdersToMake.Parent" xml:space="preserve">
-    <value>TCVisuzalization</value>
-  </data>
-  <data name="&gt;&gt;TPOrdersToMake.ZOrder" xml:space="preserve">
-    <value>2</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.Name" xml:space="preserve">
-    <value>ItemsTooMuchPanel</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.Parent" xml:space="preserve">
-    <value>TPItemsTooMuch</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="TPItemsTooMuch.ImageKey" xml:space="preserve">
-    <value>ItemsTooMuch.png</value>
-  </data>
-  <data name="TPItemsTooMuch.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 26</value>
-  </data>
-  <data name="TPItemsTooMuch.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 593</value>
-  </data>
-  <data name="TPItemsTooMuch.TabIndex" type="System.Int32, mscorlib">
-    <value>3</value>
-  </data>
-  <data name="TPItemsTooMuch.Text" xml:space="preserve">
-    <value>Items en trop</value>
-  </data>
-  <data name="&gt;&gt;TPItemsTooMuch.Name" xml:space="preserve">
-    <value>TPItemsTooMuch</value>
-  </data>
-  <data name="&gt;&gt;TPItemsTooMuch.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TPItemsTooMuch.Parent" xml:space="preserve">
-    <value>TCVisuzalization</value>
-  </data>
-  <data name="&gt;&gt;TPItemsTooMuch.ZOrder" xml:space="preserve">
-    <value>3</value>
-  </data>
-  <data name="TCVisuzalization.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <metadata name="VidualizationImages.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>333, 17</value>
-  </metadata>
-  <data name="VidualizationImages.ImageStream" mimetype="application/x-microsoft.net.object.binary.base64">
-    <value>
-        AAEAAAD/////AQAAAAAAAAAMAgAAAFdTeXN0ZW0uV2luZG93cy5Gb3JtcywgVmVyc2lvbj00LjAuMC4w
-        LCBDdWx0dXJlPW5ldXRyYWwsIFB1YmxpY0tleVRva2VuPWI3N2E1YzU2MTkzNGUwODkFAQAAACZTeXN0
-        ZW0uV2luZG93cy5Gb3Jtcy5JbWFnZUxpc3RTdHJlYW1lcgEAAAAERGF0YQcCAgAAAAkDAAAADwMAAAD8
-        CwAAAk1TRnQBSQFMAgEBBAEAAQgBAAEIAQABEAEAARABAAT/AQkBAAj/AUIBTQE2AQQGAAE2AQQCAAEo
-        AwABQAMAASADAAEBAQABCAYAAQgYAAGAAgABgAMAAoABAAGAAwABgAEAAYABAAKAAgADwAEAAcAB3AHA
-        AQAB8AHKAaYBAAEzBQABMwEAATMBAAEzAQACMwIAAxYBAAMcAQADIgEAAykBAANVAQADTQEAA0IBAAM5
-        AQABgAF8Af8BAAJQAf8BAAGTAQAB1gEAAf8B7AHMAQABxgHWAe8BAAHWAucBAAGQAakBrQIAAf8BMwMA
-        AWYDAAGZAwABzAIAATMDAAIzAgABMwFmAgABMwGZAgABMwHMAgABMwH/AgABZgMAAWYBMwIAAmYCAAFm
-        AZkCAAFmAcwCAAFmAf8CAAGZAwABmQEzAgABmQFmAgACmQIAAZkBzAIAAZkB/wIAAcwDAAHMATMCAAHM
-        AWYCAAHMAZkCAALMAgABzAH/AgAB/wFmAgAB/wGZAgAB/wHMAQABMwH/AgAB/wEAATMBAAEzAQABZgEA
-        ATMBAAGZAQABMwEAAcwBAAEzAQAB/wEAAf8BMwIAAzMBAAIzAWYBAAIzAZkBAAIzAcwBAAIzAf8BAAEz
-        AWYCAAEzAWYBMwEAATMCZgEAATMBZgGZAQABMwFmAcwBAAEzAWYB/wEAATMBmQIAATMBmQEzAQABMwGZ
-        AWYBAAEzApkBAAEzAZkBzAEAATMBmQH/AQABMwHMAgABMwHMATMBAAEzAcwBZgEAATMBzAGZAQABMwLM
-        AQABMwHMAf8BAAEzAf8BMwEAATMB/wFmAQABMwH/AZkBAAEzAf8BzAEAATMC/wEAAWYDAAFmAQABMwEA
-        AWYBAAFmAQABZgEAAZkBAAFmAQABzAEAAWYBAAH/AQABZgEzAgABZgIzAQABZgEzAWYBAAFmATMBmQEA
-        AWYBMwHMAQABZgEzAf8BAAJmAgACZgEzAQADZgEAAmYBmQEAAmYBzAEAAWYBmQIAAWYBmQEzAQABZgGZ
-        AWYBAAFmApkBAAFmAZkBzAEAAWYBmQH/AQABZgHMAgABZgHMATMBAAFmAcwBmQEAAWYCzAEAAWYBzAH/
-        AQABZgH/AgABZgH/ATMBAAFmAf8BmQEAAWYB/wHMAQABzAEAAf8BAAH/AQABzAEAApkCAAGZATMBmQEA
-        AZkBAAGZAQABmQEAAcwBAAGZAwABmQIzAQABmQEAAWYBAAGZATMBzAEAAZkBAAH/AQABmQFmAgABmQFm
-        ATMBAAGZATMBZgEAAZkBZgGZAQABmQFmAcwBAAGZATMB/wEAApkBMwEAApkBZgEAA5kBAAKZAcwBAAKZ
-        Af8BAAGZAcwCAAGZAcwBMwEAAWYBzAFmAQABmQHMAZkBAAGZAswBAAGZAcwB/wEAAZkB/wIAAZkB/wEz
-        AQABmQHMAWYBAAGZAf8BmQEAAZkB/wHMAQABmQL/AQABzAMAAZkBAAEzAQABzAEAAWYBAAHMAQABmQEA
-        AcwBAAHMAQABmQEzAgABzAIzAQABzAEzAWYBAAHMATMBmQEAAcwBMwHMAQABzAEzAf8BAAHMAWYCAAHM
-        AWYBMwEAAZkCZgEAAcwBZgGZAQABzAFmAcwBAAGZAWYB/wEAAcwBmQIAAcwBmQEzAQABzAGZAWYBAAHM
-        ApkBAAHMAZkBzAEAAcwBmQH/AQACzAIAAswBMwEAAswBZgEAAswBmQEAA8wBAALMAf8BAAHMAf8CAAHM
-        Af8BMwEAAZkB/wFmAQABzAH/AZkBAAHMAf8BzAEAAcwC/wEAAcwBAAEzAQAB/wEAAWYBAAH/AQABmQEA
-        AcwBMwIAAf8CMwEAAf8BMwFmAQAB/wEzAZkBAAH/ATMBzAEAAf8BMwH/AQAB/wFmAgAB/wFmATMBAAHM
-        AmYBAAH/AWYBmQEAAf8BZgHMAQABzAFmAf8BAAH/AZkCAAH/AZkBMwEAAf8BmQFmAQAB/wKZAQAB/wGZ
-        AcwBAAH/AZkB/wEAAf8BzAIAAf8BzAEzAQAB/wHMAWYBAAH/AcwBmQEAAf8CzAEAAf8BzAH/AQAC/wEz
-        AQABzAH/AWYBAAL/AZkBAAL/AcwBAAJmAf8BAAFmAf8BZgEAAWYC/wEAAf8CZgEAAf8BZgH/AQAC/wFm
-        AQABIQEAAaUBAANfAQADdwEAA4YBAAOWAQADywEAA7IBAAPXAQAD3QEAA+MBAAPqAQAD8QEAA/gBAAHw
-        AfsB/wEAAaQCoAEAA4ADAAH/AgAB/wMAAv8BAAH/AwAB/wEAAf8BAAL/AgAD//8A/wD/AP8ABgAOEgHq
-        EQAB7gFFAfMC/wMAAf8B8wEHAfEB/xMAARwBeQErARwG9AH1A/8BEgEACKYExwOsAfMBeQFSASsBHAHv
-        AfQB/wHxAXQCKgFzAQcB/wEAEP8BAAEcAXoBUgErAe0BbQH0Am0B9AJtAewB/wESAQAB/wH1CPQD8wH0
-        AawB7gJ6AVIBKwEqAe0BUQEqAjEBUgIqAZIB/wH1AdUCrQHcAdUJ1AH0AQAB8QFKAXoCUgHqAfQCbQH0
-        Am0BkgH/ARIBAAH/AfQC4wEgAfMCOQFOAfEC+wEsAfMBrAH0AUsCegFSASsBKgQxAVkDKgHyAfQB2wGt
-        AbMBGQncAdsB9AEAAfEB6gFKAXkBBwFLAfECiwHdAuoBbQH1ARIBAAH/AfQCFwEgAfMCVgFOAfECOAEs
-        AfMBxwGZATEBSwJ6AVIBdAMxATcBWQExAioB8AH0AdwCswEZAfcC7QGSAbQDswLcAfQBAAHxARIB6gFK
-        AUsBtAHVAtwB2wGnAeoBbQH0ARIBAAH/AfQCRwEgAfMDTgHxAjgBLAHzAccBeQIxAUsBegGZAe0BRAE4
-        AVIB6wF0AjEBKgG8AfQB3AKzAfQBdAJLAVIBugO0AdUB3AH0AQAB8wESA+oB1QEJAhkBCQHcAWYB6gH0
-        ARIBAAH/AfUC+QEgAfQE8wI4ASwB9AHHAXQDOAFLAVIBBwGuAcgB3ALbAdUBhgEqAQcB9AHcArMB9AFS
-        AksBUgW0AQkB9AEAAfMBEwISAWYB3AQZAQkBiwESAfQBEgEAAv8B9QT0A/MCMgEsAfQBxwFSATgB+wFe
-        AaABKgETAeYB2wQJAdsBpgEHAfQBCQKzAfQBUgIrAVIBCQS0ARkB9AEAAfMBFAITAWYB3AQZAQkBiwET
-        AfQBEgEAA/8B9QT0AvMDLAH0AaYBUgFeAzgBKwGnAdsBCQQZAQkB3AL0AQkBtAGzAfUBGgKZARoBtAKz
-        AbQB9AEZAfQBAAH0BBQB3AEZA/QB3AFmARQB9AESAQAE/wH1BPQE8wH0AaYBAAEaATEBOAIxAc4B3AUZ
-        AQkB2wG1AfQBCQG0AbMB9QT/BPUB/wEZAfQBAAH0BBUBZgHcARkB9AEJAYYBFQEUAfQBEgEABdsG1QPU
-        AaYDAAFSAjEB1QHcBhkB2wHPAfQBCQHbAbMBtAnVAdwB9QEAAfQBQwMVAUMBBwKGAbUDFQH0ARIBAAHV
-        CdQBzgPNAaYDAAFSAjcBpwHcAhkB9AMZAdsBvAH0AQkF2wHcBgkB/wIAAfUFQwHxAkMB8wNDAfMBEgEA
-        AdwJ1AHOA80BpgMAATECOAHrAdwF9AEJAbQBAAH0AfAF3AHVAvEDGQH1AwAB/wTwBPEF8wESAQAB8wL0
-        AxkCCQPcA9sBiwMAATEDOAGnAdwD9QEZAQkB8AEAAfQFuwEJAbsB/wgADv8BEgEAAfMNCQQAAVIB+wFe
-        AeUBXgGuAc8BCQG1AYYB9AIACP8sAAH0ARoBeQFSAXQBmQEaAfQB/xMAAUIBTQE+BwABPgMAASgDAAFA
-        AwABIAMAAQEBAAEBBgABARYAA/+BAAGAAQAC/wKDAv8BgAEAAYACAAEBAgABgAEAAYAFAAGAAQABgAUA
-        AYABAAGABQABgAEAAYAFAAGAAQABgAUAAYABAAGABQABgAEAAYAFAAGAAQABgAEAAYADAAGAAQABgAEA
-        AeADAAGAAQABgAEAAeACAAEBAYABAAGAAQAB4AEBAQABAwGAAQABgAEAAeABAQEAAX8BgAEAAYABAQHg
-        AQMBAAX/AfABBwL/Cw==
-</value>
-  </data>
-  <data name="TCVisuzalization.Location" type="System.Drawing.Point, System.Drawing">
-    <value>4, 4</value>
-  </data>
-  <data name="TCVisuzalization.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1103, 623</value>
-  </data>
-  <data name="TCVisuzalization.TabIndex" type="System.Int32, mscorlib">
-    <value>0</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.Name" xml:space="preserve">
-    <value>TCVisuzalization</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.Type" xml:space="preserve">
-    <value>System.Windows.Forms.TabControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.Parent" xml:space="preserve">
-    <value>TPVisualization</value>
-  </data>
-  <data name="&gt;&gt;TCVisuzalization.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="GeneralStockPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1149,30 +1160,6 @@
   <data name="&gt;&gt;GeneralStockPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="LocStcokPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="LocStcokPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>3, 3</value>
-  </data>
-  <data name="LocStcokPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1089, 587</value>
-  </data>
-  <data name="LocStcokPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.Name" xml:space="preserve">
-    <value>LocStcokPanel</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.Parent" xml:space="preserve">
-    <value>TPStockByLoc</value>
-  </data>
-  <data name="&gt;&gt;LocStcokPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
   <data name="OrdersToDoPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
     <value>Fill</value>
   </data>
@@ -1195,30 +1182,6 @@
     <value>TPOrdersToMake</value>
   </data>
   <data name="&gt;&gt;OrdersToDoPanel.ZOrder" xml:space="preserve">
-    <value>0</value>
-  </data>
-  <data name="ItemsTooMuchPanel.Dock" type="System.Windows.Forms.DockStyle, System.Windows.Forms">
-    <value>Fill</value>
-  </data>
-  <data name="ItemsTooMuchPanel.Location" type="System.Drawing.Point, System.Drawing">
-    <value>0, 0</value>
-  </data>
-  <data name="ItemsTooMuchPanel.Size" type="System.Drawing.Size, System.Drawing">
-    <value>1095, 593</value>
-  </data>
-  <data name="ItemsTooMuchPanel.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.Name" xml:space="preserve">
-    <value>ItemsTooMuchPanel</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.Parent" xml:space="preserve">
-    <value>TPItemsTooMuch</value>
-  </data>
-  <data name="&gt;&gt;ItemsTooMuchPanel.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
   <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">

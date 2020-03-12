@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FProduct));
             this.LBProducts = new System.Windows.Forms.ListBox();
             this.GBProduct = new System.Windows.Forms.GroupBox();
             this.TxtDescription = new System.Windows.Forms.TextBox();
@@ -41,10 +43,10 @@
             this.LblBrand = new System.Windows.Forms.Label();
             this.LblName = new System.Windows.Forms.Label();
             this.GBSupplier = new System.Windows.Forms.GroupBox();
+            this.CBMeasuringUnit = new System.Windows.Forms.ComboBox();
             this.NudPrice = new System.Windows.Forms.NumericUpDown();
             this.NudMeasuringQty = new System.Windows.Forms.NumericUpDown();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.txtMeasuringUnit = new System.Windows.Forms.TextBox();
             this.lblMeasuringUnit = new System.Windows.Forms.Label();
             this.lblQuantityUnit = new System.Windows.Forms.Label();
             this.txtSupplierCode = new System.Windows.Forms.TextBox();
@@ -54,21 +56,30 @@
             this.GBOBarCode = new System.Windows.Forms.GroupBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_Print = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.GBOther = new System.Windows.Forms.GroupBox();
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.TxtLastUpdate = new System.Windows.Forms.TextBox();
             this.LblLastUpdate = new System.Windows.Forms.Label();
             this.ActionPanel = new System.Windows.Forms.Panel();
             this.lbl_BarCode = new System.Windows.Forms.Label();
             this.ucManagementAction1 = new SGI.Views.UCManagementAction();
+            this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
+            this.GBInventory = new System.Windows.Forms.GroupBox();
+            this.lblQtyMin = new System.Windows.Forms.Label();
+            this.lblMaxQty = new System.Windows.Forms.Label();
+            this.NudMin = new System.Windows.Forms.NumericUpDown();
+            this.nudMax = new System.Windows.Forms.NumericUpDown();
             this.GBProduct.SuspendLayout();
             this.GBSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudMeasuringQty)).BeginInit();
             this.GBOBarCode.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
+	    this.GBOther.SuspendLayout();
+	    ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.ActionPanel.SuspendLayout();
+            this.GBInventory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudMin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
             this.SuspendLayout();
             // 
             // LBProducts
@@ -189,10 +200,10 @@
             // 
             // GBSupplier
             // 
+            this.GBSupplier.Controls.Add(this.CBMeasuringUnit);
             this.GBSupplier.Controls.Add(this.NudPrice);
             this.GBSupplier.Controls.Add(this.NudMeasuringQty);
             this.GBSupplier.Controls.Add(this.lblPrice);
-            this.GBSupplier.Controls.Add(this.txtMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblQuantityUnit);
             this.GBSupplier.Controls.Add(this.txtSupplierCode);
@@ -206,6 +217,15 @@
             this.GBSupplier.TabIndex = 2;
             this.GBSupplier.TabStop = false;
             this.GBSupplier.Text = "Fournisseur";
+            // 
+            // CBMeasuringUnit
+            // 
+            this.CBMeasuringUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBMeasuringUnit.FormattingEnabled = true;
+            this.CBMeasuringUnit.Location = new System.Drawing.Point(626, 116);
+            this.CBMeasuringUnit.Name = "CBMeasuringUnit";
+            this.CBMeasuringUnit.Size = new System.Drawing.Size(202, 25);
+            this.CBMeasuringUnit.TabIndex = 19;
             // 
             // NudPrice
             // 
@@ -230,13 +250,6 @@
             this.lblPrice.Size = new System.Drawing.Size(38, 19);
             this.lblPrice.TabIndex = 15;
             this.lblPrice.Text = "Prix :";
-            // 
-            // txtMeasuringUnit
-            // 
-            this.txtMeasuringUnit.Location = new System.Drawing.Point(626, 116);
-            this.txtMeasuringUnit.Name = "txtMeasuringUnit";
-            this.txtMeasuringUnit.Size = new System.Drawing.Size(202, 25);
-            this.txtMeasuringUnit.TabIndex = 14;
             // 
             // lblMeasuringUnit
             // 
@@ -311,32 +324,33 @@
             // 
             // btn_Print
             // 
+            this.btn_Print.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Print.BackgroundImage")));
+            this.btn_Print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Print.Enabled = false;
             this.btn_Print.Location = new System.Drawing.Point(474, 41);
             this.btn_Print.Name = "btn_Print";
-            this.btn_Print.Size = new System.Drawing.Size(157, 37);
+            this.btn_Print.Size = new System.Drawing.Size(75, 56);
             this.btn_Print.TabIndex = 21;
-            this.btn_Print.Text = "Imprimer étiquette";
+            this.ToolTips.SetToolTip(this.btn_Print, "Imprimer");
             this.btn_Print.UseVisualStyleBackColor = true;
             this.btn_Print.Click += new System.EventHandler(this.Btn_Print_Click);
             // 
-            // groupBox1
+            // GBOther
             // 
-            this.groupBox1.Controls.Add(this.cbActive);
-            this.groupBox1.Controls.Add(this.TxtLastUpdate);
-            this.groupBox1.Controls.Add(this.LblLastUpdate);
-            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.groupBox1.Location = new System.Drawing.Point(301, 496);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(1195, 112);
-            this.groupBox1.TabIndex = 5;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Code barre";
+            this.GBOther.Controls.Add(this.TxtLastUpdate);
+            this.GBOther.Controls.Add(this.LblLastUpdate);
+            this.GBOther.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GBOther.Location = new System.Drawing.Point(301, 621);
+            this.GBOther.Name = "GBOther";
+            this.GBOther.Size = new System.Drawing.Size(1195, 112);
+            this.GBOther.TabIndex = 5;
+            this.GBOther.TabStop = false;
+            this.GBOther.Text = "Autres";
             // 
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(488, 48);
+            this.cbActive.Location = new System.Drawing.Point(483, 56);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(55, 23);
             this.cbActive.TabIndex = 25;
@@ -347,6 +361,7 @@
             // 
             this.TxtLastUpdate.Location = new System.Drawing.Point(174, 48);
             this.TxtLastUpdate.Name = "TxtLastUpdate";
+            this.TxtLastUpdate.ReadOnly = true;
             this.TxtLastUpdate.Size = new System.Drawing.Size(202, 25);
             this.TxtLastUpdate.TabIndex = 23;
             // 
@@ -363,7 +378,7 @@
             // 
             this.ActionPanel.Controls.Add(this.ucManagementAction1);
             this.ActionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActionPanel.Location = new System.Drawing.Point(301, 659);
+            this.ActionPanel.Location = new System.Drawing.Point(301, 753);
             this.ActionPanel.Name = "ActionPanel";
             this.ActionPanel.Size = new System.Drawing.Size(1195, 56);
             this.ActionPanel.TabIndex = 6;
@@ -385,13 +400,61 @@
             this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
             this.ucManagementAction1.TabIndex = 0;
             // 
+            // GBInventory
+            // 
+            this.GBInventory.Controls.Add(this.nudMax);
+            this.GBInventory.Controls.Add(this.NudMin);
+            this.GBInventory.Controls.Add(this.lblMaxQty);
+            this.GBInventory.Controls.Add(this.cbActive);
+            this.GBInventory.Controls.Add(this.lblQtyMin);
+            this.GBInventory.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GBInventory.Location = new System.Drawing.Point(301, 477);
+            this.GBInventory.Name = "GBInventory";
+            this.GBInventory.Size = new System.Drawing.Size(1195, 144);
+            this.GBInventory.TabIndex = 7;
+            this.GBInventory.TabStop = false;
+            this.GBInventory.Text = "Inventaire";
+            // 
+            // lblQtyMin
+            // 
+            this.lblQtyMin.AutoSize = true;
+            this.lblQtyMin.Location = new System.Drawing.Point(27, 56);
+            this.lblQtyMin.Name = "lblQtyMin";
+            this.lblQtyMin.Size = new System.Drawing.Size(132, 19);
+            this.lblQtyMin.TabIndex = 19;
+            this.lblQtyMin.Text = "Quantité minimum :";
+            // 
+            // lblMaxQty
+            // 
+            this.lblMaxQty.AutoSize = true;
+            this.lblMaxQty.Location = new System.Drawing.Point(30, 100);
+            this.lblMaxQty.Name = "lblMaxQty";
+            this.lblMaxQty.Size = new System.Drawing.Size(134, 19);
+            this.lblMaxQty.TabIndex = 26;
+            this.lblMaxQty.Text = "Quantité maximum :";
+            // 
+            // NudMin
+            // 
+            this.NudMin.Location = new System.Drawing.Point(188, 54);
+            this.NudMin.Name = "NudMin";
+            this.NudMin.Size = new System.Drawing.Size(202, 25);
+            this.NudMin.TabIndex = 20;
+            // 
+            // nudMax
+            // 
+            this.nudMax.Location = new System.Drawing.Point(188, 98);
+            this.nudMax.Name = "nudMax";
+            this.nudMax.Size = new System.Drawing.Size(202, 25);
+            this.nudMax.TabIndex = 27;
+            // 
             // FProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1496, 715);
+            this.ClientSize = new System.Drawing.Size(1496, 809);
+            this.Controls.Add(this.GBOther);
+            this.Controls.Add(this.GBInventory);
             this.Controls.Add(this.ActionPanel);
-            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.GBOBarCode);
             this.Controls.Add(this.GBSupplier);
             this.Controls.Add(this.GBProduct);
@@ -409,10 +472,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.NudMeasuringQty)).EndInit();
             this.GBOBarCode.ResumeLayout(false);
             this.GBOBarCode.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
+            this.GBOther.ResumeLayout(false);
+            this.GBOther.PerformLayout();
             this.ActionPanel.ResumeLayout(false);
+            this.GBInventory.ResumeLayout(false);
+            this.GBInventory.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.NudMin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nudMax)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -438,11 +504,10 @@
         private System.Windows.Forms.TextBox TxtSupplierName;
         private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.TextBox txtMeasuringUnit;
         private System.Windows.Forms.Label lblMeasuringUnit;
         private System.Windows.Forms.Label lblQuantityUnit;
         private System.Windows.Forms.Button btn_Print;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox GBOther;
         private System.Windows.Forms.TextBox TxtLastUpdate;
         private System.Windows.Forms.Label LblLastUpdate;
         private System.Windows.Forms.CheckBox cbActive;
@@ -450,7 +515,14 @@
         private System.Windows.Forms.NumericUpDown NudPrice;
         private System.Windows.Forms.Panel ActionPanel;
         private UCManagementAction ucManagementAction1;
+	private System.Windows.Forms.ComboBox CBMeasuringUnit;
+        private System.Windows.Forms.ToolTip ToolTips;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_BarCode;
+        private System.Windows.Forms.GroupBox GBInventory;
+        private System.Windows.Forms.Label lblQtyMin;
+        private System.Windows.Forms.NumericUpDown nudMax;
+        private System.Windows.Forms.NumericUpDown NudMin;
+        private System.Windows.Forms.Label lblMaxQty;
     }
 }
