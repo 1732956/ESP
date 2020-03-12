@@ -7,9 +7,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using KeepAutomation.Barcode.Bean;
 using SGI.Controller;
 using SGI.Model.Classes;
 using static SGI.CEnum;
+using System.Drawing.Imaging;
+using System.Drawing.Printing;
 
 namespace SGI.Views.SubViews
 {
@@ -321,16 +324,57 @@ namespace SGI.Views.SubViews
             NudMeasuringQty.Value = currentProduct.UnitCount;
             CBMeasuringUnit.SelectedValue = currentProduct.MeasuringUnit.UnitId;
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);
-            txtBarCode.Text = currentProduct.BarCodeId;
             NudMin.Value = currentProduct.MinQty;
             nudMax.Value = currentProduct.MaxQty;
             if (currentProduct.BarCodeId != "")
                 btn_Print.Enabled = true;
             TxtLastUpdate.Text = currentProduct.LastUpdate.ToString();
             cbActive.Checked = currentProduct.Active;
+            LoadBarCode(currentProduct.BarCodeId);
 
         }
 
-        #endregion
+	private void Btn_Print_Click(object sender, EventArgs e)
+        {
+            PrintDialog pd = new PrintDialog();
+            PrintDocument doc = new PrintDocument();
+            doc.PrintPage += Doc_PrintPage;
+            pd.Document = doc;
+            if (pd.ShowDialog() == DialogResult.OK)
+            {
+                doc.Print();
+            }
+        }
+
+        private void Doc_PrintPage(object sender, PrintPageEventArgs e)
+        {
+
+            Bitmap bm = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            pictureBox2.DrawToBitmap(bm, new Rectangle(0, 0, pictureBox2.Width, pictureBox2.Height));
+            e.Graphics.DrawImage(bm, 0, 0);
+            bm.Dispose();
+        }
+
+        void LoadBarCode(string barCodenbr)
+        {
+
+            string barcode = barCodenbr;
+            lbl_BarCode.Text = barCodenbr;
+            Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);
+            using (Graphics graphics = Graphics.FromImage(bitmap))
+	    {
+                Font oFont = new System.Drawing.Font("IDAHC39M Code 39 Barcode", 20);
+                PointF point = new PointF(2f, 2f);
+                SolidBrush black = new SolidBrush(Color.Black);
+                SolidBrush white = new SolidBrush(Color.White);
+                graphics.FillRectangle(white, 0, 0, bitmap.Width, bitmap.Height);
+                graphics.DrawString("*" + barcode + "*", oFont, black, point);
+	    }
+
+            pictureBox2.Image = bitmap;
+            //pictureBox2.Height  = bitmap.Height;
+            //pictureBox2.Width = bitmap.Width;
+        }
+
     }
 }

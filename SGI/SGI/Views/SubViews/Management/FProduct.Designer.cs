@@ -54,14 +54,14 @@
             this.TxtSupplierName = new System.Windows.Forms.TextBox();
             this.lblSupplierName = new System.Windows.Forms.Label();
             this.GBOBarCode = new System.Windows.Forms.GroupBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_Print = new System.Windows.Forms.Button();
-            this.txtBarCode = new System.Windows.Forms.TextBox();
-            this.lblBarCode = new System.Windows.Forms.Label();
             this.GBOther = new System.Windows.Forms.GroupBox();
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.TxtLastUpdate = new System.Windows.Forms.TextBox();
             this.LblLastUpdate = new System.Windows.Forms.Label();
             this.ActionPanel = new System.Windows.Forms.Panel();
+            this.lbl_BarCode = new System.Windows.Forms.Label();
             this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.GBInventory = new System.Windows.Forms.GroupBox();
@@ -74,7 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudMeasuringQty)).BeginInit();
             this.GBOBarCode.SuspendLayout();
-            this.GBOther.SuspendLayout();
+	    this.GBOther.SuspendLayout();
+	    ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.ActionPanel.SuspendLayout();
             this.GBInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudMin)).BeginInit();
@@ -88,7 +90,7 @@
             this.LBProducts.ItemHeight = 17;
             this.LBProducts.Location = new System.Drawing.Point(0, 0);
             this.LBProducts.Name = "LBProducts";
-            this.LBProducts.Size = new System.Drawing.Size(301, 809);
+            this.LBProducts.Size = new System.Drawing.Size(301, 715);
             this.LBProducts.TabIndex = 0;
             this.LBProducts.SelectedIndexChanged += new System.EventHandler(this.LBProducts_SelectedIndexChanged);
             // 
@@ -203,6 +205,7 @@
             this.GBSupplier.Controls.Add(this.NudPrice);
             this.GBSupplier.Controls.Add(this.NudMeasuringQty);
             this.GBSupplier.Controls.Add(this.lblPrice);
+            this.GBSupplier.Controls.Add(this.txtMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblQuantityUnit);
             this.GBSupplier.Controls.Add(this.txtSupplierCode);
@@ -302,45 +305,37 @@
             // 
             // GBOBarCode
             // 
+            this.GBOBarCode.Controls.Add(this.lbl_BarCode);
+            this.GBOBarCode.Controls.Add(this.pictureBox2);
             this.GBOBarCode.Controls.Add(this.btn_Print);
-            this.GBOBarCode.Controls.Add(this.txtBarCode);
-            this.GBOBarCode.Controls.Add(this.lblBarCode);
             this.GBOBarCode.Dock = System.Windows.Forms.DockStyle.Top;
             this.GBOBarCode.Location = new System.Drawing.Point(301, 365);
             this.GBOBarCode.Name = "GBOBarCode";
-            this.GBOBarCode.Size = new System.Drawing.Size(1195, 112);
+            this.GBOBarCode.Size = new System.Drawing.Size(1195, 131);
             this.GBOBarCode.TabIndex = 3;
             this.GBOBarCode.TabStop = false;
             this.GBOBarCode.Text = "Code barre";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(122, 18);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(244, 82);
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
             // 
             // btn_Print
             // 
             this.btn_Print.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btn_Print.BackgroundImage")));
             this.btn_Print.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btn_Print.Enabled = false;
-            this.btn_Print.Location = new System.Drawing.Point(483, 40);
+            this.btn_Print.Location = new System.Drawing.Point(474, 41);
             this.btn_Print.Name = "btn_Print";
             this.btn_Print.Size = new System.Drawing.Size(75, 56);
             this.btn_Print.TabIndex = 21;
             this.ToolTips.SetToolTip(this.btn_Print, "Imprimer");
             this.btn_Print.UseVisualStyleBackColor = true;
-            // 
-            // txtBarCode
-            // 
-            this.txtBarCode.Location = new System.Drawing.Point(111, 57);
-            this.txtBarCode.Name = "txtBarCode";
-            this.txtBarCode.ReadOnly = true;
-            this.txtBarCode.Size = new System.Drawing.Size(313, 25);
-            this.txtBarCode.TabIndex = 20;
-            // 
-            // lblBarCode
-            // 
-            this.lblBarCode.AutoSize = true;
-            this.lblBarCode.Location = new System.Drawing.Point(27, 60);
-            this.lblBarCode.Name = "lblBarCode";
-            this.lblBarCode.Size = new System.Drawing.Size(88, 19);
-            this.lblBarCode.TabIndex = 19;
-            this.lblBarCode.Text = "Code barre : ";
+            this.btn_Print.Click += new System.EventHandler(this.Btn_Print_Click);
             // 
             // GBOther
             // 
@@ -390,6 +385,14 @@
             this.ActionPanel.Size = new System.Drawing.Size(1195, 56);
             this.ActionPanel.TabIndex = 6;
             // 
+            // lbl_BarCode
+            // 
+            this.lbl_BarCode.AutoSize = true;
+            this.lbl_BarCode.Location = new System.Drawing.Point(211, 103);
+            this.lbl_BarCode.Name = "lbl_BarCode";
+            this.lbl_BarCode.Size = new System.Drawing.Size(0, 19);
+            this.lbl_BarCode.TabIndex = 24;
+            // 
             // ucManagementAction1
             // 
             this.ucManagementAction1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -399,6 +402,7 @@
             this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
             this.ucManagementAction1.TabIndex = 0;
             // 
+            this.ucManagementAction1.Load += new System.EventHandler(this.ucManagementAction1_Load);
             // GBInventory
             // 
             this.GBInventory.Controls.Add(this.nudMax);
@@ -506,8 +510,6 @@
         private System.Windows.Forms.Label lblMeasuringUnit;
         private System.Windows.Forms.Label lblQuantityUnit;
         private System.Windows.Forms.Button btn_Print;
-        private System.Windows.Forms.TextBox txtBarCode;
-        private System.Windows.Forms.Label lblBarCode;
         private System.Windows.Forms.GroupBox GBOther;
         private System.Windows.Forms.TextBox TxtLastUpdate;
         private System.Windows.Forms.Label LblLastUpdate;
@@ -516,8 +518,10 @@
         private System.Windows.Forms.NumericUpDown NudPrice;
         private System.Windows.Forms.Panel ActionPanel;
         private UCManagementAction ucManagementAction1;
-        private System.Windows.Forms.ComboBox CBMeasuringUnit;
+	private System.Windows.Forms.ComboBox CBMeasuringUnit;
         private System.Windows.Forms.ToolTip ToolTips;
+        private System.Windows.Forms.PictureBox pictureBox2;
+        private System.Windows.Forms.Label lbl_BarCode;
         private System.Windows.Forms.GroupBox GBInventory;
         private System.Windows.Forms.Label lblQtyMin;
         private System.Windows.Forms.NumericUpDown nudMax;

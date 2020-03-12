@@ -43,3 +43,9 @@ C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.pdb
 C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.UCManagementAction.resources
 C:\Users\adminesp\Desktop\git\SGI\SGI\obj\Debug\SGI.Views.SubViews.Management.FLocation.resources
+C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Management.FLocation.resources
+C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.Views.UCManagementAction.resources
+C:\Users\adminesp\Documents\ESP\SGI\SGI\bin\Debug\BarcodeStandard.dll
+C:\Users\adminesp\Documents\ESP\SGI\SGI\bin\Debug\KeepAutomation.Barcode.Windows.dll
+C:\Users\adminesp\Documents\ESP\SGI\SGI\bin\Debug\System.Drawing.Common.dll
+C:\Users\adminesp\Documents\ESP\SGI\SGI\obj\Debug\SGI.csproj.CopyComplete
