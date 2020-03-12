@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 using SGI.Model.Classes;
 using System.Data.SqlClient;
 using System.Data;
-
+using System.Windows.Forms;
 
 namespace SGI.Controller
 {
@@ -16,18 +16,26 @@ namespace SGI.Controller
         {
 
             List<Product> products = new List<Product>();
-            using (SqlCommand cmd = new SqlCommand("Product_sp", CDatabase.Connection))
+            try
             {
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                cmd.Parameters.Add("@isActive", SqlDbType.Int).Value = isActive;
-                SqlDataReader dr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                foreach (DataRow row in dt.Rows)
+                using (SqlCommand cmd = new SqlCommand("Product_sp", CDatabase.Connection))
                 {
-                    Product newProduct = new Product(row, false);
-                    products.Add(newProduct);
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@isActive", SqlDbType.Int).Value = isActive;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Product newProduct = new Product(row, false);
+                        products.Add(newProduct);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
             }
             return products;
         }

@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SGI.Model.Classes;
+using System.Windows.Forms;
 
 namespace SGI.Controller
 {
@@ -14,17 +15,25 @@ namespace SGI.Controller
         public List<MeasuringUnit> GetAllActiveMeasuringUnits()
         {
             List<MeasuringUnit> measuringUnits = new List<MeasuringUnit>();
-            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_MesuringUnit where isActive = 1", CDatabase.Connection))
+            try
             {
-                cmd.CommandType = System.Data.CommandType.Text;
-                SqlDataReader dr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                foreach (DataRow row in dt.Rows)
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_MesuringUnit where isActive = 1", CDatabase.Connection))
                 {
-                    MeasuringUnit newMU = new MeasuringUnit(row);
-                    measuringUnits.Add(newMU);
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        MeasuringUnit newMU = new MeasuringUnit(row);
+                        measuringUnits.Add(newMU);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
             }
             return measuringUnits;
         }

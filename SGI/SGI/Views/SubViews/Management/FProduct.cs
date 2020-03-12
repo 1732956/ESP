@@ -118,8 +118,10 @@ namespace SGI.Views.SubViews
             else if (CBFilter.Text == "Inactifs")
                 dataSource = Productcontoller.GetAllProducts(0);
             LBProducts.DataBindings.Clear();
-            LBProducts.DataSource = dataSource;
-            LBProducts.SelectedIndex = 0;
+            var products  = dataSource;
+            LBProducts.DataSource = products;
+            if(products.Count > 0)
+                LBProducts.SelectedIndex = 0;
         }
 
         #region Actions
@@ -151,7 +153,8 @@ namespace SGI.Views.SubViews
                     LBProducts.DataBindings.Clear();
                     List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
                     LBProducts.DataSource = tempoProducts;
-                    LBProducts.SelectedIndex = 0;
+                    if(tempoProducts.Count > 0) 
+                        LBProducts.SelectedIndex = 0;
                     CurrentState = State.VIEW;
                     break;
                 case State.UPDATE:
@@ -239,8 +242,10 @@ namespace SGI.Views.SubViews
         {
             LBProducts.DisplayMember = "Name";
             LBProducts.ValueMember = "ProductId";
-            LBProducts.DataSource = Productcontoller.GetAllProducts(1);
-            LBProducts.SelectedIndex = 0;
+            var products = Productcontoller.GetAllProducts(1);
+            LBProducts.DataSource = products;
+            if(products.Count > 0)
+                LBProducts.SelectedIndex = 0;
         }
 
         private void GetAllActiveCategories()

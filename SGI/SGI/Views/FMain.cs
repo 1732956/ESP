@@ -25,7 +25,6 @@ namespace SGI
             FInventoryIn form = new FInventoryIn();
             ShowSubForm(form, InPanel);
         }
-
         private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (TCMain.SelectedIndex)
