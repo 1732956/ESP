@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -26,6 +27,14 @@ namespace SGI.Model.Classes
             UnitCode    = "";
             Description = "";
             Active      = false;
+        }
+
+        public MeasuringUnit(DataRow row)
+        {
+            UnitId = Convert.ToInt32(row["UnitId"]);
+            UnitCode = row["UnitCode"].ToString();
+            Description = row["Descr"].ToString();
+            Active = Convert.ToBoolean(row["isActive"]);
         }
     }
 }

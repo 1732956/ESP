@@ -42,12 +42,15 @@
             this.TCManagement = new System.Windows.Forms.TabControl();
             this.TPProduct = new System.Windows.Forms.TabPage();
             this.ProductPanel = new System.Windows.Forms.Panel();
+            this.TPLocation = new System.Windows.Forms.TabPage();
+            this.LocationPanel = new System.Windows.Forms.Panel();
             this.TPCategory = new System.Windows.Forms.TabPage();
             this.CategoryPanel = new System.Windows.Forms.Panel();
             this.TPDepartment = new System.Windows.Forms.TabPage();
             this.DepartmentPanel = new System.Windows.Forms.Panel();
             this.TPMeasuringUnit = new System.Windows.Forms.TabPage();
             this.MeasuringUnitPanel = new System.Windows.Forms.Panel();
+            this.ManagementImages = new System.Windows.Forms.ImageList(this.components);
             this.TPVisualization = new System.Windows.Forms.TabPage();
             this.TCVisuzalization = new System.Windows.Forms.TabControl();
             this.TPStockGeneral = new System.Windows.Forms.TabPage();
@@ -58,10 +61,7 @@
             this.OrdersToDoPanel = new System.Windows.Forms.Panel();
             this.TPItemsTooMuch = new System.Windows.Forms.TabPage();
             this.ItemsTooMuchPanel = new System.Windows.Forms.Panel();
-            this.ManagementImages = new System.Windows.Forms.ImageList(this.components);
             this.VidualizationImages = new System.Windows.Forms.ImageList(this.components);
-            this.TPLocation = new System.Windows.Forms.TabPage();
-            this.LocationPanel = new System.Windows.Forms.Panel();
             this.TCMain.SuspendLayout();
             this.TPTransaction.SuspendLayout();
             this.TCTransaction.SuspendLayout();
@@ -70,6 +70,7 @@
             this.TPManagement.SuspendLayout();
             this.TCManagement.SuspendLayout();
             this.TPProduct.SuspendLayout();
+            this.TPLocation.SuspendLayout();
             this.TPCategory.SuspendLayout();
             this.TPDepartment.SuspendLayout();
             this.TPMeasuringUnit.SuspendLayout();
@@ -79,7 +80,6 @@
             this.TPStockByLoc.SuspendLayout();
             this.TPOrdersToMake.SuspendLayout();
             this.TPItemsTooMuch.SuspendLayout();
-            this.TPLocation.SuspendLayout();
             this.SuspendLayout();
             // 
             // TCMain
@@ -114,6 +114,8 @@
             resources.ApplyResources(this.TPIn, "TPIn");
             this.TPIn.Name = "TPIn";
             this.TPIn.UseVisualStyleBackColor = true;
+            this.TPIn.Enter += new System.EventHandler(this.TPIn_Enter);
+            this.TPIn.Leave += new System.EventHandler(this.TPIn_Leave);
             // 
             // InPanel
             // 
@@ -127,6 +129,7 @@
             this.TPOut.Name = "TPOut";
             this.TPOut.UseVisualStyleBackColor = true;
             this.TPOut.Enter += new System.EventHandler(this.TPOut_Enter);
+            this.TPOut.Leave += new System.EventHandler(this.TPOut_Leave);
             // 
             // OutPanel
             // 
@@ -165,11 +168,27 @@
             resources.ApplyResources(this.TPProduct, "TPProduct");
             this.TPProduct.Name = "TPProduct";
             this.TPProduct.UseVisualStyleBackColor = true;
+            this.TPProduct.Enter += new System.EventHandler(this.TPProduct_Enter);
+            this.TPProduct.Leave += new System.EventHandler(this.TPProduct_Leave);
             // 
             // ProductPanel
             // 
             resources.ApplyResources(this.ProductPanel, "ProductPanel");
             this.ProductPanel.Name = "ProductPanel";
+            // 
+            // TPLocation
+            // 
+            this.TPLocation.Controls.Add(this.LocationPanel);
+            resources.ApplyResources(this.TPLocation, "TPLocation");
+            this.TPLocation.Name = "TPLocation";
+            this.TPLocation.UseVisualStyleBackColor = true;
+            this.TPLocation.Enter += new System.EventHandler(this.TPLocation_Enter);
+            this.TPLocation.Leave += new System.EventHandler(this.TPLocation_Leave);
+            // 
+            // LocationPanel
+            // 
+            resources.ApplyResources(this.LocationPanel, "LocationPanel");
+            this.LocationPanel.Name = "LocationPanel";
             // 
             // TPCategory
             // 
@@ -178,6 +197,7 @@
             this.TPCategory.Name = "TPCategory";
             this.TPCategory.UseVisualStyleBackColor = true;
             this.TPCategory.Enter += new System.EventHandler(this.TPCategory_Enter);
+            this.TPCategory.Leave += new System.EventHandler(this.TPCategory_Leave);
             // 
             // CategoryPanel
             // 
@@ -191,6 +211,7 @@
             this.TPDepartment.Name = "TPDepartment";
             this.TPDepartment.UseVisualStyleBackColor = true;
             this.TPDepartment.Enter += new System.EventHandler(this.TPDepartment_Enter);
+            this.TPDepartment.Leave += new System.EventHandler(this.TPDepartment_Leave);
             // 
             // DepartmentPanel
             // 
@@ -204,11 +225,22 @@
             this.TPMeasuringUnit.Name = "TPMeasuringUnit";
             this.TPMeasuringUnit.UseVisualStyleBackColor = true;
             this.TPMeasuringUnit.Enter += new System.EventHandler(this.TPMeasuringUnit_Enter);
+            this.TPMeasuringUnit.Leave += new System.EventHandler(this.TPMeasuringUnit_Leave);
             // 
             // MeasuringUnitPanel
             // 
             resources.ApplyResources(this.MeasuringUnitPanel, "MeasuringUnitPanel");
             this.MeasuringUnitPanel.Name = "MeasuringUnitPanel";
+            // 
+            // ManagementImages
+            // 
+            this.ManagementImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ManagementImages.ImageStream")));
+            this.ManagementImages.TransparentColor = System.Drawing.Color.Transparent;
+            this.ManagementImages.Images.SetKeyName(0, "Category.png");
+            this.ManagementImages.Images.SetKeyName(1, "Department.png");
+            this.ManagementImages.Images.SetKeyName(2, "MeasuringUnit.png");
+            this.ManagementImages.Images.SetKeyName(3, "Product.png");
+            this.ManagementImages.Images.SetKeyName(4, "Location.png");
             // 
             // TPVisualization
             // 
@@ -234,6 +266,8 @@
             resources.ApplyResources(this.TPStockGeneral, "TPStockGeneral");
             this.TPStockGeneral.Name = "TPStockGeneral";
             this.TPStockGeneral.UseVisualStyleBackColor = true;
+            this.TPStockGeneral.Enter += new System.EventHandler(this.TPStockGeneral_Enter);
+            this.TPStockGeneral.Leave += new System.EventHandler(this.TPStockGeneral_Leave);
             // 
             // GeneralStockPanel
             // 
@@ -247,6 +281,7 @@
             this.TPStockByLoc.Name = "TPStockByLoc";
             this.TPStockByLoc.UseVisualStyleBackColor = true;
             this.TPStockByLoc.Enter += new System.EventHandler(this.TPStockByLoc_Enter);
+            this.TPStockByLoc.Leave += new System.EventHandler(this.TPStockByLoc_Leave);
             // 
             // LocStcokPanel
             // 
@@ -259,6 +294,8 @@
             resources.ApplyResources(this.TPOrdersToMake, "TPOrdersToMake");
             this.TPOrdersToMake.Name = "TPOrdersToMake";
             this.TPOrdersToMake.UseVisualStyleBackColor = true;
+            this.TPOrdersToMake.Enter += new System.EventHandler(this.TPOrdersToMake_Enter);
+            this.TPOrdersToMake.Leave += new System.EventHandler(this.TPOrdersToMake_Leave);
             // 
             // OrdersToDoPanel
             // 
@@ -273,21 +310,12 @@
             this.TPItemsTooMuch.Name = "TPItemsTooMuch";
             this.TPItemsTooMuch.UseVisualStyleBackColor = true;
             this.TPItemsTooMuch.Enter += new System.EventHandler(this.TPItemsTooMuch_Enter);
+            this.TPItemsTooMuch.Leave += new System.EventHandler(this.TPItemsTooMuch_Leave);
             // 
             // ItemsTooMuchPanel
             // 
             resources.ApplyResources(this.ItemsTooMuchPanel, "ItemsTooMuchPanel");
             this.ItemsTooMuchPanel.Name = "ItemsTooMuchPanel";
-            // 
-            // ManagementImages
-            // 
-            this.ManagementImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("ManagementImages.ImageStream")));
-            this.ManagementImages.TransparentColor = System.Drawing.Color.Transparent;
-            this.ManagementImages.Images.SetKeyName(0, "Category.png");
-            this.ManagementImages.Images.SetKeyName(1, "Department.png");
-            this.ManagementImages.Images.SetKeyName(2, "MeasuringUnit.png");
-            this.ManagementImages.Images.SetKeyName(3, "Product.png");
-            this.ManagementImages.Images.SetKeyName(4, "Location.png");
             // 
             // VidualizationImages
             // 
@@ -297,19 +325,6 @@
             this.VidualizationImages.Images.SetKeyName(1, "ItemsTooMuch.png");
             this.VidualizationImages.Images.SetKeyName(2, "LocStock.png");
             this.VidualizationImages.Images.SetKeyName(3, "OrdersToDo.png");
-            // 
-            // TPLocation
-            // 
-            this.TPLocation.Controls.Add(this.LocationPanel);
-            resources.ApplyResources(this.TPLocation, "TPLocation");
-            this.TPLocation.Name = "TPLocation";
-            this.TPLocation.UseVisualStyleBackColor = true;
-            this.TPLocation.Enter += new System.EventHandler(this.TPLocation_Enter);
-            // 
-            // LocationPanel
-            // 
-            resources.ApplyResources(this.LocationPanel, "LocationPanel");
-            this.LocationPanel.Name = "LocationPanel";
             // 
             // FMain
             // 
@@ -328,6 +343,7 @@
             this.TPManagement.ResumeLayout(false);
             this.TCManagement.ResumeLayout(false);
             this.TPProduct.ResumeLayout(false);
+            this.TPLocation.ResumeLayout(false);
             this.TPCategory.ResumeLayout(false);
             this.TPDepartment.ResumeLayout(false);
             this.TPMeasuringUnit.ResumeLayout(false);
@@ -337,7 +353,6 @@
             this.TPStockByLoc.ResumeLayout(false);
             this.TPOrdersToMake.ResumeLayout(false);
             this.TPItemsTooMuch.ResumeLayout(false);
-            this.TPLocation.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

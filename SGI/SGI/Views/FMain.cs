@@ -20,6 +20,30 @@ namespace SGI
             if (!pDatabaseConnected)
                 MessageBox.Show("Votre connection au serveur ne semble pas fonctionner, veuillez contacter votre administrateur système.", "Erreur connection", MessageBoxButtons.OK);
         }
+        private void FMain_Load(object sender, EventArgs e)
+        {
+            FInventoryIn form = new FInventoryIn();
+            ShowSubForm(form, InPanel);
+        }
+
+        private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (TCMain.SelectedIndex)
+            {
+                case 0:
+                    FInventoryIn form = new FInventoryIn();
+                    ShowSubForm(form, InPanel);
+                    break;
+                case 1:
+                    FProduct form1 = new FProduct();
+                    ShowSubForm(form1, ProductPanel);
+                    break;
+                case 2:
+                    FGeneralStock form2 = new FGeneralStock();
+                    ShowSubForm(form2, GeneralStockPanel);
+                    break;
+            }
+        }
 
         #region Utilities
         private void ShowSubForm(Form subForm, Panel parentControl)
@@ -29,6 +53,11 @@ namespace SGI
             parentControl.Controls.Add(subForm);
             subForm.Dock = DockStyle.Fill;
             subForm.Show();
+        }
+
+        private void ClearSubForm(Panel parentControl)
+        {
+            parentControl.Controls.Clear();
         }
         #endregion
 
@@ -50,6 +79,12 @@ namespace SGI
         {
             FLocation form = new FLocation();
             ShowSubForm(form, LocationPanel);
+        }
+
+        private void TPOrdersToMake_Enter(object sender, EventArgs e)
+        {
+            FOrdersToDo form = new FOrdersToDo();
+            ShowSubForm(form, OrdersToDoPanel);
         }
 
         private void TPDepartment_Enter(object sender, EventArgs e)
@@ -82,31 +117,93 @@ namespace SGI
             ShowSubForm(form, ItemsTooMuchPanel);
         }
 
-        #endregion
-
-        private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
+        private void TPStockGeneral_Enter(object sender, EventArgs e)
         {
-            switch (TCMain.SelectedIndex)
+            if (GeneralStockPanel.Controls.Count == 0)
             {
-                case 0:
-                    FInventoryIn form = new FInventoryIn();
-                    ShowSubForm(form, InPanel);
-                    break;
-                case 1:
-                    FProduct form1 = new FProduct();
-                    ShowSubForm(form1, ProductPanel);
-                    break;
-                case 2:
-                    FGeneralStock form2 = new FGeneralStock();
-                    ShowSubForm(form2, GeneralStockPanel);
-                    break;
+                FProduct form = new FProduct();
+                ShowSubForm(form, ProductPanel);
             }
         }
 
-        private void FMain_Load(object sender, EventArgs e)
+        private void TPIn_Enter(object sender, EventArgs e)
         {
-            FInventoryIn form = new FInventoryIn();
-            ShowSubForm(form, InPanel);
+            if (InPanel.Controls.Count == 0)
+            {
+                FInventoryIn form = new FInventoryIn();
+                ShowSubForm(form, InPanel);
+            }
         }
+
+        private void TPProduct_Enter(object sender, EventArgs e)
+        {
+            if (ProductPanel.Controls.Count == 0)
+            {
+                FProduct form = new FProduct();
+                ShowSubForm(form, ProductPanel);
+            }
+        }
+
+        #endregion
+
+        #region SubFormClears
+        private void TPIn_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(InPanel);
+        }
+
+        private void TPProduct_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(ProductPanel);
+        }
+
+        private void TPStockGeneral_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(GeneralStockPanel);
+        }
+
+        private void TPOut_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(OutPanel);
+        }
+
+        private void TPLocation_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(LocationPanel);
+        }
+
+        private void TPCategory_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(CategoryPanel);
+        }
+
+        private void TPDepartment_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(CategoryPanel);
+        }
+
+        private void TPMeasuringUnit_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(MeasuringUnitPanel);
+
+        }
+
+        private void TPStockByLoc_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(LocStcokPanel);
+        }
+
+        private void TPOrdersToMake_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(OrdersToDoPanel);
+        }
+
+        private void TPItemsTooMuch_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(ItemsTooMuchPanel);
+        }
+        #endregion
+
+        
     }
 }
