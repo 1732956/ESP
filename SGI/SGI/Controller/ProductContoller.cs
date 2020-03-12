@@ -57,7 +57,7 @@ namespace SGI.Controller
                     Worked = true;
                 }
             }
-            catch(Exception ex)
+            catch
             {
                 Worked = false;
             }

@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using KeepAutomation.Barcode.Bean;
 using SGI.Controller;
 using SGI.Model.Classes;
 using static SGI.CEnum;
@@ -105,7 +104,7 @@ namespace SGI.Views.SubViews
         private void UcManagementAction1_DeleteButtonClicked()
         {
             DialogResult dr = MessageBox.Show("Êtes-vous certain de vouloir supprimer le produit : " + currentProduct.Name + " ?", "Suppression d'un produit", MessageBoxButtons.YesNo);
-            if(dr == DialogResult.Yes)
+            if (dr == DialogResult.Yes)
             {
                 bool deletionWorked = Productcontoller.EditSingleProduct(currentProduct, "delete");
                 if (deletionWorked)
@@ -208,7 +207,7 @@ namespace SGI.Views.SubViews
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
             if (CBMeasuringUnit.SelectedValue == null)
                 returnMessage += "L'unité de mesure ne peut pas être nulle." + Environment.NewLine;
-            if(NudMin.Value <= 0)
+            if (NudMin.Value <= 0)
                 returnMessage += "La quantité minimum doit être positive." + Environment.NewLine;
             if (nudMax.Value <= 0)
                 returnMessage += "La quantité maximum doit être positive." + Environment.NewLine;
@@ -330,11 +329,13 @@ namespace SGI.Views.SubViews
                 btn_Print.Enabled = true;
             TxtLastUpdate.Text = currentProduct.LastUpdate.ToString();
             cbActive.Checked = currentProduct.Active;
-            LoadBarCode(currentProduct.BarCodeId);
+            if(currentProduct.BarCodeId != "")
+                LoadBarCode(currentProduct.BarCodeId);
 
         }
+        #endregion
 
-	private void Btn_Print_Click(object sender, EventArgs e)
+        private void Btn_Print_Click(object sender, EventArgs e)
         {
             PrintDialog pd = new PrintDialog();
             PrintDocument doc = new PrintDocument();
@@ -362,14 +363,14 @@ namespace SGI.Views.SubViews
             lbl_BarCode.Text = barCodenbr;
             Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);
             using (Graphics graphics = Graphics.FromImage(bitmap))
-	    {
+            {
                 Font oFont = new System.Drawing.Font("IDAHC39M Code 39 Barcode", 20);
                 PointF point = new PointF(2f, 2f);
                 SolidBrush black = new SolidBrush(Color.Black);
                 SolidBrush white = new SolidBrush(Color.White);
                 graphics.FillRectangle(white, 0, 0, bitmap.Width, bitmap.Height);
                 graphics.DrawString("*" + barcode + "*", oFont, black, point);
-	    }
+            }
 
             pictureBox2.Image = bitmap;
             //pictureBox2.Height  = bitmap.Height;

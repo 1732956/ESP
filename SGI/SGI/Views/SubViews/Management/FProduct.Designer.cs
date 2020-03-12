@@ -76,7 +76,6 @@
             this.GBOBarCode.SuspendLayout();
 	    this.GBOther.SuspendLayout();
 	    ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.ActionPanel.SuspendLayout();
             this.GBInventory.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudMin)).BeginInit();
@@ -205,7 +204,6 @@
             this.GBSupplier.Controls.Add(this.NudPrice);
             this.GBSupplier.Controls.Add(this.NudMeasuringQty);
             this.GBSupplier.Controls.Add(this.lblPrice);
-            this.GBSupplier.Controls.Add(this.txtMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblQuantityUnit);
             this.GBSupplier.Controls.Add(this.txtSupplierCode);
@@ -402,7 +400,6 @@
             this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
             this.ucManagementAction1.TabIndex = 0;
             // 
-            this.ucManagementAction1.Load += new System.EventHandler(this.ucManagementAction1_Load);
             // GBInventory
             // 
             this.GBInventory.Controls.Add(this.nudMax);
