@@ -12,18 +12,20 @@ namespace SGI.Controller
 {
     public class ProductContoller
     {
-        public List<Product> GetAllProducts()
+        public List<Product> GetAllProducts(int isActive)
         {
+
             List<Product> products = new List<Product>();
             using (SqlCommand cmd = new SqlCommand("Product_sp", CDatabase.Connection))
             {
                 cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                cmd.Parameters.Add("@isActive", SqlDbType.Int).Value = isActive;
                 SqlDataReader dr = cmd.ExecuteReader();
                 DataTable dt = new DataTable();
                 dt.Load(dr);
-                foreach(DataRow row in dt.Rows)
+                foreach (DataRow row in dt.Rows)
                 {
-                    Product newProduct = new Product(row,false);
+                    Product newProduct = new Product(row, false);
                     products.Add(newProduct);
                 }
             }
@@ -64,24 +66,6 @@ namespace SGI.Controller
             return Worked;
         }
 
-        public List<Product> GetAllActiveProducts()
-        {
-            List<Product> products = new List<Product>();
-            using (SqlCommand cmd = new SqlCommand("ActiveProduct_sp", CDatabase.Connection))
-            {
-                cmd.CommandType = System.Data.CommandType.StoredProcedure;
-                SqlDataReader dr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                foreach (DataRow row in dt.Rows)
-                {
-                    Product newProduct = new Product(row, false);
-                    products.Add(newProduct);
-                }
-            }
-            return products;
-        }
-
         public Product GetSingleProductInfo(String BarCodeId)
         {
             Product Product = new Product();
@@ -93,10 +77,10 @@ namespace SGI.Controller
             dt.Load(dr);
             foreach (DataRow row in dt.Rows)
             {
-                Product = new Product(row,true);
+                Product = new Product(row, true);
             }
             return Product;
         }
     }
-   
+
 }

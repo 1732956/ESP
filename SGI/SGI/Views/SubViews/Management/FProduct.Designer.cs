@@ -54,32 +54,35 @@
             this.TxtSupplierName = new System.Windows.Forms.TextBox();
             this.lblSupplierName = new System.Windows.Forms.Label();
             this.GBOBarCode = new System.Windows.Forms.GroupBox();
+            this.lbl_BarCode = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btn_Print = new System.Windows.Forms.Button();
             this.GBOther = new System.Windows.Forms.GroupBox();
-            this.cbActive = new System.Windows.Forms.CheckBox();
             this.TxtLastUpdate = new System.Windows.Forms.TextBox();
             this.LblLastUpdate = new System.Windows.Forms.Label();
+            this.cbActive = new System.Windows.Forms.CheckBox();
             this.ActionPanel = new System.Windows.Forms.Panel();
-            this.lbl_BarCode = new System.Windows.Forms.Label();
-            this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.GBInventory = new System.Windows.Forms.GroupBox();
-            this.lblQtyMin = new System.Windows.Forms.Label();
-            this.lblMaxQty = new System.Windows.Forms.Label();
-            this.NudMin = new System.Windows.Forms.NumericUpDown();
             this.nudMax = new System.Windows.Forms.NumericUpDown();
+            this.NudMin = new System.Windows.Forms.NumericUpDown();
+            this.lblMaxQty = new System.Windows.Forms.Label();
+            this.lblQtyMin = new System.Windows.Forms.Label();
+            this.GBFilter = new System.Windows.Forms.GroupBox();
+            this.CBFilter = new System.Windows.Forms.ComboBox();
+            this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.GBProduct.SuspendLayout();
             this.GBSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NudMeasuringQty)).BeginInit();
             this.GBOBarCode.SuspendLayout();
-	    this.GBOther.SuspendLayout();
-	    ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.GBOther.SuspendLayout();
             this.ActionPanel.SuspendLayout();
             this.GBInventory.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NudMin)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudMin)).BeginInit();
+            this.GBFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // LBProducts
@@ -87,9 +90,9 @@
             this.LBProducts.Dock = System.Windows.Forms.DockStyle.Left;
             this.LBProducts.FormattingEnabled = true;
             this.LBProducts.ItemHeight = 17;
-            this.LBProducts.Location = new System.Drawing.Point(0, 0);
+            this.LBProducts.Location = new System.Drawing.Point(0, 53);
             this.LBProducts.Name = "LBProducts";
-            this.LBProducts.Size = new System.Drawing.Size(301, 715);
+            this.LBProducts.Size = new System.Drawing.Size(301, 756);
             this.LBProducts.TabIndex = 0;
             this.LBProducts.SelectedIndexChanged += new System.EventHandler(this.LBProducts_SelectedIndexChanged);
             // 
@@ -106,7 +109,7 @@
             this.GBProduct.Controls.Add(this.LblBrand);
             this.GBProduct.Controls.Add(this.LblName);
             this.GBProduct.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GBProduct.Location = new System.Drawing.Point(301, 0);
+            this.GBProduct.Location = new System.Drawing.Point(301, 53);
             this.GBProduct.Name = "GBProduct";
             this.GBProduct.Size = new System.Drawing.Size(1195, 173);
             this.GBProduct.TabIndex = 1;
@@ -211,7 +214,7 @@
             this.GBSupplier.Controls.Add(this.TxtSupplierName);
             this.GBSupplier.Controls.Add(this.lblSupplierName);
             this.GBSupplier.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GBSupplier.Location = new System.Drawing.Point(301, 173);
+            this.GBSupplier.Location = new System.Drawing.Point(301, 226);
             this.GBSupplier.Name = "GBSupplier";
             this.GBSupplier.Size = new System.Drawing.Size(1195, 192);
             this.GBSupplier.TabIndex = 2;
@@ -307,12 +310,20 @@
             this.GBOBarCode.Controls.Add(this.pictureBox2);
             this.GBOBarCode.Controls.Add(this.btn_Print);
             this.GBOBarCode.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GBOBarCode.Location = new System.Drawing.Point(301, 365);
+            this.GBOBarCode.Location = new System.Drawing.Point(301, 418);
             this.GBOBarCode.Name = "GBOBarCode";
             this.GBOBarCode.Size = new System.Drawing.Size(1195, 131);
             this.GBOBarCode.TabIndex = 3;
             this.GBOBarCode.TabStop = false;
             this.GBOBarCode.Text = "Code barre";
+            // 
+            // lbl_BarCode
+            // 
+            this.lbl_BarCode.AutoSize = true;
+            this.lbl_BarCode.Location = new System.Drawing.Point(211, 103);
+            this.lbl_BarCode.Name = "lbl_BarCode";
+            this.lbl_BarCode.Size = new System.Drawing.Size(0, 19);
+            this.lbl_BarCode.TabIndex = 24;
             // 
             // pictureBox2
             // 
@@ -340,22 +351,12 @@
             this.GBOther.Controls.Add(this.TxtLastUpdate);
             this.GBOther.Controls.Add(this.LblLastUpdate);
             this.GBOther.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GBOther.Location = new System.Drawing.Point(301, 621);
+            this.GBOther.Location = new System.Drawing.Point(301, 693);
             this.GBOther.Name = "GBOther";
             this.GBOther.Size = new System.Drawing.Size(1195, 112);
             this.GBOther.TabIndex = 5;
             this.GBOther.TabStop = false;
             this.GBOther.Text = "Autres";
-            // 
-            // cbActive
-            // 
-            this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(483, 56);
-            this.cbActive.Name = "cbActive";
-            this.cbActive.Size = new System.Drawing.Size(55, 23);
-            this.cbActive.TabIndex = 25;
-            this.cbActive.Text = "Actif";
-            this.cbActive.UseVisualStyleBackColor = true;
             // 
             // TxtLastUpdate
             // 
@@ -374,6 +375,16 @@
             this.LblLastUpdate.TabIndex = 22;
             this.LblLastUpdate.Text = "Dernière mise à jour :";
             // 
+            // cbActive
+            // 
+            this.cbActive.AutoSize = true;
+            this.cbActive.Location = new System.Drawing.Point(483, 56);
+            this.cbActive.Name = "cbActive";
+            this.cbActive.Size = new System.Drawing.Size(55, 23);
+            this.cbActive.TabIndex = 25;
+            this.cbActive.Text = "Actif";
+            this.cbActive.UseVisualStyleBackColor = true;
+            // 
             // ActionPanel
             // 
             this.ActionPanel.Controls.Add(this.ucManagementAction1);
@@ -383,23 +394,6 @@
             this.ActionPanel.Size = new System.Drawing.Size(1195, 56);
             this.ActionPanel.TabIndex = 6;
             // 
-            // lbl_BarCode
-            // 
-            this.lbl_BarCode.AutoSize = true;
-            this.lbl_BarCode.Location = new System.Drawing.Point(211, 103);
-            this.lbl_BarCode.Name = "lbl_BarCode";
-            this.lbl_BarCode.Size = new System.Drawing.Size(0, 19);
-            this.lbl_BarCode.TabIndex = 24;
-            // 
-            // ucManagementAction1
-            // 
-            this.ucManagementAction1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
-            this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ucManagementAction1.Name = "ucManagementAction1";
-            this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
-            this.ucManagementAction1.TabIndex = 0;
-            // 
             // GBInventory
             // 
             this.GBInventory.Controls.Add(this.nudMax);
@@ -408,21 +402,26 @@
             this.GBInventory.Controls.Add(this.cbActive);
             this.GBInventory.Controls.Add(this.lblQtyMin);
             this.GBInventory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GBInventory.Location = new System.Drawing.Point(301, 477);
+            this.GBInventory.Location = new System.Drawing.Point(301, 549);
             this.GBInventory.Name = "GBInventory";
             this.GBInventory.Size = new System.Drawing.Size(1195, 144);
             this.GBInventory.TabIndex = 7;
             this.GBInventory.TabStop = false;
             this.GBInventory.Text = "Inventaire";
             // 
-            // lblQtyMin
+            // nudMax
             // 
-            this.lblQtyMin.AutoSize = true;
-            this.lblQtyMin.Location = new System.Drawing.Point(27, 56);
-            this.lblQtyMin.Name = "lblQtyMin";
-            this.lblQtyMin.Size = new System.Drawing.Size(132, 19);
-            this.lblQtyMin.TabIndex = 19;
-            this.lblQtyMin.Text = "Quantité minimum :";
+            this.nudMax.Location = new System.Drawing.Point(188, 98);
+            this.nudMax.Name = "nudMax";
+            this.nudMax.Size = new System.Drawing.Size(202, 25);
+            this.nudMax.TabIndex = 27;
+            // 
+            // NudMin
+            // 
+            this.NudMin.Location = new System.Drawing.Point(188, 54);
+            this.NudMin.Name = "NudMin";
+            this.NudMin.Size = new System.Drawing.Size(202, 25);
+            this.NudMin.TabIndex = 20;
             // 
             // lblMaxQty
             // 
@@ -433,19 +432,42 @@
             this.lblMaxQty.TabIndex = 26;
             this.lblMaxQty.Text = "Quantité maximum :";
             // 
-            // NudMin
+            // lblQtyMin
             // 
-            this.NudMin.Location = new System.Drawing.Point(188, 54);
-            this.NudMin.Name = "NudMin";
-            this.NudMin.Size = new System.Drawing.Size(202, 25);
-            this.NudMin.TabIndex = 20;
+            this.lblQtyMin.AutoSize = true;
+            this.lblQtyMin.Location = new System.Drawing.Point(27, 56);
+            this.lblQtyMin.Name = "lblQtyMin";
+            this.lblQtyMin.Size = new System.Drawing.Size(132, 19);
+            this.lblQtyMin.TabIndex = 19;
+            this.lblQtyMin.Text = "Quantité minimum :";
             // 
-            // nudMax
+            // GBFilter
             // 
-            this.nudMax.Location = new System.Drawing.Point(188, 98);
-            this.nudMax.Name = "nudMax";
-            this.nudMax.Size = new System.Drawing.Size(202, 25);
-            this.nudMax.TabIndex = 27;
+            this.GBFilter.Controls.Add(this.CBFilter);
+            this.GBFilter.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GBFilter.Location = new System.Drawing.Point(0, 0);
+            this.GBFilter.Name = "GBFilter";
+            this.GBFilter.Size = new System.Drawing.Size(1496, 53);
+            this.GBFilter.TabIndex = 1;
+            this.GBFilter.TabStop = false;
+            // 
+            // CBFilter
+            // 
+            this.CBFilter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CBFilter.FormattingEnabled = true;
+            this.CBFilter.Location = new System.Drawing.Point(3, 21);
+            this.CBFilter.Name = "CBFilter";
+            this.CBFilter.Size = new System.Drawing.Size(298, 25);
+            this.CBFilter.TabIndex = 0;
+            // 
+            // ucManagementAction1
+            // 
+            this.ucManagementAction1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
+            this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ucManagementAction1.Name = "ucManagementAction1";
+            this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
+            this.ucManagementAction1.TabIndex = 0;
             // 
             // FProduct
             // 
@@ -459,6 +481,7 @@
             this.Controls.Add(this.GBSupplier);
             this.Controls.Add(this.GBProduct);
             this.Controls.Add(this.LBProducts);
+            this.Controls.Add(this.GBFilter);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -472,13 +495,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.NudMeasuringQty)).EndInit();
             this.GBOBarCode.ResumeLayout(false);
             this.GBOBarCode.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.GBOther.ResumeLayout(false);
             this.GBOther.PerformLayout();
             this.ActionPanel.ResumeLayout(false);
             this.GBInventory.ResumeLayout(false);
             this.GBInventory.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.NudMin)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudMax)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.NudMin)).EndInit();
+            this.GBFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -524,5 +549,7 @@
         private System.Windows.Forms.NumericUpDown nudMax;
         private System.Windows.Forms.NumericUpDown NudMin;
         private System.Windows.Forms.Label lblMaxQty;
+        private System.Windows.Forms.GroupBox GBFilter;
+        private System.Windows.Forms.ComboBox CBFilter;
     }
 }
