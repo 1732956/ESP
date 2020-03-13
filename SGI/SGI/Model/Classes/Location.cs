@@ -25,7 +25,7 @@ namespace SGI.Model.Classes
         public Location(DataRow row)
         {
             this.LocationId = Convert.ToInt32(row["LocationId"]);
-            this.Description = row["Descr"].ToString(); ;
+            this.Description = row["Descr"].ToString(); 
             this.Name = row["Name"].ToString();
         }
        

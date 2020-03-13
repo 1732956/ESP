@@ -147,7 +147,7 @@ namespace SGI.Views.SubViews
                     if (!vError)
                     {
                         ControllerInvIn.InventoryIn(Convert.ToInt32(txt_productid.Text), Convert.ToInt32(txt_qte.Text), Convert.ToInt32(cbo_loc.SelectedValue));
-                        MessageBox.Show("Traitement effectué");
+                        MessageBox.Show("Inventaire ajouté");
                         ClearScreen();
                     }
                 }

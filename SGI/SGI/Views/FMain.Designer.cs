@@ -90,7 +90,6 @@
             resources.ApplyResources(this.TCMain, "TCMain");
             this.TCMain.Name = "TCMain";
             this.TCMain.SelectedIndex = 0;
-            this.TCMain.SelectedIndexChanged += new System.EventHandler(this.TCMain_SelectedIndexChanged);
             // 
             // TPTransaction
             // 
@@ -107,6 +106,8 @@
             this.TCTransaction.ImageList = this.TransactionImages;
             this.TCTransaction.Name = "TCTransaction";
             this.TCTransaction.SelectedIndex = 0;
+            this.TCTransaction.SelectedIndexChanged += new System.EventHandler(this.TCTransaction_SelectedIndexChanged);
+            this.TCTransaction.Selected += new System.Windows.Forms.TabControlEventHandler(this.TCTransaction_Selected);
             // 
             // TPIn
             // 
@@ -128,7 +129,6 @@
             resources.ApplyResources(this.TPOut, "TPOut");
             this.TPOut.Name = "TPOut";
             this.TPOut.UseVisualStyleBackColor = true;
-            this.TPOut.Enter += new System.EventHandler(this.TPOut_Enter);
             this.TPOut.Leave += new System.EventHandler(this.TPOut_Leave);
             // 
             // OutPanel

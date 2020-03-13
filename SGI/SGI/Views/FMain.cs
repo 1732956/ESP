@@ -25,24 +25,24 @@ namespace SGI
             FInventoryIn form = new FInventoryIn();
             ShowSubForm(form, InPanel);
         }
-        private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            switch (TCMain.SelectedIndex)
-            {
-                case 0:
-                    FInventoryIn form = new FInventoryIn();
-                    ShowSubForm(form, InPanel);
-                    break;
-                case 1:
-                    FProduct form1 = new FProduct();
-                    ShowSubForm(form1, ProductPanel);
-                    break;
-                case 2:
-                    FGeneralStock form2 = new FGeneralStock();
-                    ShowSubForm(form2, GeneralStockPanel);
-                    break;
-            }
-        }
+        //private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
+        //{
+        //    switch (TCMain.SelectedIndex)
+        //    {
+        //        case 0:
+        //            FInventoryIn form = new FInventoryIn();
+        //            ShowSubForm(form, InPanel);
+        //            break;
+        //        case 1:
+        //            FProduct form1 = new FProduct();
+        //            ShowSubForm(form1, ProductPanel);
+        //            break;
+        //        case 2:
+        //            FGeneralStock form2 = new FGeneralStock();
+        //            ShowSubForm(form2, GeneralStockPanel);
+        //            break;
+        //    }
+        //}
 
         #region Utilities
         private void ShowSubForm(Form subForm, Panel parentControl)
@@ -203,6 +203,20 @@ namespace SGI
         }
         #endregion
 
-        
+        private void TCTransaction_Selected(object sender, TabControlEventArgs e)
+        {
+            FInventoryOut form = new FInventoryOut();
+            ShowSubForm(form, OutPanel);
+        }
+
+        private void TCTransaction_SelectedIndexChanged(object sender, EventArgs e)
+        {
+         
+            if (TCTransaction.SelectedIndex == 1)
+            {
+
+                OutPanel.Controls[0].Controls[10].Focus() ;
+            }
+        }
     }
 }
