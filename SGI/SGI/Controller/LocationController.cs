@@ -6,6 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SGI.Model.Classes;
+using System.Windows.Forms;
 
 namespace SGI.Controller
 {
@@ -14,17 +15,25 @@ namespace SGI.Controller
         public List<Location> GetAllLocationsActive()
         {
             List<Location> Location = new List<Location>();
-            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_location", CDatabase.Connection))
+            try
             {
-                cmd.CommandType = System.Data.CommandType.Text;
-                SqlDataReader dr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                foreach (DataRow row in dt.Rows)
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_location", CDatabase.Connection))
                 {
-                    Location newLocation = new Location(row);
-                    Location.Add(newLocation);
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Location newLocation = new Location(row);
+                        Location.Add(newLocation);
+                    }
                 }
+            }
+            catch(Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
             }
             return Location;
         }

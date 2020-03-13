@@ -37,6 +37,7 @@ namespace SGI.Views.SubViews
                         ucManagementAction1.btnNew.Enabled = true;
                         ucManagementAction1.btnDelete.Enabled = true;
                         btn_Print.Enabled = true;
+                        LBProducts.Enabled = true;
                         break;
                     case State.ADD:
                         ucManagementAction1.btnSave.Enabled = true;
@@ -44,6 +45,7 @@ namespace SGI.Views.SubViews
                         ucManagementAction1.btnNew.Enabled = false;
                         ucManagementAction1.btnDelete.Enabled = false;
                         btn_Print.Enabled = false;
+                        LBProducts.Enabled = false;
                         break;
                     case State.UPDATE:
                         ucManagementAction1.btnSave.Enabled = true;
@@ -51,6 +53,7 @@ namespace SGI.Views.SubViews
                         ucManagementAction1.btnNew.Enabled = false;
                         ucManagementAction1.btnDelete.Enabled = false;
                         btn_Print.Enabled = true;
+                        LBProducts.Enabled = true;
                         break;
                     case State.DELETE:
                         ucManagementAction1.btnSave.Enabled = false;
@@ -58,11 +61,11 @@ namespace SGI.Views.SubViews
                         ucManagementAction1.btnNew.Enabled = false;
                         ucManagementAction1.btnDelete.Enabled = false;
                         btn_Print.Enabled = false;
+                        LBProducts.Enabled = true;
                         break;
                 }
             }
         }
-
         public Product currentProduct
         {
             get { return mCurrentProduct; }
@@ -82,6 +85,10 @@ namespace SGI.Views.SubViews
             CategoryController = new CategoryController();
             DepartmentController = new DepartmentController();
             MeasuringUnitController = new MeasuringUnitController();
+            CBFilter.Items.Add("Actifs");
+            CBFilter.Items.Add("Tous");
+            CBFilter.Items.Add("Inactifs");
+            CBFilter.SelectedItem = "Actifs";
             GetAllActiveDepartments();
             GetAllActiveCategories();
             GetAllActiveMeasuringUnits();
@@ -91,6 +98,7 @@ namespace SGI.Views.SubViews
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
             ucManagementAction1.DeleteButtonClicked += UcManagementAction1_DeleteButtonClicked;
+            CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
             ChangeFormEditStatus(true);
         }
 
@@ -98,6 +106,22 @@ namespace SGI.Views.SubViews
         {
             currentProduct = (Product)LBProducts.SelectedItem;
             CurrentState = State.VIEW;
+        }
+
+        private void CBFilter_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            List<Product> dataSource = new List<Product>();
+            if (CBFilter.Text == "Tous")
+                dataSource = Productcontoller.GetAllProducts(-1);
+            else if (CBFilter.Text == "Actifs")
+                dataSource = Productcontoller.GetAllProducts(1);
+            else if (CBFilter.Text == "Inactifs")
+                dataSource = Productcontoller.GetAllProducts(0);
+            LBProducts.DataBindings.Clear();
+            var products  = dataSource;
+            LBProducts.DataSource = products;
+            if(products.Count > 0)
+                LBProducts.SelectedIndex = 0;
         }
 
         #region Actions
@@ -110,7 +134,7 @@ namespace SGI.Views.SubViews
                 if (deletionWorked)
                 {
                     MessageBox.Show("Produit supprimé.");
-                    List<Product> tempoProducts = Productcontoller.GetAllActiveProducts();
+                    List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
                     LBProducts.DataBindings.Clear();
                     LBProducts.DataSource = tempoProducts;
                     LBProducts.SelectedIndex = 0;
@@ -127,10 +151,10 @@ namespace SGI.Views.SubViews
             {
                 case State.ADD:
                     LBProducts.DataBindings.Clear();
-                    List<Product> tempoProducts = Productcontoller.GetAllActiveProducts();
+                    List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
                     LBProducts.DataSource = tempoProducts;
-                    LBProducts.SelectedIndex = 0;
-                    RefreshProductData();
+                    if(tempoProducts.Count > 0) 
+                        LBProducts.SelectedIndex = 0;
                     CurrentState = State.VIEW;
                     break;
                 case State.UPDATE:
@@ -142,12 +166,11 @@ namespace SGI.Views.SubViews
 
         private void UcManagementAction1_NewButtonClicked()
         {
-            List<Product> tempoProducts = Productcontoller.GetAllActiveProducts();
+            List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
             tempoProducts.Add(new Product());
             LBProducts.DataBindings.Clear();
             LBProducts.DataSource = tempoProducts;
             LBProducts.SelectedIndex = LBProducts.Items.Count - 1;
-            RefreshProductData();
             ChangeFormEditStatus(false);
             CurrentState = State.ADD;
         }
@@ -157,19 +180,19 @@ namespace SGI.Views.SubViews
             switch (CurrentState)
             {
                 case State.ADD:
-                    Save("add", 0);
+                    Save("add", 0,true);
                     break;
                 case State.UPDATE:
-                    Save("update", currentProduct.ProductId);
+                    Save("update", currentProduct.ProductId, false);
                     break;
             }
         }
 
-        private void Save(string Action, int ProductId)
+        private void Save(string Action, int ProductId, bool last)
         {
             string errorMessage = CanSave();
             if (errorMessage != "")
-                MessageBox.Show(errorMessage);
+                MessageBox.Show(errorMessage, "Impossible de sauvegarder");
             else
             {
                 SetProductData(ProductId);
@@ -177,11 +200,10 @@ namespace SGI.Views.SubViews
                 if (newProductWorked)
                 {
                     MessageBox.Show("Enregistrement effectué");
-                    List<Product> tempoProducts = Productcontoller.GetAllActiveProducts();
+                    List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
                     LBProducts.DataBindings.Clear();
                     LBProducts.DataSource = tempoProducts;
-                    LBProducts.SelectedIndex = LBProducts.Items.Count - 1;
-                    RefreshProductData();
+                    LBProducts.SelectedIndex = last == true ? LBProducts.Items.Count - 1 : 0;
                     ChangeFormEditStatus(true);
                     CurrentState = State.VIEW;
                 }
@@ -194,15 +216,15 @@ namespace SGI.Views.SubViews
         {
             string returnMessage = "";
             if (TxtName.Text == "")
-                returnMessage += "Le nom ne peut pas être nulle." + Environment.NewLine;
+                returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;
             if (TxtBrand.Text == "")
                 returnMessage += "La marque ne peut pas être nulle." + Environment.NewLine;
             if (CbCategory.SelectedValue == null)
                 returnMessage += "La catégorie ne peut pas être nulle." + Environment.NewLine;
             if (CbDepartment.SelectedValue == null)
-                returnMessage += "Le département ne peut pas être nulle." + Environment.NewLine;
+                returnMessage += "Le département ne peut pas être nul." + Environment.NewLine;
             if (TxtSupplierName.Text == "")
-                returnMessage += "Le nom de fournisseur ne peut pas être nulle." + Environment.NewLine;
+                returnMessage += "Le nom de fournisseur ne peut pas être nul." + Environment.NewLine;
             if (NudMeasuringQty.Value <= 0)
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
             if (CBMeasuringUnit.SelectedValue == null)
@@ -220,8 +242,10 @@ namespace SGI.Views.SubViews
         {
             LBProducts.DisplayMember = "Name";
             LBProducts.ValueMember = "ProductId";
-            LBProducts.DataSource = Productcontoller.GetAllActiveProducts();
-            LBProducts.SelectedIndex = 0;
+            var products = Productcontoller.GetAllProducts(1);
+            LBProducts.DataSource = products;
+            if(products.Count > 0)
+                LBProducts.SelectedIndex = 0;
         }
 
         private void GetAllActiveCategories()
@@ -329,12 +353,13 @@ namespace SGI.Views.SubViews
                 btn_Print.Enabled = true;
             TxtLastUpdate.Text = currentProduct.LastUpdate.ToString();
             cbActive.Checked = currentProduct.Active;
-            if(currentProduct.BarCodeId != "")
-                LoadBarCode(currentProduct.BarCodeId);
+            LoadBarCode(currentProduct.BarCodeId);
+                
 
         }
         #endregion
 
+        #region BarCode
         private void Btn_Print_Click(object sender, EventArgs e)
         {
             PrintDialog pd = new PrintDialog();
@@ -361,21 +386,24 @@ namespace SGI.Views.SubViews
 
             string barcode = barCodenbr;
             lbl_BarCode.Text = barCodenbr;
-            Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);
-            using (Graphics graphics = Graphics.FromImage(bitmap))
+            if (barcode.Length > 0)
             {
-                Font oFont = new System.Drawing.Font("IDAHC39M Code 39 Barcode", 20);
-                PointF point = new PointF(2f, 2f);
-                SolidBrush black = new SolidBrush(Color.Black);
-                SolidBrush white = new SolidBrush(Color.White);
-                graphics.FillRectangle(white, 0, 0, bitmap.Width, bitmap.Height);
-                graphics.DrawString("*" + barcode + "*", oFont, black, point);
+                GBOBarCode.Visible = true;
+                Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);
+                using (Graphics graphics = Graphics.FromImage(bitmap))
+                {
+                    Font oFont = new System.Drawing.Font("IDAHC39M Code 39 Barcode", 20);
+                    PointF point = new PointF(2f, 2f);
+                    SolidBrush black = new SolidBrush(Color.Black);
+                    SolidBrush white = new SolidBrush(Color.White);
+                    graphics.FillRectangle(white, 0, 0, bitmap.Width, bitmap.Height);
+                    graphics.DrawString("*" + barcode + "*", oFont, black, point);
+                }
+                pictureBox2.Image = bitmap;
             }
-
-            pictureBox2.Image = bitmap;
-            //pictureBox2.Height  = bitmap.Height;
-            //pictureBox2.Width = bitmap.Width;
+            else
+                GBOBarCode.Visible = false;
         }
-
+        #endregion
     }
 }

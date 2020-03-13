@@ -6,6 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using SGI.Model.Classes;
+using System.Windows.Forms;
+
 namespace SGI.Controller
 {
     public class DepartmentController
@@ -13,17 +15,25 @@ namespace SGI.Controller
         public List<Department> GetAllActiveDepartments()
         {
             List<Department> departments = new List<Department>();
-            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_Departement where isActive = 1", CDatabase.Connection))
+            try
             {
-                cmd.CommandType = System.Data.CommandType.Text;
-                SqlDataReader dr = cmd.ExecuteReader();
-                DataTable dt = new DataTable();
-                dt.Load(dr);
-                foreach (DataRow row in dt.Rows)
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_Departement where isActive = 1", CDatabase.Connection))
                 {
-                    Department newDepartmente = new Department(row);
-                    departments.Add(newDepartmente);
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Department newDepartmente = new Department(row);
+                        departments.Add(newDepartmente);
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
             }
             return departments;
         }

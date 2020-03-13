@@ -92,8 +92,10 @@ namespace SGI.Views.SubViews
 
             cbo_loc.DisplayMember = "Name";
             cbo_loc.ValueMember   = "LocationId";
-            cbo_loc.DataSource = controllerLoc.GetAllLocationsActive();
-            cbo_loc.SelectedIndex = 0;
+            var locs = controllerLoc.GetAllLocationsActive();
+            cbo_loc.DataSource = locs;
+            if (locs.Count > 0)
+                cbo_loc.SelectedIndex = 0;
         }
 
         private void Btn_confirm_Click(object sender, EventArgs e)
