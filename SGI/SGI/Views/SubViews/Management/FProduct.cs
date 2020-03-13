@@ -55,14 +55,6 @@ namespace SGI.Views.SubViews
                         btn_Print.Enabled = true;
                         LBProducts.Enabled = true;
                         break;
-                    case State.DELETE:
-                        ucManagementAction1.btnSave.Enabled = false;
-                        ucManagementAction1.btnCancel.Enabled = false;
-                        ucManagementAction1.btnNew.Enabled = false;
-                        ucManagementAction1.btnDelete.Enabled = false;
-                        btn_Print.Enabled = false;
-                        LBProducts.Enabled = true;
-                        break;
                 }
             }
         }
@@ -86,18 +78,18 @@ namespace SGI.Views.SubViews
             DepartmentController = new DepartmentController();
             MeasuringUnitController = new MeasuringUnitController();
             CBFilter.Items.Add("Actifs");
-            CBFilter.Items.Add("Tous");
             CBFilter.Items.Add("Inactifs");
+            CBFilter.Items.Add("Tous");
             CBFilter.SelectedItem = "Actifs";
             GetAllActiveDepartments();
             GetAllActiveCategories();
             GetAllActiveMeasuringUnits();
             GetAllActiveProducts();
             CurrentState = State.VIEW;
+            ucManagementAction1.btnDelete.Visible = false;
             ucManagementAction1.SaveButtonClicked += UcManagementAction1_SaveButtonClicked;
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
-            ucManagementAction1.DeleteButtonClicked += UcManagementAction1_DeleteButtonClicked;
             CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
             ChangeFormEditStatus(true);
         }
@@ -118,33 +110,13 @@ namespace SGI.Views.SubViews
             else if (CBFilter.Text == "Inactifs")
                 dataSource = Productcontoller.GetAllProducts(0);
             LBProducts.DataBindings.Clear();
-            var products  = dataSource;
+            var products = dataSource;
             LBProducts.DataSource = products;
-            if(products.Count > 0)
+            if (products.Count > 0)
                 LBProducts.SelectedIndex = 0;
         }
 
         #region Actions
-        private void UcManagementAction1_DeleteButtonClicked()
-        {
-            DialogResult dr = MessageBox.Show("Êtes-vous certain de vouloir supprimer le produit : " + currentProduct.Name + " ?", "Suppression d'un produit", MessageBoxButtons.YesNo);
-            if (dr == DialogResult.Yes)
-            {
-                bool deletionWorked = Productcontoller.EditSingleProduct(currentProduct, "delete");
-                if (deletionWorked)
-                {
-                    MessageBox.Show("Produit supprimé.");
-                    List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
-                    LBProducts.DataBindings.Clear();
-                    LBProducts.DataSource = tempoProducts;
-                    LBProducts.SelectedIndex = 0;
-                    ChangeFormEditStatus(true);
-                }
-                else
-                    MessageBox.Show("Une erreur est survenue, veuillez réessayer.");
-            }
-        }
-
         private void UcManagementAction1_CancelButtonClicked()
         {
             switch (CurrentState)
@@ -153,7 +125,7 @@ namespace SGI.Views.SubViews
                     LBProducts.DataBindings.Clear();
                     List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
                     LBProducts.DataSource = tempoProducts;
-                    if(tempoProducts.Count > 0) 
+                    if (tempoProducts.Count > 0)
                         LBProducts.SelectedIndex = 0;
                     CurrentState = State.VIEW;
                     break;
@@ -180,7 +152,7 @@ namespace SGI.Views.SubViews
             switch (CurrentState)
             {
                 case State.ADD:
-                    Save("add", 0,true);
+                    Save("add", 0, true);
                     break;
                 case State.UPDATE:
                     Save("update", currentProduct.ProductId, false);
@@ -200,10 +172,24 @@ namespace SGI.Views.SubViews
                 if (newProductWorked)
                 {
                     MessageBox.Show("Enregistrement effectué");
-                    List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
+                    string currentFilter = CBFilter.Text;
+                    int isActiveFilter;
+                    if (currentFilter == "Actifs")
+                        isActiveFilter = 1;
+                    else if (currentFilter == "Inactifs")
+                        isActiveFilter = 0;
+                    else
+                        isActiveFilter = -1;
+                    List<Product> tempoProducts = Productcontoller.GetAllProducts(isActiveFilter);
+                    if(tempoProducts.Count <= 0)
+                    {
+                        tempoProducts = Productcontoller.GetAllProducts(1);
+                        CBFilter.SelectedIndex = 0;
+                    }
                     LBProducts.DataBindings.Clear();
                     LBProducts.DataSource = tempoProducts;
                     LBProducts.SelectedIndex = last == true ? LBProducts.Items.Count - 1 : 0;
+
                     ChangeFormEditStatus(true);
                     CurrentState = State.VIEW;
                 }
@@ -244,7 +230,7 @@ namespace SGI.Views.SubViews
             LBProducts.ValueMember = "ProductId";
             var products = Productcontoller.GetAllProducts(1);
             LBProducts.DataSource = products;
-            if(products.Count > 0)
+            if (products.Count > 0)
                 LBProducts.SelectedIndex = 0;
         }
 
@@ -354,7 +340,7 @@ namespace SGI.Views.SubViews
             TxtLastUpdate.Text = currentProduct.LastUpdate.ToString();
             cbActive.Checked = currentProduct.Active;
             LoadBarCode(currentProduct.BarCodeId);
-                
+
 
         }
         #endregion

@@ -37,5 +37,80 @@ namespace SGI.Controller
             }
             return categories;
         }
+
+        public List<Category> GetAllInactiveCategories()
+        {
+            List<Category> categories = new List<Category>();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_Category where isActive = 0", CDatabase.Connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Category newCategory = new Category(row);
+                        categories.Add(newCategory);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
+            }
+            return categories;
+        }
+
+        public List<Category> GetAllCategories()
+        {
+            List<Category> categories = new List<Category>();
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_Category ORDER BY isActive DESC", CDatabase.Connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    foreach (DataRow row in dt.Rows)
+                    {
+                        Category newCategory = new Category(row);
+                        categories.Add(newCategory);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
+            }
+            return categories;
+        }
+
+        public bool EditSingleCategory(Category newCategory, string Action)
+        {
+            bool Worked = false;
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("Category_sp", CDatabase.Connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.StoredProcedure;
+                    cmd.Parameters.Add("@Action", SqlDbType.VarChar).Value = Action;
+                    cmd.Parameters.Add("@CategoryId", SqlDbType.Int).Value = newCategory.CategoryID;
+                    cmd.Parameters.Add("@Descr", SqlDbType.VarChar).Value = newCategory.Description;
+                    cmd.Parameters.Add("@isActive", SqlDbType.Bit).Value = newCategory.Active;
+                    cmd.ExecuteNonQuery();
+                    Worked = true;
+                }
+            }
+            catch
+            {
+                Worked = false;
+            }
+            return Worked;
+        }
     }
 }

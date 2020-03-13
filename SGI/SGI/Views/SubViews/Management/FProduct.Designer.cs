@@ -62,6 +62,7 @@
             this.LblLastUpdate = new System.Windows.Forms.Label();
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.ActionPanel = new System.Windows.Forms.Panel();
+            this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.GBInventory = new System.Windows.Forms.GroupBox();
             this.nudMax = new System.Windows.Forms.NumericUpDown();
@@ -70,7 +71,6 @@
             this.lblQtyMin = new System.Windows.Forms.Label();
             this.GBFilter = new System.Windows.Forms.GroupBox();
             this.CBFilter = new System.Windows.Forms.ComboBox();
-            this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.GBProduct.SuspendLayout();
             this.GBSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).BeginInit();
@@ -92,7 +92,7 @@
             this.LBProducts.ItemHeight = 17;
             this.LBProducts.Location = new System.Drawing.Point(0, 53);
             this.LBProducts.Name = "LBProducts";
-            this.LBProducts.Size = new System.Drawing.Size(301, 756);
+            this.LBProducts.Size = new System.Drawing.Size(301, 816);
             this.LBProducts.TabIndex = 0;
             this.LBProducts.SelectedIndexChanged += new System.EventHandler(this.LBProducts_SelectedIndexChanged);
             // 
@@ -389,10 +389,19 @@
             // 
             this.ActionPanel.Controls.Add(this.ucManagementAction1);
             this.ActionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActionPanel.Location = new System.Drawing.Point(301, 753);
+            this.ActionPanel.Location = new System.Drawing.Point(301, 813);
             this.ActionPanel.Name = "ActionPanel";
             this.ActionPanel.Size = new System.Drawing.Size(1195, 56);
             this.ActionPanel.TabIndex = 6;
+            // 
+            // ucManagementAction1
+            // 
+            this.ucManagementAction1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
+            this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ucManagementAction1.Name = "ucManagementAction1";
+            this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
+            this.ucManagementAction1.TabIndex = 0;
             // 
             // GBInventory
             // 
@@ -460,20 +469,11 @@
             this.CBFilter.Size = new System.Drawing.Size(298, 25);
             this.CBFilter.TabIndex = 0;
             // 
-            // ucManagementAction1
-            // 
-            this.ucManagementAction1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
-            this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ucManagementAction1.Name = "ucManagementAction1";
-            this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
-            this.ucManagementAction1.TabIndex = 0;
-            // 
             // FProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1496, 809);
+            this.ClientSize = new System.Drawing.Size(1496, 869);
             this.Controls.Add(this.GBOther);
             this.Controls.Add(this.GBInventory);
             this.Controls.Add(this.ActionPanel);
