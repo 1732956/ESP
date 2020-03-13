@@ -2,3 +2,5 @@
 *.orig
 SGI/SGI/bigmac.png
 SGI/SGI/Resources/bigmac.png
+SGI/.vs/SGI/v16/Server/sqlite3/storage.ide-shm
+SGI/.vs/SGI/v16/Server/sqlite3/storage.ide-wal
