@@ -47,12 +47,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.btn_cancel = new System.Windows.Forms.Button();
             this.grp_product.SuspendLayout();
             this.SuspendLayout();
             // 
             // txt_produit
             // 
-            this.txt_produit.Location = new System.Drawing.Point(374, 134);
+            this.txt_produit.Location = new System.Drawing.Point(513, 137);
             this.txt_produit.Name = "txt_produit";
             this.txt_produit.Size = new System.Drawing.Size(186, 25);
             this.txt_produit.TabIndex = 0;
@@ -61,7 +62,7 @@
             // 
             // txt_qte
             // 
-            this.txt_qte.Location = new System.Drawing.Point(374, 195);
+            this.txt_qte.Location = new System.Drawing.Point(513, 198);
             this.txt_qte.Name = "txt_qte";
             this.txt_qte.Size = new System.Drawing.Size(186, 25);
             this.txt_qte.TabIndex = 1;
@@ -71,7 +72,7 @@
             // lbl_produit
             // 
             this.lbl_produit.AutoSize = true;
-            this.lbl_produit.Location = new System.Drawing.Point(296, 137);
+            this.lbl_produit.Location = new System.Drawing.Point(435, 140);
             this.lbl_produit.Name = "lbl_produit";
             this.lbl_produit.Size = new System.Drawing.Size(61, 19);
             this.lbl_produit.TabIndex = 3;
@@ -80,7 +81,7 @@
             // lbl_qte
             // 
             this.lbl_qte.AutoSize = true;
-            this.lbl_qte.Location = new System.Drawing.Point(294, 198);
+            this.lbl_qte.Location = new System.Drawing.Point(433, 201);
             this.lbl_qte.Name = "lbl_qte";
             this.lbl_qte.Size = new System.Drawing.Size(74, 19);
             this.lbl_qte.TabIndex = 4;
@@ -91,7 +92,7 @@
             // 
             this.cbo_loc.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbo_loc.FormattingEnabled = true;
-            this.cbo_loc.Location = new System.Drawing.Point(374, 260);
+            this.cbo_loc.Location = new System.Drawing.Point(513, 263);
             this.cbo_loc.Name = "cbo_loc";
             this.cbo_loc.Size = new System.Drawing.Size(186, 25);
             this.cbo_loc.TabIndex = 6;
@@ -101,7 +102,7 @@
             // lbl_loc
             // 
             this.lbl_loc.AutoSize = true;
-            this.lbl_loc.Location = new System.Drawing.Point(270, 263);
+            this.lbl_loc.Location = new System.Drawing.Point(409, 266);
             this.lbl_loc.Name = "lbl_loc";
             this.lbl_loc.Size = new System.Drawing.Size(87, 19);
             this.lbl_loc.TabIndex = 7;
@@ -110,7 +111,7 @@
             // 
             // btn_confirm
             // 
-            this.btn_confirm.Location = new System.Drawing.Point(399, 390);
+            this.btn_confirm.Location = new System.Drawing.Point(449, 405);
             this.btn_confirm.Name = "btn_confirm";
             this.btn_confirm.Size = new System.Drawing.Size(117, 34);
             this.btn_confirm.TabIndex = 8;
@@ -173,7 +174,7 @@
             this.grp_product.Controls.Add(this.txt_cat);
             this.grp_product.Controls.Add(this.txt_marque);
             this.grp_product.Dock = System.Windows.Forms.DockStyle.Right;
-            this.grp_product.Location = new System.Drawing.Point(665, 0);
+            this.grp_product.Location = new System.Drawing.Point(963, 0);
             this.grp_product.Name = "grp_product";
             this.grp_product.Size = new System.Drawing.Size(338, 603);
             this.grp_product.TabIndex = 14;
@@ -234,11 +235,23 @@
             this.label1.TabIndex = 14;
             this.label1.Text = "Nom :";
             // 
+            // btn_cancel
+            // 
+            this.btn_cancel.Location = new System.Drawing.Point(626, 405);
+            this.btn_cancel.Name = "btn_cancel";
+            this.btn_cancel.Size = new System.Drawing.Size(117, 34);
+            this.btn_cancel.TabIndex = 15;
+            this.btn_cancel.Text = "Cancel";
+            this.btn_cancel.UseVisualStyleBackColor = true;
+            this.btn_cancel.Visible = false;
+            this.btn_cancel.Click += new System.EventHandler(this.Btn_cancel_Click);
+            // 
             // FInventoryIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1003, 603);
+            this.ClientSize = new System.Drawing.Size(1301, 603);
+            this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.grp_product);
             this.Controls.Add(this.btn_confirm);
             this.Controls.Add(this.lbl_loc);
@@ -281,5 +294,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txt_productid;
+        private System.Windows.Forms.Button btn_cancel;
     }
 }

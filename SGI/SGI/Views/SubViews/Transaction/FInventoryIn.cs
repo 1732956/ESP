@@ -38,7 +38,7 @@ namespace SGI.Views.SubViews
             {
 
                 CurrentProduct = ControllerProduct.GetSingleProductInfo(txt_produit.Text);
-                if (CurrentProduct.ProductId != 0 )
+                if (CurrentProduct.ProductId != 0 && CurrentProduct.ProductId != -1)
                 {
                     txt_qte.Visible = true;
                     cbo_loc.Visible = true;
@@ -46,6 +46,7 @@ namespace SGI.Views.SubViews
                     lbl_loc.Visible = true;
                     btn_confirm.Visible = true;
                     grp_product.Visible = true;
+                    btn_cancel.Visible = true;
                     txt_productid.Text = CurrentProduct.ProductId.ToString();
                     txt_descr.Text = CurrentProduct.Description;
                     txt_nom.Text = CurrentProduct.Name;
@@ -56,8 +57,17 @@ namespace SGI.Views.SubViews
                 }
                 else
                 {
-                    MessageBox.Show("Le produit est invalide");
-                    ClearScreenProduct();
+                    if (CurrentProduct.ProductId == 0)
+                    {
+                        MessageBox.Show("Le produit est invalide");
+                        ClearScreenProduct();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Le produit est inactif");
+                        ClearScreenProduct();
+                    }
+
                 }
             }
         }
@@ -89,6 +99,11 @@ namespace SGI.Views.SubViews
         private void Btn_confirm_Click(object sender, EventArgs e)
         {
             bool vError = false;
+
+
+
+
+
 
             if (txt_produit.Text == "")
             {
@@ -158,6 +173,7 @@ namespace SGI.Views.SubViews
             lbl_qte.Visible = false;
             lbl_loc.Visible = false;
             btn_confirm.Visible = false;
+            btn_cancel.Visible = false;
         }
 
         void ClearScreenProduct()
@@ -189,6 +205,11 @@ namespace SGI.Views.SubViews
                     ClearScreenProduct();
                 }
             }
+        }
+
+        private void Btn_cancel_Click(object sender, EventArgs e)
+        {
+            ClearScreen();
         }
     }
 }
