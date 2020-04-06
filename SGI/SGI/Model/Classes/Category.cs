@@ -23,7 +23,7 @@ namespace SGI.Model.Classes
         public Category(DataRow row)
         {     
            	this.CategoryID = Convert.ToInt32(row["CategoryId"]);
-           	this.Description = row["Descr"].ToString();
+           	this.Description = row["Description"].ToString();
            	this.Active = Convert.ToBoolean(row["isActive"]);
         }
         public Category()

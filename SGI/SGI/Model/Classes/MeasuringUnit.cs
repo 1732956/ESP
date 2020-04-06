@@ -31,9 +31,9 @@ namespace SGI.Model.Classes
 
         public MeasuringUnit(DataRow row)
         {
-            UnitId = Convert.ToInt32(row["UnitId"]);
+            UnitId = Convert.ToInt32(row["MesuringUnitID"]);
             UnitCode = row["UnitCode"].ToString();
-            Description = row["Descr"].ToString();
+            Description = row["Description"].ToString();
             Active = Convert.ToBoolean(row["isActive"]);
         }
     }
