@@ -47,6 +47,8 @@ namespace SGI.Views.SubViews
                     btn_confirm.Visible = true;
                     grp_product.Visible = true;
                     btn_cancel.Visible = true;
+                    cbo_reason.Visible = true;
+                    lbl_reason.Visible = true;
                     txt_productid.Text = CurrentProduct.ProductId.ToString();
                     txt_descr.Text = CurrentProduct.Description;
                     txt_nom.Text = CurrentProduct.Name;
@@ -216,7 +218,6 @@ namespace SGI.Views.SubViews
                 catch (Exception)
                 {
                     MessageBox.Show("Erreur lors de l'enregistrement");
-                    throw;
                 }
             }
         }
