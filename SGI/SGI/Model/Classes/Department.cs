@@ -34,7 +34,7 @@ namespace SGI.Model.Classes
             DepartmentId = 0;
             Name = "";
             Description = "";
-            Active = false;
+            Active = true;
         }
     }
 }

@@ -10,8 +10,6 @@ using System.Windows.Forms;
 using SGI.Controller;
 using SGI.Model.Classes;
 using static SGI.CEnum;
-using System.Drawing.Imaging;
-using System.Drawing.Printing;
 
 namespace SGI.Views.SubViews
 {

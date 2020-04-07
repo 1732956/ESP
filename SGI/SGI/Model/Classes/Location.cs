@@ -14,6 +14,13 @@ namespace SGI.Model.Classes
         public string Description { get; set; }
         public bool Active { get; set; }
 
+        public Location()
+        {
+            LocationId = 0;
+            Name = "";
+            Description = "";
+            Active = true;
+        }
         public Location(int pId, string pName, string pDescription, bool pActive)
         {
             LocationId = pId;
@@ -25,8 +32,9 @@ namespace SGI.Model.Classes
         public Location(DataRow row)
         {
             this.LocationId = Convert.ToInt32(row["LocationId"]);
-            this.Description = row["Descr"].ToString(); 
+            this.Description = row["Description"].ToString(); 
             this.Name = row["Name"].ToString();
+            this.Active = Convert.ToBoolean(row["IsActive"]);
         }
        
     }

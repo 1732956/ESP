@@ -30,7 +30,7 @@ namespace SGI.Model.Classes
         {
         	CategoryID = 0;
         	Description = "";
-        	Active = false;
+        	Active = true;
         }
         
 

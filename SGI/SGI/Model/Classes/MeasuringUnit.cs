@@ -26,7 +26,7 @@ namespace SGI.Model.Classes
             UnitId      = 0;
             UnitCode    = "";
             Description = "";
-            Active      = false;
+            Active      = true;
         }
 
         public MeasuringUnit(DataRow row)
