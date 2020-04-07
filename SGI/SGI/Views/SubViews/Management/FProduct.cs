@@ -253,7 +253,7 @@ namespace SGI.Views.SubViews
         private void GetAllActiveMeasuringUnits()
         {
             CBMeasuringUnit.DisplayMember = "UnitCode";
-            CBMeasuringUnit.ValueMember = "UnitId";
+            CBMeasuringUnit.ValueMember = "UnitID";
             CBMeasuringUnit.DataSource = MeasuringUnitController.GetAllActiveMeasuringUnits();
             CbDepartment.SelectedIndex = -1;
         }
