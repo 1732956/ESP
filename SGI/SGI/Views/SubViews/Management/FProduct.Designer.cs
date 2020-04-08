@@ -234,6 +234,11 @@
             // 
             this.NudPrice.DecimalPlaces = 2;
             this.NudPrice.Location = new System.Drawing.Point(987, 56);
+            this.NudPrice.Maximum = new decimal(new int[] {
+            1410065408,
+            2,
+            0,
+            0});
             this.NudPrice.Name = "NudPrice";
             this.NudPrice.Size = new System.Drawing.Size(202, 25);
             this.NudPrice.TabIndex = 18;
@@ -241,6 +246,11 @@
             // NudMeasuringQty
             // 
             this.NudMeasuringQty.Location = new System.Drawing.Point(626, 57);
+            this.NudMeasuringQty.Maximum = new decimal(new int[] {
+            1000,
+            0,
+            0,
+            0});
             this.NudMeasuringQty.Name = "NudMeasuringQty";
             this.NudMeasuringQty.Size = new System.Drawing.Size(202, 25);
             this.NudMeasuringQty.TabIndex = 17;
@@ -421,6 +431,11 @@
             // nudMax
             // 
             this.nudMax.Location = new System.Drawing.Point(188, 98);
+            this.nudMax.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.nudMax.Name = "nudMax";
             this.nudMax.Size = new System.Drawing.Size(202, 25);
             this.nudMax.TabIndex = 27;
@@ -428,6 +443,11 @@
             // NudMin
             // 
             this.NudMin.Location = new System.Drawing.Point(188, 54);
+            this.NudMin.Maximum = new decimal(new int[] {
+            10000,
+            0,
+            0,
+            0});
             this.NudMin.Name = "NudMin";
             this.NudMin.Size = new System.Drawing.Size(202, 25);
             this.NudMin.TabIndex = 20;

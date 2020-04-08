@@ -166,7 +166,10 @@ namespace SGI.Views.SubViews
                     }
                     LBDepartments.DataBindings.Clear();
                     LBDepartments.DataSource = tempoDepartment;
-                    LBDepartments.SelectedIndex = last == true ? LBDepartments.Items.Count - 1 : 0;
+                    if (LBDepartments.Items.Count > 0)
+                        LBDepartments.SelectedIndex = last == true ? LBDepartments.Items.Count - 1 : 0;
+                    else
+                        LBDepartments.SelectedIndex = -1;
                     ChangeFormEditStatus(true);
                     CurrentState = State.VIEW;
                 }

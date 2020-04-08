@@ -36,7 +36,6 @@ namespace SGI.Views.SubViews
                         ucManagementAction1.btnCancel.Enabled = false;
                         ucManagementAction1.btnNew.Enabled = true;
                         ucManagementAction1.btnDelete.Enabled = true;
-                        btn_Print.Enabled = true;
                         LBProducts.Enabled = true;
                         break;
                     case State.ADD:
@@ -52,7 +51,6 @@ namespace SGI.Views.SubViews
                         ucManagementAction1.btnCancel.Enabled = true;
                         ucManagementAction1.btnNew.Enabled = false;
                         ucManagementAction1.btnDelete.Enabled = false;
-                        btn_Print.Enabled = true;
                         LBProducts.Enabled = true;
                         break;
                 }
@@ -188,7 +186,10 @@ namespace SGI.Views.SubViews
                     }
                     LBProducts.DataBindings.Clear();
                     LBProducts.DataSource = tempoProducts;
-                    LBProducts.SelectedIndex = last == true ? LBProducts.Items.Count - 1 : 0;
+                    if (LBProducts.Items.Count > 0)
+                        LBProducts.SelectedIndex = last == true ? LBProducts.Items.Count - 1 : 0;
+                    else
+                        LBProducts.SelectedIndex = -1;
 
                     ChangeFormEditStatus(true);
                     CurrentState = State.VIEW;
@@ -215,10 +216,12 @@ namespace SGI.Views.SubViews
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
             if (CBMeasuringUnit.SelectedValue == null)
                 returnMessage += "L'unité de mesure ne peut pas être nulle." + Environment.NewLine;
-            if (NudMin.Value <= 0)
+            if (NudMin.Value < 0)
                 returnMessage += "La quantité minimum doit être positive." + Environment.NewLine;
-            if (nudMax.Value <= 0)
+            if (nudMax.Value < 0)
                 returnMessage += "La quantité maximum doit être positive." + Environment.NewLine;
+            if(NudMin.Value > nudMax.Value)
+                returnMessage += "La quantité minimum doit être inférieur à la quantité maximum." + Environment.NewLine;
             return returnMessage;
         }
         #endregion
@@ -335,8 +338,16 @@ namespace SGI.Views.SubViews
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);
             NudMin.Value = currentProduct.MinQty;
             nudMax.Value = currentProduct.MaxQty;
-            if (currentProduct.BarCodeId != "")
+            if (currentProduct.BarCodeId == "")
+            {
+                btn_Print.Enabled = false;
+                pictureBox2.Enabled = false;
+            }
+            else
+            {
                 btn_Print.Enabled = true;
+                pictureBox2.Enabled = true;
+            }
             TxtLastUpdate.Text = currentProduct.LastUpdate.ToString();
             cbActive.Checked = currentProduct.Active;
             LoadBarCode(currentProduct.BarCodeId);

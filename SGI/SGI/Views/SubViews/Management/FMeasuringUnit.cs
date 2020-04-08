@@ -168,7 +168,10 @@ namespace SGI.Views.SubViews
                     }
                     LBMeasuringUnits.DataBindings.Clear();
                     LBMeasuringUnits.DataSource = tempoMU;
-                    LBMeasuringUnits.SelectedIndex = last == true ? LBMeasuringUnits.Items.Count - 1 : 0;
+                    if (LBMeasuringUnits.Items.Count > 0)
+                        LBMeasuringUnits.SelectedIndex = last == true ? LBMeasuringUnits.Items.Count - 1 : 0;
+                    else
+                        LBMeasuringUnits.SelectedIndex = -1;
                     ChangeFormEditStatus(true);
                     CurrentState = State.VIEW;
                 }

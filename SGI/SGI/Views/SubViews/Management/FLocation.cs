@@ -166,7 +166,10 @@ namespace SGI.Views.SubViews.Management
                     }
                     LBLocations.DataBindings.Clear();
                     LBLocations.DataSource = tempoLocation;
-                    LBLocations.SelectedIndex = last == true ? LBLocations.Items.Count - 1 : 0;
+                    if (LBLocations.Items.Count > 0)
+                        LBLocations.SelectedIndex = last == true ? LBLocations.Items.Count - 1 : 0;
+                    else
+                        LBLocations.SelectedIndex = -1;
                     ChangeFormEditStatus(true);
                     CurrentState = State.VIEW;
                 }
