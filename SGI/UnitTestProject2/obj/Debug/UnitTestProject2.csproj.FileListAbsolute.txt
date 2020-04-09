@@ -1,0 +1,11 @@
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\UnitTestProject2.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\UnitTestProject2.pdb
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\obj\Debug\UnitTestProject2.csprojResolveAssemblyReference.cache
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\obj\Debug\UnitTestProject2.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\obj\Debug\UnitTestProject2.pdb
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\SGISettings.Designer.cs
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\SGISettings.settings
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\SGI.exe
+C:\Users\Olivier\Documents\ESP\SGI\UnitTestProject2\bin\Debug\SGI.pdb
