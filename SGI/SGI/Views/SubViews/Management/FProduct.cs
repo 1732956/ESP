@@ -21,6 +21,7 @@ namespace SGI.Views.SubViews
         CategoryController CategoryController;
         DepartmentController DepartmentController;
         MeasuringUnitController MeasuringUnitController;
+        SupplierController SupplierController;
         Product mCurrentProduct;
         State mCurrentState;
         State CurrentState
@@ -75,6 +76,7 @@ namespace SGI.Views.SubViews
             CategoryController = new CategoryController();
             DepartmentController = new DepartmentController();
             MeasuringUnitController = new MeasuringUnitController();
+            SupplierController = new SupplierController();
             CBFilter.Items.Add("Actifs");
             CBFilter.Items.Add("Inactifs");
             CBFilter.Items.Add("Tous");
@@ -82,6 +84,7 @@ namespace SGI.Views.SubViews
             GetAllActiveDepartments();
             GetAllActiveCategories();
             GetAllActiveMeasuringUnits();
+            GetAllActiveSuppliers();
             GetAllActiveProducts();
             CurrentState = State.VIEW;
             ucManagementAction1.btnDelete.Visible = false;
@@ -210,8 +213,8 @@ namespace SGI.Views.SubViews
                 returnMessage += "La catégorie ne peut pas être nulle." + Environment.NewLine;
             if (CbDepartment.SelectedValue == null)
                 returnMessage += "Le département ne peut pas être nul." + Environment.NewLine;
-            if (TxtSupplierName.Text == "")
-                returnMessage += "Le nom de fournisseur ne peut pas être nul." + Environment.NewLine;
+            if (CBSupplier.SelectedValue == null)
+                returnMessage += "Le fournisseur ne peut pas être nul." + Environment.NewLine;
             if (NudMeasuringQty.Value <= 0)
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
             if (CBMeasuringUnit.SelectedValue == null)
@@ -245,6 +248,14 @@ namespace SGI.Views.SubViews
             CbCategory.SelectedIndex = -1;
         }
 
+        private void GetAllActiveSuppliers()
+        {
+            CBSupplier.DisplayMember = "Name";
+            CBSupplier.ValueMember = "SupplierID";
+            CBSupplier.DataSource = SupplierController.GetAllSuppliersActive();
+            CBSupplier.SelectedIndex = -1;
+        }
+
         private void GetAllActiveDepartments()
         {
             CbDepartment.DisplayMember = "Name";
@@ -272,8 +283,7 @@ namespace SGI.Views.SubViews
             currentProduct.Description = TxtDescription.Text;
             currentProduct.Category = (Category)CbCategory.SelectedItem;
             currentProduct.Department = (Department)CbDepartment.SelectedItem;
-            currentProduct.Supplier = TxtSupplierName.Text;
-            currentProduct.SupplierCode = txtSupplierCode.Text;
+            currentProduct.Supplier = (Supplier)CBSupplier.SelectedItem;
             currentProduct.UnitCount = Convert.ToInt32(NudMeasuringQty.Value);
             currentProduct.MeasuringUnit = (MeasuringUnit)CBMeasuringUnit.SelectedItem;
             currentProduct.Price = Convert.ToInt32(NudPrice.Value);
@@ -291,8 +301,7 @@ namespace SGI.Views.SubViews
                 CbCategory.SelectedIndexChanged += PutInEditMode;
                 CbDepartment.SelectedIndexChanged += PutInEditMode;
                 TxtDescription.TextChanged += PutInEditMode;
-                TxtSupplierName.TextChanged += PutInEditMode;
-                txtSupplierCode.TextChanged += PutInEditMode;
+                CBSupplier.SelectedIndexChanged += PutInEditMode;
                 NudMeasuringQty.ValueChanged += PutInEditMode;
                 CBMeasuringUnit.SelectedIndexChanged += PutInEditMode;
                 NudPrice.ValueChanged += PutInEditMode;
@@ -307,8 +316,7 @@ namespace SGI.Views.SubViews
                 CbCategory.SelectedIndexChanged -= PutInEditMode;
                 CbDepartment.SelectedIndexChanged -= PutInEditMode;
                 TxtDescription.TextChanged -= PutInEditMode;
-                TxtSupplierName.TextChanged -= PutInEditMode;
-                txtSupplierCode.TextChanged -= PutInEditMode;
+                CBSupplier.SelectedIndexChanged -= PutInEditMode;
                 NudMeasuringQty.ValueChanged -= PutInEditMode;
                 CBMeasuringUnit.SelectedIndexChanged -= PutInEditMode;
                 NudPrice.ValueChanged -= PutInEditMode;
@@ -331,8 +339,7 @@ namespace SGI.Views.SubViews
             TxtDescription.Text = currentProduct.Description;
             CbCategory.SelectedValue = currentProduct.Category.CategoryID;
             CbDepartment.SelectedValue = currentProduct.Department.DepartmentId;
-            TxtSupplierName.Text = currentProduct.Supplier;
-            txtSupplierCode.Text = currentProduct.SupplierCode;
+            CBSupplier.SelectedValue = currentProduct.Supplier.SupplierID;
             NudMeasuringQty.Value = currentProduct.UnitCount;
             CBMeasuringUnit.SelectedValue = currentProduct.MeasuringUnit.UnitId;
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);

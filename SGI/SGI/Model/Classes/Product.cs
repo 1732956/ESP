@@ -13,8 +13,6 @@ namespace SGI.Model.Classes
         public string Name { get; set; }
         public string Brand { get; set; }
         public string Description { get; set; }
-        public string Supplier { get; set; }
-        public string SupplierCode { get; set; }
         public double Price { get; set; }
         public DateTime LastUpdate { get; set; }
         public bool Active { get; set; }
@@ -25,6 +23,7 @@ namespace SGI.Model.Classes
         public Category Category { get; set; }
         public Department Department { get; set; }
         public MeasuringUnit MeasuringUnit { get; set; }
+        public Supplier Supplier { get; set; }
 
         public Product(DataRow row, bool isSingle)
         {
@@ -34,8 +33,6 @@ namespace SGI.Model.Classes
                 this.Name = row["Name"].ToString();
                 this.Brand = row["Brand"].ToString();
                 this.Description = row["Description"].ToString();
-                this.Supplier = row["SupplierName"].ToString();
-                this.SupplierCode = row["SupplierCode"].ToString();
                 this.Price = Convert.ToDouble(row["Price"]);
                 this.LastUpdate = Convert.ToDateTime(row["LastUpdate"]);
                 this.Active = Convert.ToBoolean(row["isActive"]);
@@ -43,6 +40,7 @@ namespace SGI.Model.Classes
                 this.MaxQty = Convert.ToInt32(row["QtyMax"]);
                 this.MinQty = Convert.ToInt32(row["QtyMin"]);
                 this.BarCodeId = row["BarCodeId"].ToString();
+                this.Supplier = new Supplier(Convert.ToInt32(row["SupID"]), row["SupName"].ToString(), row["SupCode"].ToString(), row["SupResPers"].ToString(), row["SupAdress"].ToString(), row["SupEmail"].ToString(), row["SupPhone"].ToString(), Convert.ToDouble(row["SupMinOrderPrice"]), Convert.ToBoolean(row["SupActive"]));
                 this.Category = new Category(Convert.ToInt32(row["CategoryId"]), row["CategoryDescription"].ToString(), Convert.ToBoolean(row["CategoryIsActive"]));
                 this.Department = new Department(Convert.ToInt32(row["DepartementId"]), row["DepartmentName"].ToString(), row["DepartmentDescription"].ToString(), Convert.ToBoolean(row["DepartmentIsActive"]));
                 this.MeasuringUnit = new MeasuringUnit(Convert.ToInt32(row["MeasuringUnitId"]), row["UnitCode"].ToString(), row["MeasuringUnitDescription"].ToString(), Convert.ToBoolean(row["MeasuringUnitIsActive"]));
@@ -53,9 +51,10 @@ namespace SGI.Model.Classes
                 this.ProductId = Convert.ToInt32(row["ProductId"]);
                 this.Name = row["ProductName"].ToString();
                 this.Brand = row["Brand"].ToString();
-                this.Description = row["DescrProduct"].ToString();
+                this.Description = row["Descr"].ToString();
                 this.Price = Convert.ToDouble(row["Price"]);
                 this.BarCodeId = row["BarCodeId"].ToString();
+                this.Supplier = new Supplier(0, row["SupName"].ToString(), "", "", "", "", "", 0, true);
                 this.Category = new Category(0, row["CatDescr"].ToString(), true);
                 this.Department = new Department(0, row["DepNom"].ToString(), "",true);
                 this.MeasuringUnit = new MeasuringUnit();
@@ -68,8 +67,7 @@ namespace SGI.Model.Classes
             Name = "";
             Brand = "";
             Description = "";
-            Supplier = "";
-            SupplierCode = "";
+            Supplier = new Supplier();
             Price = 0;
             LastUpdate = DateTime.Now;
             Active = true;

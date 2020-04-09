@@ -58,6 +58,7 @@
     <Compile Include="Controller\MeasuringUnitController.cs" />
     <Compile Include="Controller\ProductContoller.cs" />
     <Compile Include="Controller\ReasonCodeController.cs" />
+    <Compile Include="Controller\SupplierController.cs" />
     <Compile Include="Model\CDatabase.cs" />
     <Compile Include="Model\Classes\Category.cs" />
     <Compile Include="Model\Classes\Department.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Model\Classes\MeasuringUnit.cs" />
     <Compile Include="Model\Classes\Product.cs" />
     <Compile Include="Model\Classes\ReasonCode.cs" />
+    <Compile Include="Model\Classes\Supplier.cs" />
     <Compile Include="SGISettings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>

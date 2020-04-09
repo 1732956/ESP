@@ -60,8 +60,7 @@ namespace SGI.Controller
                     cmd.Parameters.Add("@Description", SqlDbType.VarChar).Value = newProduct.Description;
                     cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = newProduct.Price;
                     cmd.Parameters.Add("@UnitId", SqlDbType.Int).Value = newProduct.MeasuringUnit.UnitId;
-                    cmd.Parameters.Add("@SupplierCode", SqlDbType.VarChar).Value = newProduct.SupplierCode;
-                    cmd.Parameters.Add("@SupplierName", SqlDbType.VarChar).Value = newProduct.Supplier;
+                    cmd.Parameters.Add("@SupplierId", SqlDbType.VarChar).Value = newProduct.Supplier.SupplierID;
                     cmd.Parameters.Add("@isActive", SqlDbType.Bit).Value = newProduct.Active;
                     cmd.ExecuteNonQuery();
                     Worked = true;

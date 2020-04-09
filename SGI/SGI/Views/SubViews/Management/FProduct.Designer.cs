@@ -49,9 +49,6 @@
             this.lblPrice = new System.Windows.Forms.Label();
             this.lblMeasuringUnit = new System.Windows.Forms.Label();
             this.lblQuantityUnit = new System.Windows.Forms.Label();
-            this.txtSupplierCode = new System.Windows.Forms.TextBox();
-            this.lblSupplierCode = new System.Windows.Forms.Label();
-            this.TxtSupplierName = new System.Windows.Forms.TextBox();
             this.lblSupplierName = new System.Windows.Forms.Label();
             this.GBOBarCode = new System.Windows.Forms.GroupBox();
             this.lbl_BarCode = new System.Windows.Forms.Label();
@@ -71,6 +68,7 @@
             this.lblQtyMin = new System.Windows.Forms.Label();
             this.GBFilter = new System.Windows.Forms.GroupBox();
             this.CBFilter = new System.Windows.Forms.ComboBox();
+            this.CBSupplier = new System.Windows.Forms.ComboBox();
             this.GBProduct.SuspendLayout();
             this.GBSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).BeginInit();
@@ -203,15 +201,13 @@
             // 
             // GBSupplier
             // 
+            this.GBSupplier.Controls.Add(this.CBSupplier);
             this.GBSupplier.Controls.Add(this.CBMeasuringUnit);
             this.GBSupplier.Controls.Add(this.NudPrice);
             this.GBSupplier.Controls.Add(this.NudMeasuringQty);
             this.GBSupplier.Controls.Add(this.lblPrice);
             this.GBSupplier.Controls.Add(this.lblMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblQuantityUnit);
-            this.GBSupplier.Controls.Add(this.txtSupplierCode);
-            this.GBSupplier.Controls.Add(this.lblSupplierCode);
-            this.GBSupplier.Controls.Add(this.TxtSupplierName);
             this.GBSupplier.Controls.Add(this.lblSupplierName);
             this.GBSupplier.Dock = System.Windows.Forms.DockStyle.Top;
             this.GBSupplier.Location = new System.Drawing.Point(301, 226);
@@ -225,7 +221,7 @@
             // 
             this.CBMeasuringUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBMeasuringUnit.FormattingEnabled = true;
-            this.CBMeasuringUnit.Location = new System.Drawing.Point(626, 116);
+            this.CBMeasuringUnit.Location = new System.Drawing.Point(174, 113);
             this.CBMeasuringUnit.Name = "CBMeasuringUnit";
             this.CBMeasuringUnit.Size = new System.Drawing.Size(202, 25);
             this.CBMeasuringUnit.TabIndex = 19;
@@ -267,7 +263,7 @@
             // lblMeasuringUnit
             // 
             this.lblMeasuringUnit.AutoSize = true;
-            this.lblMeasuringUnit.Location = new System.Drawing.Point(479, 122);
+            this.lblMeasuringUnit.Location = new System.Drawing.Point(27, 119);
             this.lblMeasuringUnit.Name = "lblMeasuringUnit";
             this.lblMeasuringUnit.Size = new System.Drawing.Size(117, 19);
             this.lblMeasuringUnit.TabIndex = 13;
@@ -282,37 +278,14 @@
             this.lblQuantityUnit.TabIndex = 11;
             this.lblQuantityUnit.Text = "Quanité par unité : ";
             // 
-            // txtSupplierCode
-            // 
-            this.txtSupplierCode.Location = new System.Drawing.Point(111, 124);
-            this.txtSupplierCode.Name = "txtSupplierCode";
-            this.txtSupplierCode.Size = new System.Drawing.Size(313, 25);
-            this.txtSupplierCode.TabIndex = 10;
-            // 
-            // lblSupplierCode
-            // 
-            this.lblSupplierCode.AutoSize = true;
-            this.lblSupplierCode.Location = new System.Drawing.Point(30, 124);
-            this.lblSupplierCode.Name = "lblSupplierCode";
-            this.lblSupplierCode.Size = new System.Drawing.Size(52, 19);
-            this.lblSupplierCode.TabIndex = 9;
-            this.lblSupplierCode.Text = "Code : ";
-            // 
-            // TxtSupplierName
-            // 
-            this.TxtSupplierName.Location = new System.Drawing.Point(111, 51);
-            this.TxtSupplierName.Name = "TxtSupplierName";
-            this.TxtSupplierName.Size = new System.Drawing.Size(313, 25);
-            this.TxtSupplierName.TabIndex = 7;
-            // 
             // lblSupplierName
             // 
             this.lblSupplierName.AutoSize = true;
             this.lblSupplierName.Location = new System.Drawing.Point(30, 53);
             this.lblSupplierName.Name = "lblSupplierName";
-            this.lblSupplierName.Size = new System.Drawing.Size(50, 19);
+            this.lblSupplierName.Size = new System.Drawing.Size(91, 19);
             this.lblSupplierName.TabIndex = 6;
-            this.lblSupplierName.Text = "Nom : ";
+            this.lblSupplierName.Text = "Fournisseur : ";
             // 
             // GBOBarCode
             // 
@@ -489,6 +462,15 @@
             this.CBFilter.Size = new System.Drawing.Size(298, 25);
             this.CBFilter.TabIndex = 0;
             // 
+            // CBSupplier
+            // 
+            this.CBSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBSupplier.FormattingEnabled = true;
+            this.CBSupplier.Location = new System.Drawing.Point(174, 53);
+            this.CBSupplier.Name = "CBSupplier";
+            this.CBSupplier.Size = new System.Drawing.Size(202, 25);
+            this.CBSupplier.TabIndex = 20;
+            // 
             // FProduct
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -544,9 +526,6 @@
         private System.Windows.Forms.Label LblName;
         private System.Windows.Forms.GroupBox GBSupplier;
         private System.Windows.Forms.GroupBox GBOBarCode;
-        private System.Windows.Forms.TextBox txtSupplierCode;
-        private System.Windows.Forms.Label lblSupplierCode;
-        private System.Windows.Forms.TextBox TxtSupplierName;
         private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.Label lblPrice;
         private System.Windows.Forms.Label lblMeasuringUnit;
@@ -571,5 +550,6 @@
         private System.Windows.Forms.Label lblMaxQty;
         private System.Windows.Forms.GroupBox GBFilter;
         private System.Windows.Forms.ComboBox CBFilter;
+        private System.Windows.Forms.ComboBox CBSupplier;
     }
 }

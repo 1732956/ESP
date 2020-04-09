@@ -62,6 +62,7 @@
             this.TPItemsTooMuch = new System.Windows.Forms.TabPage();
             this.ItemsTooMuchPanel = new System.Windows.Forms.Panel();
             this.VidualizationImages = new System.Windows.Forms.ImageList(this.components);
+            this.TPSupplier = new System.Windows.Forms.TabPage();
             this.TCMain.SuspendLayout();
             this.TPTransaction.SuspendLayout();
             this.TCTransaction.SuspendLayout();
@@ -154,6 +155,7 @@
             // 
             this.TCManagement.Controls.Add(this.TPProduct);
             this.TCManagement.Controls.Add(this.TPLocation);
+            this.TCManagement.Controls.Add(this.TPSupplier);
             this.TCManagement.Controls.Add(this.TPCategory);
             this.TCManagement.Controls.Add(this.TPDepartment);
             this.TCManagement.Controls.Add(this.TPMeasuringUnit);
@@ -326,6 +328,12 @@
             this.VidualizationImages.Images.SetKeyName(2, "LocStock.png");
             this.VidualizationImages.Images.SetKeyName(3, "OrdersToDo.png");
             // 
+            // TPSupplier
+            // 
+            resources.ApplyResources(this.TPSupplier, "TPSupplier");
+            this.TPSupplier.Name = "TPSupplier";
+            this.TPSupplier.UseVisualStyleBackColor = true;
+            // 
             // FMain
             // 
             resources.ApplyResources(this, "$this");
@@ -391,6 +399,7 @@
         private System.Windows.Forms.TabPage TPLocation;
         private System.Windows.Forms.ImageList VidualizationImages;
         private System.Windows.Forms.Panel LocationPanel;
+        private System.Windows.Forms.TabPage TPSupplier;
     }
 }
 
