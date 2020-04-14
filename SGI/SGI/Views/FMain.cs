@@ -25,24 +25,6 @@ namespace SGI
             FInventoryIn form = new FInventoryIn();
             ShowSubForm(form, InPanel);
         }
-        //private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
-        //{
-        //    switch (TCMain.SelectedIndex)
-        //    {
-        //        case 0:
-        //            FInventoryIn form = new FInventoryIn();
-        //            ShowSubForm(form, InPanel);
-        //            break;
-        //        case 1:
-        //            FProduct form1 = new FProduct();
-        //            ShowSubForm(form1, ProductPanel);
-        //            break;
-        //        case 2:
-        //            FGeneralStock form2 = new FGeneralStock();
-        //            ShowSubForm(form2, GeneralStockPanel);
-        //            break;
-        //    }
-        //}
 
         #region Utilities
         private void ShowSubForm(Form subForm, Panel parentControl)
@@ -120,8 +102,8 @@ namespace SGI
         {
             if (GeneralStockPanel.Controls.Count == 0)
             {
-                FProduct form = new FProduct();
-                ShowSubForm(form, ProductPanel);
+                FGeneralStock form = new FGeneralStock();
+                ShowSubForm(form, GeneralStockPanel);
             }
         }
 
@@ -140,6 +122,15 @@ namespace SGI
             {
                 FProduct form = new FProduct();
                 ShowSubForm(form, ProductPanel);
+            }
+        }
+
+        private void TPSupplier_Enter(object sender, EventArgs e)
+        {
+            if(SupplierPanel.Controls.Count == 0)
+            {
+                FSupplier form = new FSupplier();
+                ShowSubForm(form, SupplierPanel);
             }
         }
 
@@ -201,6 +192,12 @@ namespace SGI
         {
             ClearSubForm(ItemsTooMuchPanel);
         }
+
+        private void TPSupplier_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(SupplierPanel);
+        }
+
         #endregion
 
         private void TCTransaction_Selected(object sender, TabControlEventArgs e)
@@ -208,14 +205,26 @@ namespace SGI
             FInventoryOut form = new FInventoryOut();
             ShowSubForm(form, OutPanel);
         }
-
         private void TCTransaction_SelectedIndexChanged(object sender, EventArgs e)
         {
-         
             if (TCTransaction.SelectedIndex == 1)
             {
-
-                OutPanel.Controls[0].Controls[10].Focus() ;
+                OutPanel.Controls[0].Controls[10].Focus();
+            }
+        }
+        private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch(TCMain.SelectedIndex)
+            {
+                case 0: //transactions
+                    TCTransaction.SelectedIndex = -1;
+                    break;
+                case 1: //gestion
+                    TCManagement.SelectedIndex = -1;
+                    break;
+                case 2: //visualisation
+                    TCVisuzalization.SelectedIndex = -1;
+                    break;
             }
         }
     }

@@ -44,6 +44,8 @@
             this.ProductPanel = new System.Windows.Forms.Panel();
             this.TPLocation = new System.Windows.Forms.TabPage();
             this.LocationPanel = new System.Windows.Forms.Panel();
+            this.TPSupplier = new System.Windows.Forms.TabPage();
+            this.SupplierPanel = new System.Windows.Forms.Panel();
             this.TPCategory = new System.Windows.Forms.TabPage();
             this.CategoryPanel = new System.Windows.Forms.Panel();
             this.TPDepartment = new System.Windows.Forms.TabPage();
@@ -62,7 +64,6 @@
             this.TPItemsTooMuch = new System.Windows.Forms.TabPage();
             this.ItemsTooMuchPanel = new System.Windows.Forms.Panel();
             this.VidualizationImages = new System.Windows.Forms.ImageList(this.components);
-            this.TPSupplier = new System.Windows.Forms.TabPage();
             this.TCMain.SuspendLayout();
             this.TPTransaction.SuspendLayout();
             this.TCTransaction.SuspendLayout();
@@ -72,6 +73,7 @@
             this.TCManagement.SuspendLayout();
             this.TPProduct.SuspendLayout();
             this.TPLocation.SuspendLayout();
+            this.TPSupplier.SuspendLayout();
             this.TPCategory.SuspendLayout();
             this.TPDepartment.SuspendLayout();
             this.TPMeasuringUnit.SuspendLayout();
@@ -91,6 +93,7 @@
             resources.ApplyResources(this.TCMain, "TCMain");
             this.TCMain.Name = "TCMain";
             this.TCMain.SelectedIndex = 0;
+            this.TCMain.SelectedIndexChanged += new System.EventHandler(this.TCMain_SelectedIndexChanged);
             // 
             // TPTransaction
             // 
@@ -192,6 +195,20 @@
             resources.ApplyResources(this.LocationPanel, "LocationPanel");
             this.LocationPanel.Name = "LocationPanel";
             // 
+            // TPSupplier
+            // 
+            this.TPSupplier.Controls.Add(this.SupplierPanel);
+            resources.ApplyResources(this.TPSupplier, "TPSupplier");
+            this.TPSupplier.Name = "TPSupplier";
+            this.TPSupplier.UseVisualStyleBackColor = true;
+            this.TPSupplier.Enter += new System.EventHandler(this.TPSupplier_Enter);
+            this.TPSupplier.Leave += new System.EventHandler(this.TPSupplier_Leave);
+            // 
+            // SupplierPanel
+            // 
+            resources.ApplyResources(this.SupplierPanel, "SupplierPanel");
+            this.SupplierPanel.Name = "SupplierPanel";
+            // 
             // TPCategory
             // 
             this.TPCategory.Controls.Add(this.CategoryPanel);
@@ -243,6 +260,7 @@
             this.ManagementImages.Images.SetKeyName(2, "MeasuringUnit.png");
             this.ManagementImages.Images.SetKeyName(3, "Product.png");
             this.ManagementImages.Images.SetKeyName(4, "Location.png");
+            this.ManagementImages.Images.SetKeyName(5, "Supplier.png");
             // 
             // TPVisualization
             // 
@@ -328,12 +346,6 @@
             this.VidualizationImages.Images.SetKeyName(2, "LocStock.png");
             this.VidualizationImages.Images.SetKeyName(3, "OrdersToDo.png");
             // 
-            // TPSupplier
-            // 
-            resources.ApplyResources(this.TPSupplier, "TPSupplier");
-            this.TPSupplier.Name = "TPSupplier";
-            this.TPSupplier.UseVisualStyleBackColor = true;
-            // 
             // FMain
             // 
             resources.ApplyResources(this, "$this");
@@ -352,6 +364,7 @@
             this.TCManagement.ResumeLayout(false);
             this.TPProduct.ResumeLayout(false);
             this.TPLocation.ResumeLayout(false);
+            this.TPSupplier.ResumeLayout(false);
             this.TPCategory.ResumeLayout(false);
             this.TPDepartment.ResumeLayout(false);
             this.TPMeasuringUnit.ResumeLayout(false);
@@ -400,6 +413,7 @@
         private System.Windows.Forms.ImageList VidualizationImages;
         private System.Windows.Forms.Panel LocationPanel;
         private System.Windows.Forms.TabPage TPSupplier;
+        private System.Windows.Forms.Panel SupplierPanel;
     }
 }
 

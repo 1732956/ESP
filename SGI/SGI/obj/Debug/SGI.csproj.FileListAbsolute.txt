@@ -97,3 +97,4 @@ C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.csproj.CoreCompileInputs.cache
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.pdb
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Transaction.FProductIn.resources
+C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.FSupplier.resources
