@@ -35,6 +35,8 @@ namespace SGI.Views.SubViews
 
         private void Txt_produit_KeyPress(object sender, KeyPressEventArgs e)
         {
+            bool isAlreadyIn = false;
+
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
                 if (txt_produit.Text == "")
@@ -44,7 +46,7 @@ namespace SGI.Views.SubViews
                 }
                 else
                 {
-                    CurrentProduct = ControllerProduct.GetSingleProductInfo(txt_produit.Text); //BUG HERE
+                    CurrentProduct = ControllerProduct.GetSingleProductInfo(txt_produit.Text); 
                     if (CurrentProduct.ProductId == 0)
                     {
                         MessageBox.Show("Le produit est invalide");
@@ -55,8 +57,20 @@ namespace SGI.Views.SubViews
                         DialogResult Result = ProductMessageBox.Show(txt_produit.Text);
                         if(Result == DialogResult.OK) //le produit est accepté
                         {
-                            //doit verif si produit est deja la, si oui, incrementer qty    //BUG HERE
-                            DGVOrder.Rows.Add(CurrentProduct.Name, 1, CurrentProduct.ProductId);
+                            for (int i = 0; i < DGVOrder.Rows.Count; i++)
+                            {
+                               if (Convert.ToInt32(DGVOrder.Rows[i].Cells[2].Value) == CurrentProduct.ProductId)
+                                {
+                                    isAlreadyIn = true;
+                                    DGVOrder.Rows[i].Cells[1].Value = Convert.ToInt32(DGVOrder.Rows[i].Cells[1].Value) + 1;
+                                }
+                            }
+
+                            if (isAlreadyIn == false)
+                            {
+                                DGVOrder.Rows.Add(CurrentProduct.Name, 1, CurrentProduct.ProductId);
+                            }
+
                             btn_deleteCurrentProduct.Enabled = true;
                             btnCancelOrder.Enabled = true;
                             btn_enterInInventory.Enabled = true;
