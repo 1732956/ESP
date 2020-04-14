@@ -51,7 +51,7 @@ namespace SGI.Model.Classes
                 this.ProductId = Convert.ToInt32(row["ProductId"]);
                 this.Name = row["ProductName"].ToString();
                 this.Brand = row["Brand"].ToString();
-                this.Description = row["Descr"].ToString();
+                this.Description = row["DescrProduct"].ToString();
                 this.Price = Convert.ToDouble(row["Price"]);
                 this.BarCodeId = row["BarCodeId"].ToString();
                 this.Supplier = new Supplier(0, row["SupName"].ToString(), "", "", "", "", "", 0, true);

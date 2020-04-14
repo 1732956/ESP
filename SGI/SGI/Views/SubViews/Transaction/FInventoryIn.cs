@@ -9,21 +9,22 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SGI.Controller;
 using SGI.Model.Classes;
+using SGI.Views.SubViews.Transaction;
 
 namespace SGI.Views.SubViews
 {
     public partial class FInventoryIn : Form
     {
         LocationController controllerLoc;
-        InventoryInController ControllerInvIn;
         ProductContoller ControllerProduct;
+        InventoryInController ControllerInvIn;
         Product CurrentProduct;
         public FInventoryIn()
         {
             InitializeComponent();
             controllerLoc = new LocationController();
-            ControllerInvIn = new InventoryInController();
             ControllerProduct = new ProductContoller();
+            ControllerInvIn = new InventoryInController();
             GetAllLocationsActive();
         }
 
@@ -36,47 +37,40 @@ namespace SGI.Views.SubViews
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-
-                CurrentProduct = ControllerProduct.GetSingleProductInfo(txt_produit.Text);
-                if (CurrentProduct.ProductId != 0 && CurrentProduct.ProductId != -1)
+                if (txt_produit.Text == "")
                 {
-                    txt_qte.Visible = true;
-                    cbo_loc.Visible = true;
-                    lbl_qte.Visible = true;
-                    lbl_loc.Visible = true;
-                    btn_confirm.Visible = true;
-                    grp_product.Visible = true;
-                    btn_cancel.Visible = true;
-                    txt_productid.Text = CurrentProduct.ProductId.ToString();
-                    txt_descr.Text = CurrentProduct.Description;
-                    txt_nom.Text = CurrentProduct.Name;
-                    txt_marque.Text = CurrentProduct.Brand;
-                    txt_cat.Text = CurrentProduct.Category.Description;
-                    txt_dep.Text = CurrentProduct.Department.Name;
-                    txt_qte.Focus();
+                    MessageBox.Show("Le produit ne peut pas être vide");
+                    txt_produit.Focus();
                 }
                 else
                 {
+                    CurrentProduct = ControllerProduct.GetSingleProductInfo(txt_produit.Text); //BUG HERE
                     if (CurrentProduct.ProductId == 0)
                     {
                         MessageBox.Show("Le produit est invalide");
-                        ClearScreenProduct();
+                        txt_produit.Focus();
                     }
                     else
                     {
-                        MessageBox.Show("Le produit est inactif");
-                        ClearScreenProduct();
+                        DialogResult Result = ProductMessageBox.Show(txt_produit.Text);
+                        if(Result == DialogResult.OK) //le produit est accepté
+                        {
+                            //doit verif si produit est deja la, si oui, incrementer qty    //BUG HERE
+                            DGVOrder.Rows.Add(CurrentProduct.Name, 1, CurrentProduct.ProductId);
+                            btn_deleteCurrentProduct.Enabled = true;
+                            btnCancelOrder.Enabled = true;
+                            btn_enterInInventory.Enabled = true;
+                            cbo_loc.Enabled = false;
+                            txt_produit.Text = "";
+                            txt_produit.Focus();
+                        }
+                        else if(Result == DialogResult.Cancel) // le produit est refusé
+                        {
+                            txt_produit.Text = "";
+                            txt_produit.Focus();
+                        }
                     }
-
-                }
-            }
-        }
-
-        private void Txt_qte_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == Convert.ToChar(Keys.Enter))
-            {
-                btn_confirm.Focus();
+                } 
             }
         }
 
@@ -84,12 +78,12 @@ namespace SGI.Views.SubViews
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
-                btn_confirm.Focus();
+                txt_produit.Focus();
             }
         }
+
         private void GetAllLocationsActive()
         {
-
             cbo_loc.DisplayMember = "Name";
             cbo_loc.ValueMember   = "LocationId";
             var locs = controllerLoc.GetAllLocationsActive();
@@ -101,42 +95,11 @@ namespace SGI.Views.SubViews
         private void Btn_confirm_Click(object sender, EventArgs e)
         {
             bool vError = false;
-
-
-
-
-
-
-            if (txt_produit.Text == "")
+            for (int i = 0; i < DGVOrder.Rows.Count; i++)
             {
-                vError = true;
-                MessageBox.Show("Le produit ne doit pas être vide");
-                txt_produit.Focus();
-            }
-
-            if (!vError)
-            {
-                try
-                {
-                    Convert.ToInt32(txt_qte.Text);
-                }
-                catch (Exception)
+                if(Convert.ToInt32(DGVOrder.Rows[i].Cells[1].Value) <= 0)
                 {
                     vError = true;
-                    MessageBox.Show("La quantité doit être numérique");
-                    txt_qte.Text = "";
-                    txt_qte.Focus();
-                }
-            }
-
-            if (!vError)
-            {
-                if (Convert.ToInt32(txt_qte.Text) <= 0)
-                {
-                    vError = true;
-                    MessageBox.Show("La quantité doit être plus grande que zéro");
-                    txt_qte.Text = "";
-                    txt_qte.Focus();
                 }
             }
 
@@ -146,9 +109,12 @@ namespace SGI.Views.SubViews
                 {
                     if (!vError)
                     {
-                        ControllerInvIn.InventoryIn(Convert.ToInt32(txt_productid.Text), Convert.ToInt32(txt_qte.Text), Convert.ToInt32(cbo_loc.SelectedValue));
+                        for (int i = 0; i < DGVOrder.Rows.Count; i++)
+                        {
+                            ControllerInvIn.InventoryIn(Convert.ToInt32(DGVOrder.Rows[i].Cells[2].Value), Convert.ToInt32(DGVOrder.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue));
+                        }
                         MessageBox.Show("Inventaire ajouté");
-                        ClearScreen();
+                        FinishOrder();
                     }
                 }
                 catch (Exception)
@@ -157,61 +123,39 @@ namespace SGI.Views.SubViews
                     throw;
                 }
             }
-        }
-        void ClearScreen() {
-            txt_nom.Text = "";
-            txt_produit.Text = "";
-            txt_qte.Text = "";
-            cbo_loc.SelectedIndex = 0;
-            txt_productid.Text = "";
-            txt_descr.Text = "";
-            txt_nom.Text = "";
-            txt_marque.Text = "";
-            txt_cat.Text = "";
-            txt_dep.Text = "";
-            txt_qte.Visible = false;
-            cbo_loc.Visible = false;
-            grp_product.Visible = false;
-            lbl_qte.Visible = false;
-            lbl_loc.Visible = false;
-            btn_confirm.Visible = false;
-            btn_cancel.Visible = false;
-        }
-
-        void ClearScreenProduct()
-        {
-            txt_nom.Text = "";
-            txt_produit.Text = "";
-            txt_productid.Text = "";
-            txt_descr.Text = "";
-            txt_nom.Text = "";
-            txt_marque.Text = "";
-            txt_cat.Text = "";
-            txt_dep.Text = "";
-            txt_produit.Focus();
-        }
-
-        private void Txt_produit_Validating(object sender, CancelEventArgs e)
-        {
-            if (txt_produit.Text == "")
-            {
-                ClearScreenProduct();
-            }
             else
-            if (txt_produit.Text != CurrentProduct.BarCodeId)
             {
-                CurrentProduct = ControllerProduct.GetSingleProductInfo(txt_produit.Text);
-                if (CurrentProduct.ProductId == 0)
+                MessageBox.Show("Un ou plusieurs produits de la commande ont une quanité négative ou nulle, veuillez modifier leur quantité et réessayer.");
+            }
+        }
+
+        private void btnCancelOrder_Click(object sender, EventArgs e)
+        {
+            FinishOrder();
+        }
+
+        private void FinishOrder()
+        {
+            DGVOrder.Rows.Clear();
+            cbo_loc.Enabled = true;
+            txt_produit.Text = "";
+        }
+
+        private void btn_deleteCurrentProduct_Click(object sender, EventArgs e)
+        {
+            if(DGVOrder.SelectedRows != null)
+            {
+                for (int i = 0; i < DGVOrder.SelectedRows.Count; i++)
                 {
-                    MessageBox.Show("Le produit est invalide");
-                    ClearScreenProduct();
+                    DGVOrder.Rows.Remove(DGVOrder.SelectedRows[i]);
+                    if(DGVOrder.Rows.Count == 0)
+                    {
+                        btn_deleteCurrentProduct.Enabled = false;
+                        btnCancelOrder.Enabled = false;
+                        btn_enterInInventory.Enabled = false;
+                    }
                 }
             }
-        }
-
-        private void Btn_cancel_Click(object sender, EventArgs e)
-        {
-            ClearScreen();
         }
     }
 }
