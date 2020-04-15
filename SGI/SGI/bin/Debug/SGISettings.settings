@@ -3,7 +3,7 @@
   <Profiles />
   <Settings>
     <Setting Name="DataSource" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">localhost</Value>
+      <Value Profile="(Default)">DESKTOP-V2JHBSH\MSSQLSERVER2019</Value>
     </Setting>
   </Settings>
 </SettingsFile>

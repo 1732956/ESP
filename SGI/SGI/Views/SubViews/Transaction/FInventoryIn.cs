@@ -153,6 +153,9 @@ namespace SGI.Views.SubViews
             DGVOrder.Rows.Clear();
             cbo_loc.Enabled = true;
             txt_produit.Text = "";
+            btnCancelOrder.Enabled = false;
+            btn_deleteCurrentProduct.Enabled = false;
+            btn_enterInInventory.Enabled = false;
         }
 
         private void btn_deleteCurrentProduct_Click(object sender, EventArgs e)

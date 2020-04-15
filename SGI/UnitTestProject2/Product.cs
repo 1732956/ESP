@@ -2,7 +2,6 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using SGI.Controller;
 using SGI.Model.Classes;
-
 using SGI;
 using System.Data.SqlClient;
 using System.Data;
@@ -10,14 +9,14 @@ using System.Data;
 namespace UnitTestProject2
 {
     [TestClass]
-    public class UnitTest1
+    public class Product
     {
         [TestMethod]
         public void CreerProduit()
         {
             CDatabase.ConnectToData();
             ProductContoller productcontoller = new ProductContoller();
-            Product currentProduct = new Product();
+            SGI.Model.Classes.Product currentProduct = new SGI.Model.Classes.Product();
             currentProduct.ProductId = 0;
             currentProduct.Name = "TestUnitaireProduitCrééOATF";
             currentProduct.Description = "test1";
@@ -33,7 +32,6 @@ namespace UnitTestProject2
             currentProduct.Category.CategoryID = 1;
             currentProduct.Department.DepartmentId = 1;
             currentProduct.MeasuringUnit.UnitId = 1;
-
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "add"));
         }
 
@@ -42,7 +40,7 @@ namespace UnitTestProject2
         {
             CDatabase.ConnectToData();
             ProductContoller productcontoller = new ProductContoller();
-            Product currentProduct = new Product();
+            SGI.Model.Classes.Product currentProduct = new SGI.Model.Classes.Product();
 
             using (SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitCrééOATF'", CDatabase.Connection))
             {
@@ -69,16 +67,17 @@ namespace UnitTestProject2
             currentProduct.Category.CategoryID = 1;
             currentProduct.Department.DepartmentId = 1;
             currentProduct.MeasuringUnit.UnitId = 1;
-
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "update"));
+            CDatabase.ConnectToData();
         }
 
         [TestMethod]
         public void DeleteProduit()
         {
             CDatabase.ConnectToData();
-
-            SqlCommand cmd = new SqlCommand("DELETE FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitUpdatéOATF'", CDatabase.Connection) ;
+            SqlCommand cmd = new SqlCommand("DELETE FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitUpdatéOATF'", CDatabase.Connection);
+            cmd.ExecuteNonQuery();
+            SqlCommand cmd2 = new SqlCommand("DELETE FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitCrééOATF'", CDatabase.Connection); //si jamais l'update du produit n'a pas fonctionné
             cmd.ExecuteNonQuery();
         }
 
@@ -87,7 +86,7 @@ namespace UnitTestProject2
         {
             CDatabase.ConnectToData();
             ProductContoller productcontoller = new ProductContoller();
-            Product currentProduct = new Product();
+            SGI.Model.Classes.Product currentProduct = new SGI.Model.Classes.Product();
             currentProduct.ProductId = 9999;
             currentProduct.Name = null;
             currentProduct.Description = "test1";
@@ -103,7 +102,6 @@ namespace UnitTestProject2
             currentProduct.Category.CategoryID = 1;
             currentProduct.Department.DepartmentId = 1;
             currentProduct.MeasuringUnit.UnitId = 1;
-
             Assert.IsFalse(productcontoller.EditSingleProduct(currentProduct, "update"));
         }
     }
