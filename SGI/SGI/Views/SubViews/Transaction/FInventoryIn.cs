@@ -52,6 +52,11 @@ namespace SGI.Views.SubViews
                         MessageBox.Show("Le produit est invalide");
                         txt_produit.Focus();
                     }
+                    else if (cbo_loc.SelectedValue == null)
+                    {
+                        cbo_loc.Focus();
+                        MessageBox.Show("Veuillez choisir une location");
+                    }
                     else
                     {
                         DialogResult Result = ProductMessageBox.Show(txt_produit.Text);
