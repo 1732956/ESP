@@ -43,6 +43,7 @@
             this.LblBrand = new System.Windows.Forms.Label();
             this.LblName = new System.Windows.Forms.Label();
             this.GBSupplier = new System.Windows.Forms.GroupBox();
+            this.CBSupplier = new System.Windows.Forms.ComboBox();
             this.CBMeasuringUnit = new System.Windows.Forms.ComboBox();
             this.NudPrice = new System.Windows.Forms.NumericUpDown();
             this.NudMeasuringQty = new System.Windows.Forms.NumericUpDown();
@@ -59,7 +60,6 @@
             this.LblLastUpdate = new System.Windows.Forms.Label();
             this.cbActive = new System.Windows.Forms.CheckBox();
             this.ActionPanel = new System.Windows.Forms.Panel();
-            this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.GBInventory = new System.Windows.Forms.GroupBox();
             this.nudMax = new System.Windows.Forms.NumericUpDown();
@@ -68,7 +68,7 @@
             this.lblQtyMin = new System.Windows.Forms.Label();
             this.GBFilter = new System.Windows.Forms.GroupBox();
             this.CBFilter = new System.Windows.Forms.ComboBox();
-            this.CBSupplier = new System.Windows.Forms.ComboBox();
+            this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.GBProduct.SuspendLayout();
             this.GBSupplier.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.NudPrice)).BeginInit();
@@ -217,6 +217,15 @@
             this.GBSupplier.TabStop = false;
             this.GBSupplier.Text = "Fournisseur";
             // 
+            // CBSupplier
+            // 
+            this.CBSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBSupplier.FormattingEnabled = true;
+            this.CBSupplier.Location = new System.Drawing.Point(174, 53);
+            this.CBSupplier.Name = "CBSupplier";
+            this.CBSupplier.Size = new System.Drawing.Size(202, 25);
+            this.CBSupplier.TabIndex = 20;
+            // 
             // CBMeasuringUnit
             // 
             this.CBMeasuringUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -312,7 +321,8 @@
             // 
             this.pictureBox2.Location = new System.Drawing.Point(122, 18);
             this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(244, 82);
+            this.pictureBox2.Size = new System.Drawing.Size(240, 82);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox2.TabIndex = 23;
             this.pictureBox2.TabStop = false;
             // 
@@ -376,15 +386,6 @@
             this.ActionPanel.Name = "ActionPanel";
             this.ActionPanel.Size = new System.Drawing.Size(1195, 56);
             this.ActionPanel.TabIndex = 6;
-            // 
-            // ucManagementAction1
-            // 
-            this.ucManagementAction1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
-            this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.ucManagementAction1.Name = "ucManagementAction1";
-            this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
-            this.ucManagementAction1.TabIndex = 0;
             // 
             // GBInventory
             // 
@@ -462,14 +463,14 @@
             this.CBFilter.Size = new System.Drawing.Size(298, 25);
             this.CBFilter.TabIndex = 0;
             // 
-            // CBSupplier
+            // ucManagementAction1
             // 
-            this.CBSupplier.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBSupplier.FormattingEnabled = true;
-            this.CBSupplier.Location = new System.Drawing.Point(174, 53);
-            this.CBSupplier.Name = "CBSupplier";
-            this.CBSupplier.Size = new System.Drawing.Size(202, 25);
-            this.CBSupplier.TabIndex = 20;
+            this.ucManagementAction1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
+            this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.ucManagementAction1.Name = "ucManagementAction1";
+            this.ucManagementAction1.Size = new System.Drawing.Size(1195, 56);
+            this.ucManagementAction1.TabIndex = 0;
             // 
             // FProduct
             // 
