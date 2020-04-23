@@ -397,11 +397,15 @@ namespace SGI.Views.SubViews
                 using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
                     Font oFont = new System.Drawing.Font("IDAHC39M Code 39 Barcode", 20);
-                    PointF point = new PointF(2f, 2f);
+                    Font oFontSec = new System.Drawing.Font("Arial", 20);
+                    PointF point = new PointF(2f, 50f);
+                    PointF Secpoint = new PointF(20f, 2f);
                     SolidBrush black = new SolidBrush(Color.Black);
                     SolidBrush white = new SolidBrush(Color.White);
                     graphics.FillRectangle(white, 0, 0, bitmap.Width, bitmap.Height);
                     graphics.DrawString("*" + barcode + "*", oFont, black, point);
+                    graphics.DrawString("test nom produit", oFontSec, black, Secpoint);
+
                 }
                 pictureBox2.Image = bitmap;
             }
