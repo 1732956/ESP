@@ -101,7 +101,6 @@ namespace SGI.Controller
                     cmd.Parameters.Add("@Action", SqlDbType.VarChar).Value = Action;
                     cmd.Parameters.Add("@SupplierId", SqlDbType.Int).Value = newSupplier.SupplierID;
                     cmd.Parameters.Add("@Name", SqlDbType.VarChar).Value = newSupplier.Name;
-                    cmd.Parameters.Add("@Code", SqlDbType.VarChar).Value = newSupplier.Code;
                     cmd.Parameters.Add("@ResourcePerson", SqlDbType.VarChar).Value = newSupplier.ResourcePerson;
                     cmd.Parameters.Add("@Adress", SqlDbType.VarChar).Value = newSupplier.Adress;
                     cmd.Parameters.Add("@Email", SqlDbType.VarChar).Value = newSupplier.Email;

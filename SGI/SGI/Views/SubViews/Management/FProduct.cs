@@ -213,11 +213,7 @@ namespace SGI.Views.SubViews
         {
             string returnMessage = "";
             if (TxtName.Text == "")
-                returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;
-            if (TxtBrand.Text == "")
-                returnMessage += "La marque ne peut pas être nulle." + Environment.NewLine;
-            if (CbCategory.SelectedValue == null)
-                returnMessage += "La catégorie ne peut pas être nulle." + Environment.NewLine;
+                returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;       
             if (CbDepartment.SelectedValue == null)
                 returnMessage += "Le département ne peut pas être nul." + Environment.NewLine;
             if (CBSupplier.SelectedValue == null)
@@ -232,6 +228,8 @@ namespace SGI.Views.SubViews
                 returnMessage += "La quantité maximum doit être positive." + Environment.NewLine;
             if(NudMin.Value > nudMax.Value)
                 returnMessage += "La quantité minimum doit être inférieur à la quantité maximum." + Environment.NewLine;
+            if(txt_fournisseurcode.Text == "")
+                returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
             return returnMessage;
         }
         #endregion
@@ -297,6 +295,7 @@ namespace SGI.Views.SubViews
             currentProduct.Active = cbActive.Checked;
             currentProduct.MinQty = Convert.ToInt32(NudMin.Value);
             currentProduct.MaxQty = Convert.ToInt32(nudMax.Value);
+            currentProduct.CodeSupplier = txt_fournisseurcode.Text;
         }
 
         private void ChangeFormEditStatus(bool Editing)
@@ -315,6 +314,7 @@ namespace SGI.Views.SubViews
                 cbActive.CheckedChanged += PutInEditMode;
                 nudMax.ValueChanged += PutInEditMode;
                 NudMin.ValueChanged += PutInEditMode;
+                txt_fournisseurcode.TextChanged += PutInEditMode;
             }
             else
             {
@@ -331,6 +331,7 @@ namespace SGI.Views.SubViews
                 nudMax.ValueChanged -= PutInEditMode;
                 NudMin.ValueChanged -= PutInEditMode;
                 CurrentState = State.VIEW;
+                txt_fournisseurcode.TextChanged -= PutInEditMode;
             }
         }
 
@@ -352,6 +353,7 @@ namespace SGI.Views.SubViews
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);
             NudMin.Value = currentProduct.MinQty;
             nudMax.Value = currentProduct.MaxQty;
+            txt_fournisseurcode.Text = currentProduct.CodeSupplier;
             if (currentProduct.BarCodeId == "")
             {
                 btn_Print.Enabled = false;
@@ -404,11 +406,15 @@ namespace SGI.Views.SubViews
                 using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
                     Font oFont = new System.Drawing.Font("IDAHC39M Code 39 Barcode", 20);
-                    PointF point = new PointF(2f, 2f);
+                    Font oFontSec = new System.Drawing.Font("Arial", 20);
+                    PointF point = new PointF(2f, 50f);
+                    PointF Secpoint = new PointF(20f, 2f);
                     SolidBrush black = new SolidBrush(Color.Black);
                     SolidBrush white = new SolidBrush(Color.White);
                     graphics.FillRectangle(white, 0, 0, bitmap.Width, bitmap.Height);
                     graphics.DrawString("*" + barcode + "*", oFont, black, point);
+                    graphics.DrawString("test nom produit", oFontSec, black, Secpoint);
+
                 }
                 pictureBox2.Image = bitmap;
             }

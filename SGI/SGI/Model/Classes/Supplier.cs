@@ -11,7 +11,6 @@ namespace SGI.Model.Classes
     {
         public int SupplierID { get; set; }
         public string Name { get; set; }
-        public string Code { get; set; }
         public string ResourcePerson { get; set; }
         public string Adress { get; set; }
         public string Email { get; set; }
@@ -22,7 +21,6 @@ namespace SGI.Model.Classes
         {
             this.SupplierID = Convert.ToInt32(row["SupplierID"]);
             this.Name = row["Name"].ToString();
-            this.Code = row["Code"].ToString();
             this.ResourcePerson = row["ResourcePerson"].ToString();
             this.Adress = row["Adress"].ToString();
             this.Email = row["Email"].ToString();
@@ -31,11 +29,10 @@ namespace SGI.Model.Classes
             this.Active = Convert.ToBoolean(row["Active"]);
         }
 
-        public Supplier(int SupplierID, string Name, string Code, string ResourcePerson, string Adress, string Email, string PhoneNumber, double MinOrderPrice, bool Active)
+        public Supplier(int SupplierID, string Name, string ResourcePerson, string Adress, string Email, string PhoneNumber, double MinOrderPrice, bool Active)
         {
             this.SupplierID = SupplierID;
             this.Name = Name;
-            this.Code = Code;
             this.ResourcePerson = ResourcePerson;
             this.Adress = Adress;
             this.Email = Email;
@@ -48,7 +45,6 @@ namespace SGI.Model.Classes
         {
             SupplierID = 0;
             Name = "";
-            Code = "";
             ResourcePerson = "";
             Adress = "";
             Email = "";
