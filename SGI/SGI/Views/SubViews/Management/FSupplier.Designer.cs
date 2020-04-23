@@ -45,8 +45,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtResourcePerson = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.txtCode = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.LblName = new System.Windows.Forms.Label();
             this.LBSuppliers = new System.Windows.Forms.ListBox();
@@ -60,7 +58,7 @@
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(34, 373);
+            this.cbActive.Location = new System.Drawing.Point(34, 335);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(55, 23);
             this.cbActive.TabIndex = 25;
@@ -106,8 +104,6 @@
             this.GBSupplier.Controls.Add(this.label3);
             this.GBSupplier.Controls.Add(this.txtResourcePerson);
             this.GBSupplier.Controls.Add(this.label2);
-            this.GBSupplier.Controls.Add(this.txtCode);
-            this.GBSupplier.Controls.Add(this.label1);
             this.GBSupplier.Controls.Add(this.cbActive);
             this.GBSupplier.Controls.Add(this.TxtName);
             this.GBSupplier.Controls.Add(this.LblName);
@@ -121,7 +117,7 @@
             // 
             // nudMinOrderPrice
             // 
-            this.nudMinOrderPrice.Location = new System.Drawing.Point(240, 314);
+            this.nudMinOrderPrice.Location = new System.Drawing.Point(240, 276);
             this.nudMinOrderPrice.Maximum = new decimal(new int[] {
             1000000,
             0,
@@ -134,7 +130,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(30, 316);
+            this.label6.Location = new System.Drawing.Point(30, 278);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(195, 19);
             this.label6.TabIndex = 36;
@@ -142,7 +138,7 @@
             // 
             // txtPhoneNumber
             // 
-            this.txtPhoneNumber.Location = new System.Drawing.Point(240, 264);
+            this.txtPhoneNumber.Location = new System.Drawing.Point(240, 226);
             this.txtPhoneNumber.Name = "txtPhoneNumber";
             this.txtPhoneNumber.Size = new System.Drawing.Size(313, 25);
             this.txtPhoneNumber.TabIndex = 35;
@@ -150,7 +146,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(30, 267);
+            this.label5.Location = new System.Drawing.Point(30, 229);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(135, 19);
             this.label5.TabIndex = 34;
@@ -158,7 +154,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(240, 218);
+            this.txtEmail.Location = new System.Drawing.Point(240, 180);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(313, 25);
             this.txtEmail.TabIndex = 33;
@@ -166,7 +162,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(30, 221);
+            this.label4.Location = new System.Drawing.Point(30, 183);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(52, 19);
             this.label4.TabIndex = 32;
@@ -174,7 +170,7 @@
             // 
             // txtAdress
             // 
-            this.txtAdress.Location = new System.Drawing.Point(240, 170);
+            this.txtAdress.Location = new System.Drawing.Point(240, 132);
             this.txtAdress.Name = "txtAdress";
             this.txtAdress.Size = new System.Drawing.Size(313, 25);
             this.txtAdress.TabIndex = 31;
@@ -182,7 +178,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(30, 173);
+            this.label3.Location = new System.Drawing.Point(30, 135);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(64, 19);
             this.label3.TabIndex = 30;
@@ -190,7 +186,7 @@
             // 
             // txtResourcePerson
             // 
-            this.txtResourcePerson.Location = new System.Drawing.Point(240, 124);
+            this.txtResourcePerson.Location = new System.Drawing.Point(240, 86);
             this.txtResourcePerson.Name = "txtResourcePerson";
             this.txtResourcePerson.Size = new System.Drawing.Size(313, 25);
             this.txtResourcePerson.TabIndex = 29;
@@ -198,27 +194,11 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(30, 127);
+            this.label2.Location = new System.Drawing.Point(30, 89);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(134, 19);
             this.label2.TabIndex = 28;
             this.label2.Text = "Personne ressource :";
-            // 
-            // txtCode
-            // 
-            this.txtCode.Location = new System.Drawing.Point(240, 83);
-            this.txtCode.Name = "txtCode";
-            this.txtCode.Size = new System.Drawing.Size(313, 25);
-            this.txtCode.TabIndex = 27;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(30, 86);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 19);
-            this.label1.TabIndex = 26;
-            this.label1.Text = "Code : ";
             // 
             // TxtName
             // 
@@ -302,7 +282,5 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtResourcePerson;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox txtCode;
-        private System.Windows.Forms.Label label1;
     }
 }

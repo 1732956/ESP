@@ -206,11 +206,7 @@ namespace SGI.Views.SubViews
         {
             string returnMessage = "";
             if (TxtName.Text == "")
-                returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;
-            if (TxtBrand.Text == "")
-                returnMessage += "La marque ne peut pas être nulle." + Environment.NewLine;
-            if (CbCategory.SelectedValue == null)
-                returnMessage += "La catégorie ne peut pas être nulle." + Environment.NewLine;
+                returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;       
             if (CbDepartment.SelectedValue == null)
                 returnMessage += "Le département ne peut pas être nul." + Environment.NewLine;
             if (CBSupplier.SelectedValue == null)
@@ -225,6 +221,8 @@ namespace SGI.Views.SubViews
                 returnMessage += "La quantité maximum doit être positive." + Environment.NewLine;
             if(NudMin.Value > nudMax.Value)
                 returnMessage += "La quantité minimum doit être inférieur à la quantité maximum." + Environment.NewLine;
+            if(txt_fournisseurcode.Text == "")
+                returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
             return returnMessage;
         }
         #endregion
@@ -290,6 +288,7 @@ namespace SGI.Views.SubViews
             currentProduct.Active = cbActive.Checked;
             currentProduct.MinQty = Convert.ToInt32(NudMin.Value);
             currentProduct.MaxQty = Convert.ToInt32(nudMax.Value);
+            currentProduct.CodeSupplier = txt_fournisseurcode.Text;
         }
 
         private void ChangeFormEditStatus(bool Editing)
@@ -308,6 +307,7 @@ namespace SGI.Views.SubViews
                 cbActive.CheckedChanged += PutInEditMode;
                 nudMax.ValueChanged += PutInEditMode;
                 NudMin.ValueChanged += PutInEditMode;
+                txt_fournisseurcode.TextChanged += PutInEditMode;
             }
             else
             {
@@ -324,6 +324,7 @@ namespace SGI.Views.SubViews
                 nudMax.ValueChanged -= PutInEditMode;
                 NudMin.ValueChanged -= PutInEditMode;
                 CurrentState = State.VIEW;
+                txt_fournisseurcode.TextChanged -= PutInEditMode;
             }
         }
 
@@ -345,6 +346,7 @@ namespace SGI.Views.SubViews
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);
             NudMin.Value = currentProduct.MinQty;
             nudMax.Value = currentProduct.MaxQty;
+            txt_fournisseurcode.Text = currentProduct.CodeSupplier;
             if (currentProduct.BarCodeId == "")
             {
                 btn_Print.Enabled = false;

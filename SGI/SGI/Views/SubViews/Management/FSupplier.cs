@@ -192,16 +192,9 @@ namespace SGI.Views.SubViews
             string returnMessage = "";
             if (TxtName.Text == "")
                 returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;
-            if (txtAdress.Text == "")
-                returnMessage += "L'adresse ne peut pas être nulle." + Environment.NewLine;
-            if (txtCode.Text == "")
-                returnMessage += "Le code ne peut pas être nul." + Environment.NewLine;
-            if (txtEmail.Text == "")
-                returnMessage += "L'email ne peut pas être nul." + Environment.NewLine;
             if (txtPhoneNumber.Text == "")
                 returnMessage += "Le numéro de téléphone ne peut pas être nul." + Environment.NewLine;
-            if (txtResourcePerson.Text == "")
-                returnMessage += "La personne ressource ne peut pas être nulle." + Environment.NewLine;
+
             if (nudMinOrderPrice.Value <= 0)
                 returnMessage += "Le prix de commande mnimimum ne peut pas être nul ou négatif." + Environment.NewLine;
             return returnMessage;
@@ -211,7 +204,6 @@ namespace SGI.Views.SubViews
         {
             currentSupplier.SupplierID = supplierId;
             currentSupplier.Adress = txtAdress.Text;
-            currentSupplier.Code = txtCode.Text;
             currentSupplier.Email = txtEmail.Text;
             currentSupplier.MinOrderPrice = Convert.ToDouble(nudMinOrderPrice.Value);
             currentSupplier.Name = TxtName.Text;
@@ -224,7 +216,6 @@ namespace SGI.Views.SubViews
         {
             TxtName.Text = currentSupplier.Name;
             txtAdress.Text = currentSupplier.Adress;
-            txtCode.Text = currentSupplier.Code;
             txtEmail.Text = currentSupplier.Email;
             txtPhoneNumber.Text = currentSupplier.PhoneNumber;
             txtResourcePerson.Text = currentSupplier.ResourcePerson;
@@ -248,7 +239,6 @@ namespace SGI.Views.SubViews
             {
                 TxtName.TextChanged += PutInEditMode;
                 txtAdress.TextChanged += PutInEditMode;
-                txtCode.TextChanged += PutInEditMode;
                 txtEmail.TextChanged += PutInEditMode;
                 txtPhoneNumber.TextChanged += PutInEditMode;
                 txtResourcePerson.TextChanged += PutInEditMode;
@@ -259,7 +249,6 @@ namespace SGI.Views.SubViews
             {
                 TxtName.TextChanged -= PutInEditMode;
                 txtAdress.TextChanged -= PutInEditMode;
-                txtCode.TextChanged -= PutInEditMode;
                 txtEmail.TextChanged -= PutInEditMode;
                 txtPhoneNumber.TextChanged -= PutInEditMode;
                 txtResourcePerson.TextChanged -= PutInEditMode;

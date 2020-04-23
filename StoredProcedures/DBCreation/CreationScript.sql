@@ -43,7 +43,7 @@ CREATE TABLE Tbl_Category(
 CREATE TABLE Tbl_Departement(
 	DepartementID   INT IDENTITY (1,1) NOT NULL ,
 	Nom             VARCHAR (50) NOT NULL ,
-	Description     VARCHAR (50) NOT NULL  ,
+	Description     VARCHAR (50) ,
 	IsActive		bit NOT NULL
 	CONSTRAINT Tbl_Departement_PK PRIMARY KEY (DepartementID)
 );
@@ -54,10 +54,9 @@ CREATE TABLE Tbl_Departement(
 CREATE TABLE Tbl_Supplier(
 	SupplierID         INT IDENTITY (1,1) NOT NULL ,
 	Name			   VARCHAR (100) NOT NULL ,
-	Code			   VARCHAR (100) NOT NULL ,
-	ResourcePerson     VARCHAR (100) NOT NULL ,
-	Adress			   VARCHAR (100) NOT NULL ,
-	Email			   VARCHAR (100) NOT NULL ,
+	ResourcePerson     VARCHAR (100)  ,
+	Adress			   VARCHAR (100)  ,
+	Email			   VARCHAR (100)  ,
 	PhoneNumber		   VARCHAR (100) NOT NULL , 
 	MinOrderPrice	   MONEY		 NOT NULL ,
 	Active			   bit			 NOT NULL ,
@@ -71,19 +70,20 @@ CREATE TABLE Tbl_Supplier(
 CREATE TABLE Tbl_Product(
 	ProductID       INT IDENTITY (100,1) NOT NULL ,
 	Name             VARCHAR (50) NOT NULL ,
-	Brand            VARCHAR (50) NOT NULL ,
-	Description      VARCHAR (50) NOT NULL ,
+	Brand            VARCHAR (50) ,
+	Description      VARCHAR (50) ,
 	UnitNbr          INT  NOT NULL ,
 	QtyMin			 INT  NOT NULL ,
 	QtyMax			 INT  NOT NULL ,
 	Price            MONEY  NOT NULL ,
 	IsActive         bit  NOT NULL ,
 	MesuringUnitID   INT  NOT NULL ,
-	CategoryID       INT  NOT NULL ,
+	CategoryID       INT  ,
 	SupplierID		 INT  NOT NULL ,
 	DepartementID    INT  NOT NULL  ,
 	LastUpdate       DateTime,
-	BarCodeId        VARCHAR(7)
+	BarCodeId        VARCHAR(7),
+	SupplierCode     VARCHAR(50) NOT NULL,
 	CONSTRAINT Tbl_Product_PK PRIMARY KEY (ProductID)
 
 	,CONSTRAINT Tbl_Product_Tbl_Supplier_FK FOREIGN KEY (SupplierID) REFERENCES Tbl_Supplier(SupplierID)
@@ -158,8 +158,8 @@ VALUES('NomDep','DescriptionDep',1)
 INSERT INTO Tbl_Category ( Description,IsActive)
 VALUES('DescriptionCat', 1)
 
-INSERT INTO Tbl_Supplier (Name, Code, ResourcePerson, Adress, Email, PhoneNumber, MinOrderPrice, Active)
-VALUES('nameSupplier', 'CodeSupplier', 'RessourcePerson', 'Adress', 'Email', 'PhoneNumber', 75, 1)
+INSERT INTO Tbl_Supplier (Name, ResourcePerson, Adress, Email, PhoneNumber, MinOrderPrice, Active)
+VALUES('nameSupplier', 'RessourcePerson', 'Adress', 'Email', 'PhoneNumber', 75, 1)
 
 INSERT INTO Tbl_Product(Name,Brand,Description,UnitNbr,QtyMin,QtyMax,Price,IsActive,MesuringUnitID,CategoryID,DepartementID,SupplierID,LastUpdate,BarCodeId)
 VALUES('nameProduct', 'BrandProduct', 'DescrPproduct',3 ,5, 18, 22, 1,1,1,1,1, GETDATE(),'P000100')

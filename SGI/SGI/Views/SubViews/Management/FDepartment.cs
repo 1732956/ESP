@@ -183,8 +183,7 @@ namespace SGI.Views.SubViews
             string returnMessage = "";
             if (TxtName.Text == "")
                 returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;
-            if (txtDescription.Text == "")
-                returnMessage += "La description ne peut pas être nulle." + Environment.NewLine;
+         
             return returnMessage;
         }
 
