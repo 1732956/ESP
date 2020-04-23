@@ -72,8 +72,6 @@ D:\Temporaire\École\SGI\SGI\obj\Debug\SGI.Views.SubViews.FDepartment.resources
 D:\Temporaire\École\SGI\SGI\obj\Debug\SGI.Views.SubViews.FCategory.resources
 D:\Temporaire\École\SGI\SGI\obj\Debug\SGI.Views.SubViews.FProduct.resources
 D:\Temporaire\École\SGI\SGI\obj\Debug\SGI.csproj.GenerateResource.Cache
-C:\Users\trist\Desktop\ESP\SGI\SGI\bin\Debug\SGISettings.Designer.cs
-C:\Users\trist\Desktop\ESP\SGI\SGI\bin\Debug\SGISettings.settings
 C:\Users\trist\Desktop\ESP\SGI\SGI\bin\Debug\SGI.exe.config
 C:\Users\trist\Desktop\ESP\SGI\SGI\bin\Debug\SGI.exe
 C:\Users\trist\Desktop\ESP\SGI\SGI\bin\Debug\SGI.pdb
@@ -98,3 +96,4 @@ C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.pdb
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Transaction.FProductIn.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.FSupplier.resources
+C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Integration.FIntegration.resources

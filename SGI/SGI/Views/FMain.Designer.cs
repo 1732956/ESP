@@ -64,6 +64,8 @@
             this.TPItemsTooMuch = new System.Windows.Forms.TabPage();
             this.ItemsTooMuchPanel = new System.Windows.Forms.Panel();
             this.VidualizationImages = new System.Windows.Forms.ImageList(this.components);
+            this.TPIntegration = new System.Windows.Forms.TabPage();
+            this.IntegrationPanel = new System.Windows.Forms.Panel();
             this.TCMain.SuspendLayout();
             this.TPTransaction.SuspendLayout();
             this.TCTransaction.SuspendLayout();
@@ -83,6 +85,7 @@
             this.TPStockByLoc.SuspendLayout();
             this.TPOrdersToMake.SuspendLayout();
             this.TPItemsTooMuch.SuspendLayout();
+            this.TPIntegration.SuspendLayout();
             this.SuspendLayout();
             // 
             // TCMain
@@ -90,6 +93,7 @@
             this.TCMain.Controls.Add(this.TPTransaction);
             this.TCMain.Controls.Add(this.TPManagement);
             this.TCMain.Controls.Add(this.TPVisualization);
+            this.TCMain.Controls.Add(this.TPIntegration);
             resources.ApplyResources(this.TCMain, "TCMain");
             this.TCMain.Name = "TCMain";
             this.TCMain.SelectedIndex = 0;
@@ -346,6 +350,20 @@
             this.VidualizationImages.Images.SetKeyName(2, "LocStock.png");
             this.VidualizationImages.Images.SetKeyName(3, "OrdersToDo.png");
             // 
+            // TPIntegration
+            // 
+            this.TPIntegration.Controls.Add(this.IntegrationPanel);
+            resources.ApplyResources(this.TPIntegration, "TPIntegration");
+            this.TPIntegration.Name = "TPIntegration";
+            this.TPIntegration.UseVisualStyleBackColor = true;
+            this.TPIntegration.Enter += new System.EventHandler(this.TPIntegration_Enter);
+            this.TPIntegration.Leave += new System.EventHandler(this.TPIntegration_Leave);
+            // 
+            // IntegrationPanel
+            // 
+            resources.ApplyResources(this.IntegrationPanel, "IntegrationPanel");
+            this.IntegrationPanel.Name = "IntegrationPanel";
+            // 
             // FMain
             // 
             resources.ApplyResources(this, "$this");
@@ -374,6 +392,7 @@
             this.TPStockByLoc.ResumeLayout(false);
             this.TPOrdersToMake.ResumeLayout(false);
             this.TPItemsTooMuch.ResumeLayout(false);
+            this.TPIntegration.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -414,6 +433,8 @@
         private System.Windows.Forms.Panel LocationPanel;
         private System.Windows.Forms.TabPage TPSupplier;
         private System.Windows.Forms.Panel SupplierPanel;
+        private System.Windows.Forms.TabPage TPIntegration;
+        private System.Windows.Forms.Panel IntegrationPanel;
     }
 }
 

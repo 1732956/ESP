@@ -71,7 +71,10 @@ namespace SGI.Views.SubViews
             CBFilter.Items.Add("Tous");
             CBFilter.SelectedItem = "Actifs";
             GetAllActiveDepartments();
-            CurrentState = State.VIEW;
+            if (currentDepartment == null)
+                CurrentState = State.ADD;
+            else
+                CurrentState = State.VIEW;
             ucManagementAction1.btnDelete.Visible = false;
             ucManagementAction1.SaveButtonClicked += UcManagementAction1_SaveButtonClicked;
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
@@ -102,11 +105,15 @@ namespace SGI.Views.SubViews
             {
                 case State.ADD:
                     LBDepartments.DataBindings.Clear();
-                    List<Department> tempoCategories = DepartmentController.GetAllDepartments();
+                    List<Department> tempoCategories = DepartmentController.GetAllActiveDepartments();
                     LBDepartments.DataSource = tempoCategories;
                     if (tempoCategories.Count > 0)
+                    {
                         LBDepartments.SelectedIndex = 0;
-                    CurrentState = State.VIEW;
+                        CurrentState = State.VIEW;
+                    }
+                    else
+                        CurrentState = State.ADD;
                     break;
                 case State.UPDATE:
                     RefreshDepartmentData();

@@ -71,7 +71,10 @@ namespace SGI.Views.SubViews.Management
             CBFilter.Items.Add("Tous");
             CBFilter.SelectedItem = "Actifs";
             GetAllActiveLocations();
-            CurrentState = State.VIEW;
+            if (currentLocation == null)
+                CurrentState = State.ADD;
+            else
+                CurrentState = State.VIEW;
             ucManagementAction1.btnDelete.Visible = false;
             ucManagementAction1.SaveButtonClicked += UcManagementAction1_SaveButtonClicked;
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
@@ -102,11 +105,15 @@ namespace SGI.Views.SubViews.Management
             {
                 case State.ADD:
                     LBLocations.DataBindings.Clear();
-                    List<Location> tempoLocations = LocationController.GetAllLocations();
+                    List<Location> tempoLocations = LocationController.GetAllLocationsActive();
                     LBLocations.DataSource = tempoLocations;
                     if (tempoLocations.Count > 0)
+                    {
                         LBLocations.SelectedIndex = 0;
-                    CurrentState = State.VIEW;
+                        CurrentState = State.VIEW;
+                    }
+                    else
+                        CurrentState = State.ADD;
                     break;
                 case State.UPDATE:
                     RefreshLocationData();

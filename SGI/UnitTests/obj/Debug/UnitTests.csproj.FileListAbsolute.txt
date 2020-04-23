@@ -11,8 +11,6 @@ C:\Users\trist\Desktop\ESP\SGI\UnitTestProject2\obj\Debug\UnitTests.csproj.CoreC
 C:\Users\trist\Desktop\ESP\SGI\UnitTestProject2\obj\Debug\UnitTests.csproj.CopyComplete
 C:\Users\trist\Desktop\ESP\SGI\UnitTestProject2\obj\Debug\UnitTestProject2.dll
 C:\Users\trist\Desktop\ESP\SGI\UnitTestProject2\obj\Debug\UnitTestProject2.pdb
-C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Debug\SGISettings.Designer.cs
-C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Debug\SGISettings.settings
 C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Debug\UnitTestProject2.dll
 C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Debug\UnitTestProject2.pdb
 C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll

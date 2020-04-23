@@ -86,7 +86,10 @@ namespace SGI.Views.SubViews
             GetAllActiveMeasuringUnits();
             GetAllActiveSuppliers();
             GetAllActiveProducts();
-            CurrentState = State.VIEW;
+            if (currentProduct == null)
+                CurrentState = State.ADD;
+            else
+                CurrentState = State.VIEW;
             ucManagementAction1.btnDelete.Visible = false;
             ucManagementAction1.SaveButtonClicked += UcManagementAction1_SaveButtonClicked;
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
@@ -127,8 +130,12 @@ namespace SGI.Views.SubViews
                     List<Product> tempoProducts = Productcontoller.GetAllProducts(1);
                     LBProducts.DataSource = tempoProducts;
                     if (tempoProducts.Count > 0)
+                    {
                         LBProducts.SelectedIndex = 0;
-                    CurrentState = State.VIEW;
+                        CurrentState = State.VIEW;
+                    }
+                    else
+                        CurrentState = State.ADD;
                     break;
                 case State.UPDATE:
                     RefreshProductData();

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using SGI.Views.SubViews;
+using SGI.Views.SubViews.Integration;
 using SGI.Views.SubViews.Management;
 
 namespace SGI
@@ -134,6 +135,17 @@ namespace SGI
             }
         }
 
+        private void TPIntegration_Enter(object sender, EventArgs e)
+        {
+            FIntegration form = new FIntegration();
+            ShowSubForm(form, IntegrationPanel);
+        }
+
+        private void TCTransaction_Selected(object sender, TabControlEventArgs e)
+        {
+            FInventoryOut form = new FInventoryOut();
+            ShowSubForm(form, OutPanel);
+        }
         #endregion
 
         #region SubFormClears
@@ -169,7 +181,7 @@ namespace SGI
 
         private void TPDepartment_Leave(object sender, EventArgs e)
         {
-            ClearSubForm(CategoryPanel);
+            ClearSubForm(DepartmentPanel);
         }
 
         private void TPMeasuringUnit_Leave(object sender, EventArgs e)
@@ -198,13 +210,13 @@ namespace SGI
             ClearSubForm(SupplierPanel);
         }
 
+        private void TPIntegration_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(IntegrationPanel);
+        }
+
         #endregion
 
-        private void TCTransaction_Selected(object sender, TabControlEventArgs e)
-        {
-            FInventoryOut form = new FInventoryOut();
-            ShowSubForm(form, OutPanel);
-        }
         private void TCTransaction_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (TCTransaction.SelectedIndex == 1)
