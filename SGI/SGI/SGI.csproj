@@ -56,14 +56,12 @@
     <Compile Include="Controller\InventoryOutController.cs" />
     <Compile Include="Controller\LocationController.cs" />
     <Compile Include="Controller\ProductContoller.cs" />
-    <Compile Include="Controller\ReasonCodeController.cs" />
     <Compile Include="Controller\SupplierController.cs" />
     <Compile Include="Model\CDatabase.cs" />
     <Compile Include="Model\Classes\Category.cs" />
     <Compile Include="Model\Classes\Department.cs" />
     <Compile Include="Model\Classes\Location.cs" />
     <Compile Include="Model\Classes\Product.cs" />
-    <Compile Include="Model\Classes\ReasonCode.cs" />
     <Compile Include="Model\Classes\Supplier.cs" />
     <Compile Include="Views\FMain.cs">
       <SubType>Form</SubType>
