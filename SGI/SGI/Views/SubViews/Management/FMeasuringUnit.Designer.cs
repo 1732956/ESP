@@ -1,6 +1,6 @@
 ﻿namespace SGI.Views.SubViews
 {
-    partial class FCategory
+    partial class FMeasuringUnit
     {
         /// <summary>
         /// Required designer variable.
@@ -34,20 +34,22 @@
             this.ucManagementAction1 = new SGI.Views.UCManagementAction();
             this.ToolTips = new System.Windows.Forms.ToolTip(this.components);
             this.CBFilter = new System.Windows.Forms.ComboBox();
-            this.GBCategory = new System.Windows.Forms.GroupBox();
+            this.lblDescription = new System.Windows.Forms.GroupBox();
+            this.txtCode = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.TxtName = new System.Windows.Forms.TextBox();
             this.LblName = new System.Windows.Forms.Label();
-            this.LBCategories = new System.Windows.Forms.ListBox();
+            this.LBMeasuringUnits = new System.Windows.Forms.ListBox();
             this.GBFilter = new System.Windows.Forms.GroupBox();
             this.ActionPanel.SuspendLayout();
-            this.GBCategory.SuspendLayout();
+            this.lblDescription.SuspendLayout();
             this.GBFilter.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(34, 99);
+            this.cbActive.Location = new System.Drawing.Point(502, 46);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(55, 23);
             this.cbActive.TabIndex = 25;
@@ -58,10 +60,10 @@
             // 
             this.ActionPanel.Controls.Add(this.ucManagementAction1);
             this.ActionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActionPanel.Location = new System.Drawing.Point(301, 354);
+            this.ActionPanel.Location = new System.Drawing.Point(301, 491);
             this.ActionPanel.Name = "ActionPanel";
-            this.ActionPanel.Size = new System.Drawing.Size(504, 56);
-            this.ActionPanel.TabIndex = 14;
+            this.ActionPanel.Size = new System.Drawing.Size(603, 56);
+            this.ActionPanel.TabIndex = 22;
             // 
             // ucManagementAction1
             // 
@@ -69,7 +71,7 @@
             this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
             this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ucManagementAction1.Name = "ucManagementAction1";
-            this.ucManagementAction1.Size = new System.Drawing.Size(504, 56);
+            this.ucManagementAction1.Size = new System.Drawing.Size(603, 56);
             this.ucManagementAction1.TabIndex = 0;
             // 
             // CBFilter
@@ -82,18 +84,36 @@
             this.CBFilter.Size = new System.Drawing.Size(298, 25);
             this.CBFilter.TabIndex = 0;
             // 
-            // GBCategory
+            // lblDescription
             // 
-            this.GBCategory.Controls.Add(this.cbActive);
-            this.GBCategory.Controls.Add(this.TxtName);
-            this.GBCategory.Controls.Add(this.LblName);
-            this.GBCategory.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GBCategory.Location = new System.Drawing.Point(301, 53);
-            this.GBCategory.Name = "GBCategory";
-            this.GBCategory.Size = new System.Drawing.Size(504, 173);
-            this.GBCategory.TabIndex = 9;
-            this.GBCategory.TabStop = false;
-            this.GBCategory.Text = "Catégorie";
+            this.lblDescription.Controls.Add(this.txtCode);
+            this.lblDescription.Controls.Add(this.label1);
+            this.lblDescription.Controls.Add(this.cbActive);
+            this.lblDescription.Controls.Add(this.TxtName);
+            this.lblDescription.Controls.Add(this.LblName);
+            this.lblDescription.Dock = System.Windows.Forms.DockStyle.Top;
+            this.lblDescription.Location = new System.Drawing.Point(301, 53);
+            this.lblDescription.Name = "lblDescription";
+            this.lblDescription.Size = new System.Drawing.Size(603, 173);
+            this.lblDescription.TabIndex = 20;
+            this.lblDescription.TabStop = false;
+            this.lblDescription.Text = "Unités de mesure";
+            // 
+            // txtCode
+            // 
+            this.txtCode.Location = new System.Drawing.Point(111, 102);
+            this.txtCode.Name = "txtCode";
+            this.txtCode.Size = new System.Drawing.Size(313, 25);
+            this.txtCode.TabIndex = 27;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(30, 104);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(48, 19);
+            this.label1.TabIndex = 26;
+            this.label1.Text = "Code :";
             // 
             // TxtName
             // 
@@ -111,16 +131,16 @@
             this.LblName.TabIndex = 0;
             this.LblName.Text = "Nom : ";
             // 
-            // LBCategories
+            // LBMeasuringUnits
             // 
-            this.LBCategories.Dock = System.Windows.Forms.DockStyle.Left;
-            this.LBCategories.FormattingEnabled = true;
-            this.LBCategories.ItemHeight = 17;
-            this.LBCategories.Location = new System.Drawing.Point(0, 53);
-            this.LBCategories.Name = "LBCategories";
-            this.LBCategories.Size = new System.Drawing.Size(301, 357);
-            this.LBCategories.TabIndex = 8;
-            this.LBCategories.SelectedIndexChanged += new System.EventHandler(this.LBCategories_SelectedIndexChanged);
+            this.LBMeasuringUnits.Dock = System.Windows.Forms.DockStyle.Left;
+            this.LBMeasuringUnits.FormattingEnabled = true;
+            this.LBMeasuringUnits.ItemHeight = 17;
+            this.LBMeasuringUnits.Location = new System.Drawing.Point(0, 53);
+            this.LBMeasuringUnits.Name = "LBMeasuringUnits";
+            this.LBMeasuringUnits.Size = new System.Drawing.Size(301, 494);
+            this.LBMeasuringUnits.TabIndex = 19;
+            this.LBMeasuringUnits.SelectedIndexChanged += new System.EventHandler(this.LBMeasuringUnits_SelectedIndexChanged);
             // 
             // GBFilter
             // 
@@ -128,27 +148,27 @@
             this.GBFilter.Dock = System.Windows.Forms.DockStyle.Top;
             this.GBFilter.Location = new System.Drawing.Point(0, 0);
             this.GBFilter.Name = "GBFilter";
-            this.GBFilter.Size = new System.Drawing.Size(805, 53);
-            this.GBFilter.TabIndex = 10;
+            this.GBFilter.Size = new System.Drawing.Size(904, 53);
+            this.GBFilter.TabIndex = 21;
             this.GBFilter.TabStop = false;
             // 
-            // FCategory
+            // FMeasuringUnit
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(805, 410);
+            this.ClientSize = new System.Drawing.Size(904, 547);
             this.Controls.Add(this.ActionPanel);
-            this.Controls.Add(this.GBCategory);
-            this.Controls.Add(this.LBCategories);
+            this.Controls.Add(this.lblDescription);
+            this.Controls.Add(this.LBMeasuringUnits);
             this.Controls.Add(this.GBFilter);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.Name = "FCategory";
-            this.Text = "FCategory";
+            this.Name = "FMeasuringUnit";
+            this.Text = "FMeasuringUnit";
             this.ActionPanel.ResumeLayout(false);
-            this.GBCategory.ResumeLayout(false);
-            this.GBCategory.PerformLayout();
+            this.lblDescription.ResumeLayout(false);
+            this.lblDescription.PerformLayout();
             this.GBFilter.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -161,10 +181,12 @@
         private UCManagementAction ucManagementAction1;
         private System.Windows.Forms.ToolTip ToolTips;
         private System.Windows.Forms.ComboBox CBFilter;
-        private System.Windows.Forms.GroupBox GBCategory;
+        private System.Windows.Forms.GroupBox lblDescription;
+        private System.Windows.Forms.TextBox txtCode;
+        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox TxtName;
         private System.Windows.Forms.Label LblName;
-        private System.Windows.Forms.ListBox LBCategories;
+        private System.Windows.Forms.ListBox LBMeasuringUnits;
         private System.Windows.Forms.GroupBox GBFilter;
     }
 }
