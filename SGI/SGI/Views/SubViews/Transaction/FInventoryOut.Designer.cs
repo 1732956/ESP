@@ -48,8 +48,6 @@
             this.lbl_produit = new System.Windows.Forms.Label();
             this.txt_qte = new System.Windows.Forms.TextBox();
             this.txt_produit = new System.Windows.Forms.TextBox();
-            this.lbl_reason = new System.Windows.Forms.Label();
-            this.cbo_reason = new System.Windows.Forms.ComboBox();
             this.grp_product.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -247,33 +245,11 @@
             this.txt_produit.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Txt_produit_KeyPress);
             this.txt_produit.Validating += new System.ComponentModel.CancelEventHandler(this.Txt_produit_Validating);
             // 
-            // lbl_reason
-            // 
-            this.lbl_reason.AutoSize = true;
-            this.lbl_reason.Location = new System.Drawing.Point(375, 335);
-            this.lbl_reason.Name = "lbl_reason";
-            this.lbl_reason.Size = new System.Drawing.Size(56, 19);
-            this.lbl_reason.TabIndex = 26;
-            this.lbl_reason.Text = "Raison :";
-            this.lbl_reason.Visible = false;
-            // 
-            // cbo_reason
-            // 
-            this.cbo_reason.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbo_reason.FormattingEnabled = true;
-            this.cbo_reason.Location = new System.Drawing.Point(448, 329);
-            this.cbo_reason.Name = "cbo_reason";
-            this.cbo_reason.Size = new System.Drawing.Size(186, 25);
-            this.cbo_reason.TabIndex = 25;
-            this.cbo_reason.Visible = false;
-            // 
             // FInventoryOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1268, 588);
-            this.Controls.Add(this.lbl_reason);
-            this.Controls.Add(this.cbo_reason);
             this.Controls.Add(this.btn_cancel);
             this.Controls.Add(this.grp_product);
             this.Controls.Add(this.btn_confirm);
@@ -317,7 +293,5 @@
         private System.Windows.Forms.Label lbl_produit;
         private System.Windows.Forms.TextBox txt_qte;
         private System.Windows.Forms.TextBox txt_produit;
-        private System.Windows.Forms.Label lbl_reason;
-        private System.Windows.Forms.ComboBox cbo_reason;
     }
 }

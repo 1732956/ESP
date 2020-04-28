@@ -120,17 +120,6 @@ CREATE TABLE Tbl_Inventory(
 );
 
 
-/*------------------------------------------------------------
--- Table: Tbl_ReasonCode
-------------------------------------------------------------*/
-CREATE TABLE Tbl_ReasonCode(
-	ReasonID      INT IDENTITY (1,1) NOT NULL ,
-	Code          VARCHAR (50) NOT NULL ,
-	Description   VARCHAR (50) NOT NULL ,
-	IsActive      bit  NOT NULL  ,
-	CONSTRAINT Tbl_ReasonCode_PK PRIMARY KEY (ReasonID)
-);
-
 
 /*------------------------------------------------------------
 -- Table: Tbl_InventoryTransaction
@@ -140,11 +129,9 @@ CREATE TABLE Tbl_InventoryTransaction(
 	QuantityDelta            INT  NOT NULL ,
 	Date                     DATETIME NOT NULL ,
 	ProductID				 INT NOT NULL ,
-	ReasonID                 INT  NOT NULL ,
 	LocationID               INT  NOT NULL  ,
 	CONSTRAINT Tbl_InventoryTransaction_PK PRIMARY KEY (InventoryTransactionID)
 	,CONSTRAINT Tbl_InventoryTransaction_Tbl_Product_FK FOREIGN KEY (ProductID) REFERENCES Tbl_Product(ProductID)
-	,CONSTRAINT Tbl_InventoryTransaction_Tbl_ReasonCode0_FK FOREIGN KEY (ReasonID) REFERENCES Tbl_ReasonCode(ReasonID)
 	,CONSTRAINT Tbl_InventoryTransaction_Tbl_Location1_FK FOREIGN KEY (LocationID) REFERENCES Tbl_Location(LocationID)
 );
 
@@ -161,6 +148,6 @@ VALUES('DescriptionCat', 1)
 INSERT INTO Tbl_Supplier (Name, ResourcePerson, Adress, Email, PhoneNumber, MinOrderPrice, Active)
 VALUES('nameSupplier', 'RessourcePerson', 'Adress', 'Email', 'PhoneNumber', 75, 1)
 
-INSERT INTO Tbl_Product(Name,Brand,Description,UnitNbr,QtyMin,QtyMax,Price,IsActive,MesuringUnitID,CategoryID,DepartementID,SupplierID,LastUpdate,BarCodeId)
-VALUES('nameProduct', 'BrandProduct', 'DescrPproduct',3 ,5, 18, 22, 1,1,1,1,1, GETDATE(),'P000100')
+INSERT INTO Tbl_Product(Name,Brand,Description,UnitNbr,QtyMin,QtyMax,Price,IsActive,MesuringUnitID,CategoryID,DepartementID,SupplierID,LastUpdate,BarCodeId,SupplierCode)
+VALUES('nameProduct', 'BrandProduct', 'DescrPproduct',3 ,5, 18, 22, 1,1,1,1,1, GETDATE(),'P000100','supcode')
 select * from Tbl_Product

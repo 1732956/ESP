@@ -18,7 +18,6 @@ namespace SGI.Views.SubViews
         LocationController controllerLoc;
         ProductContoller ControllerProduct;
         Product CurrentProduct;
-        ReasonCodeController ControllerReasonCode;
         InventoryOutController ControllerInvOut;
 
         public FInventoryOut()
@@ -26,10 +25,8 @@ namespace SGI.Views.SubViews
             InitializeComponent();
             controllerLoc        = new LocationController();
             ControllerProduct    = new ProductContoller();
-            ControllerReasonCode = new ReasonCodeController();
             ControllerInvOut     = new InventoryOutController();
             GetAllLocationsActive();
-            GetAllReasonActive();
         }
 
         private void Txt_produit_KeyPress(object sender, KeyPressEventArgs e)
@@ -47,8 +44,6 @@ namespace SGI.Views.SubViews
                     btn_confirm.Visible = true;
                     grp_product.Visible = true;
                     btn_cancel.Visible = true;
-                    cbo_reason.Visible = true;
-                    lbl_reason.Visible = true;
                     txt_productid.Text = CurrentProduct.ProductId.ToString();
                     txt_descr.Text = CurrentProduct.Description;
                     txt_nom.Text = CurrentProduct.Name;
@@ -92,19 +87,6 @@ namespace SGI.Views.SubViews
                 cbo_loc.SelectedIndex = 0;
         }
 
-
-        private void GetAllReasonActive()
-        {
-
-           
-            cbo_reason.DisplayMember = "Description";
-            cbo_reason.ValueMember = "ReasonId";
-            var reasons = ControllerReasonCode.GetAllActiveReasonCode();
-            cbo_reason.DataSource = reasons;
-            if (reasons.Count > 0)
-                cbo_loc.SelectedIndex = 0;
-        }
-
         void ClearScreenProduct()
         {
             txt_nom.Text = "";
@@ -141,8 +123,6 @@ namespace SGI.Views.SubViews
             lbl_loc.Visible = false;
             btn_confirm.Visible = false;
             btn_cancel.Visible = false;
-            cbo_reason.Visible = false;
-            lbl_reason.Visible = false;
         }
         private void Txt_produit_Validating(object sender, CancelEventArgs e)
         {
@@ -210,7 +190,7 @@ namespace SGI.Views.SubViews
                 {
                     if (!vError)
                     {
-                        ControllerInvOut.InventoryOut(Convert.ToInt32(txt_productid.Text), Convert.ToInt32(cbo_reason.SelectedValue), Convert.ToInt32(txt_qte.Text), Convert.ToInt32(cbo_loc.SelectedValue));
+                        ControllerInvOut.InventoryOut(Convert.ToInt32(txt_productid.Text), Convert.ToInt32(txt_qte.Text), Convert.ToInt32(cbo_loc.SelectedValue));
                         MessageBox.Show("Inventaire retiré");
                         ClearScreen();
                     }
