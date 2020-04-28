@@ -80,7 +80,8 @@ namespace SGI.Views.SubViews.Management
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
             CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
-            ChangeFormEditStatus(true);
+            if (currentLocation != null)
+                ChangeFormEditStatus(true);
         }
 
         private void CBFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -205,9 +206,11 @@ namespace SGI.Views.SubViews.Management
                 LBLocations.SelectedIndex = 0;
         }
 
-        private void SetLocationData(int lcoationId)
+        private void SetLocationData(int locationId)
         {
-            currentLocation.LocationId = lcoationId;
+            if (currentLocation == null)
+                currentLocation = new Location(locationId, TxtName.Text, txtDescription.Text, cbActive.Checked);
+            currentLocation.LocationId = locationId;
             currentLocation.Name = TxtName.Text;
             currentLocation.Description = txtDescription.Text;
             currentLocation.Active = cbActive.Checked;

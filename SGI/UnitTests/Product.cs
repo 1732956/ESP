@@ -31,7 +31,6 @@ namespace UnitTestProject2
             currentProduct.BarCodeId = "test1";
             currentProduct.Category.CategoryID = 1;
             currentProduct.Department.DepartmentId = 1;
-            currentProduct.MeasuringUnit.UnitId = 1;
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "add"));
         }
 
@@ -66,7 +65,6 @@ namespace UnitTestProject2
             currentProduct.BarCodeId = "test2";
             currentProduct.Category.CategoryID = 1;
             currentProduct.Department.DepartmentId = 1;
-            currentProduct.MeasuringUnit.UnitId = 1;
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "update"));
             CDatabase.ConnectToData();
         }
@@ -101,7 +99,6 @@ namespace UnitTestProject2
             currentProduct.BarCodeId = "test1";
             currentProduct.Category.CategoryID = 1;
             currentProduct.Department.DepartmentId = 1;
-            currentProduct.MeasuringUnit.UnitId = 1;
             Assert.IsFalse(productcontoller.EditSingleProduct(currentProduct, "update"));
         }
     }

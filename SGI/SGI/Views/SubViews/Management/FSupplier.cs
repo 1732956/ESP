@@ -82,7 +82,8 @@ namespace SGI.Views.SubViews
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
             CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
-            ChangeFormEditStatus(true);
+            if(currentSupplier != null)
+                ChangeFormEditStatus(true);
         }
 
         private void CBFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -202,6 +203,8 @@ namespace SGI.Views.SubViews
 
         private void SetSupplierData(int supplierId)
         {
+            if (currentSupplier == null)
+                currentSupplier = new Supplier(supplierId, TxtName.Text, txtResourcePerson.Text, txtAdress.Text, txtEmail.Text, txtPhoneNumber.Text, Convert.ToDouble(nudMinOrderPrice.Value), cbActive.Checked);
             currentSupplier.SupplierID = supplierId;
             currentSupplier.Adress = txtAdress.Text;
             currentSupplier.Email = txtEmail.Text;

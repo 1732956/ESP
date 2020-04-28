@@ -46,11 +46,9 @@
             this.txt_fournisseurcode = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.CBSupplier = new System.Windows.Forms.ComboBox();
-            this.CBMeasuringUnit = new System.Windows.Forms.ComboBox();
             this.NudPrice = new System.Windows.Forms.NumericUpDown();
             this.NudMeasuringQty = new System.Windows.Forms.NumericUpDown();
             this.lblPrice = new System.Windows.Forms.Label();
-            this.lblMeasuringUnit = new System.Windows.Forms.Label();
             this.lblQuantityUnit = new System.Windows.Forms.Label();
             this.lblSupplierName = new System.Windows.Forms.Label();
             this.GBOBarCode = new System.Windows.Forms.GroupBox();
@@ -206,11 +204,9 @@
             this.GBSupplier.Controls.Add(this.txt_fournisseurcode);
             this.GBSupplier.Controls.Add(this.label1);
             this.GBSupplier.Controls.Add(this.CBSupplier);
-            this.GBSupplier.Controls.Add(this.CBMeasuringUnit);
             this.GBSupplier.Controls.Add(this.NudPrice);
             this.GBSupplier.Controls.Add(this.NudMeasuringQty);
             this.GBSupplier.Controls.Add(this.lblPrice);
-            this.GBSupplier.Controls.Add(this.lblMeasuringUnit);
             this.GBSupplier.Controls.Add(this.lblQuantityUnit);
             this.GBSupplier.Controls.Add(this.lblSupplierName);
             this.GBSupplier.Dock = System.Windows.Forms.DockStyle.Top;
@@ -223,7 +219,7 @@
             // 
             // txt_fournisseurcode
             // 
-            this.txt_fournisseurcode.Location = new System.Drawing.Point(626, 113);
+            this.txt_fournisseurcode.Location = new System.Drawing.Point(186, 116);
             this.txt_fournisseurcode.Name = "txt_fournisseurcode";
             this.txt_fournisseurcode.Size = new System.Drawing.Size(202, 25);
             this.txt_fournisseurcode.TabIndex = 22;
@@ -231,7 +227,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(470, 119);
+            this.label1.Location = new System.Drawing.Point(30, 122);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(139, 19);
             this.label1.TabIndex = 21;
@@ -246,22 +242,13 @@
             this.CBSupplier.Size = new System.Drawing.Size(202, 25);
             this.CBSupplier.TabIndex = 20;
             // 
-            // CBMeasuringUnit
-            // 
-            this.CBMeasuringUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBMeasuringUnit.FormattingEnabled = true;
-            this.CBMeasuringUnit.Location = new System.Drawing.Point(174, 113);
-            this.CBMeasuringUnit.Name = "CBMeasuringUnit";
-            this.CBMeasuringUnit.Size = new System.Drawing.Size(202, 25);
-            this.CBMeasuringUnit.TabIndex = 19;
-            // 
             // NudPrice
             // 
             this.NudPrice.DecimalPlaces = 2;
             this.NudPrice.Location = new System.Drawing.Point(987, 56);
             this.NudPrice.Maximum = new decimal(new int[] {
-            1410065408,
-            2,
+            100000,
+            0,
             0,
             0});
             this.NudPrice.Name = "NudPrice";
@@ -288,15 +275,6 @@
             this.lblPrice.Size = new System.Drawing.Size(38, 19);
             this.lblPrice.TabIndex = 15;
             this.lblPrice.Text = "Prix :";
-            // 
-            // lblMeasuringUnit
-            // 
-            this.lblMeasuringUnit.AutoSize = true;
-            this.lblMeasuringUnit.Location = new System.Drawing.Point(27, 119);
-            this.lblMeasuringUnit.Name = "lblMeasuringUnit";
-            this.lblMeasuringUnit.Size = new System.Drawing.Size(117, 19);
-            this.lblMeasuringUnit.TabIndex = 13;
-            this.lblMeasuringUnit.Text = "Unité de mesure :";
             // 
             // lblQuantityUnit
             // 
@@ -363,6 +341,7 @@
             // 
             this.GBOther.Controls.Add(this.TxtLastUpdate);
             this.GBOther.Controls.Add(this.LblLastUpdate);
+            this.GBOther.Controls.Add(this.cbActive);
             this.GBOther.Dock = System.Windows.Forms.DockStyle.Top;
             this.GBOther.Location = new System.Drawing.Point(301, 693);
             this.GBOther.Name = "GBOther";
@@ -391,7 +370,7 @@
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(483, 56);
+            this.cbActive.Location = new System.Drawing.Point(474, 50);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(55, 23);
             this.cbActive.TabIndex = 25;
@@ -421,7 +400,6 @@
             this.GBInventory.Controls.Add(this.nudMax);
             this.GBInventory.Controls.Add(this.NudMin);
             this.GBInventory.Controls.Add(this.lblMaxQty);
-            this.GBInventory.Controls.Add(this.cbActive);
             this.GBInventory.Controls.Add(this.lblQtyMin);
             this.GBInventory.Dock = System.Windows.Forms.DockStyle.Top;
             this.GBInventory.Location = new System.Drawing.Point(301, 549);
@@ -549,7 +527,6 @@
         private System.Windows.Forms.GroupBox GBOBarCode;
         private System.Windows.Forms.Label lblSupplierName;
         private System.Windows.Forms.Label lblPrice;
-        private System.Windows.Forms.Label lblMeasuringUnit;
         private System.Windows.Forms.Label lblQuantityUnit;
         private System.Windows.Forms.Button btn_Print;
         private System.Windows.Forms.GroupBox GBOther;
@@ -560,7 +537,6 @@
         private System.Windows.Forms.NumericUpDown NudPrice;
         private System.Windows.Forms.Panel ActionPanel;
         private UCManagementAction ucManagementAction1;
-	private System.Windows.Forms.ComboBox CBMeasuringUnit;
         private System.Windows.Forms.ToolTip ToolTips;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Label lbl_BarCode;

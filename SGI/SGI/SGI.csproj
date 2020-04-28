@@ -55,7 +55,6 @@
     <Compile Include="Controller\InventoryInController.cs" />
     <Compile Include="Controller\InventoryOutController.cs" />
     <Compile Include="Controller\LocationController.cs" />
-    <Compile Include="Controller\MeasuringUnitController.cs" />
     <Compile Include="Controller\ProductContoller.cs" />
     <Compile Include="Controller\ReasonCodeController.cs" />
     <Compile Include="Controller\SupplierController.cs" />
@@ -63,7 +62,6 @@
     <Compile Include="Model\Classes\Category.cs" />
     <Compile Include="Model\Classes\Department.cs" />
     <Compile Include="Model\Classes\Location.cs" />
-    <Compile Include="Model\Classes\MeasuringUnit.cs" />
     <Compile Include="Model\Classes\Product.cs" />
     <Compile Include="Model\Classes\ReasonCode.cs" />
     <Compile Include="Model\Classes\Supplier.cs" />
@@ -141,12 +139,6 @@
     <Compile Include="Views\SubViews\Visualization\FGeneralStock.Designer.cs">
       <DependentUpon>FGeneralStock.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SubViews\Management\FMeasuringUnit.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SubViews\Management\FMeasuringUnit.Designer.cs">
-      <DependentUpon>FMeasuringUnit.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\SubViews\Management\FDepartment.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -210,9 +202,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Visualization\FGeneralStock.resx">
       <DependentUpon>FGeneralStock.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SubViews\Management\FMeasuringUnit.resx">
-      <DependentUpon>FMeasuringUnit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Management\FDepartment.resx">
       <DependentUpon>FDepartment.cs</DependentUpon>

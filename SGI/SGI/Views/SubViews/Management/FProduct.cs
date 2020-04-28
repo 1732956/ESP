@@ -20,7 +20,6 @@ namespace SGI.Views.SubViews
         ProductContoller Productcontoller;
         CategoryController CategoryController;
         DepartmentController DepartmentController;
-        MeasuringUnitController MeasuringUnitController;
         SupplierController SupplierController;
         Product mCurrentProduct;
         State mCurrentState;
@@ -75,7 +74,6 @@ namespace SGI.Views.SubViews
             Productcontoller = new ProductContoller();
             CategoryController = new CategoryController();
             DepartmentController = new DepartmentController();
-            MeasuringUnitController = new MeasuringUnitController();
             SupplierController = new SupplierController();
             CBFilter.Items.Add("Actifs");
             CBFilter.Items.Add("Inactifs");
@@ -83,7 +81,6 @@ namespace SGI.Views.SubViews
             CBFilter.SelectedItem = "Actifs";
             GetAllActiveDepartments();
             GetAllActiveCategories();
-            GetAllActiveMeasuringUnits();
             GetAllActiveSuppliers();
             GetAllActiveProducts();
             if (currentProduct == null)
@@ -95,7 +92,8 @@ namespace SGI.Views.SubViews
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
             CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
-            ChangeFormEditStatus(true);
+            if(currentProduct != null)
+                ChangeFormEditStatus(true);
         }
 
         private void LBProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -220,15 +218,15 @@ namespace SGI.Views.SubViews
                 returnMessage += "Le fournisseur ne peut pas être nul." + Environment.NewLine;
             if (NudMeasuringQty.Value <= 0)
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
-            if (CBMeasuringUnit.SelectedValue == null)
-                returnMessage += "L'unité de mesure ne peut pas être nulle." + Environment.NewLine;
             if (NudMin.Value < 0)
                 returnMessage += "La quantité minimum doit être positive." + Environment.NewLine;
             if (nudMax.Value < 0)
                 returnMessage += "La quantité maximum doit être positive." + Environment.NewLine;
             if(NudMin.Value > nudMax.Value)
                 returnMessage += "La quantité minimum doit être inférieur à la quantité maximum." + Environment.NewLine;
-            if(txt_fournisseurcode.Text == "")
+            if (NudPrice.Value <= 0)
+                returnMessage += "Le prix doit ne peut pas être nul." + Environment.NewLine;
+            if (txt_fournisseurcode.Text == "")
                 returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
             return returnMessage;
         }
@@ -269,19 +267,13 @@ namespace SGI.Views.SubViews
             CbDepartment.SelectedIndex = -1;
         }
 
-        private void GetAllActiveMeasuringUnits()
-        {
-            CBMeasuringUnit.DisplayMember = "UnitCode";
-            CBMeasuringUnit.ValueMember = "UnitID";
-            CBMeasuringUnit.DataSource = MeasuringUnitController.GetAllActiveMeasuringUnits();
-            CbDepartment.SelectedIndex = -1;
-        }
-
         #endregion
 
         #region Utils
         private void SetProductData(int productId)
         {
+            if (currentProduct == null)
+                currentProduct = new Product(productId, TxtName.Text, TxtBrand.Text, TxtDescription.Text, (Supplier)CBSupplier.SelectedItem, Convert.ToInt32(NudPrice.Value), cbActive.Checked, Convert.ToInt32(NudMeasuringQty.Value), Convert.ToInt32(nudMax.Value), Convert.ToInt32(NudMin.Value), (Category)CbCategory.SelectedItem, (Department)CbDepartment.SelectedItem, txt_fournisseurcode.Text);
             currentProduct.ProductId = productId;
             currentProduct.Name = TxtName.Text;
             currentProduct.Brand = TxtBrand.Text;
@@ -290,7 +282,6 @@ namespace SGI.Views.SubViews
             currentProduct.Department = (Department)CbDepartment.SelectedItem;
             currentProduct.Supplier = (Supplier)CBSupplier.SelectedItem;
             currentProduct.UnitCount = Convert.ToInt32(NudMeasuringQty.Value);
-            currentProduct.MeasuringUnit = (MeasuringUnit)CBMeasuringUnit.SelectedItem;
             currentProduct.Price = Convert.ToInt32(NudPrice.Value);
             currentProduct.Active = cbActive.Checked;
             currentProduct.MinQty = Convert.ToInt32(NudMin.Value);
@@ -309,7 +300,6 @@ namespace SGI.Views.SubViews
                 TxtDescription.TextChanged += PutInEditMode;
                 CBSupplier.SelectedIndexChanged += PutInEditMode;
                 NudMeasuringQty.ValueChanged += PutInEditMode;
-                CBMeasuringUnit.SelectedIndexChanged += PutInEditMode;
                 NudPrice.ValueChanged += PutInEditMode;
                 cbActive.CheckedChanged += PutInEditMode;
                 nudMax.ValueChanged += PutInEditMode;
@@ -325,7 +315,6 @@ namespace SGI.Views.SubViews
                 TxtDescription.TextChanged -= PutInEditMode;
                 CBSupplier.SelectedIndexChanged -= PutInEditMode;
                 NudMeasuringQty.ValueChanged -= PutInEditMode;
-                CBMeasuringUnit.SelectedIndexChanged -= PutInEditMode;
                 NudPrice.ValueChanged -= PutInEditMode;
                 cbActive.CheckedChanged -= PutInEditMode;
                 nudMax.ValueChanged -= PutInEditMode;
@@ -349,7 +338,6 @@ namespace SGI.Views.SubViews
             CbDepartment.SelectedValue = currentProduct.Department.DepartmentId;
             CBSupplier.SelectedValue = currentProduct.Supplier.SupplierID;
             NudMeasuringQty.Value = currentProduct.UnitCount;
-            CBMeasuringUnit.SelectedValue = currentProduct.MeasuringUnit.UnitId;
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);
             NudMin.Value = currentProduct.MinQty;
             nudMax.Value = currentProduct.MaxQty;

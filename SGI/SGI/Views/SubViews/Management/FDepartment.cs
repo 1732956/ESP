@@ -80,7 +80,8 @@ namespace SGI.Views.SubViews
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
             CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
-            ChangeFormEditStatus(true);
+            if(currentDepartment != null)
+                ChangeFormEditStatus(true);
         }
 
         private void CBFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -194,9 +195,11 @@ namespace SGI.Views.SubViews
             return returnMessage;
         }
 
-        private void SetDepartmentData(int categoryId)
+        private void SetDepartmentData(int departmentId)
         {
-            currentDepartment.DepartmentId = categoryId;
+            if (currentDepartment == null)
+                currentDepartment = new Department(departmentId, TxtName.Text, txtDescription.Text, cbActive.Checked);
+            currentDepartment.DepartmentId = departmentId;
             currentDepartment.Name = TxtName.Text;
             currentDepartment.Description = txtDescription.Text;
             currentDepartment.Active = cbActive.Checked;

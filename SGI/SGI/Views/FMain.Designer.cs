@@ -50,8 +50,6 @@
             this.CategoryPanel = new System.Windows.Forms.Panel();
             this.TPDepartment = new System.Windows.Forms.TabPage();
             this.DepartmentPanel = new System.Windows.Forms.Panel();
-            this.TPMeasuringUnit = new System.Windows.Forms.TabPage();
-            this.MeasuringUnitPanel = new System.Windows.Forms.Panel();
             this.ManagementImages = new System.Windows.Forms.ImageList(this.components);
             this.TPVisualization = new System.Windows.Forms.TabPage();
             this.TCVisuzalization = new System.Windows.Forms.TabControl();
@@ -78,7 +76,6 @@
             this.TPSupplier.SuspendLayout();
             this.TPCategory.SuspendLayout();
             this.TPDepartment.SuspendLayout();
-            this.TPMeasuringUnit.SuspendLayout();
             this.TPVisualization.SuspendLayout();
             this.TCVisuzalization.SuspendLayout();
             this.TPStockGeneral.SuspendLayout();
@@ -165,7 +162,6 @@
             this.TCManagement.Controls.Add(this.TPSupplier);
             this.TCManagement.Controls.Add(this.TPCategory);
             this.TCManagement.Controls.Add(this.TPDepartment);
-            this.TCManagement.Controls.Add(this.TPMeasuringUnit);
             resources.ApplyResources(this.TCManagement, "TCManagement");
             this.TCManagement.ImageList = this.ManagementImages;
             this.TCManagement.Name = "TCManagement";
@@ -240,20 +236,6 @@
             // 
             resources.ApplyResources(this.DepartmentPanel, "DepartmentPanel");
             this.DepartmentPanel.Name = "DepartmentPanel";
-            // 
-            // TPMeasuringUnit
-            // 
-            this.TPMeasuringUnit.Controls.Add(this.MeasuringUnitPanel);
-            resources.ApplyResources(this.TPMeasuringUnit, "TPMeasuringUnit");
-            this.TPMeasuringUnit.Name = "TPMeasuringUnit";
-            this.TPMeasuringUnit.UseVisualStyleBackColor = true;
-            this.TPMeasuringUnit.Enter += new System.EventHandler(this.TPMeasuringUnit_Enter);
-            this.TPMeasuringUnit.Leave += new System.EventHandler(this.TPMeasuringUnit_Leave);
-            // 
-            // MeasuringUnitPanel
-            // 
-            resources.ApplyResources(this.MeasuringUnitPanel, "MeasuringUnitPanel");
-            this.MeasuringUnitPanel.Name = "MeasuringUnitPanel";
             // 
             // ManagementImages
             // 
@@ -385,7 +367,6 @@
             this.TPSupplier.ResumeLayout(false);
             this.TPCategory.ResumeLayout(false);
             this.TPDepartment.ResumeLayout(false);
-            this.TPMeasuringUnit.ResumeLayout(false);
             this.TPVisualization.ResumeLayout(false);
             this.TCVisuzalization.ResumeLayout(false);
             this.TPStockGeneral.ResumeLayout(false);
@@ -408,7 +389,6 @@
         private System.Windows.Forms.TabPage TPOut;
         private System.Windows.Forms.TabControl TCManagement;
         private System.Windows.Forms.TabPage TPProduct;
-        private System.Windows.Forms.TabPage TPMeasuringUnit;
         private System.Windows.Forms.TabPage TPCategory;
         private System.Windows.Forms.TabPage TPDepartment;
         private System.Windows.Forms.TabControl TCVisuzalization;
@@ -421,7 +401,6 @@
         private System.Windows.Forms.Panel OutPanel;
         private System.Windows.Forms.Panel CategoryPanel;
         private System.Windows.Forms.Panel DepartmentPanel;
-        private System.Windows.Forms.Panel MeasuringUnitPanel;
         private System.Windows.Forms.Panel GeneralStockPanel;
         private System.Windows.Forms.Panel LocStcokPanel;
         private System.Windows.Forms.Panel OrdersToDoPanel;

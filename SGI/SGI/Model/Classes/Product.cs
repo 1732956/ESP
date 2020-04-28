@@ -22,7 +22,6 @@ namespace SGI.Model.Classes
         public string BarCodeId { get; set; }
         public Category Category { get; set; }
         public Department Department { get; set; }
-        public MeasuringUnit MeasuringUnit { get; set; }
         public Supplier Supplier { get; set; }
         public String   CodeSupplier { get; set; }
 
@@ -45,7 +44,6 @@ namespace SGI.Model.Classes
                 this.Supplier = new Supplier(Convert.ToInt32(row["SupID"]), row["SupName"].ToString(), row["SupResPers"].ToString(), row["SupAdress"].ToString(), row["SupEmail"].ToString(), row["SupPhone"].ToString(), Convert.ToDouble(row["SupMinOrderPrice"]), Convert.ToBoolean(row["SupActive"]));
                 this.Category = new Category(Convert.ToInt32(row["CategoryId"]), row["CategoryDescription"].ToString(), Convert.ToBoolean(row["CategoryIsActive"]));
                 this.Department = new Department(Convert.ToInt32(row["DepartementId"]), row["DepartmentName"].ToString(), row["DepartmentDescription"].ToString(), Convert.ToBoolean(row["DepartmentIsActive"]));
-                this.MeasuringUnit = new MeasuringUnit(Convert.ToInt32(row["MeasuringUnitId"]), row["UnitCode"].ToString(), row["MeasuringUnitDescription"].ToString(), Convert.ToBoolean(row["MeasuringUnitIsActive"]));
 
             }
             else
@@ -59,7 +57,6 @@ namespace SGI.Model.Classes
                 this.Supplier = new Supplier(0, row["SupName"].ToString(), "", "", "", "", 0, true);
                 this.Category = new Category(0, row["CatDescr"].ToString(), true);
                 this.Department = new Department(0, row["DepNom"].ToString(), "",true);
-                this.MeasuringUnit = new MeasuringUnit();
             }
         }
 
@@ -79,7 +76,24 @@ namespace SGI.Model.Classes
             BarCodeId = "";
             Category = new Category();
             Department = new Department();
-            MeasuringUnit = new MeasuringUnit();
+            CodeSupplier = "";
+        }
+
+        public Product(int id, string name, string brand, string description, Supplier supplier, int price, bool active, int unitcount, int maxqty, int minqty, Category category, Department department, string codesupplier)
+        {
+            ProductId = id;
+            Name = name;
+            Brand = brand;
+            Description = description;
+            Supplier = supplier;
+            Price = price;
+            Active = active;
+            UnitCount = unitcount;
+            MaxQty = maxqty;
+            MinQty = minqty;
+            Category = category;
+            Department = department;
+            CodeSupplier = codesupplier;
         }
     }
 }

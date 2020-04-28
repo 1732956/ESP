@@ -75,12 +75,6 @@ namespace SGI
             ShowSubForm(form, DepartmentPanel);
         }
 
-        private void TPMeasuringUnit_Enter(object sender, EventArgs e)
-        {
-            FMeasuringUnit form = new FMeasuringUnit();
-            ShowSubForm(form, MeasuringUnitPanel);
-        }
-
         private void TPStockByLoc_Enter(object sender, EventArgs e)
         {
             FLocStock form = new FLocStock();
@@ -182,12 +176,6 @@ namespace SGI
         private void TPDepartment_Leave(object sender, EventArgs e)
         {
             ClearSubForm(DepartmentPanel);
-        }
-
-        private void TPMeasuringUnit_Leave(object sender, EventArgs e)
-        {
-            ClearSubForm(MeasuringUnitPanel);
-
         }
 
         private void TPStockByLoc_Leave(object sender, EventArgs e)

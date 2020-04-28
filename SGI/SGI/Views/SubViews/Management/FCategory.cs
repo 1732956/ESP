@@ -82,7 +82,8 @@ namespace SGI.Views.SubViews
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
             CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
-            ChangeFormEditStatus(true);
+            if(currentCategory != null)
+                ChangeFormEditStatus(true);
         }
 
         private void CBFilter_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,6 +198,8 @@ namespace SGI.Views.SubViews
 
         private void SetCategoryData(int categoryId)
         {
+            if (currentCategory == null)
+                currentCategory = new Category(categoryId, TxtName.Text, cbActive.Checked);
             currentCategory.CategoryID = categoryId;
             currentCategory.Description = TxtName.Text;
             currentCategory.Active = cbActive.Checked;
