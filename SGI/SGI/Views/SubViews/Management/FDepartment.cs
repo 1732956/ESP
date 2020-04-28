@@ -169,7 +169,7 @@ namespace SGI.Views.SubViews
                         tempoDepartment = DepartmentController.GetAllDepartments();
                     if (tempoDepartment.Count <= 0)
                     {
-                        tempoDepartment = DepartmentController.GetAllDepartments();
+                        tempoDepartment = DepartmentController.GetAllActiveDepartments();
                         CBFilter.SelectedIndex = 0;
                     }
                     LBDepartments.DataBindings.Clear();
@@ -247,6 +247,7 @@ namespace SGI.Views.SubViews
         private void LBDepartments_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentDepartment = (Department)LBDepartments.SelectedItem;
+            ChangeFormEditStatus(true);
             CurrentState = State.VIEW;
         }
     }
