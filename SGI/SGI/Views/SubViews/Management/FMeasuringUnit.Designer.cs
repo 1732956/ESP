@@ -77,6 +77,7 @@
             // CBFilter
             // 
             this.CBFilter.Dock = System.Windows.Forms.DockStyle.Left;
+            this.CBFilter.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBFilter.FormattingEnabled = true;
             this.CBFilter.Location = new System.Drawing.Point(3, 21);
             this.CBFilter.Name = "CBFilter";
