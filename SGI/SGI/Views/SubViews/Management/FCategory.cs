@@ -244,6 +244,7 @@ namespace SGI.Views.SubViews
         private void LBCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentCategory = (Category)LBCategories.SelectedItem;
+            ChangeFormEditStatus(true);
             CurrentState = State.VIEW;
         }
     }

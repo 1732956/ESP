@@ -169,7 +169,7 @@ namespace SGI.Views.SubViews.Management
                         tempoLocation = LocationController.GetAllLocations();
                     if (tempoLocation.Count <= 0)
                     {
-                        tempoLocation = LocationController.GetAllLocations();
+                        tempoLocation = LocationController.GetAllLocationsActive();
                         CBFilter.SelectedIndex = 0;
                     }
                     LBLocations.DataBindings.Clear();
@@ -249,6 +249,7 @@ namespace SGI.Views.SubViews.Management
         {
             currentLocation = (Location)LBLocations.SelectedItem;
             CurrentState = State.VIEW;
+            ChangeFormEditStatus(true);
         }
     }
 }
