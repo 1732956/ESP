@@ -270,6 +270,7 @@ namespace SGI.Views.SubViews
         {
             currentSupplier = (Supplier)LBSuppliers.SelectedItem;
             CurrentState = State.VIEW;
+            ChangeFormEditStatus(true);
         }
     }
 }

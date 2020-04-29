@@ -135,6 +135,13 @@ CREATE TABLE Tbl_InventoryTransaction(
 	,CONSTRAINT Tbl_InventoryTransaction_Tbl_Location1_FK FOREIGN KEY (LocationID) REFERENCES Tbl_Location(LocationID)
 );
 
+CREATE TABLE Tbl_ProductDepartments(
+	ID			    INT   IDENTITY,  
+	ProductId       INT  ,
+	DepartementsId INT
+	CONSTRAINT Tbl_Supplier_PK PRIMARY KEY (ID)
+);
+
 
 INSERT INTO Tbl_MesuringUnit(Description,UnitCode,IsActive)
 VALUES('DescriptionUnit', 'CodeUnit', 1)

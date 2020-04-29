@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FProduct));
             this.LBProducts = new System.Windows.Forms.ListBox();
             this.GBProduct = new System.Windows.Forms.GroupBox();
+            this.lst_dep = new System.Windows.Forms.ListBox();
             this.TxtDescription = new System.Windows.Forms.TextBox();
-            this.CbDepartment = new System.Windows.Forms.ComboBox();
             this.CbCategory = new System.Windows.Forms.ComboBox();
             this.TxtBrand = new System.Windows.Forms.TextBox();
             this.TxtName = new System.Windows.Forms.TextBox();
@@ -96,8 +96,8 @@
             // 
             // GBProduct
             // 
+            this.GBProduct.Controls.Add(this.lst_dep);
             this.GBProduct.Controls.Add(this.TxtDescription);
-            this.GBProduct.Controls.Add(this.CbDepartment);
             this.GBProduct.Controls.Add(this.CbCategory);
             this.GBProduct.Controls.Add(this.TxtBrand);
             this.GBProduct.Controls.Add(this.TxtName);
@@ -114,22 +114,23 @@
             this.GBProduct.TabStop = false;
             this.GBProduct.Text = "Produit";
             // 
+            // lst_dep
+            // 
+            this.lst_dep.FormattingEnabled = true;
+            this.lst_dep.ItemHeight = 17;
+            this.lst_dep.Location = new System.Drawing.Point(969, 18);
+            this.lst_dep.Name = "lst_dep";
+            this.lst_dep.SelectionMode = System.Windows.Forms.SelectionMode.MultiSimple;
+            this.lst_dep.Size = new System.Drawing.Size(231, 140);
+            this.lst_dep.TabIndex = 9;
+            // 
             // TxtDescription
             // 
-            this.TxtDescription.Location = new System.Drawing.Point(895, 77);
+            this.TxtDescription.Location = new System.Drawing.Point(449, 104);
             this.TxtDescription.Multiline = true;
             this.TxtDescription.Name = "TxtDescription";
             this.TxtDescription.Size = new System.Drawing.Size(433, 52);
             this.TxtDescription.TabIndex = 0;
-            // 
-            // CbDepartment
-            // 
-            this.CbDepartment.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbDepartment.FormattingEnabled = true;
-            this.CbDepartment.Location = new System.Drawing.Point(591, 98);
-            this.CbDepartment.Name = "CbDepartment";
-            this.CbDepartment.Size = new System.Drawing.Size(237, 25);
-            this.CbDepartment.TabIndex = 8;
             // 
             // CbCategory
             // 
@@ -166,7 +167,7 @@
             // LblDepartment
             // 
             this.LblDepartment.AutoSize = true;
-            this.LblDepartment.Location = new System.Drawing.Point(479, 104);
+            this.LblDepartment.Location = new System.Drawing.Point(862, 18);
             this.LblDepartment.Name = "LblDepartment";
             this.LblDepartment.Size = new System.Drawing.Size(101, 19);
             this.LblDepartment.TabIndex = 3;
@@ -175,7 +176,7 @@
             // LblDescription
             // 
             this.LblDescription.AutoSize = true;
-            this.LblDescription.Location = new System.Drawing.Point(891, 46);
+            this.LblDescription.Location = new System.Drawing.Point(445, 73);
             this.LblDescription.Name = "LblDescription";
             this.LblDescription.Size = new System.Drawing.Size(163, 19);
             this.LblDescription.TabIndex = 2;
@@ -515,7 +516,6 @@
         private System.Windows.Forms.ListBox LBProducts;
         private System.Windows.Forms.GroupBox GBProduct;
         private System.Windows.Forms.TextBox TxtDescription;
-        private System.Windows.Forms.ComboBox CbDepartment;
         private System.Windows.Forms.ComboBox CbCategory;
         private System.Windows.Forms.TextBox TxtBrand;
         private System.Windows.Forms.TextBox TxtName;
@@ -551,5 +551,6 @@
         private System.Windows.Forms.ComboBox CBSupplier;
         private System.Windows.Forms.TextBox txt_fournisseurcode;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ListBox lst_dep;
     }
 }

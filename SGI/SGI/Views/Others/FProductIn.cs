@@ -25,7 +25,7 @@ namespace SGI.Views.SubViews.Transaction
             txtBrand.Text = currentProduct.Brand;
             txtCategory.Text = currentProduct.Category.Description;
             txtPrice.Text = currentProduct.Price.ToString() + " $";
-            txtDepartment.Text = currentProduct.Department.Name;
+          //  txtDepartment.Text = currentProduct.Department.Name;
             txtSupplier.Text = currentProduct.Supplier.Name;
             StartTimer();
         }
