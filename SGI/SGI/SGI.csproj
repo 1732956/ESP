@@ -52,6 +52,7 @@
     <Compile Include="CEnum.cs" />
     <Compile Include="Controller\CategoryController.cs" />
     <Compile Include="Controller\DepartmentController.cs" />
+    <Compile Include="Controller\InventoryController.cs" />
     <Compile Include="Controller\InventoryInController.cs" />
     <Compile Include="Controller\InventoryOutController.cs" />
     <Compile Include="Controller\LocationController.cs" />
@@ -88,6 +89,12 @@
     </Compile>
     <Compile Include="Views\SubViews\Management\FLocation.Designer.cs">
       <DependentUpon>FLocation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\SubViews\Transaction\FInventoryInOut.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\SubViews\Transaction\FInventoryInOut.Designer.cs">
+      <DependentUpon>FInventoryInOut.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\SubViews\Transaction\FInventoryOut.cs">
       <SubType>Form</SubType>
@@ -176,6 +183,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Management\FLocation.resx">
       <DependentUpon>FLocation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryInOut.resx">
+      <DependentUpon>FInventoryInOut.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryOut.resx">
       <DependentUpon>FInventoryOut.cs</DependentUpon>
