@@ -11,9 +11,9 @@ namespace SGI.Controller
 {
     class InventoryController
     {
-        public DataTable GetLocationInventory(Location currentLoc)
-        {
-            using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_Inventory where LocationID = " + currentLoc.LocationId, CDatabase.Connection))
+        public DataTable GetLocationInventory(Location currentLoc, string productColumn, string qtyColumn, string measuringUnitColumn)
+        { 
+            using (SqlCommand cmd = new SqlCommand("SELECT Quantity as " + qtyColumn + ", Name as " + productColumn + " From Tbl_Inventory INNER JOIN Tbl_Product ON Tbl_Inventory.ProductID_ = Tbl_Product.ProductID  where LocationID = "+ currentLoc.LocationId + " AND IsActive = 1", CDatabase.Connection))
             {
                 cmd.CommandType = System.Data.CommandType.Text;
                 SqlDataReader dr = cmd.ExecuteReader();
