@@ -21,6 +21,6 @@ VALUES('Filtreur a eau pour four', 'Alto-Shaam', 'Filtreur a eau pour four (comp
 	  ('Balais pour plancher', 'Swiffer', 'Balais swiffer pour plancher des chambres', 'unité', 1, 6, 2, 15, 26.25, 1, 4, 2, GETDATE(), 'p000101', '13605078');
 
 INSERT INTO Tbl_productdepartments(ProductId, DepartementsId)
-VALUES(1,1),
-	  (2,1),
-	  (2,2)
+VALUES(100,1),
+	  (101,1),
+	  (101,2);

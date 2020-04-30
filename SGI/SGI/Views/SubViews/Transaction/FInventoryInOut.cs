@@ -104,6 +104,15 @@ namespace SGI.Views.SubViews.Transaction
             }
         }
 
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (TCAction.SelectedIndex == 0)
+                GetCurrentInventory(dgvInventory);
+            else
+                GetCurrentInventory(dgvInventoryOut);
+            txt_produit.Focus();
+        }
+
         private void GetCurrentInventory(DataGridView dgvToFill)
         {
             Location currentLocation = (Location)cbo_loc.SelectedItem;
@@ -341,11 +350,6 @@ namespace SGI.Views.SubViews.Transaction
             {
                 txt_produit.Focus();
             }
-        }
-
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            txt_produit.Focus();
         }
 
         #endregion
