@@ -81,8 +81,6 @@ C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Properties.Resources.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Integration.FIntegration.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.FSupplier.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Management.FLocation.resources
-C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.FInventoryOut.resources
-C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.FInventoryIn.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.UCManagementAction.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Transaction.FProductIn.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.FItemsTooMuch.resources
