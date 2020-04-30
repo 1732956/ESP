@@ -179,5 +179,10 @@ namespace SGI.Views.SubViews
                 }
             }
         }
+
+        private void cbo_loc_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

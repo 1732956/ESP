@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using SGI.Views.SubViews;
 using SGI.Views.SubViews.Integration;
 using SGI.Views.SubViews.Management;
+using SGI.Views.SubViews.Transaction;
 
 namespace SGI
 {
@@ -23,8 +24,7 @@ namespace SGI
         }
         private void FMain_Load(object sender, EventArgs e)
         {
-            FInventoryIn form = new FInventoryIn();
-            ShowSubForm(form, InPanel);
+            
         }
 
         #region Utilities
@@ -44,12 +44,6 @@ namespace SGI
         #endregion
 
         #region SubFormLoads
-
-        private void TPOut_Enter(object sender, EventArgs e)
-        {
-            FInventoryOut form = new FInventoryOut();
-            ShowSubForm(form, OutPanel);
-        }
 
         private void TPCategory_Enter(object sender, EventArgs e)
         {
@@ -102,15 +96,6 @@ namespace SGI
             }
         }
 
-        private void TPIn_Enter(object sender, EventArgs e)
-        {
-            if (InPanel.Controls.Count == 0)
-            {
-                FInventoryIn form = new FInventoryIn();
-                ShowSubForm(form, InPanel);
-            }
-        }
-
         private void TPProduct_Enter(object sender, EventArgs e)
         {
             if (ProductPanel.Controls.Count == 0)
@@ -135,18 +120,15 @@ namespace SGI
             ShowSubForm(form, IntegrationPanel);
         }
 
-        private void TCTransaction_Selected(object sender, TabControlEventArgs e)
+        private void TPTransaction_Enter(object sender, EventArgs e)
         {
-            FInventoryOut form = new FInventoryOut();
-            ShowSubForm(form, OutPanel);
+            FInventoryInOut form = new FInventoryInOut();
+            ShowSubForm(form, InventoryInOutPanel);
         }
+
         #endregion
 
         #region SubFormClears
-        private void TPIn_Leave(object sender, EventArgs e)
-        {
-            ClearSubForm(InPanel);
-        }
 
         private void TPProduct_Leave(object sender, EventArgs e)
         {
@@ -158,10 +140,6 @@ namespace SGI
             ClearSubForm(GeneralStockPanel);
         }
 
-        private void TPOut_Leave(object sender, EventArgs e)
-        {
-            ClearSubForm(OutPanel);
-        }
 
         private void TPLocation_Leave(object sender, EventArgs e)
         {
@@ -203,21 +181,18 @@ namespace SGI
             ClearSubForm(IntegrationPanel);
         }
 
-        #endregion
-
-        private void TCTransaction_SelectedIndexChanged(object sender, EventArgs e)
+        private void TPTransaction_Leave(object sender, EventArgs e)
         {
-            if (TCTransaction.SelectedIndex == 1)
-            {
-                OutPanel.Controls[0].Controls[10].Focus();
-            }
+            ClearSubForm(InventoryInOutPanel);
         }
+
+        #endregion
         private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch(TCMain.SelectedIndex)
             {
                 case 0: //transactions
-                    TCTransaction.SelectedIndex = -1;
+                    
                     break;
                 case 1: //gestion
                     TCManagement.SelectedIndex = -1;

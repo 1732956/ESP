@@ -37,8 +37,8 @@
             this.btn_deleteCurrentProduct = new System.Windows.Forms.Button();
             this.DGVOrder = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.btnCancelOrder = new System.Windows.Forms.Button();
+            this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,6 +71,7 @@
             this.cbo_loc.Name = "cbo_loc";
             this.cbo_loc.Size = new System.Drawing.Size(186, 25);
             this.cbo_loc.TabIndex = 6;
+            this.cbo_loc.SelectedIndexChanged += new System.EventHandler(this.cbo_loc_SelectedIndexChanged);
             this.cbo_loc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.Cbo_loc_KeyPress);
             // 
             // lbl_loc
@@ -156,7 +157,7 @@
             // 
             // Quantity
             // 
-            this.Quantity.HeaderText = "Quantité";
+            this.Quantity.HeaderText = "Quantité (+)";
             this.Quantity.Name = "Quantity";
             // 
             // ProductID

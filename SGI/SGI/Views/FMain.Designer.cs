@@ -32,11 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.TCMain = new System.Windows.Forms.TabControl();
             this.TPTransaction = new System.Windows.Forms.TabPage();
-            this.TCTransaction = new System.Windows.Forms.TabControl();
-            this.TPIn = new System.Windows.Forms.TabPage();
-            this.InPanel = new System.Windows.Forms.Panel();
-            this.TPOut = new System.Windows.Forms.TabPage();
-            this.OutPanel = new System.Windows.Forms.Panel();
             this.TransactionImages = new System.Windows.Forms.ImageList(this.components);
             this.TPManagement = new System.Windows.Forms.TabPage();
             this.TCManagement = new System.Windows.Forms.TabControl();
@@ -64,11 +59,9 @@
             this.VidualizationImages = new System.Windows.Forms.ImageList(this.components);
             this.TPIntegration = new System.Windows.Forms.TabPage();
             this.IntegrationPanel = new System.Windows.Forms.Panel();
+            this.InventoryInOutPanel = new System.Windows.Forms.Panel();
             this.TCMain.SuspendLayout();
             this.TPTransaction.SuspendLayout();
-            this.TCTransaction.SuspendLayout();
-            this.TPIn.SuspendLayout();
-            this.TPOut.SuspendLayout();
             this.TPManagement.SuspendLayout();
             this.TCManagement.SuspendLayout();
             this.TPProduct.SuspendLayout();
@@ -98,48 +91,12 @@
             // 
             // TPTransaction
             // 
-            this.TPTransaction.Controls.Add(this.TCTransaction);
+            this.TPTransaction.Controls.Add(this.InventoryInOutPanel);
             resources.ApplyResources(this.TPTransaction, "TPTransaction");
             this.TPTransaction.Name = "TPTransaction";
             this.TPTransaction.UseVisualStyleBackColor = true;
-            // 
-            // TCTransaction
-            // 
-            this.TCTransaction.Controls.Add(this.TPIn);
-            this.TCTransaction.Controls.Add(this.TPOut);
-            resources.ApplyResources(this.TCTransaction, "TCTransaction");
-            this.TCTransaction.ImageList = this.TransactionImages;
-            this.TCTransaction.Name = "TCTransaction";
-            this.TCTransaction.SelectedIndex = 0;
-            this.TCTransaction.SelectedIndexChanged += new System.EventHandler(this.TCTransaction_SelectedIndexChanged);
-            this.TCTransaction.Selected += new System.Windows.Forms.TabControlEventHandler(this.TCTransaction_Selected);
-            // 
-            // TPIn
-            // 
-            this.TPIn.Controls.Add(this.InPanel);
-            resources.ApplyResources(this.TPIn, "TPIn");
-            this.TPIn.Name = "TPIn";
-            this.TPIn.UseVisualStyleBackColor = true;
-            this.TPIn.Enter += new System.EventHandler(this.TPIn_Enter);
-            this.TPIn.Leave += new System.EventHandler(this.TPIn_Leave);
-            // 
-            // InPanel
-            // 
-            resources.ApplyResources(this.InPanel, "InPanel");
-            this.InPanel.Name = "InPanel";
-            // 
-            // TPOut
-            // 
-            this.TPOut.Controls.Add(this.OutPanel);
-            resources.ApplyResources(this.TPOut, "TPOut");
-            this.TPOut.Name = "TPOut";
-            this.TPOut.UseVisualStyleBackColor = true;
-            this.TPOut.Leave += new System.EventHandler(this.TPOut_Leave);
-            // 
-            // OutPanel
-            // 
-            resources.ApplyResources(this.OutPanel, "OutPanel");
-            this.OutPanel.Name = "OutPanel";
+            this.TPTransaction.Enter += new System.EventHandler(this.TPTransaction_Enter);
+            this.TPTransaction.Leave += new System.EventHandler(this.TPTransaction_Leave);
             // 
             // TransactionImages
             // 
@@ -346,6 +303,11 @@
             resources.ApplyResources(this.IntegrationPanel, "IntegrationPanel");
             this.IntegrationPanel.Name = "IntegrationPanel";
             // 
+            // InventoryInOutPanel
+            // 
+            resources.ApplyResources(this.InventoryInOutPanel, "InventoryInOutPanel");
+            this.InventoryInOutPanel.Name = "InventoryInOutPanel";
+            // 
             // FMain
             // 
             resources.ApplyResources(this, "$this");
@@ -357,9 +319,6 @@
             this.Load += new System.EventHandler(this.FMain_Load);
             this.TCMain.ResumeLayout(false);
             this.TPTransaction.ResumeLayout(false);
-            this.TCTransaction.ResumeLayout(false);
-            this.TPIn.ResumeLayout(false);
-            this.TPOut.ResumeLayout(false);
             this.TPManagement.ResumeLayout(false);
             this.TCManagement.ResumeLayout(false);
             this.TPProduct.ResumeLayout(false);
@@ -384,9 +343,6 @@
         private System.Windows.Forms.TabPage TPManagement;
         private System.Windows.Forms.TabPage TPVisualization;
         private System.Windows.Forms.TabPage TPTransaction;
-        private System.Windows.Forms.TabControl TCTransaction;
-        private System.Windows.Forms.TabPage TPIn;
-        private System.Windows.Forms.TabPage TPOut;
         private System.Windows.Forms.TabControl TCManagement;
         private System.Windows.Forms.TabPage TPProduct;
         private System.Windows.Forms.TabPage TPCategory;
@@ -397,8 +353,6 @@
         private System.Windows.Forms.TabPage TPOrdersToMake;
         private System.Windows.Forms.TabPage TPItemsTooMuch;
         private System.Windows.Forms.Panel ProductPanel;
-        private System.Windows.Forms.Panel InPanel;
-        private System.Windows.Forms.Panel OutPanel;
         private System.Windows.Forms.Panel CategoryPanel;
         private System.Windows.Forms.Panel DepartmentPanel;
         private System.Windows.Forms.Panel GeneralStockPanel;
@@ -414,6 +368,7 @@
         private System.Windows.Forms.Panel SupplierPanel;
         private System.Windows.Forms.TabPage TPIntegration;
         private System.Windows.Forms.Panel IntegrationPanel;
+        private System.Windows.Forms.Panel InventoryInOutPanel;
     }
 }
 

@@ -29,13 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FProductIn));
             this.formTimer = new System.Windows.Forms.Timer(this.components);
             this.productName = new System.Windows.Forms.Label();
             this.lblBrand = new System.Windows.Forms.Label();
             this.txtBrand = new System.Windows.Forms.TextBox();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.btnContinue = new System.Windows.Forms.Button();
             this.txtPrice = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCategory = new System.Windows.Forms.TextBox();
@@ -61,7 +59,7 @@
             // lblBrand
             // 
             this.lblBrand.AutoSize = true;
-            this.lblBrand.Location = new System.Drawing.Point(81, 68);
+            this.lblBrand.Location = new System.Drawing.Point(76, 50);
             this.lblBrand.Name = "lblBrand";
             this.lblBrand.Size = new System.Drawing.Size(57, 19);
             this.lblBrand.TabIndex = 1;
@@ -69,7 +67,7 @@
             // 
             // txtBrand
             // 
-            this.txtBrand.Location = new System.Drawing.Point(185, 65);
+            this.txtBrand.Location = new System.Drawing.Point(180, 47);
             this.txtBrand.Name = "txtBrand";
             this.txtBrand.ReadOnly = true;
             this.txtBrand.Size = new System.Drawing.Size(191, 25);
@@ -77,31 +75,19 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnCancel.BackgroundImage")));
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnCancel.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.btnCancel.ImageKey = "(none)";
-            this.btnCancel.Location = new System.Drawing.Point(124, 280);
+            this.btnCancel.Location = new System.Drawing.Point(207, 253);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(81, 39);
             this.btnCancel.TabIndex = 3;
+            this.btnCancel.Text = "Annuler";
             this.btnCancel.UseVisualStyleBackColor = true;
-            // 
-            // btnContinue
-            // 
-            this.btnContinue.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnContinue.BackgroundImage")));
-            this.btnContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnContinue.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.btnContinue.Location = new System.Drawing.Point(234, 280);
-            this.btnContinue.Name = "btnContinue";
-            this.btnContinue.Size = new System.Drawing.Size(82, 39);
-            this.btnContinue.TabIndex = 4;
-            this.btnContinue.UseVisualStyleBackColor = true;
-            this.btnContinue.Click += new System.EventHandler(this.btnContinue_Click);
             // 
             // txtPrice
             // 
-            this.txtPrice.Location = new System.Drawing.Point(185, 234);
+            this.txtPrice.Location = new System.Drawing.Point(180, 216);
             this.txtPrice.Name = "txtPrice";
             this.txtPrice.ReadOnly = true;
             this.txtPrice.Size = new System.Drawing.Size(191, 25);
@@ -110,7 +96,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 237);
+            this.label1.Location = new System.Drawing.Point(76, 219);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(31, 19);
             this.label1.TabIndex = 5;
@@ -118,7 +104,7 @@
             // 
             // txtCategory
             // 
-            this.txtCategory.Location = new System.Drawing.Point(185, 108);
+            this.txtCategory.Location = new System.Drawing.Point(180, 90);
             this.txtCategory.Name = "txtCategory";
             this.txtCategory.ReadOnly = true;
             this.txtCategory.Size = new System.Drawing.Size(191, 25);
@@ -127,7 +113,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(81, 111);
+            this.label2.Location = new System.Drawing.Point(76, 93);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(68, 19);
             this.label2.TabIndex = 7;
@@ -135,7 +121,7 @@
             // 
             // txtDepartment
             // 
-            this.txtDepartment.Location = new System.Drawing.Point(185, 153);
+            this.txtDepartment.Location = new System.Drawing.Point(180, 135);
             this.txtDepartment.Name = "txtDepartment";
             this.txtDepartment.ReadOnly = true;
             this.txtDepartment.Size = new System.Drawing.Size(191, 25);
@@ -144,7 +130,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(81, 159);
+            this.label3.Location = new System.Drawing.Point(76, 141);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(90, 19);
             this.label3.TabIndex = 9;
@@ -152,7 +138,7 @@
             // 
             // txtSupplier
             // 
-            this.txtSupplier.Location = new System.Drawing.Point(185, 194);
+            this.txtSupplier.Location = new System.Drawing.Point(180, 176);
             this.txtSupplier.Name = "txtSupplier";
             this.txtSupplier.ReadOnly = true;
             this.txtSupplier.Size = new System.Drawing.Size(191, 25);
@@ -161,7 +147,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(81, 200);
+            this.label4.Location = new System.Drawing.Point(76, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(80, 19);
             this.label4.TabIndex = 11;
@@ -171,7 +157,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(464, 350);
+            this.ClientSize = new System.Drawing.Size(470, 304);
             this.Controls.Add(this.txtSupplier);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtDepartment);
@@ -180,7 +166,6 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtPrice);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnContinue);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtBrand);
             this.Controls.Add(this.lblBrand);
@@ -203,7 +188,6 @@
         private System.Windows.Forms.Label lblBrand;
         private System.Windows.Forms.TextBox txtBrand;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button btnContinue;
         private System.Windows.Forms.TextBox txtPrice;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCategory;
