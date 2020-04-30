@@ -72,6 +72,8 @@ namespace SGI.Controller
                     cmd.Parameters.Add("@QtyMin", SqlDbType.Int).Value = newProduct.MinQty;
                     cmd.Parameters.Add("@QtyMax", SqlDbType.Int).Value = newProduct.MaxQty;
                     cmd.Parameters.Add("@supplierCode", SqlDbType.VarChar).Value = newProduct.CodeSupplier;
+                    cmd.Parameters.Add("@MeasureUnit", SqlDbType.VarChar).Value = newProduct.MeasureUnit;
+                    cmd.Parameters.Add("@MeasureQty", SqlDbType.Int).Value = newProduct.MeasureQty;
                     cmd.Parameters.Add("@CategoryId", SqlDbType.Int).Value = newProduct.Category.CategoryID;
                     String DepString = "";
                     for (int  i = 0;  i < newProduct.Departments.Count;  i++)

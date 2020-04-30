@@ -180,7 +180,10 @@ namespace SGI.Views.SubViews
                         LBCategories.SelectedIndex = last == true ? LBCategories.Items.Count - 1 : 0;
                     else
                         LBCategories.SelectedIndex = -1;
+
                     ChangeFormEditStatus(true);
+
+
                     CurrentState = State.VIEW;
                 }
                 else
@@ -244,7 +247,6 @@ namespace SGI.Views.SubViews
         private void LBCategories_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentCategory = (Category)LBCategories.SelectedItem;
-            ChangeFormEditStatus(true);
             CurrentState = State.VIEW;
         }
     }
