@@ -28,6 +28,20 @@ namespace SGI.Controller
                     foreach (DataRow row in dt.Rows)
                     {
                         Product newProduct = new Product(row, false);
+
+                        using (SqlCommand cmd2 = new SqlCommand("ProductDeparments_sp", CDatabase.Connection))
+                        {
+                            cmd2.CommandType = System.Data.CommandType.StoredProcedure;
+                            cmd2.Parameters.Add("@ProductId", SqlDbType.Int).Value = newProduct.ProductId;
+                            SqlDataReader dr2 = cmd2.ExecuteReader();
+                            DataTable dt2 = new DataTable();
+                            dt2.Load(dr2);
+                            foreach (DataRow row2 in dt2.Rows)
+                            {
+                                newProduct.addDepartment(row2);
+                            }
+                        }
+
                         products.Add(newProduct);
                     }
                 }
@@ -43,6 +57,7 @@ namespace SGI.Controller
         public bool EditSingleProduct(Product newProduct, string Action)
         {
             bool Worked = false;
+
             try
             {
 
@@ -57,8 +72,16 @@ namespace SGI.Controller
                     cmd.Parameters.Add("@QtyMin", SqlDbType.Int).Value = newProduct.MinQty;
                     cmd.Parameters.Add("@QtyMax", SqlDbType.Int).Value = newProduct.MaxQty;
                     cmd.Parameters.Add("@supplierCode", SqlDbType.VarChar).Value = newProduct.CodeSupplier;
+                    cmd.Parameters.Add("@MeasureUnit", SqlDbType.VarChar).Value = newProduct.MeasureUnit;
+                    cmd.Parameters.Add("@MeasureQty", SqlDbType.Int).Value = newProduct.MeasureQty;
                     cmd.Parameters.Add("@CategoryId", SqlDbType.Int).Value = newProduct.Category.CategoryID;
-                    cmd.Parameters.Add("@DepartementId", SqlDbType.Int).Value = newProduct.Department.DepartmentId;
+                    String DepString = "";
+                    for (int  i = 0;  i < newProduct.Departments.Count;  i++)
+                    {
+                        DepString += newProduct.Departments[i].DepartmentId.ToString() + ",";
+                    }
+
+                    cmd.Parameters.Add("@Departement", SqlDbType.VarChar).Value = DepString;  
                     cmd.Parameters.Add("@Description", SqlDbType.VarChar).Value = newProduct.Description;
                     cmd.Parameters.Add("@Price", SqlDbType.Decimal).Value = newProduct.Price;
                     cmd.Parameters.Add("@SupplierId", SqlDbType.VarChar).Value = newProduct.Supplier.SupplierID;
@@ -67,7 +90,7 @@ namespace SGI.Controller
                     Worked = true;
                 }
             }
-            catch
+            catch(Exception e)
             {
                 Worked = false;
             }

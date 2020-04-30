@@ -249,7 +249,7 @@ namespace SGI.Views.SubViews.Management
         {
             currentLocation = (Location)LBLocations.SelectedItem;
             CurrentState = State.VIEW;
-            ChangeFormEditStatus(true);
+           
         }
     }
 }

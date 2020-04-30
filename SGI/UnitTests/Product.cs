@@ -5,6 +5,7 @@ using SGI.Model.Classes;
 using SGI;
 using System.Data.SqlClient;
 using System.Data;
+using System.Collections.Generic;
 
 namespace UnitTestProject2
 {
@@ -30,7 +31,7 @@ namespace UnitTestProject2
             currentProduct.MinQty = 2;
             currentProduct.BarCodeId = "test1";
             currentProduct.Category.CategoryID = 1;
-            currentProduct.Department.DepartmentId = 1;
+            currentProduct.Departments = new List<Department>();
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "add"));
         }
 
@@ -64,7 +65,7 @@ namespace UnitTestProject2
             currentProduct.MinQty = 2;
             currentProduct.BarCodeId = "test2";
             currentProduct.Category.CategoryID = 1;
-            currentProduct.Department.DepartmentId = 1;
+            currentProduct.Departments = new List<Department>();
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "update"));
             CDatabase.ConnectToData();
         }
@@ -98,7 +99,7 @@ namespace UnitTestProject2
             currentProduct.MinQty = 2;
             currentProduct.BarCodeId = "test1";
             currentProduct.Category.CategoryID = 1;
-            currentProduct.Department.DepartmentId = 1;
+            currentProduct.Departments = new List<Department>();
             Assert.IsFalse(productcontoller.EditSingleProduct(currentProduct, "update"));
         }
     }

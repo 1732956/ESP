@@ -20,10 +20,12 @@ namespace SGI.Model.Classes
         public int MaxQty { get; set; }
         public int MinQty { get; set; }
         public string BarCodeId { get; set; }
+        public string MeasureUnit { get; set; }
+        public int MeasureQty { get; set; }
         public Category Category { get; set; }
-        public Department Department { get; set; }
         public Supplier Supplier { get; set; }
         public String   CodeSupplier { get; set; }
+        public List<Department> Departments { get; set; }
 
         public Product(DataRow row, bool isSingle)
         {
@@ -41,10 +43,11 @@ namespace SGI.Model.Classes
                 this.MinQty = Convert.ToInt32(row["QtyMin"]);
                 this.BarCodeId = row["BarCodeId"].ToString();
                 this.CodeSupplier = row["SupplierCode"].ToString();
+                this.MeasureUnit = row["MeasureUnit"].ToString();
+                this.MeasureQty = Convert.ToInt32(row["MeasureQty"]);
                 this.Supplier = new Supplier(Convert.ToInt32(row["SupID"]), row["SupName"].ToString(), row["SupResPers"].ToString(), row["SupAdress"].ToString(), row["SupEmail"].ToString(), row["SupPhone"].ToString(), Convert.ToDouble(row["SupMinOrderPrice"]), Convert.ToBoolean(row["SupActive"]));
                 this.Category = new Category(Convert.ToInt32(row["CategoryId"]), row["CategoryDescription"].ToString(), Convert.ToBoolean(row["CategoryIsActive"]));
-                this.Department = new Department(Convert.ToInt32(row["DepartementId"]), row["DepartmentName"].ToString(), row["DepartmentDescription"].ToString(), Convert.ToBoolean(row["DepartmentIsActive"]));
-
+                this.Departments = new List<Department>();
             }
             else
             {
@@ -54,11 +57,23 @@ namespace SGI.Model.Classes
                 this.Description = row["DescrProduct"].ToString();
                 this.Price = Convert.ToDouble(row["Price"]);
                 this.BarCodeId = row["BarCodeId"].ToString();
+                this.MeasureUnit = row["MeasureUnit"].ToString();
+                this.MeasureQty = Convert.ToInt32(row["MeasureQty"]);
                 this.Supplier = new Supplier(0, row["SupName"].ToString(), "", "", "", "", 0, true);
                 this.Category = new Category(0, row["CatDescr"].ToString(), true);
-                this.Department = new Department(0, row["DepNom"].ToString(), "",true);
+                this.Departments = new List<Department>();
+
+
+
+
             }
         }
+
+        public void addDepartment(DataRow row)
+        {
+            this.Departments.Add(new Department(Convert.ToInt32(row["DepartementID"]), row["DepNom"].ToString(), row["Description"].ToString(),Convert.ToBoolean(row["IsActive"])));
+        }
+
 
         public Product()
         {
@@ -75,11 +90,15 @@ namespace SGI.Model.Classes
             MinQty = 0;
             BarCodeId = "";
             Category = new Category();
-            Department = new Department();
+            Departments = new List<Department>();
             CodeSupplier = "";
+            MeasureQty = 0;
+            MeasureUnit = "";
         }
 
-        public Product(int id, string name, string brand, string description, Supplier supplier, int price, bool active, int unitcount, int maxqty, int minqty, Category category, Department department, string codesupplier)
+        public Product(int id, string name, string brand, string description, Supplier supplier, int price, bool active,
+            int unitcount, int maxqty, int minqty, Category category, List<Department> departments, string codesupplier, string measureUnit,
+            int measureQty)
         {
             ProductId = id;
             Name = name;
@@ -92,7 +111,7 @@ namespace SGI.Model.Classes
             MaxQty = maxqty;
             MinQty = minqty;
             Category = category;
-            Department = department;
+            Departments = departments;
             CodeSupplier = codesupplier;
         }
     }

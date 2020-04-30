@@ -15,6 +15,7 @@ DROP TABLE IF EXISTS dbo.Tbl_Category;
 DROP TABLE IF EXISTS dbo.Tbl_Location;
 DROP TABLE IF EXISTS dbo.Tbl_MesuringUnit;
 DROP TABLE IF EXISTS dbo.Tbl_Supplier;
+DROP TABLE IF EXISTS dbo.Tbl_ProductDepartments;
 
 
 CREATE TABLE Tbl_MesuringUnit(
@@ -72,24 +73,22 @@ CREATE TABLE Tbl_Product(
 	Name             VARCHAR (50) NOT NULL ,
 	Brand            VARCHAR (50) ,
 	Description      VARCHAR (50) ,
+    MeasureUnit      VARCHAR (100) NOT NULL DEFAULT '',
+	MeasureQty       INT NOT NULL DEFAULT 0,
 	UnitNbr          INT  NOT NULL ,
 	QtyMin			 INT  NOT NULL ,
 	QtyMax			 INT  NOT NULL ,
 	Price            MONEY  NOT NULL ,
 	IsActive         bit  NOT NULL ,
-	MesuringUnitID   INT  NOT NULL ,
 	CategoryID       INT  ,
 	SupplierID		 INT  NOT NULL ,
-	DepartementID    INT  NOT NULL  ,
 	LastUpdate       DateTime,
 	BarCodeId        VARCHAR(7),
 	SupplierCode     VARCHAR(50) NOT NULL,
 	CONSTRAINT Tbl_Product_PK PRIMARY KEY (ProductID)
 
 	,CONSTRAINT Tbl_Product_Tbl_Supplier_FK FOREIGN KEY (SupplierID) REFERENCES Tbl_Supplier(SupplierID)
-	,CONSTRAINT Tbl_Product_Tbl_MesuringUnit_FK FOREIGN KEY (MesuringUnitID) REFERENCES Tbl_MesuringUnit(MesuringUnitID)
 	,CONSTRAINT Tbl_Product_Tbl_Category0_FK FOREIGN KEY (CategoryID) REFERENCES Tbl_Category(CategoryID)
-	,CONSTRAINT Tbl_Product_Tbl_Departement1_FK FOREIGN KEY (DepartementID) REFERENCES Tbl_Departement(DepartementID)
 );
 
 
@@ -135,9 +134,14 @@ CREATE TABLE Tbl_InventoryTransaction(
 	,CONSTRAINT Tbl_InventoryTransaction_Tbl_Location1_FK FOREIGN KEY (LocationID) REFERENCES Tbl_Location(LocationID)
 );
 
+CREATE TABLE Tbl_ProductDepartments(
+	ID			    INT   IDENTITY,  
+	ProductId       INT  ,
+	DepartementsId INT
+	CONSTRAINT Tbl_Tbl_ProductDepartments_PK PRIMARY KEY (ID)
+);
 
-INSERT INTO Tbl_MesuringUnit(Description,UnitCode,IsActive)
-VALUES('DescriptionUnit', 'CodeUnit', 1)
+
 
 INSERT INTO Tbl_Departement (Nom,Description,IsActive)
 VALUES('NomDep','DescriptionDep',1)
@@ -148,6 +152,6 @@ VALUES('DescriptionCat', 1)
 INSERT INTO Tbl_Supplier (Name, ResourcePerson, Adress, Email, PhoneNumber, MinOrderPrice, Active)
 VALUES('nameSupplier', 'RessourcePerson', 'Adress', 'Email', 'PhoneNumber', 75, 1)
 
-INSERT INTO Tbl_Product(Name,Brand,Description,UnitNbr,QtyMin,QtyMax,Price,IsActive,MesuringUnitID,CategoryID,DepartementID,SupplierID,LastUpdate,BarCodeId,SupplierCode)
-VALUES('nameProduct', 'BrandProduct', 'DescrPproduct',3 ,5, 18, 22, 1,1,1,1,1, GETDATE(),'P000100','supcode')
+INSERT INTO Tbl_Product(Name,Brand,Description,UnitNbr,QtyMin,QtyMax,Price,IsActive,CategoryID,SupplierID,LastUpdate,BarCodeId,SupplierCode)
+VALUES('nameProduct', 'BrandProduct', 'DescrPproduct',3 ,5, 18, 22,1,1,1, GETDATE(),'P000100','supcode')
 select * from Tbl_Product

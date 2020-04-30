@@ -83,6 +83,8 @@ namespace SGI.Views.SubViews
             GetAllActiveCategories();
             GetAllActiveSuppliers();
             GetAllActiveProducts();
+            selectDepartments();
+
             if (currentProduct == null)
                 CurrentState = State.ADD;
             else
@@ -92,8 +94,12 @@ namespace SGI.Views.SubViews
             ucManagementAction1.NewButtonClicked += UcManagementAction1_NewButtonClicked;
             ucManagementAction1.CancelButtonClicked += UcManagementAction1_CancelButtonClicked;
             CBFilter.SelectedIndexChanged += CBFilter_SelectedIndexChanged;
-            if(currentProduct != null)
+            if (currentProduct != null)
                 ChangeFormEditStatus(true);
+
+ 
+
+
         }
 
         private void LBProducts_SelectedIndexChanged(object sender, EventArgs e)
@@ -200,7 +206,7 @@ namespace SGI.Views.SubViews
                         LBProducts.SelectedIndex = -1;
 
                     ChangeFormEditStatus(true);
-                    CurrentState = State.VIEW;
+                           CurrentState = State.VIEW;
                 }
                 else
                     MessageBox.Show("Une erreur est survenue, veuillez réessayer.");
@@ -212,8 +218,6 @@ namespace SGI.Views.SubViews
             string returnMessage = "";
             if (TxtName.Text == "")
                 returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;       
-            if (CbDepartment.SelectedValue == null)
-                returnMessage += "Le département ne peut pas être nul." + Environment.NewLine;
             if (CBSupplier.SelectedValue == null)
                 returnMessage += "Le fournisseur ne peut pas être nul." + Environment.NewLine;
             if (NudMeasuringQty.Value <= 0)
@@ -228,6 +232,15 @@ namespace SGI.Views.SubViews
                 returnMessage += "Le prix doit ne peut pas être nul." + Environment.NewLine;
             if (txt_fournisseurcode.Text == "")
                 returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
+            if (lst_dep.SelectedItems.Count <1)
+                returnMessage += "Un département doit être sélectionner " + Environment.NewLine;
+            if (txt_mesure.Text == "")
+                returnMessage += "La mesure par unité de peut pas être vide " + Environment.NewLine;
+            if (nud_measureqty.Value <= 0 )
+                returnMessage += "La quantité par unité de peut pas être vide " + Environment.NewLine;
+
+
+
             return returnMessage;
         }
         #endregion
@@ -261,25 +274,53 @@ namespace SGI.Views.SubViews
 
         private void GetAllActiveDepartments()
         {
-            CbDepartment.DisplayMember = "Name";
-            CbDepartment.ValueMember = "DepartmentId";
-            CbDepartment.DataSource = DepartmentController.GetAllActiveDepartments();
-            CbDepartment.SelectedIndex = -1;
+            lst_dep.DisplayMember = "Name";
+            lst_dep.ValueMember = "DepartmentId";
+            lst_dep.DataSource = DepartmentController.GetAllActiveDepartments();
         }
+
+        private void selectDepartments()
+        {
+            for (int i = 0; i < lst_dep.Items.Count; i++) 
+            {
+                Department currentDep = (Department)lst_dep.Items[i];
+                if (currentProduct.Departments.Any(dId => dId.DepartmentId == currentDep.DepartmentId))
+                {
+                    lst_dep.SetSelected(i, true);
+                }   
+                else
+                {
+                    lst_dep.SetSelected(i, false);
+                }
+            }
+        }
+
+
 
         #endregion
 
         #region Utils
         private void SetProductData(int productId)
         {
+            List<Department> ListDep = new List<Department>();
+
+            for (int i = 0; i < lst_dep.SelectedItems.Count; i++)
+            {
+                Department currentDep = (Department)lst_dep.SelectedItems[i];
+                ListDep.Add(currentDep);
+            }
+
             if (currentProduct == null)
-                currentProduct = new Product(productId, TxtName.Text, TxtBrand.Text, TxtDescription.Text, (Supplier)CBSupplier.SelectedItem, Convert.ToInt32(NudPrice.Value), cbActive.Checked, Convert.ToInt32(NudMeasuringQty.Value), Convert.ToInt32(nudMax.Value), Convert.ToInt32(NudMin.Value), (Category)CbCategory.SelectedItem, (Department)CbDepartment.SelectedItem, txt_fournisseurcode.Text);
+                 currentProduct = new Product(productId, TxtName.Text, TxtBrand.Text, TxtDescription.Text, (Supplier)CBSupplier.SelectedItem, Convert.ToInt32(NudPrice.Value), cbActive.Checked, Convert.ToInt32(NudMeasuringQty.Value), Convert.ToInt32(nudMax.Value), Convert.ToInt32(NudMin.Value), (Category)CbCategory.SelectedItem, ListDep, txt_fournisseurcode.Text,txt_mesure.Text, Convert.ToInt32(nud_measureqty.Value));
+
             currentProduct.ProductId = productId;
             currentProduct.Name = TxtName.Text;
             currentProduct.Brand = TxtBrand.Text;
             currentProduct.Description = TxtDescription.Text;
             currentProduct.Category = (Category)CbCategory.SelectedItem;
-            currentProduct.Department = (Department)CbDepartment.SelectedItem;
+            currentProduct.MeasureUnit = txt_mesure.Text;
+            currentProduct.MeasureQty = Convert.ToInt32(nud_measureqty.Value);
+            currentProduct.Departments = ListDep;
             currentProduct.Supplier = (Supplier)CBSupplier.SelectedItem;
             currentProduct.UnitCount = Convert.ToInt32(NudMeasuringQty.Value);
             currentProduct.Price = Convert.ToInt32(NudPrice.Value);
@@ -296,7 +337,7 @@ namespace SGI.Views.SubViews
                 TxtName.TextChanged += PutInEditMode;
                 TxtBrand.TextChanged += PutInEditMode;
                 CbCategory.SelectedIndexChanged += PutInEditMode;
-                CbDepartment.SelectedIndexChanged += PutInEditMode;
+                lst_dep.SelectedIndexChanged += PutInEditMode;
                 TxtDescription.TextChanged += PutInEditMode;
                 CBSupplier.SelectedIndexChanged += PutInEditMode;
                 NudMeasuringQty.ValueChanged += PutInEditMode;
@@ -305,13 +346,15 @@ namespace SGI.Views.SubViews
                 nudMax.ValueChanged += PutInEditMode;
                 NudMin.ValueChanged += PutInEditMode;
                 txt_fournisseurcode.TextChanged += PutInEditMode;
+                nud_measureqty.ValueChanged += PutInEditMode;
+                txt_mesure.TextChanged += PutInEditMode;
             }
             else
             {
                 TxtName.TextChanged -= PutInEditMode;
                 TxtBrand.TextChanged -= PutInEditMode;
                 CbCategory.SelectedIndexChanged -= PutInEditMode;
-                CbDepartment.SelectedIndexChanged -= PutInEditMode;
+                lst_dep.SelectedIndexChanged -= PutInEditMode;
                 TxtDescription.TextChanged -= PutInEditMode;
                 CBSupplier.SelectedIndexChanged -= PutInEditMode;
                 NudMeasuringQty.ValueChanged -= PutInEditMode;
@@ -321,6 +364,8 @@ namespace SGI.Views.SubViews
                 NudMin.ValueChanged -= PutInEditMode;
                 CurrentState = State.VIEW;
                 txt_fournisseurcode.TextChanged -= PutInEditMode;
+                txt_mesure.TextChanged -= PutInEditMode;
+                nud_measureqty.ValueChanged -= PutInEditMode;
             }
         }
 
@@ -335,13 +380,15 @@ namespace SGI.Views.SubViews
             TxtBrand.Text = currentProduct.Brand;
             TxtDescription.Text = currentProduct.Description;
             CbCategory.SelectedValue = currentProduct.Category.CategoryID;
-            CbDepartment.SelectedValue = currentProduct.Department.DepartmentId;
+            selectDepartments();
             CBSupplier.SelectedValue = currentProduct.Supplier.SupplierID;
             NudMeasuringQty.Value = currentProduct.UnitCount;
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);
             NudMin.Value = currentProduct.MinQty;
             nudMax.Value = currentProduct.MaxQty;
             txt_fournisseurcode.Text = currentProduct.CodeSupplier;
+            txt_mesure.Text = currentProduct.MeasureUnit;
+            nud_measureqty.Value = currentProduct.MeasureQty;
             if (currentProduct.BarCodeId == "")
             {
                 btn_Print.Enabled = false;
@@ -410,5 +457,6 @@ namespace SGI.Views.SubViews
                 GBOBarCode.Visible = false;
         }
         #endregion
+
     }
 }

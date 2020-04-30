@@ -247,7 +247,6 @@ namespace SGI.Views.SubViews
         private void LBDepartments_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentDepartment = (Department)LBDepartments.SelectedItem;
-            ChangeFormEditStatus(true);
             CurrentState = State.VIEW;
         }
     }
