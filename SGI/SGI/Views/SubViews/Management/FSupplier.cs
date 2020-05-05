@@ -113,6 +113,7 @@ namespace SGI.Views.SubViews
                     if (tempoSuppliers.Count > 0)
                     {
                         LBSuppliers.SelectedIndex = 0;
+                        ChangeFormEditStatus(true);
                         CurrentState = State.VIEW;
                     }
                     else
