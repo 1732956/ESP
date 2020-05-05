@@ -325,7 +325,7 @@ namespace SGI.Views.SubViews.Transaction
                     MessageBox.Show("Un ou plusieurs produits de la commande ont une quanité négative ou nulle, veuillez modifier leur quantité et réessayer.");
                 }
             }
-            catch (Exception ex)
+            catch
             {
                 MessageBox.Show("Erreur lors de l'enregistrement");
             }

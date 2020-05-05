@@ -90,7 +90,7 @@ namespace SGI.Controller
                     Worked = true;
                 }
             }
-            catch(Exception e)
+            catch
             {
                 Worked = false;
             }
