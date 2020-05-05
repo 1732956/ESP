@@ -131,18 +131,3 @@ CREATE TABLE Tbl_ProductDepartments(
 	DepartementsId INT
 	CONSTRAINT Tbl_Tbl_ProductDepartments_PK PRIMARY KEY (ID)
 );
-
-
-
-INSERT INTO Tbl_Departement (Nom,Description,IsActive)
-VALUES('NomDep','DescriptionDep',1)
-
-INSERT INTO Tbl_Category ( Description,IsActive)
-VALUES('DescriptionCat', 1)
-
-INSERT INTO Tbl_Supplier (Name, ResourcePerson, Adress, Email, PhoneNumber, MinOrderPrice, Active)
-VALUES('nameSupplier', 'RessourcePerson', 'Adress', 'Email', 'PhoneNumber', 75, 1)
-
-INSERT INTO Tbl_Product(Name,Brand,Description,UnitNbr,QtyMin,QtyMax,Price,IsActive,CategoryID,SupplierID,LastUpdate,BarCodeId,SupplierCode)
-VALUES('nameProduct', 'BrandProduct', 'DescrPproduct',3 ,5, 18, 22,1,1,1, GETDATE(),'P000100','supcode')
-select * from Tbl_Product

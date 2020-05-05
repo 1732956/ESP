@@ -29,42 +29,44 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FInventoryInOut));
             this.cbo_loc = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.TCAction = new System.Windows.Forms.TabControl();
             this.TPIn = new System.Windows.Forms.TabPage();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
-            this.InvProduct = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvMeasUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvQty = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlMovementActions = new System.Windows.Forms.Panel();
             this.dgvMovement = new System.Windows.Forms.DataGridView();
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.TPOut = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvInventoryOut = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgvOutMovement = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnOutConfirm = new System.Windows.Forms.Button();
+            this.btnOutDelete = new System.Windows.Forms.Button();
+            this.btnOutCancel = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_produit = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductID_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvMeasUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.images = new System.Windows.Forms.ImageList(this.components);
             this.TCAction.SuspendLayout();
             this.TPIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
@@ -72,9 +74,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovement)).BeginInit();
             this.panel2.SuspendLayout();
             this.TPOut.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventoryOut)).BeginInit();
             this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutMovement)).BeginInit();
             this.panel4.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -105,6 +107,7 @@
             this.TCAction.Controls.Add(this.TPIn);
             this.TCAction.Controls.Add(this.TPOut);
             this.TCAction.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.TCAction.ImageList = this.images;
             this.TCAction.Location = new System.Drawing.Point(10, 52);
             this.TCAction.Name = "TCAction";
             this.TCAction.SelectedIndex = 0;
@@ -116,6 +119,7 @@
             // 
             this.TPIn.Controls.Add(this.dgvInventory);
             this.TPIn.Controls.Add(this.pnlMovementActions);
+            this.TPIn.ImageKey = "package_add.png";
             this.TPIn.Location = new System.Drawing.Point(4, 26);
             this.TPIn.Name = "TPIn";
             this.TPIn.Padding = new System.Windows.Forms.Padding(10);
@@ -130,32 +134,15 @@
             this.dgvInventory.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvInventory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvInventory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.InvProduct,
+            this.ProductID_,
             this.InvMeasUnit,
-            this.InvQty});
+            this.Quantity});
             this.dgvInventory.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvInventory.Location = new System.Drawing.Point(10, 10);
             this.dgvInventory.Name = "dgvInventory";
+            this.dgvInventory.ReadOnly = true;
             this.dgvInventory.Size = new System.Drawing.Size(574, 453);
             this.dgvInventory.TabIndex = 0;
-            // 
-            // InvProduct
-            // 
-            this.InvProduct.HeaderText = "Produit";
-            this.InvProduct.Name = "InvProduct";
-            this.InvProduct.ReadOnly = true;
-            // 
-            // InvMeasUnit
-            // 
-            this.InvMeasUnit.HeaderText = "Unité de mesure";
-            this.InvMeasUnit.Name = "InvMeasUnit";
-            this.InvMeasUnit.ReadOnly = true;
-            // 
-            // InvQty
-            // 
-            this.InvQty.HeaderText = "Quantité";
-            this.InvQty.Name = "InvQty";
-            this.InvQty.ReadOnly = true;
             // 
             // pnlMovementActions
             // 
@@ -175,31 +162,14 @@
             this.dgvMovement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvMovement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Product,
-            this.Quantity,
+            this.Qty,
             this.ProductID});
             this.dgvMovement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvMovement.Location = new System.Drawing.Point(6, 0);
             this.dgvMovement.Name = "dgvMovement";
             this.dgvMovement.Size = new System.Drawing.Size(390, 375);
             this.dgvMovement.TabIndex = 1;
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Produit";
-            this.Product.Name = "Product";
-            this.Product.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.HeaderText = "Quantité (+)";
-            this.Quantity.Name = "Quantity";
-            // 
-            // ProductID
-            // 
-            this.ProductID.HeaderText = "ProductID";
-            this.ProductID.Name = "ProductID";
-            this.ProductID.ReadOnly = true;
-            this.ProductID.Visible = false;
+            this.dgvMovement.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovement_CellEndEdit);
             // 
             // panel2
             // 
@@ -253,74 +223,57 @@
             // 
             // TPOut
             // 
-            this.TPOut.Controls.Add(this.dataGridView1);
+            this.TPOut.Controls.Add(this.dgvInventoryOut);
             this.TPOut.Controls.Add(this.panel3);
+            this.TPOut.ImageKey = "package_delete.png";
             this.TPOut.Location = new System.Drawing.Point(4, 26);
             this.TPOut.Name = "TPOut";
-            this.TPOut.Padding = new System.Windows.Forms.Padding(3);
+            this.TPOut.Padding = new System.Windows.Forms.Padding(10);
             this.TPOut.Size = new System.Drawing.Size(990, 473);
             this.TPOut.TabIndex = 1;
             this.TPOut.Text = "Sortie";
             this.TPOut.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // dgvInventoryOut
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvInventoryOut.AllowUserToAddRows = false;
+            this.dgvInventoryOut.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvInventoryOut.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvInventoryOut.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(588, 467);
-            this.dataGridView1.TabIndex = 4;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Produit";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Unité de mesure";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Quantité";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.dgvInventoryOut.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvInventoryOut.Location = new System.Drawing.Point(10, 10);
+            this.dgvInventoryOut.Name = "dgvInventoryOut";
+            this.dgvInventoryOut.Size = new System.Drawing.Size(574, 453);
+            this.dgvInventoryOut.TabIndex = 4;
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.dataGridView2);
+            this.panel3.Controls.Add(this.dgvOutMovement);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panel3.Location = new System.Drawing.Point(591, 3);
+            this.panel3.Location = new System.Drawing.Point(584, 10);
             this.panel3.Name = "panel3";
             this.panel3.Padding = new System.Windows.Forms.Padding(6, 0, 0, 0);
-            this.panel3.Size = new System.Drawing.Size(396, 467);
+            this.panel3.Size = new System.Drawing.Size(396, 453);
             this.panel3.TabIndex = 5;
             // 
-            // dataGridView2
+            // dgvOutMovement
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvOutMovement.AllowUserToAddRows = false;
+            this.dgvOutMovement.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvOutMovement.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOutMovement.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6});
-            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView2.Location = new System.Drawing.Point(6, 0);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(390, 389);
-            this.dataGridView2.TabIndex = 1;
+            this.dgvOutMovement.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvOutMovement.Location = new System.Drawing.Point(6, 0);
+            this.dgvOutMovement.Name = "dgvOutMovement";
+            this.dgvOutMovement.Size = new System.Drawing.Size(390, 375);
+            this.dgvOutMovement.TabIndex = 1;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -342,50 +295,53 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.button1);
-            this.panel4.Controls.Add(this.button2);
-            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.btnOutConfirm);
+            this.panel4.Controls.Add(this.btnOutDelete);
+            this.panel4.Controls.Add(this.btnOutCancel);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4.Location = new System.Drawing.Point(6, 389);
+            this.panel4.Location = new System.Drawing.Point(6, 375);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(390, 78);
             this.panel4.TabIndex = 2;
             // 
-            // button1
+            // btnOutConfirm
             // 
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button1.Location = new System.Drawing.Point(260, 0);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 78);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Confirmer";
-            this.toolTip1.SetToolTip(this.button1, "Confirmer tout les mouvements");
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnOutConfirm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOutConfirm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnOutConfirm.Location = new System.Drawing.Point(260, 0);
+            this.btnOutConfirm.Name = "btnOutConfirm";
+            this.btnOutConfirm.Size = new System.Drawing.Size(130, 78);
+            this.btnOutConfirm.TabIndex = 2;
+            this.btnOutConfirm.Text = "Confirmer";
+            this.toolTip1.SetToolTip(this.btnOutConfirm, "Confirmer tout les mouvements");
+            this.btnOutConfirm.UseVisualStyleBackColor = true;
+            this.btnOutConfirm.Click += new System.EventHandler(this.btnOutConfirm_Click);
             // 
-            // button2
+            // btnOutDelete
             // 
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button2.Location = new System.Drawing.Point(130, 0);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(130, 78);
-            this.button2.TabIndex = 0;
-            this.button2.Text = "Supprimer";
-            this.toolTip1.SetToolTip(this.button2, "Supprimer le mouvement sélectionné");
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnOutDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOutDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnOutDelete.Location = new System.Drawing.Point(130, 0);
+            this.btnOutDelete.Name = "btnOutDelete";
+            this.btnOutDelete.Size = new System.Drawing.Size(130, 78);
+            this.btnOutDelete.TabIndex = 0;
+            this.btnOutDelete.Text = "Supprimer";
+            this.toolTip1.SetToolTip(this.btnOutDelete, "Supprimer le mouvement sélectionné");
+            this.btnOutDelete.UseVisualStyleBackColor = true;
+            this.btnOutDelete.Click += new System.EventHandler(this.btnOutDelete_Click);
             // 
-            // button3
+            // btnOutCancel
             // 
-            this.button3.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button3.Dock = System.Windows.Forms.DockStyle.Left;
-            this.button3.Location = new System.Drawing.Point(0, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(130, 78);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Annuler";
-            this.toolTip1.SetToolTip(this.button3, "Modifier le mouvement sélectionné");
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnOutCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnOutCancel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnOutCancel.Location = new System.Drawing.Point(0, 0);
+            this.btnOutCancel.Name = "btnOutCancel";
+            this.btnOutCancel.Size = new System.Drawing.Size(130, 78);
+            this.btnOutCancel.TabIndex = 1;
+            this.btnOutCancel.Text = "Annuler";
+            this.toolTip1.SetToolTip(this.btnOutCancel, "Modifier le mouvement sélectionné");
+            this.btnOutCancel.UseVisualStyleBackColor = true;
+            this.btnOutCancel.Click += new System.EventHandler(this.btnOutCancel_Click);
             // 
             // panel1
             // 
@@ -416,6 +372,73 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Produit :";
             // 
+            // Product
+            // 
+            this.Product.HeaderText = "Produit";
+            this.Product.Name = "Product";
+            this.Product.ReadOnly = true;
+            // 
+            // Qty
+            // 
+            this.Qty.HeaderText = "Quantité (+)";
+            this.Qty.Name = "Qty";
+            // 
+            // ProductID
+            // 
+            this.ProductID.HeaderText = "ProductID";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
+            this.ProductID.Visible = false;
+            // 
+            // ProductID_
+            // 
+            this.ProductID_.DataPropertyName = "Name";
+            this.ProductID_.HeaderText = "Produit";
+            this.ProductID_.Name = "ProductID_";
+            this.ProductID_.ReadOnly = true;
+            // 
+            // InvMeasUnit
+            // 
+            this.InvMeasUnit.DataPropertyName = "InvMeasUnit";
+            this.InvMeasUnit.HeaderText = "Unité de mesure";
+            this.InvMeasUnit.Name = "InvMeasUnit";
+            this.InvMeasUnit.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantité";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Produit";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MeasuringUnit";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Unité de mesure";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Qty";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Quantité";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "package_add.png");
+            this.images.Images.SetKeyName(1, "package_delete.png");
+            // 
             // FInventoryInOut
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
@@ -437,9 +460,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvMovement)).EndInit();
             this.panel2.ResumeLayout(false);
             this.TPOut.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvInventoryOut)).EndInit();
             this.panel3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOutMovement)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
@@ -467,24 +490,25 @@
         private System.Windows.Forms.TextBox txt_produit;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.BindingSource bindingSource1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvProduct;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvMeasUnit;
-        private System.Windows.Forms.DataGridViewTextBoxColumn InvQty;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridView dgvInventoryOut;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgvOutMovement;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
         private System.Windows.Forms.Panel panel4;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnOutConfirm;
+        private System.Windows.Forms.Button btnOutDelete;
+        private System.Windows.Forms.Button btnOutCancel;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Product;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Qty;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductID_;
+        private System.Windows.Forms.DataGridViewTextBoxColumn InvMeasUnit;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.ImageList images;
     }
 }

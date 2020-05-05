@@ -96,18 +96,6 @@
     <Compile Include="Views\SubViews\Transaction\FInventoryInOut.Designer.cs">
       <DependentUpon>FInventoryInOut.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\SubViews\Transaction\FInventoryOut.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SubViews\Transaction\FInventoryOut.Designer.cs">
-      <DependentUpon>FInventoryOut.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\SubViews\Transaction\FInventoryIn.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Views\SubViews\Transaction\FInventoryIn.Designer.cs">
-      <DependentUpon>FInventoryIn.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\Others\UCManagementAction.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -186,12 +174,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryInOut.resx">
       <DependentUpon>FInventoryInOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryOut.resx">
-      <DependentUpon>FInventoryOut.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Views\SubViews\Transaction\FInventoryIn.resx">
-      <DependentUpon>FInventoryIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Others\UCManagementAction.resx">
       <DependentUpon>UCManagementAction.cs</DependentUpon>
