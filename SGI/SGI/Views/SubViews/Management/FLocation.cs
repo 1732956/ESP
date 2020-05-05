@@ -111,6 +111,7 @@ namespace SGI.Views.SubViews.Management
                     if (tempoLocations.Count > 0)
                     {
                         LBLocations.SelectedIndex = 0;
+                        ChangeFormEditStatus(true);
                         CurrentState = State.VIEW;
                     }
                     else
