@@ -18,15 +18,6 @@ DROP TABLE IF EXISTS dbo.Tbl_Supplier;
 DROP TABLE IF EXISTS dbo.Tbl_ProductDepartments;
 
 
-CREATE TABLE Tbl_MesuringUnit(
-	MesuringUnitID   INT IDENTITY (1,1) NOT NULL ,
-	Description      VARCHAR (50) NOT NULL ,
-	UnitCode         VARCHAR (50) NOT NULL ,
-	IsActive         bit  NOT NULL  ,
-	CONSTRAINT Tbl_MesuringUnit_PK PRIMARY KEY (MesuringUnitID)
-);
-
-
 /*------------------------------------------------------------
 -- Table: Tbl_Category
 ------------------------------------------------------------*/
@@ -72,7 +63,7 @@ CREATE TABLE Tbl_Product(
 	ProductID       INT IDENTITY (100,1) NOT NULL ,
 	Name             VARCHAR (50) NOT NULL ,
 	Brand            VARCHAR (50) ,
-	Description      VARCHAR (50) ,
+	Description      VARCHAR (300) ,
     MeasureUnit      VARCHAR (100) NOT NULL DEFAULT '',
 	MeasureQty       INT NOT NULL DEFAULT 0,
 	UnitNbr          INT  NOT NULL ,
