@@ -49,7 +49,7 @@
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(586, 60);
+            this.cbActive.Location = new System.Drawing.Point(39, 195);
             this.cbActive.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(55, 23);
@@ -99,7 +99,7 @@
             this.GBLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GBLocation.Name = "GBLocation";
             this.GBLocation.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GBLocation.Size = new System.Drawing.Size(742, 226);
+            this.GBLocation.Size = new System.Drawing.Size(742, 232);
             this.GBLocation.TabIndex = 20;
             this.GBLocation.TabStop = false;
             this.GBLocation.Text = "Localisation";

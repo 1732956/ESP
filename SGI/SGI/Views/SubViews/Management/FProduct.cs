@@ -223,6 +223,10 @@ namespace SGI.Views.SubViews
                 returnMessage += "Le fournisseur ne peut pas être nul." + Environment.NewLine;
             if (NudMeasuringQty.Value <= 0)
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
+            if (txt_mesure.Text == "")
+                returnMessage += "La mesure de l'unité de mesure de peut pas être vide " + Environment.NewLine;
+            if (nud_measureqty.Value <= 0)
+                returnMessage += "La quantité de l'unité de mesure de peut pas être vide " + Environment.NewLine;
             if (NudMin.Value < 0)
                 returnMessage += "La quantité minimum doit être positive." + Environment.NewLine;
             if (nudMax.Value < 0)
@@ -235,13 +239,6 @@ namespace SGI.Views.SubViews
                 returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
             if (lst_dep.SelectedItems.Count <1)
                 returnMessage += "Un département doit être sélectionner " + Environment.NewLine;
-            if (txt_mesure.Text == "")
-                returnMessage += "La mesure par unité de peut pas être vide " + Environment.NewLine;
-            if (nud_measureqty.Value <= 0 )
-                returnMessage += "La quantité par unité de peut pas être vide " + Environment.NewLine;
-
-
-
             return returnMessage;
         }
         #endregion

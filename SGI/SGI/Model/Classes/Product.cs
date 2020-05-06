@@ -46,7 +46,10 @@ namespace SGI.Model.Classes
                 this.MeasureUnit = row["MeasureUnit"].ToString();
                 this.MeasureQty = Convert.ToInt32(row["MeasureQty"]);
                 this.Supplier = new Supplier(Convert.ToInt32(row["SupID"]), row["SupName"].ToString(), row["SupResPers"].ToString(), row["SupAdress"].ToString(), row["SupEmail"].ToString(), row["SupPhone"].ToString(), Convert.ToDouble(row["SupMinOrderPrice"]), Convert.ToBoolean(row["SupActive"]));
-                this.Category = new Category(Convert.ToInt32(row["CategoryId"]), row["CategoryDescription"].ToString(), Convert.ToBoolean(row["CategoryIsActive"]));
+                if(row["CategoryId"] == DBNull.Value)
+                    this.Category = new Category(0, "", true);
+                else
+                    this.Category = new Category(Convert.ToInt32(row["CategoryId"]), row["CategoryDescription"].ToString(), Convert.ToBoolean(row["CategoryIsActive"]));
                 this.Departments = new List<Department>();
             }
             else

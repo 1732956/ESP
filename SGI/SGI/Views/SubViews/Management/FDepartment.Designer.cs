@@ -49,7 +49,7 @@
             // cbActive
             // 
             this.cbActive.AutoSize = true;
-            this.cbActive.Location = new System.Drawing.Point(502, 46);
+            this.cbActive.Location = new System.Drawing.Point(34, 162);
             this.cbActive.Name = "cbActive";
             this.cbActive.Size = new System.Drawing.Size(55, 23);
             this.cbActive.TabIndex = 25;
@@ -94,14 +94,14 @@
             this.GBDepartment.Dock = System.Windows.Forms.DockStyle.Top;
             this.GBDepartment.Location = new System.Drawing.Point(301, 53);
             this.GBDepartment.Name = "GBDepartment";
-            this.GBDepartment.Size = new System.Drawing.Size(585, 173);
+            this.GBDepartment.Size = new System.Drawing.Size(585, 199);
             this.GBDepartment.TabIndex = 16;
             this.GBDepartment.TabStop = false;
             this.GBDepartment.Text = "Département";
             // 
             // txtDescription
             // 
-            this.txtDescription.Location = new System.Drawing.Point(111, 102);
+            this.txtDescription.Location = new System.Drawing.Point(121, 101);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.Size = new System.Drawing.Size(313, 25);
             this.txtDescription.TabIndex = 27;
@@ -117,7 +117,7 @@
             // 
             // TxtName
             // 
-            this.TxtName.Location = new System.Drawing.Point(111, 44);
+            this.TxtName.Location = new System.Drawing.Point(121, 43);
             this.TxtName.Name = "TxtName";
             this.TxtName.Size = new System.Drawing.Size(313, 25);
             this.TxtName.TabIndex = 5;
