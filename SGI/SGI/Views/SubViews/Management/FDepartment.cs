@@ -220,6 +220,9 @@ namespace SGI.Views.SubViews
         {
             if (Editing)
             {
+                TxtName.TextChanged -= PutInEditMode;
+                txtDescription.TextChanged -= PutInEditMode;
+                cbActive.CheckedChanged -= PutInEditMode;
                 TxtName.TextChanged += PutInEditMode;
                 txtDescription.TextChanged += PutInEditMode;
                 cbActive.CheckedChanged += PutInEditMode;
@@ -229,7 +232,6 @@ namespace SGI.Views.SubViews
                 TxtName.TextChanged -= PutInEditMode;
                 txtDescription.TextChanged -= PutInEditMode;
                 cbActive.CheckedChanged -= PutInEditMode;
-                CurrentState = State.VIEW;
             }
         }
 

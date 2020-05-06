@@ -241,6 +241,14 @@ namespace SGI.Views.SubViews
         {
             if (Editing)
             {
+                TxtName.TextChanged -= PutInEditMode;
+                txtAdress.TextChanged -= PutInEditMode;
+                txtEmail.TextChanged -= PutInEditMode;
+                txtPhoneNumber.TextChanged -= PutInEditMode;
+                txtResourcePerson.TextChanged -= PutInEditMode;
+                nudMinOrderPrice.ValueChanged -= PutInEditMode;
+                cbActive.CheckedChanged -= PutInEditMode;
+
                 TxtName.TextChanged += PutInEditMode;
                 txtAdress.TextChanged += PutInEditMode;
                 txtEmail.TextChanged += PutInEditMode;
@@ -258,7 +266,6 @@ namespace SGI.Views.SubViews
                 txtResourcePerson.TextChanged -= PutInEditMode;
                 nudMinOrderPrice.ValueChanged -= PutInEditMode;
                 cbActive.CheckedChanged -= PutInEditMode;
-                CurrentState = State.VIEW;
             }
         }
 

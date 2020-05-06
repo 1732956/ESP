@@ -332,6 +332,21 @@ namespace SGI.Views.SubViews
         {
             if (Editing)
             {
+                TxtName.TextChanged -= PutInEditMode;
+                TxtBrand.TextChanged -= PutInEditMode;
+                CbCategory.SelectedIndexChanged -= PutInEditMode;
+                lst_dep.SelectedIndexChanged -= PutInEditMode;
+                TxtDescription.TextChanged -= PutInEditMode;
+                CBSupplier.SelectedIndexChanged -= PutInEditMode;
+                NudMeasuringQty.ValueChanged -= PutInEditMode;
+                NudPrice.ValueChanged -= PutInEditMode;
+                cbActive.CheckedChanged -= PutInEditMode;
+                nudMax.ValueChanged -= PutInEditMode;
+                NudMin.ValueChanged -= PutInEditMode;
+                txt_fournisseurcode.TextChanged -= PutInEditMode;
+                txt_mesure.TextChanged -= PutInEditMode;
+                nud_measureqty.ValueChanged -= PutInEditMode;
+
                 TxtName.TextChanged += PutInEditMode;
                 TxtBrand.TextChanged += PutInEditMode;
                 CbCategory.SelectedIndexChanged += PutInEditMode;
@@ -360,7 +375,6 @@ namespace SGI.Views.SubViews
                 cbActive.CheckedChanged -= PutInEditMode;
                 nudMax.ValueChanged -= PutInEditMode;
                 NudMin.ValueChanged -= PutInEditMode;
-                CurrentState = State.VIEW;
                 txt_fournisseurcode.TextChanged -= PutInEditMode;
                 txt_mesure.TextChanged -= PutInEditMode;
                 nud_measureqty.ValueChanged -= PutInEditMode;
