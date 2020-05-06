@@ -30,11 +30,11 @@
         {
             this.lstLocations = new System.Windows.Forms.ListBox();
             this.dgvStockByLoc = new System.Windows.Forms.DataGridView();
-            this.pnlData = new System.Windows.Forms.Panel();
             this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MeasuringUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlData = new System.Windows.Forms.Panel();
             this.pnlTotal = new System.Windows.Forms.Panel();
             this.lblTotal = new System.Windows.Forms.Label();
             this.TotalLocValue = new System.Windows.Forms.Label();
@@ -71,17 +71,6 @@
             this.dgvStockByLoc.Size = new System.Drawing.Size(744, 524);
             this.dgvStockByLoc.TabIndex = 1;
             // 
-            // pnlData
-            // 
-            this.pnlData.Controls.Add(this.dgvStockByLoc);
-            this.pnlData.Controls.Add(this.pnlTotal);
-            this.pnlData.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pnlData.Location = new System.Drawing.Point(200, 0);
-            this.pnlData.Name = "pnlData";
-            this.pnlData.Padding = new System.Windows.Forms.Padding(25);
-            this.pnlData.Size = new System.Drawing.Size(794, 604);
-            this.pnlData.TabIndex = 2;
-            // 
             // Product
             // 
             this.Product.DataPropertyName = "Name";
@@ -109,6 +98,17 @@
             this.Price.HeaderText = "Prix";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
+            // 
+            // pnlData
+            // 
+            this.pnlData.Controls.Add(this.dgvStockByLoc);
+            this.pnlData.Controls.Add(this.pnlTotal);
+            this.pnlData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlData.Location = new System.Drawing.Point(200, 0);
+            this.pnlData.Name = "pnlData";
+            this.pnlData.Padding = new System.Windows.Forms.Padding(25);
+            this.pnlData.Size = new System.Drawing.Size(794, 604);
+            this.pnlData.TabIndex = 2;
             // 
             // pnlTotal
             // 

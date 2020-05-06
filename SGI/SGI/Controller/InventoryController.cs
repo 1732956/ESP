@@ -65,6 +65,32 @@ namespace SGI.Controller
             }
         }
 
+        public DataTable GetLocationProduct(Product currentProduct)
+        {
+            try
+            {
+                if (currentProduct != null)
+                {
+                    using (SqlCommand cmd = new SqlCommand("SELECT L.Name as Location, Quantity, CONVERT( DEC(18,2), Price) as Price FROM Tbl_Inventory I INNER JOIN Tbl_Product P ON I.ProductID_ = P.ProductID INNER JOIN Tbl_Location L ON I.LocationID = L.LocationID WHERE ProductID = " + currentProduct.ProductId, CDatabase.Connection))
+                    {
+                        cmd.CommandType = System.Data.CommandType.Text;
+                        SqlDataReader dr = cmd.ExecuteReader();
+                        DataTable dt = new DataTable();
+                        dt.Load(dr);
+                        return dt;
+                    }
+                }
+                else
+                    return new DataTable();
+            }
+            catch (Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
+                return new DataTable();
+            }
+        }
+
         public DataTable GetProductToDo()
         {
             try

@@ -32,7 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FMain));
             this.TCMain = new System.Windows.Forms.TabControl();
             this.TPTransaction = new System.Windows.Forms.TabPage();
-            this.TransactionImages = new System.Windows.Forms.ImageList(this.components);
+            this.InventoryInOutPanel = new System.Windows.Forms.Panel();
             this.TPManagement = new System.Windows.Forms.TabPage();
             this.TCManagement = new System.Windows.Forms.TabControl();
             this.TPProduct = new System.Windows.Forms.TabPage();
@@ -48,7 +48,7 @@
             this.ManagementImages = new System.Windows.Forms.ImageList(this.components);
             this.TPVisualization = new System.Windows.Forms.TabPage();
             this.TCVisuzalization = new System.Windows.Forms.TabControl();
-            this.TPStockGeneral = new System.Windows.Forms.TabPage();
+            this.TPStockByProduct = new System.Windows.Forms.TabPage();
             this.GeneralStockPanel = new System.Windows.Forms.Panel();
             this.TPStockByLoc = new System.Windows.Forms.TabPage();
             this.LocStcokPanel = new System.Windows.Forms.Panel();
@@ -59,7 +59,7 @@
             this.VidualizationImages = new System.Windows.Forms.ImageList(this.components);
             this.TPIntegration = new System.Windows.Forms.TabPage();
             this.IntegrationPanel = new System.Windows.Forms.Panel();
-            this.InventoryInOutPanel = new System.Windows.Forms.Panel();
+            this.TransactionImages = new System.Windows.Forms.ImageList(this.components);
             this.TCMain.SuspendLayout();
             this.TPTransaction.SuspendLayout();
             this.TPManagement.SuspendLayout();
@@ -71,7 +71,7 @@
             this.TPDepartment.SuspendLayout();
             this.TPVisualization.SuspendLayout();
             this.TCVisuzalization.SuspendLayout();
-            this.TPStockGeneral.SuspendLayout();
+            this.TPStockByProduct.SuspendLayout();
             this.TPStockByLoc.SuspendLayout();
             this.TPOrdersToMake.SuspendLayout();
             this.TPItemsTooMuch.SuspendLayout();
@@ -98,12 +98,10 @@
             this.TPTransaction.Enter += new System.EventHandler(this.TPTransaction_Enter);
             this.TPTransaction.Leave += new System.EventHandler(this.TPTransaction_Leave);
             // 
-            // TransactionImages
+            // InventoryInOutPanel
             // 
-            this.TransactionImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("TransactionImages.ImageStream")));
-            this.TransactionImages.TransparentColor = System.Drawing.Color.Transparent;
-            this.TransactionImages.Images.SetKeyName(0, "InventoryIn.png");
-            this.TransactionImages.Images.SetKeyName(1, "InventoryOut.png");
+            resources.ApplyResources(this.InventoryInOutPanel, "InventoryInOutPanel");
+            this.InventoryInOutPanel.Name = "InventoryInOutPanel";
             // 
             // TPManagement
             // 
@@ -214,7 +212,7 @@
             // 
             // TCVisuzalization
             // 
-            this.TCVisuzalization.Controls.Add(this.TPStockGeneral);
+            this.TCVisuzalization.Controls.Add(this.TPStockByProduct);
             this.TCVisuzalization.Controls.Add(this.TPStockByLoc);
             this.TCVisuzalization.Controls.Add(this.TPOrdersToMake);
             this.TCVisuzalization.Controls.Add(this.TPItemsTooMuch);
@@ -223,14 +221,14 @@
             this.TCVisuzalization.Name = "TCVisuzalization";
             this.TCVisuzalization.SelectedIndex = 0;
             // 
-            // TPStockGeneral
+            // TPStockByProduct
             // 
-            this.TPStockGeneral.Controls.Add(this.GeneralStockPanel);
-            resources.ApplyResources(this.TPStockGeneral, "TPStockGeneral");
-            this.TPStockGeneral.Name = "TPStockGeneral";
-            this.TPStockGeneral.UseVisualStyleBackColor = true;
-            this.TPStockGeneral.Enter += new System.EventHandler(this.TPStockGeneral_Enter);
-            this.TPStockGeneral.Leave += new System.EventHandler(this.TPStockGeneral_Leave);
+            this.TPStockByProduct.Controls.Add(this.GeneralStockPanel);
+            resources.ApplyResources(this.TPStockByProduct, "TPStockByProduct");
+            this.TPStockByProduct.Name = "TPStockByProduct";
+            this.TPStockByProduct.UseVisualStyleBackColor = true;
+            this.TPStockByProduct.Enter += new System.EventHandler(this.TPStockGeneral_Enter);
+            this.TPStockByProduct.Leave += new System.EventHandler(this.TPStockGeneral_Leave);
             // 
             // GeneralStockPanel
             // 
@@ -303,10 +301,12 @@
             resources.ApplyResources(this.IntegrationPanel, "IntegrationPanel");
             this.IntegrationPanel.Name = "IntegrationPanel";
             // 
-            // InventoryInOutPanel
+            // TransactionImages
             // 
-            resources.ApplyResources(this.InventoryInOutPanel, "InventoryInOutPanel");
-            this.InventoryInOutPanel.Name = "InventoryInOutPanel";
+            this.TransactionImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("TransactionImages.ImageStream")));
+            this.TransactionImages.TransparentColor = System.Drawing.Color.Transparent;
+            this.TransactionImages.Images.SetKeyName(0, "InventoryIn.png");
+            this.TransactionImages.Images.SetKeyName(1, "InventoryOut.png");
             // 
             // FMain
             // 
@@ -328,7 +328,7 @@
             this.TPDepartment.ResumeLayout(false);
             this.TPVisualization.ResumeLayout(false);
             this.TCVisuzalization.ResumeLayout(false);
-            this.TPStockGeneral.ResumeLayout(false);
+            this.TPStockByProduct.ResumeLayout(false);
             this.TPStockByLoc.ResumeLayout(false);
             this.TPOrdersToMake.ResumeLayout(false);
             this.TPItemsTooMuch.ResumeLayout(false);
@@ -349,7 +349,7 @@
         private System.Windows.Forms.TabPage TPDepartment;
         private System.Windows.Forms.TabControl TCVisuzalization;
         private System.Windows.Forms.TabPage TPStockByLoc;
-        private System.Windows.Forms.TabPage TPStockGeneral;
+        private System.Windows.Forms.TabPage TPStockByProduct;
         private System.Windows.Forms.TabPage TPOrdersToMake;
         private System.Windows.Forms.TabPage TPItemsTooMuch;
         private System.Windows.Forms.Panel ProductPanel;

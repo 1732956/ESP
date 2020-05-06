@@ -28,82 +28,142 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.lstProducts = new System.Windows.Forms.ListBox();
+            this.pnlData = new System.Windows.Forms.Panel();
+            this.dgvStockByProduct = new System.Windows.Forms.DataGridView();
+            this.pnlTotal = new System.Windows.Forms.Panel();
+            this.lblTotal = new System.Windows.Forms.Label();
+            this.TotalLocValue = new System.Windows.Forms.Label();
+            this.Location = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pnlData.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStockByProduct)).BeginInit();
+            this.pnlTotal.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // lstProducts
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5});
-            this.dataGridView1.Location = new System.Drawing.Point(62, 79);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(795, 348);
-            this.dataGridView1.TabIndex = 0;
+            this.lstProducts.Dock = System.Windows.Forms.DockStyle.Left;
+            this.lstProducts.FormattingEnabled = true;
+            this.lstProducts.ItemHeight = 17;
+            this.lstProducts.Location = new System.Drawing.Point(0, 0);
+            this.lstProducts.Name = "lstProducts";
+            this.lstProducts.Size = new System.Drawing.Size(200, 589);
+            this.lstProducts.TabIndex = 1;
+            this.lstProducts.SelectedIndexChanged += new System.EventHandler(this.lstProducts_SelectedIndexChanged);
             // 
-            // Column1
+            // pnlData
             // 
-            this.Column1.HeaderText = "Nom Produit";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 150;
+            this.pnlData.Controls.Add(this.dgvStockByProduct);
+            this.pnlData.Controls.Add(this.pnlTotal);
+            this.pnlData.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pnlData.Location = new System.Drawing.Point(200, 0);
+            this.pnlData.Name = "pnlData";
+            this.pnlData.Padding = new System.Windows.Forms.Padding(25);
+            this.pnlData.Size = new System.Drawing.Size(984, 589);
+            this.pnlData.TabIndex = 3;
             // 
-            // Column2
+            // dgvStockByProduct
             // 
-            this.Column2.HeaderText = "Marque";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 150;
+            this.dgvStockByProduct.AllowUserToAddRows = false;
+            this.dgvStockByProduct.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dgvStockByProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvStockByProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Location,
+            this.Quantity,
+            this.Price});
+            this.dgvStockByProduct.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvStockByProduct.Location = new System.Drawing.Point(25, 25);
+            this.dgvStockByProduct.Name = "dgvStockByProduct";
+            this.dgvStockByProduct.ReadOnly = true;
+            this.dgvStockByProduct.Size = new System.Drawing.Size(934, 509);
+            this.dgvStockByProduct.TabIndex = 1;
             // 
-            // Column3
+            // pnlTotal
             // 
-            this.Column3.HeaderText = "Description";
-            this.Column3.Name = "Column3";
-            this.Column3.Width = 150;
+            this.pnlTotal.Controls.Add(this.lblTotal);
+            this.pnlTotal.Controls.Add(this.TotalLocValue);
+            this.pnlTotal.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnlTotal.Location = new System.Drawing.Point(25, 534);
+            this.pnlTotal.Name = "pnlTotal";
+            this.pnlTotal.Padding = new System.Windows.Forms.Padding(0, 10, 10, 0);
+            this.pnlTotal.Size = new System.Drawing.Size(934, 30);
+            this.pnlTotal.TabIndex = 2;
             // 
-            // Column4
+            // lblTotal
             // 
-            this.Column4.HeaderText = "Prix";
-            this.Column4.Name = "Column4";
-            this.Column4.Width = 150;
+            this.lblTotal.AutoSize = true;
+            this.lblTotal.Dock = System.Windows.Forms.DockStyle.Right;
+            this.lblTotal.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTotal.Location = new System.Drawing.Point(830, 10);
+            this.lblTotal.Name = "lblTotal";
+            this.lblTotal.Size = new System.Drawing.Size(94, 19);
+            this.lblTotal.TabIndex = 0;
+            this.lblTotal.Text = "Valeur total :";
             // 
-            // Column5
+            // TotalLocValue
             // 
-            this.Column5.HeaderText = "Quantité";
-            this.Column5.Name = "Column5";
-            this.Column5.Width = 150;
+            this.TotalLocValue.AutoSize = true;
+            this.TotalLocValue.Dock = System.Windows.Forms.DockStyle.Right;
+            this.TotalLocValue.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TotalLocValue.Location = new System.Drawing.Point(924, 10);
+            this.TotalLocValue.Name = "TotalLocValue";
+            this.TotalLocValue.Size = new System.Drawing.Size(0, 19);
+            this.TotalLocValue.TabIndex = 1;
+            // 
+            // Location
+            // 
+            this.Location.DataPropertyName = "Location";
+            this.Location.HeaderText = "Localisation";
+            this.Location.Name = "Location";
+            this.Location.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantité";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Prix";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
             // 
             // FGeneralStock
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 588);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(1184, 589);
+            this.Controls.Add(this.pnlData);
+            this.Controls.Add(this.lstProducts);
             this.Font = new System.Drawing.Font("Segoe UI", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FGeneralStock";
             this.Text = "FGeneralStock";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FGeneralStock_Load);
+            this.pnlData.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvStockByProduct)).EndInit();
+            this.pnlTotal.ResumeLayout(false);
+            this.pnlTotal.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
+        private System.Windows.Forms.ListBox lstProducts;
+        private System.Windows.Forms.Panel pnlData;
+        private System.Windows.Forms.DataGridView dgvStockByProduct;
+        private System.Windows.Forms.Panel pnlTotal;
+        private System.Windows.Forms.Label lblTotal;
+        private System.Windows.Forms.Label TotalLocValue;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Location;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Quantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
     }
 }
