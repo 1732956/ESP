@@ -115,6 +115,29 @@ namespace SGI.Controller
             }
             return Product;
         }
+
+
+        public bool hasQty(int ProductId, bool isActive)
+        {
+            bool hasQty = false;
+
+            if (isActive == false)
+            {
+                SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_inventory WHERE productid_ = " + ProductId + " AND quantity > 0 ", CDatabase.Connection);
+                cmd.CommandType = System.Data.CommandType.Text;
+                SqlDataReader dr = cmd.ExecuteReader();
+                DataTable dt = new DataTable();
+                dt.Load(dr);
+
+                if (dt.Rows.Count > 0)
+                {
+                    hasQty = true;
+                }
+            }
+
+
+            return hasQty;
+        }
     }
 
 }

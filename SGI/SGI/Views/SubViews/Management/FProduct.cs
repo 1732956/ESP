@@ -239,6 +239,8 @@ namespace SGI.Views.SubViews
                 returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
             if (lst_dep.SelectedItems.Count <1)
                 returnMessage += "Un département doit être sélectionner " + Environment.NewLine;
+            if (Productcontoller.hasQty(currentProduct.ProductId, cbActive.Checked))
+                returnMessage += "Impossible de rendre se produit inactif car vous en avez encore en inventaire " + Environment.NewLine;
             return returnMessage;
         }
         #endregion
@@ -448,7 +450,7 @@ namespace SGI.Views.SubViews
             lbl_BarCode.Text = barCodenbr;
             if (barcode.Length > 0)
             {
-                GBOBarCode.Visible = true;
+               // GBOBarCode.Visible = true;
                 Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);
                 using (Graphics graphics = Graphics.FromImage(bitmap))
                 {
@@ -465,8 +467,8 @@ namespace SGI.Views.SubViews
                 }
                 pictureBox2.Image = bitmap;
             }
-            else
-                GBOBarCode.Visible = false;
+           //else
+           //    GBOBarCode.Visible = false;
         }
         #endregion
 
