@@ -61,10 +61,10 @@
             // 
             this.ActionPanel.Controls.Add(this.ucManagementAction1);
             this.ActionPanel.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.ActionPanel.Location = new System.Drawing.Point(350, 415);
+            this.ActionPanel.Location = new System.Drawing.Point(298, 511);
             this.ActionPanel.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.ActionPanel.Name = "ActionPanel";
-            this.ActionPanel.Size = new System.Drawing.Size(742, 73);
+            this.ActionPanel.Size = new System.Drawing.Size(752, 73);
             this.ActionPanel.TabIndex = 22;
             // 
             // ucManagementAction1
@@ -73,7 +73,7 @@
             this.ucManagementAction1.Location = new System.Drawing.Point(0, 0);
             this.ucManagementAction1.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.ucManagementAction1.Name = "ucManagementAction1";
-            this.ucManagementAction1.Size = new System.Drawing.Size(742, 73);
+            this.ucManagementAction1.Size = new System.Drawing.Size(752, 73);
             this.ucManagementAction1.TabIndex = 0;
             // 
             // CBFilter
@@ -84,7 +84,7 @@
             this.CBFilter.Location = new System.Drawing.Point(3, 22);
             this.CBFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.CBFilter.Name = "CBFilter";
-            this.CBFilter.Size = new System.Drawing.Size(347, 25);
+            this.CBFilter.Size = new System.Drawing.Size(295, 25);
             this.CBFilter.TabIndex = 0;
             // 
             // GBLocation
@@ -95,11 +95,11 @@
             this.GBLocation.Controls.Add(this.TxtName);
             this.GBLocation.Controls.Add(this.LblName);
             this.GBLocation.Dock = System.Windows.Forms.DockStyle.Top;
-            this.GBLocation.Location = new System.Drawing.Point(350, 69);
+            this.GBLocation.Location = new System.Drawing.Point(298, 69);
             this.GBLocation.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GBLocation.Name = "GBLocation";
             this.GBLocation.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GBLocation.Size = new System.Drawing.Size(742, 232);
+            this.GBLocation.Size = new System.Drawing.Size(752, 232);
             this.GBLocation.TabIndex = 20;
             this.GBLocation.TabStop = false;
             this.GBLocation.Text = "Localisation";
@@ -146,7 +146,7 @@
             this.LBLocations.Location = new System.Drawing.Point(0, 69);
             this.LBLocations.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.LBLocations.Name = "LBLocations";
-            this.LBLocations.Size = new System.Drawing.Size(350, 419);
+            this.LBLocations.Size = new System.Drawing.Size(298, 515);
             this.LBLocations.TabIndex = 19;
             this.LBLocations.SelectedIndexChanged += new System.EventHandler(this.LBLocations_SelectedIndexChanged);
             // 
@@ -158,15 +158,14 @@
             this.GBFilter.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.GBFilter.Name = "GBFilter";
             this.GBFilter.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.GBFilter.Size = new System.Drawing.Size(1092, 69);
+            this.GBFilter.Size = new System.Drawing.Size(1050, 69);
             this.GBFilter.TabIndex = 21;
             this.GBFilter.TabStop = false;
             // 
             // FLocation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1092, 488);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.ClientSize = new System.Drawing.Size(1050, 584);
             this.Controls.Add(this.ActionPanel);
             this.Controls.Add(this.GBLocation);
             this.Controls.Add(this.LBLocations);
