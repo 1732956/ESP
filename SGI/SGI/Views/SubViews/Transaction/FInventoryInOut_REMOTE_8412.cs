@@ -47,16 +47,10 @@ namespace SGI.Views.SubViews.Transaction
             if (TCAction.SelectedIndex == 0) //in
             {
                 GetCurrentInventory(dgvInventory);
-                btnConfirm.Enabled = false;
-                btnDelete.Enabled = false;
-                btnCancel.Enabled = false;
             }
             else //out
             {
                 GetCurrentInventory(dgvInventoryOut);
-                btnOutConfirm.Enabled = false;
-                btnOutDelete.Enabled = false;
-                btnOutCancel.Enabled = false;
             }
             txt_produit.Focus();
         }
@@ -339,9 +333,6 @@ namespace SGI.Views.SubViews.Transaction
                             {
                                 MessageBox.Show("Impossible de déduir l'inventaire, vous tentez de supprimer un quantité plus grande que celle en inventaire");
                             }
-                            MessageBox.Show("Inventaire diminué");
-                            FinishOutOrder();
-                            GetCurrentInventory(dgvInventoryOut);
                         }
                     }
                 }

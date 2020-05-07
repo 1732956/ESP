@@ -47,16 +47,10 @@ namespace SGI.Views.SubViews.Transaction
             if (TCAction.SelectedIndex == 0) //in
             {
                 GetCurrentInventory(dgvInventory);
-                btnConfirm.Enabled = false;
-                btnDelete.Enabled = false;
-                btnCancel.Enabled = false;
             }
             else //out
             {
                 GetCurrentInventory(dgvInventoryOut);
-                btnOutConfirm.Enabled = false;
-                btnOutDelete.Enabled = false;
-                btnOutCancel.Enabled = false;
             }
             txt_produit.Focus();
         }
@@ -316,30 +310,11 @@ namespace SGI.Views.SubViews.Transaction
                     {
                         if (MessageBox.Show("Êtes-vous certain de vouloir confirmer ce mouvement d'inventaire", "Confirmation du mouvement", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            bool AlreadynotEnough = false;
                             for (int i = 0; i < dgvOutMovement.Rows.Count; i++)
                             {
-                                if (AlreadynotEnough == false)
-                                {
-                                    AlreadynotEnough = ControllerInvOut.VerifyQty(Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value), Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue), AlreadynotEnough);
-                                }
+                                ControllerInvOut.InventoryOut(Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value), Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue));
                             }
-
-                            if (AlreadynotEnough == false)
-                            {
-                                for (int i = 0; i < dgvOutMovement.Rows.Count; i++)
-                                {
-                                    ControllerInvOut.InventoryOut(Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value), Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue));
-                                }
-                                MessageBox.Show("Inventaire déduit");
-                                FinishOutOrder();
-                                GetCurrentInventory(dgvInventoryOut);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Impossible de déduir l'inventaire, vous tentez de supprimer un quantité plus grande que celle en inventaire");
-                            }
-                            MessageBox.Show("Inventaire diminué");
+                            MessageBox.Show("Inventaire ajouté");
                             FinishOutOrder();
                             GetCurrentInventory(dgvInventoryOut);
                         }

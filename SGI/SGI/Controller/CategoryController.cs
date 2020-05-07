@@ -112,5 +112,25 @@ namespace SGI.Controller
             }
             return Worked;
         }
+
+        public bool ifAlreadyExist(String descrCategory)
+        {
+            bool alreadyExist = false;
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_category WHERE Description = '" + descrCategory + "'", CDatabase.Connection);
+            cmd.CommandType = System.Data.CommandType.Text;
+            SqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+
+            if (dt.Rows.Count > 0)
+            {
+                alreadyExist = true;
+            }
+
+            return alreadyExist;
+        }
     }
 }
+
+

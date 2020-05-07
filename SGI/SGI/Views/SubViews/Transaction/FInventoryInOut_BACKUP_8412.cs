@@ -339,9 +339,12 @@ namespace SGI.Views.SubViews.Transaction
                             {
                                 MessageBox.Show("Impossible de déduir l'inventaire, vous tentez de supprimer un quantité plus grande que celle en inventaire");
                             }
+<<<<<<< HEAD
                             MessageBox.Show("Inventaire diminué");
                             FinishOutOrder();
                             GetCurrentInventory(dgvInventoryOut);
+=======
+>>>>>>> acbd6f6ae9fc126e4ab97f5bbd773efc3ad6c92b
                         }
                     }
                 }

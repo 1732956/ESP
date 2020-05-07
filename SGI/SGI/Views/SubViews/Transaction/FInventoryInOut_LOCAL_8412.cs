@@ -316,28 +316,9 @@ namespace SGI.Views.SubViews.Transaction
                     {
                         if (MessageBox.Show("Êtes-vous certain de vouloir confirmer ce mouvement d'inventaire", "Confirmation du mouvement", MessageBoxButtons.YesNo) == DialogResult.Yes)
                         {
-                            bool AlreadynotEnough = false;
                             for (int i = 0; i < dgvOutMovement.Rows.Count; i++)
                             {
-                                if (AlreadynotEnough == false)
-                                {
-                                    AlreadynotEnough = ControllerInvOut.VerifyQty(Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value), Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue), AlreadynotEnough);
-                                }
-                            }
-
-                            if (AlreadynotEnough == false)
-                            {
-                                for (int i = 0; i < dgvOutMovement.Rows.Count; i++)
-                                {
-                                    ControllerInvOut.InventoryOut(Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value), Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue));
-                                }
-                                MessageBox.Show("Inventaire déduit");
-                                FinishOutOrder();
-                                GetCurrentInventory(dgvInventoryOut);
-                            }
-                            else
-                            {
-                                MessageBox.Show("Impossible de déduir l'inventaire, vous tentez de supprimer un quantité plus grande que celle en inventaire");
+                                ControllerInvOut.InventoryOut(Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value), Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue));
                             }
                             MessageBox.Show("Inventaire diminué");
                             FinishOutOrder();
