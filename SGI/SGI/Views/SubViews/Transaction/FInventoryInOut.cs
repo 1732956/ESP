@@ -47,10 +47,16 @@ namespace SGI.Views.SubViews.Transaction
             if (TCAction.SelectedIndex == 0) //in
             {
                 GetCurrentInventory(dgvInventory);
+                btnConfirm.Enabled = false;
+                btnDelete.Enabled = false;
+                btnCancel.Enabled = false;
             }
             else //out
             {
                 GetCurrentInventory(dgvInventoryOut);
+                btnOutConfirm.Enabled = false;
+                btnOutDelete.Enabled = false;
+                btnOutCancel.Enabled = false;
             }
             txt_produit.Focus();
         }
@@ -314,7 +320,7 @@ namespace SGI.Views.SubViews.Transaction
                             {
                                 ControllerInvOut.InventoryOut(Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value), Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value), Convert.ToInt32(cbo_loc.SelectedValue));
                             }
-                            MessageBox.Show("Inventaire ajouté");
+                            MessageBox.Show("Inventaire diminué");
                             FinishOutOrder();
                             GetCurrentInventory(dgvInventoryOut);
                         }

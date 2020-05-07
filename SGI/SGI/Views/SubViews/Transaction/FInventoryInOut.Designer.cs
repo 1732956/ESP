@@ -35,14 +35,23 @@
             this.TCAction = new System.Windows.Forms.TabControl();
             this.TPIn = new System.Windows.Forms.TabPage();
             this.dgvInventory = new System.Windows.Forms.DataGridView();
+            this.ProductID_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.InvMeasUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnlMovementActions = new System.Windows.Forms.Panel();
             this.dgvMovement = new System.Windows.Forms.DataGridView();
+            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnConfirm = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.TPOut = new System.Windows.Forms.TabPage();
             this.dgvInventoryOut = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dgvOutMovement = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,21 +61,12 @@
             this.btnOutConfirm = new System.Windows.Forms.Button();
             this.btnOutDelete = new System.Windows.Forms.Button();
             this.btnOutCancel = new System.Windows.Forms.Button();
+            this.images = new System.Windows.Forms.ImageList(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.txt_produit = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.Product = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Qty = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductID_ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.InvMeasUnit = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Quantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.images = new System.Windows.Forms.ImageList(this.components);
             this.TCAction.SuspendLayout();
             this.TPIn.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvInventory)).BeginInit();
@@ -144,6 +144,27 @@
             this.dgvInventory.Size = new System.Drawing.Size(574, 453);
             this.dgvInventory.TabIndex = 0;
             // 
+            // ProductID_
+            // 
+            this.ProductID_.DataPropertyName = "Name";
+            this.ProductID_.HeaderText = "Produit";
+            this.ProductID_.Name = "ProductID_";
+            this.ProductID_.ReadOnly = true;
+            // 
+            // InvMeasUnit
+            // 
+            this.InvMeasUnit.DataPropertyName = "InvMeasUnit";
+            this.InvMeasUnit.HeaderText = "Unité de mesure";
+            this.InvMeasUnit.Name = "InvMeasUnit";
+            this.InvMeasUnit.ReadOnly = true;
+            // 
+            // Quantity
+            // 
+            this.Quantity.DataPropertyName = "Quantity";
+            this.Quantity.HeaderText = "Quantité";
+            this.Quantity.Name = "Quantity";
+            this.Quantity.ReadOnly = true;
+            // 
             // pnlMovementActions
             // 
             this.pnlMovementActions.Controls.Add(this.dgvMovement);
@@ -171,6 +192,24 @@
             this.dgvMovement.TabIndex = 1;
             this.dgvMovement.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMovement_CellEndEdit);
             // 
+            // Product
+            // 
+            this.Product.HeaderText = "Produit";
+            this.Product.Name = "Product";
+            this.Product.ReadOnly = true;
+            // 
+            // Qty
+            // 
+            this.Qty.HeaderText = "Quantité (+)";
+            this.Qty.Name = "Qty";
+            // 
+            // ProductID
+            // 
+            this.ProductID.HeaderText = "ProductID";
+            this.ProductID.Name = "ProductID";
+            this.ProductID.ReadOnly = true;
+            this.ProductID.Visible = false;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.btnConfirm);
@@ -186,6 +225,7 @@
             // 
             this.btnConfirm.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnConfirm.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnConfirm.Enabled = false;
             this.btnConfirm.Location = new System.Drawing.Point(260, 0);
             this.btnConfirm.Name = "btnConfirm";
             this.btnConfirm.Size = new System.Drawing.Size(130, 78);
@@ -199,6 +239,7 @@
             // 
             this.btnDelete.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnDelete.Enabled = false;
             this.btnDelete.Location = new System.Drawing.Point(130, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(130, 78);
@@ -212,6 +253,7 @@
             // 
             this.btnCancel.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCancel.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnCancel.Enabled = false;
             this.btnCancel.Location = new System.Drawing.Point(0, 0);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(130, 78);
@@ -248,6 +290,27 @@
             this.dgvInventoryOut.Name = "dgvInventoryOut";
             this.dgvInventoryOut.Size = new System.Drawing.Size(574, 453);
             this.dgvInventoryOut.TabIndex = 4;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
+            this.dataGridViewTextBoxColumn1.HeaderText = "Produit";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "MeasuringUnit";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Unité de mesure";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Qty";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Quantité";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // panel3
             // 
@@ -343,6 +406,13 @@
             this.btnOutCancel.UseVisualStyleBackColor = true;
             this.btnOutCancel.Click += new System.EventHandler(this.btnOutCancel_Click);
             // 
+            // images
+            // 
+            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
+            this.images.TransparentColor = System.Drawing.Color.Transparent;
+            this.images.Images.SetKeyName(0, "package_add.png");
+            this.images.Images.SetKeyName(1, "package_delete.png");
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.txt_produit);
@@ -371,73 +441,6 @@
             this.label2.Size = new System.Drawing.Size(61, 19);
             this.label2.TabIndex = 2;
             this.label2.Text = "Produit :";
-            // 
-            // Product
-            // 
-            this.Product.HeaderText = "Produit";
-            this.Product.Name = "Product";
-            this.Product.ReadOnly = true;
-            // 
-            // Qty
-            // 
-            this.Qty.HeaderText = "Quantité (+)";
-            this.Qty.Name = "Qty";
-            // 
-            // ProductID
-            // 
-            this.ProductID.HeaderText = "ProductID";
-            this.ProductID.Name = "ProductID";
-            this.ProductID.ReadOnly = true;
-            this.ProductID.Visible = false;
-            // 
-            // ProductID_
-            // 
-            this.ProductID_.DataPropertyName = "Name";
-            this.ProductID_.HeaderText = "Produit";
-            this.ProductID_.Name = "ProductID_";
-            this.ProductID_.ReadOnly = true;
-            // 
-            // InvMeasUnit
-            // 
-            this.InvMeasUnit.DataPropertyName = "InvMeasUnit";
-            this.InvMeasUnit.HeaderText = "Unité de mesure";
-            this.InvMeasUnit.Name = "InvMeasUnit";
-            this.InvMeasUnit.ReadOnly = true;
-            // 
-            // Quantity
-            // 
-            this.Quantity.DataPropertyName = "Quantity";
-            this.Quantity.HeaderText = "Quantité";
-            this.Quantity.Name = "Quantity";
-            this.Quantity.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "ProductName";
-            this.dataGridViewTextBoxColumn1.HeaderText = "Produit";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "MeasuringUnit";
-            this.dataGridViewTextBoxColumn2.HeaderText = "Unité de mesure";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Qty";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Quantité";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // images
-            // 
-            this.images.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("images.ImageStream")));
-            this.images.TransparentColor = System.Drawing.Color.Transparent;
-            this.images.Images.SetKeyName(0, "package_add.png");
-            this.images.Images.SetKeyName(1, "package_delete.png");
             // 
             // FInventoryInOut
             // 
