@@ -19,5 +19,26 @@ namespace SGI.Controller
             cmd.CommandType = System.Data.CommandType.StoredProcedure;
             cmd.ExecuteNonQuery();
         }
+
+        public bool VerifyQty(int productid, int Qte, int Locid, bool AlreadyNotEnough)
+        {
+            bool hasNotEnough = AlreadyNotEnough;
+
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_inventory WHERE ProductID_ = " + productid.ToString() + " AND LocationID = " + Locid.ToString() + " AND Quantity >= " + Qte.ToString(), CDatabase.Connection);
+            cmd.CommandType = System.Data.CommandType.Text;
+            SqlDataReader dr = cmd.ExecuteReader();
+            DataTable dt = new DataTable();
+            dt.Load(dr);
+
+            if (dt.Rows.Count <= 0)
+            {
+                hasNotEnough= true;
+            }
+
+            return hasNotEnough;
+        }
+
+        
+
     }
 }
