@@ -158,37 +158,47 @@ namespace SGI.Views.SubViews
             else
             {
                 SetCategoryData(CategoryId);
-                bool newCategoryWorked = CategoryController.EditSingleCategory(currentCategory, Action);
-                if (newCategoryWorked)
+                bool AlreadyExist = CategoryController.ifAlreadyExist(currentCategory.Description);
+                if (AlreadyExist == false)
                 {
-                    MessageBox.Show("Enregistrement effectué");
-                    string currentFilter = CBFilter.Text;
-                    List<Category> tempoCategory = new List<Category>();
-                    if (currentFilter == "Actifs")
-                        tempoCategory = CategoryController.GetAllActiveCategories();
-                    else if (currentFilter == "Inactifs")
-                        tempoCategory = CategoryController.GetAllInactiveCategories();
-                    else
-                        tempoCategory = CategoryController.GetAllCategories();
-                    if (tempoCategory.Count <= 0)
+                    bool newCategoryWorked = CategoryController.EditSingleCategory(currentCategory, Action);
+                    if (newCategoryWorked)
                     {
-                        tempoCategory = CategoryController.GetAllActiveCategories();
-                        CBFilter.SelectedIndex = 0;
+                        MessageBox.Show("Enregistrement effectué");
+                        string currentFilter = CBFilter.Text;
+                        List<Category> tempoCategory = new List<Category>();
+                        if (currentFilter == "Actifs")
+                            tempoCategory = CategoryController.GetAllActiveCategories();
+                        else if (currentFilter == "Inactifs")
+                            tempoCategory = CategoryController.GetAllInactiveCategories();
+                        else
+                            tempoCategory = CategoryController.GetAllCategories();
+                        if (tempoCategory.Count <= 0)
+                        {
+                            tempoCategory = CategoryController.GetAllActiveCategories();
+                            CBFilter.SelectedIndex = 0;
+                        }
+                        LBCategories.DataBindings.Clear();
+                        LBCategories.DataSource = tempoCategory;
+                        if (LBCategories.Items.Count > 0)
+                            LBCategories.SelectedIndex = last == true ? LBCategories.Items.Count - 1 : 0;
+                        else
+                            LBCategories.SelectedIndex = -1;
+
+                        ChangeFormEditStatus(true);
+
+
+                        CurrentState = State.VIEW;
                     }
-                    LBCategories.DataBindings.Clear();
-                    LBCategories.DataSource = tempoCategory;
-                    if (LBCategories.Items.Count > 0)
-                        LBCategories.SelectedIndex = last == true ? LBCategories.Items.Count - 1 : 0;
                     else
-                        LBCategories.SelectedIndex = -1;
-
-                    ChangeFormEditStatus(true);
-
-
-                    CurrentState = State.VIEW;
+                        MessageBox.Show("Une erreur est survenue, veuillez réessayer.");
                 }
                 else
-                    MessageBox.Show("Une erreur est survenue, veuillez réessayer.");
+                {
+                    MessageBox.Show("Cette description est déjà utilisée");
+                }
+
+
             }
         }
 
