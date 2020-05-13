@@ -233,6 +233,8 @@ namespace SGI.Views.SubViews
                 returnMessage += "La quantité maximum doit être positive." + Environment.NewLine;
             if(NudMin.Value > nudMax.Value)
                 returnMessage += "La quantité minimum doit être inférieur à la quantité maximum." + Environment.NewLine;
+            if(nudQtyInvOut.Value <= 0)
+                returnMessage += "La quantité de sortie d'inventaire ne peut pas être nulle." + Environment.NewLine;
             if (NudPrice.Value <= 0)
                 returnMessage += "Le prix doit ne peut pas être nul." + Environment.NewLine;
             if (txt_fournisseurcode.Text == "")
@@ -309,7 +311,7 @@ namespace SGI.Views.SubViews
             }
 
             if (currentProduct == null)
-                 currentProduct = new Product(productId, TxtName.Text, TxtBrand.Text, TxtDescription.Text, (Supplier)CBSupplier.SelectedItem, Convert.ToInt32(NudPrice.Value), cbActive.Checked, Convert.ToInt32(NudMeasuringQty.Value), Convert.ToInt32(nudMax.Value), Convert.ToInt32(NudMin.Value), (Category)CbCategory.SelectedItem, ListDep, txt_fournisseurcode.Text,txt_mesure.Text, Convert.ToInt32(nud_measureqty.Value));
+                 currentProduct = new Product(productId, TxtName.Text, TxtBrand.Text, TxtDescription.Text, (Supplier)CBSupplier.SelectedItem, Convert.ToInt32(NudPrice.Value), cbActive.Checked, Convert.ToInt32(NudMeasuringQty.Value), Convert.ToInt32(nudMax.Value), Convert.ToInt32(NudMin.Value), Convert.ToInt64(nudQtyInvOut.Value), (Category)CbCategory.SelectedItem, ListDep, txt_fournisseurcode.Text,txt_mesure.Text, Convert.ToInt32(nud_measureqty.Value));
 
             currentProduct.ProductId = productId;
             currentProduct.Name = TxtName.Text;
@@ -325,6 +327,7 @@ namespace SGI.Views.SubViews
             currentProduct.Active = cbActive.Checked;
             currentProduct.MinQty = Convert.ToInt32(NudMin.Value);
             currentProduct.MaxQty = Convert.ToInt32(nudMax.Value);
+            currentProduct.QtyInventoryOut = Convert.ToInt64(nudQtyInvOut.Value);
             currentProduct.CodeSupplier = txt_fournisseurcode.Text;
         }
 
@@ -343,6 +346,7 @@ namespace SGI.Views.SubViews
                 cbActive.CheckedChanged -= PutInEditMode;
                 nudMax.ValueChanged -= PutInEditMode;
                 NudMin.ValueChanged -= PutInEditMode;
+                nudQtyInvOut.ValueChanged -= PutInEditMode;
                 txt_fournisseurcode.TextChanged -= PutInEditMode;
                 txt_mesure.TextChanged -= PutInEditMode;
                 nud_measureqty.ValueChanged -= PutInEditMode;
@@ -358,6 +362,7 @@ namespace SGI.Views.SubViews
                 cbActive.CheckedChanged += PutInEditMode;
                 nudMax.ValueChanged += PutInEditMode;
                 NudMin.ValueChanged += PutInEditMode;
+                nudQtyInvOut.ValueChanged += PutInEditMode;
                 txt_fournisseurcode.TextChanged += PutInEditMode;
                 nud_measureqty.ValueChanged += PutInEditMode;
                 txt_mesure.TextChanged += PutInEditMode;
@@ -375,6 +380,7 @@ namespace SGI.Views.SubViews
                 cbActive.CheckedChanged -= PutInEditMode;
                 nudMax.ValueChanged -= PutInEditMode;
                 NudMin.ValueChanged -= PutInEditMode;
+                nudQtyInvOut.ValueChanged -= PutInEditMode;
                 txt_fournisseurcode.TextChanged -= PutInEditMode;
                 txt_mesure.TextChanged -= PutInEditMode;
                 nud_measureqty.ValueChanged -= PutInEditMode;
@@ -398,6 +404,7 @@ namespace SGI.Views.SubViews
             NudPrice.Value = Convert.ToDecimal(currentProduct.Price);
             NudMin.Value = currentProduct.MinQty;
             nudMax.Value = currentProduct.MaxQty;
+            nudQtyInvOut.Value = (decimal)currentProduct.QtyInventoryOut;
             txt_fournisseurcode.Text = currentProduct.CodeSupplier;
             txt_mesure.Text = currentProduct.MeasureUnit;
             nud_measureqty.Value = currentProduct.MeasureQty;
@@ -470,5 +477,27 @@ namespace SGI.Views.SubViews
         }
         #endregion
 
+        #region QuantityInventoryOut
+        private void NudMeasuringQty_Leave(object sender, EventArgs e)
+        {
+            SetQtyInvOut();
+        }
+
+        private void nud_measureqty_Leave(object sender, EventArgs e)
+        {
+            SetQtyInvOut();
+        }
+
+        private void SetQtyInvOut()
+        {
+            if (CurrentState == State.ADD)
+            {
+                if (NudMeasuringQty.Value > 0 && nud_measureqty.Value > 0)
+                {
+                    nudQtyInvOut.Value = (NudMeasuringQty.Value * nud_measureqty.Value);
+                }
+            }
+        }
+        #endregion
     }
 }

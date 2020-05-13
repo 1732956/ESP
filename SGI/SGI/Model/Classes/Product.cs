@@ -19,6 +19,7 @@ namespace SGI.Model.Classes
         public int UnitCount { get; set; }
         public int MaxQty { get; set; }
         public int MinQty { get; set; }
+        public float QtyInventoryOut { get; set; }
         public string BarCodeId { get; set; }
         public string MeasureUnit { get; set; }
         public int MeasureQty { get; set; }
@@ -41,6 +42,7 @@ namespace SGI.Model.Classes
                 this.UnitCount = Convert.ToInt32(row["UnitNbr"]);
                 this.MaxQty = Convert.ToInt32(row["QtyMax"]);
                 this.MinQty = Convert.ToInt32(row["QtyMin"]);
+                this.QtyInventoryOut = Convert.ToInt64(row["QtyInventoryOut"]);
                 this.BarCodeId = row["BarCodeId"].ToString();
                 this.CodeSupplier = row["SupplierCode"].ToString();
                 this.MeasureUnit = row["MeasureUnit"].ToString();
@@ -61,14 +63,12 @@ namespace SGI.Model.Classes
                 this.Price = Convert.ToDouble(row["Price"]);
                 this.BarCodeId = row["BarCodeId"].ToString();
                 this.MeasureUnit = row["MeasureUnit"].ToString();
+                this.UnitCount = Convert.ToInt32(row["UnitNbr"]);
                 this.MeasureQty = Convert.ToInt32(row["MeasureQty"]);
+                this.QtyInventoryOut = Convert.ToInt64(row["QtyInventoryOut"]);
                 this.Supplier = new Supplier(0, row["SupName"].ToString(), "", "", "", "", 0, true);
                 this.Category = new Category(0, row["CatDescr"].ToString(), true);
                 this.Departments = new List<Department>();
-
-
-
-
             }
         }
 
@@ -91,6 +91,7 @@ namespace SGI.Model.Classes
             UnitCount = 0;
             MaxQty = 0;
             MinQty = 0;
+            QtyInventoryOut = 0;
             BarCodeId = "";
             Category = new Category();
             Departments = new List<Department>();
@@ -100,7 +101,7 @@ namespace SGI.Model.Classes
         }
 
         public Product(int id, string name, string brand, string description, Supplier supplier, int price, bool active,
-            int unitcount, int maxqty, int minqty, Category category, List<Department> departments, string codesupplier, string measureUnit,
+            int unitcount, int maxqty, int minqty, float qtyInventoryOut, Category category, List<Department> departments, string codesupplier, string measureUnit,
             int measureQty)
         {
             ProductId = id;
@@ -113,6 +114,7 @@ namespace SGI.Model.Classes
             UnitCount = unitcount;
             MaxQty = maxqty;
             MinQty = minqty;
+            QtyInventoryOut = qtyInventoryOut;
             Category = category;
             Departments = departments;
             CodeSupplier = codesupplier;

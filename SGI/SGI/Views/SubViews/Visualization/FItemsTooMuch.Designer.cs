@@ -77,7 +77,7 @@
             // Quanity
             // 
             this.Quanity.DataPropertyName = "Quantity";
-            this.Quanity.HeaderText = "Quantité";
+            this.Quanity.HeaderText = "Quantité en inventaire";
             this.Quanity.Name = "Quanity";
             this.Quanity.ReadOnly = true;
             // 
