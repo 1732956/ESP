@@ -218,9 +218,13 @@ namespace SGI.Views.SubViews
         {
             string returnMessage = "";
             if (TxtName.Text == "")
-                returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;       
+                returnMessage += "Le nom ne peut pas être nul." + Environment.NewLine;
+            if (lst_dep.SelectedItems.Count < 1)
+                returnMessage += "Un département doit être sélectionner " + Environment.NewLine;
             if (CBSupplier.SelectedValue == null)
                 returnMessage += "Le fournisseur ne peut pas être nul." + Environment.NewLine;
+            if (txt_fournisseurcode.Text == "")
+                returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
             if (NudMeasuringQty.Value <= 0)
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
             if (txt_mesure.Text == "")
@@ -233,14 +237,10 @@ namespace SGI.Views.SubViews
                 returnMessage += "La quantité maximum doit être positive." + Environment.NewLine;
             if(NudMin.Value > nudMax.Value)
                 returnMessage += "La quantité minimum doit être inférieur à la quantité maximum." + Environment.NewLine;
-            if(nudQtyInvOut.Value <= 0)
-                returnMessage += "La quantité de sortie d'inventaire ne peut pas être nulle." + Environment.NewLine;
             if (NudPrice.Value <= 0)
                 returnMessage += "Le prix doit ne peut pas être nul." + Environment.NewLine;
-            if (txt_fournisseurcode.Text == "")
-                returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
-            if (lst_dep.SelectedItems.Count <1)
-                returnMessage += "Un département doit être sélectionner " + Environment.NewLine;
+            if (nudQtyInvOut.Value <= 0)
+                returnMessage += "La quantité de sortie d'inventaire ne peut pas être nulle." + Environment.NewLine;
             return returnMessage;
         }
         #endregion
