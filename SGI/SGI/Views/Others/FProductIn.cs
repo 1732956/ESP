@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SGI.Controller;
 using SGI.Model.Classes;
+using static SGI.CEnum;
 
 namespace SGI.Views.SubViews.Transaction
 {
@@ -16,7 +17,12 @@ namespace SGI.Views.SubViews.Transaction
     {
         ProductContoller productContoller;
 
-        public FProductIn(string ProductBarCode)
+        public float InvOutQty
+        {
+            get { return Convert.ToInt64(nudQtyOut.Value); }
+        }
+
+        public FProductIn(string ProductBarCode, InventoryTransactionType type)
         {
             InitializeComponent();
             productContoller = new ProductContoller();
@@ -25,8 +31,17 @@ namespace SGI.Views.SubViews.Transaction
             txtBrand.Text = currentProduct.Brand;
             txtCategory.Text = currentProduct.Category.Description;
             txtPrice.Text = currentProduct.Price.ToString() + " $";
-          //  txtDepartment.Text = currentProduct.Department.Name;
             txtSupplier.Text = currentProduct.Supplier.Name;
+            if (type == InventoryTransactionType.OUT)
+            {
+                lblQtyOut.Visible = true;
+                nudQtyOut.Visible = true;
+                nudQtyOut.Value = (decimal)currentProduct.QtyInventoryOut;
+                this.Text = "Sortie d'inventaire";
+                nudQtyOut.Focus();
+            }
+            else
+                this.Text = "Entrée d'inventaire";
             StartTimer();
         }
 
@@ -42,27 +57,25 @@ namespace SGI.Views.SubViews.Transaction
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
-
-        private void btnContinue_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void FProductIn_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 
-    public static class ProductMessageBox
+    public class ProductMessageBox
     {
-        public static DialogResult Show(string ProductBarCode)
+        FProductIn currentForm;
+        public DialogResult Show()
         {
-            using (var form = new FProductIn(ProductBarCode))
-            {
-                DialogResult R = form.ShowDialog();
-                return R;
-            }
+            DialogResult R = currentForm.ShowDialog();
+            return R;
+        }
+
+        public ProductMessageBox(string ProductBarCode, InventoryTransactionType type)
+        {
+            currentForm = new FProductIn(ProductBarCode, type);
+        }
+
+        public float getQtyOut()
+        {
+            return currentForm.InvOutQty;
         }
     }
 }

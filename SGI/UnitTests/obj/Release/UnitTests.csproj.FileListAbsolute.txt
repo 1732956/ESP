@@ -1,0 +1,11 @@
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Release\UnitTestProject2.dll
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Release\UnitTestProject2.pdb
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Release\SGI.exe
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Release\SGI.pdb
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\bin\Release\SGI.exe.config
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Release\UnitTests.csprojAssemblyReference.cache
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Release\UnitTests.csproj.CoreCompileInputs.cache
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Release\UnitTests.csproj.CopyComplete
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Release\UnitTestProject2.dll
+C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Release\UnitTestProject2.pdb

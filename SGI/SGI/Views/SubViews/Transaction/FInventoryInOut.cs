@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static SGI.CEnum;
 
 namespace SGI.Views.SubViews.Transaction
 {
@@ -85,7 +86,16 @@ namespace SGI.Views.SubViews.Transaction
                     }
                     else
                     {
-                        DialogResult Result = ProductMessageBox.Show(txt_produit.Text);
+                        InventoryTransactionType currentType;
+                        if (TCAction.SelectedIndex == 0)
+                            currentType = InventoryTransactionType.IN;
+                        else
+                            currentType = InventoryTransactionType.OUT;
+
+                        ProductMessageBox productMessage = new ProductMessageBox(txt_produit.Text, currentType);
+                        DialogResult Result = productMessage.Show();
+                        float qtyOut = productMessage.getQtyOut();
+                        
                         if (Result == DialogResult.OK) //le produit est accepté
                         {
                             if(TCAction.SelectedIndex == 0)
@@ -94,7 +104,7 @@ namespace SGI.Views.SubViews.Transaction
                             }
                             else
                             {
-                                AddToOutMovement();
+                                AddToOutMovement(qtyOut);
                             }
                             cbo_loc.Enabled = false;
                             txt_produit.Text = "";
@@ -135,19 +145,20 @@ namespace SGI.Views.SubViews.Transaction
 
         private void AddToInMovement()
         {
+            int qty = (CurrentProduct.UnitCount * CurrentProduct.MeasureQty);
             bool isAlreadyIn = false;
             for (int i = 0; i < dgvMovement.Rows.Count; i++)
             {
                 if (Convert.ToInt32(dgvMovement.Rows[i].Cells[2].Value) == CurrentProduct.ProductId)
                 {
                     isAlreadyIn = true;
-                    dgvMovement.Rows[i].Cells[1].Value = Convert.ToInt32(dgvMovement.Rows[i].Cells[1].Value) + 1;
+                    dgvMovement.Rows[i].Cells[1].Value = Convert.ToInt32(dgvMovement.Rows[i].Cells[1].Value) + qty;
                 }
             }
 
             if (isAlreadyIn == false)
             {
-                dgvMovement.Rows.Add(CurrentProduct.Name, 1, CurrentProduct.ProductId);
+                dgvMovement.Rows.Add(CurrentProduct.Name, qty, CurrentProduct.ProductId);
             }
             btnDelete.Enabled = true;
             btnCancel.Enabled = true;
@@ -237,7 +248,7 @@ namespace SGI.Views.SubViews.Transaction
 
         #region InventoryOut
 
-        private void AddToOutMovement()
+        private void AddToOutMovement(float qty)
         {
             bool isAlreadyIn = false;
             for (int i = 0; i < dgvOutMovement.Rows.Count; i++)
@@ -245,13 +256,13 @@ namespace SGI.Views.SubViews.Transaction
                 if (Convert.ToInt32(dgvOutMovement.Rows[i].Cells[2].Value) == CurrentProduct.ProductId)
                 {
                     isAlreadyIn = true;
-                    dgvOutMovement.Rows[i].Cells[1].Value = Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value) + 1;
+                    dgvOutMovement.Rows[i].Cells[1].Value = Convert.ToInt32(dgvOutMovement.Rows[i].Cells[1].Value) + qty;
                 }
             }
 
             if (isAlreadyIn == false)
             {
-                dgvOutMovement.Rows.Add(CurrentProduct.Name, 1, CurrentProduct.ProductId);
+                dgvOutMovement.Rows.Add(CurrentProduct.Name, qty, CurrentProduct.ProductId);
             }
             btnOutDelete.Enabled = true;
             btnOutCancel.Enabled = true;
@@ -337,11 +348,8 @@ namespace SGI.Views.SubViews.Transaction
                             }
                             else
                             {
-                                MessageBox.Show("Impossible de déduir l'inventaire, vous tentez de supprimer un quantité plus grande que celle en inventaire");
+                                MessageBox.Show("Impossible de déduir l'inventaire, vous tentez de sortir une quantité plus grande que celle en inventaire");
                             }
-                            MessageBox.Show("Inventaire diminué");
-                            FinishOutOrder();
-                            GetCurrentInventory(dgvInventoryOut);
                         }
                     }
                 }

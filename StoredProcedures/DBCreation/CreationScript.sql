@@ -69,6 +69,7 @@ CREATE TABLE Tbl_Product(
 	UnitNbr          INT  NOT NULL ,
 	QtyMin			 INT  NOT NULL ,
 	QtyMax			 INT  NOT NULL ,
+	QtyInventoryOut  FLOAT NOT NULL,
 	Price            MONEY  NOT NULL ,
 	IsActive         bit  NOT NULL ,
 	CategoryID       INT  ,

@@ -21,7 +21,7 @@ namespace UnitTestProject2
             currentProduct.ProductId = 0;
             currentProduct.Name = "TestUnitaireProduitCrééOATF";
             currentProduct.Description = "test1";
-            currentProduct.Brand  = "test1";
+            currentProduct.Brand = "test1";
             currentProduct.Supplier.SupplierID = 1;
             currentProduct.Price = 2;
             currentProduct.LastUpdate = DateTime.Now;
@@ -32,6 +32,7 @@ namespace UnitTestProject2
             currentProduct.BarCodeId = "test1";
             currentProduct.Category.CategoryID = 1;
             currentProduct.Departments = new List<Department>();
+            currentProduct.Departments[0] = new Department(0, "test", "desc", true);
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "add"));
         }
 
@@ -66,18 +67,25 @@ namespace UnitTestProject2
             currentProduct.BarCodeId = "test2";
             currentProduct.Category.CategoryID = 1;
             currentProduct.Departments = new List<Department>();
+            currentProduct.Departments[0] = new Department(0, "testupdate", "desc", true);
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "update"));
-            CDatabase.ConnectToData();
         }
 
         [TestMethod]
         public void DeleteProduit()
         {
             CDatabase.ConnectToData();
-            SqlCommand cmd = new SqlCommand("DELETE FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitUpdatéOATF'", CDatabase.Connection);
-            cmd.ExecuteNonQuery();
-            SqlCommand cmd2 = new SqlCommand("DELETE FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitCrééOATF'", CDatabase.Connection); //si jamais l'update du produit n'a pas fonctionné
-            cmd.ExecuteNonQuery();
+            using (SqlCommand cmd = new SqlCommand("DELETE FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitUpdatéOATF'", CDatabase.Connection))
+            {
+                cmd.CommandType = System.Data.CommandType.Text;
+                cmd.ExecuteNonQuery();
+            }
+
+            using (SqlCommand cmd2 = new SqlCommand("DELETE FROM tbl_product where tbl_product.Name = 'TestUnitaireProduitCrééOATF'", CDatabase.Connection))
+            {
+                cmd2.CommandType = System.Data.CommandType.Text;
+                cmd2.ExecuteNonQuery();
+            }
         }
 
         [TestMethod]

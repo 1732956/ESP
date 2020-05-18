@@ -15,5 +15,11 @@ namespace SGI
             UPDATE,
             DELETE
         }
+
+        public enum InventoryTransactionType
+        {
+            IN,
+            OUT
+        }
     }
 }
