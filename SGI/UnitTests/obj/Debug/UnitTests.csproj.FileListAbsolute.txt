@@ -22,3 +22,12 @@ C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Debug\UnitTests.csproj.CoreCompileI
 C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Debug\UnitTests.csproj.CopyComplete
 C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Debug\UnitTestProject2.dll
 C:\Users\trist\Desktop\ESP\SGI\UnitTests\obj\Debug\UnitTestProject2.pdb
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\bin\Debug\UnitTestProject2.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\bin\Debug\UnitTestProject2.pdb
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\bin\Debug\SGI.exe
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\bin\Debug\SGI.pdb
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\bin\Debug\fr\Microsoft.VisualStudio.QualityTools.UnitTestFramework.resources.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\obj\Debug\UnitTests.csprojResolveAssemblyReference.cache
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\obj\Debug\UnitTestProject2.dll
+C:\Users\Olivier\Documents\ESP\SGI\UnitTests\obj\Debug\UnitTestProject2.pdb

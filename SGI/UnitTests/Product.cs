@@ -32,7 +32,7 @@ namespace UnitTestProject2
             currentProduct.BarCodeId = "test1";
             currentProduct.Category.CategoryID = 1;
             currentProduct.Departments = new List<Department>();
-            currentProduct.Departments[0] = new Department(0, "test", "desc", true);
+            currentProduct.Departments.Add(new Department(1, "Buanderie", "desc", true));
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "add"));
         }
 
@@ -67,7 +67,7 @@ namespace UnitTestProject2
             currentProduct.BarCodeId = "test2";
             currentProduct.Category.CategoryID = 1;
             currentProduct.Departments = new List<Department>();
-            currentProduct.Departments[0] = new Department(0, "testupdate", "desc", true);
+            currentProduct.Departments.Add(new Department(1, "Buanderie", "desc", true));
             Assert.IsTrue(productcontoller.EditSingleProduct(currentProduct, "update"));
         }
 
