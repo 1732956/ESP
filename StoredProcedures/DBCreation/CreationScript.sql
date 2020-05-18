@@ -61,7 +61,7 @@ CREATE TABLE Tbl_Supplier(
 ------------------------------------------------------------*/
 CREATE TABLE Tbl_Product(
 	ProductID       INT IDENTITY (100,1) NOT NULL ,
-	Name             VARCHAR (50) NOT NULL ,
+	Name             VARCHAR (200) NOT NULL ,
 	Brand            VARCHAR (50) ,
 	Description      VARCHAR (300) ,
     MeasureUnit      VARCHAR (100) NOT NULL DEFAULT '',
@@ -69,7 +69,7 @@ CREATE TABLE Tbl_Product(
 	UnitNbr          INT  NOT NULL ,
 	QtyMin			 INT  NOT NULL ,
 	QtyMax			 INT  NOT NULL ,
-	QtyInventoryOut  FLOAT NOT NULL,
+	QtyInventoryOut  FLOAT NOT NULL DEFAULT 0,
 	Price            MONEY  NOT NULL ,
 	IsActive         bit  NOT NULL ,
 	CategoryID       INT  ,
