@@ -25,7 +25,7 @@ namespace SGI.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("localhost")]
+        [global::System.Configuration.DefaultSettingValueAttribute("192.168.0.203")]
         public string DataSource {
             get {
                 return ((string)(this["DataSource"]));

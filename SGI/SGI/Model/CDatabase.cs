@@ -14,7 +14,7 @@ namespace SGI
         public static bool ConnectToData()
         {
             bool ConnectionSuccessfull = false;
-            string connectionString = "Data Source=" + Properties.Settings.Default.DataSource + ";Initial Catalog=DATA_MANOIRQUARTIER;User ID=sa;Password=Espesp2020";
+            string connectionString = "Data Source=" + Properties.Settings.Default.DataSource + ";Initial Catalog=DATA_MANOIRQUARTIER;User ID=sa;Password=EspEsp2020";
             Connection = new SqlConnection(connectionString);
             try
             {
