@@ -102,7 +102,7 @@ namespace SGI.Controller
                                                         " AS aa WHERE Quantity < QtyMin " +
                                                         " UNION " +
                                                         " SELECT ProductID, Name, Description, CONCAT(MeasureQty, ' ', MeasureUnit) as MeasuringUnit, QtyMin, 0 FROM tbl_product " +
-                                                        " WHERE NOT EXISTS(SELECT * FROM Tbl_Inventory WHERE Tbl_Inventory.ProductID_ = tbl_product.ProductID)", CDatabase.Connection))
+                                                        " WHERE NOT EXISTS(SELECT * FROM Tbl_Inventory WHERE Tbl_Inventory.ProductID_ = tbl_product.ProductID) AND QtyMin > 0 ", CDatabase.Connection))
                 {
                     cmd.CommandType = System.Data.CommandType.Text;
                     SqlDataReader dr = cmd.ExecuteReader();
