@@ -16,10 +16,10 @@
     <ROW Property="ARPPRODUCTICON" Value="Logo.exe" Type="8"/>
     <ROW Property="CTRLS" Value="2"/>
     <ROW Property="Manufacturer" Value="SGI"/>
-    <ROW Property="ProductCode" Value="1033:{A063D953-9309-4098-B6C9-DCCCE65FB84B} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{E76C64ED-5F42-4580-BEF2-A30E76FE38D2} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="SGI"/>
-    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.1.0" Type="32"/>
     <ROW Property="RUNAPPLICATION" Value="1" Type="4"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{B6A98C46-EBE6-46CB-A0FD-5BC585966C64}"/>
