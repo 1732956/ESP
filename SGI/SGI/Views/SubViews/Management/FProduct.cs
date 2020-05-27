@@ -284,7 +284,7 @@ namespace SGI.Views.SubViews
             for (int i = 0; i < lst_dep.Items.Count; i++) 
             {
                 Department currentDep = (Department)lst_dep.Items[i];
-                if (currentProduct.Departments.Any(dId => dId.DepartmentId == currentDep.DepartmentId))
+                if (currentProduct != null && currentProduct.Departments.Any(dId => dId.DepartmentId == currentDep.DepartmentId))
                 {
                     lst_dep.SetSelected(i, true);
                 }   
@@ -453,7 +453,7 @@ namespace SGI.Views.SubViews
 
             string barcode = barCodenbr;
             lbl_BarCode.Text = barCodenbr;
-            if (barcode.Length > 0)
+            if (barcode != null && barcode.Length > 0)
             {
                 GBOBarCode.Visible = true;
                 Bitmap bitmap = new Bitmap(barcode.Length * 40, 150);

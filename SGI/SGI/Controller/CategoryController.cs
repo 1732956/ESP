@@ -113,11 +113,11 @@ namespace SGI.Controller
             return Worked;
         }
 
-        public bool ifAlreadyExist(String descrCategory)
+        public bool ifAlreadyExist(Category currentCategory)
         {
             bool alreadyExist = false;
 
-            SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_category WHERE Description = '" + descrCategory + "'", CDatabase.Connection);
+            SqlCommand cmd = new SqlCommand("SELECT * FROM tbl_category WHERE Description = '" + currentCategory.Description + "'", CDatabase.Connection);
             cmd.CommandType = System.Data.CommandType.Text;
             SqlDataReader dr = cmd.ExecuteReader();
             DataTable dt = new DataTable();
@@ -125,7 +125,11 @@ namespace SGI.Controller
 
             if (dt.Rows.Count > 0)
             {
-                alreadyExist = true;
+                for (int i = 0; i < dt.Rows.Count; i++)
+                {
+                    if(Convert.ToInt32(dt.Rows[i]["CategoryId"]) != currentCategory.CategoryID)
+                        alreadyExist = true;
+                }
             }
 
             return alreadyExist;

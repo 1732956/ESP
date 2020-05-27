@@ -6,8 +6,8 @@
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_PATH_VALIDATION_OPT" Value="2"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SGI.exe" Value="..\SGI\bin\Release"/>
-    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SGI.exe.config" Value="..\SGI\bin\Release"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SGI.exe" Value="..\SGI\bin\Debug"/>
+    <ROW Property="AI_PROPPATH_DIR_PERBUILD_SGI.exe.config" Value="..\SGI\bin\Debug"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SGI.exe" Value="SGI.exe"/>
     <ROW Property="AI_PROPPATH_FILENAME_PERBUILD_SGI.exe.config" Value="SGI.exe.config"/>
     <ROW Property="AI_RUN_AS_ADMIN" Value="0"/>

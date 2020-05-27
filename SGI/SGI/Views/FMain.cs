@@ -192,7 +192,6 @@ namespace SGI
             switch(TCMain.SelectedIndex)
             {
                 case 0: //transactions
-                    
                     break;
                 case 1: //gestion
                     TCManagement.SelectedIndex = -1;

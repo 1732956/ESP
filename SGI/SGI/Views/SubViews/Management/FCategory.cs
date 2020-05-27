@@ -158,7 +158,7 @@ namespace SGI.Views.SubViews
             else
             {
                 SetCategoryData(CategoryId);
-                bool AlreadyExist = CategoryController.ifAlreadyExist(currentCategory.Description);
+                bool AlreadyExist = CategoryController.ifAlreadyExist(currentCategory);
                 if (AlreadyExist == false)
                 {
                     bool newCategoryWorked = CategoryController.EditSingleCategory(currentCategory, Action);
@@ -195,7 +195,7 @@ namespace SGI.Views.SubViews
                 }
                 else
                 {
-                    MessageBox.Show("Cette description est déjà utilisée");
+                    MessageBox.Show("Cette catégorie existe déjà");
                 }
 
 

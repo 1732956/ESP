@@ -18,7 +18,7 @@ namespace SGI.Controller
             {
                 if (currentLoc != null)
                 {
-                    using (SqlCommand cmd = new SqlCommand("SELECT Quantity as " + qtyColumn + ", Name as " + productColumn + ", CONCAT(MeasureQty,' ', MeasureUnit ) as " + measuringUnitColumn + " From Tbl_Inventory INNER JOIN Tbl_Product ON Tbl_Inventory.ProductID_ = Tbl_Product.ProductID  where LocationID = " + currentLoc.LocationId + " AND IsActive = 1", CDatabase.Connection))
+                    using (SqlCommand cmd = new SqlCommand("SELECT Quantity as " + qtyColumn + ", Name as " + productColumn + ", CONCAT(MeasureQty,' ', MeasureUnit ) as " + measuringUnitColumn + " From Tbl_Inventory INNER JOIN Tbl_Product ON Tbl_Inventory.ProductID_ = Tbl_Product.ProductID  where LocationID = " + currentLoc.LocationId + " AND IsActive = 1 AND Tbl_Inventory.Quantity > 0", CDatabase.Connection))
                     {
                         cmd.CommandType = System.Data.CommandType.Text;
                         SqlDataReader dr = cmd.ExecuteReader();
