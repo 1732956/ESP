@@ -7,14 +7,15 @@ using System.Text;
 using System.Threading.Tasks;
 using SGI.Model.Classes;
 using System.Windows.Forms;
+using System.ComponentModel;
 
 namespace SGI.Controller
 {
     class LocationController
     {
-        public List<Location> GetAllLocationsActive()
+        public BindingList<Location> GetAllLocationsActive()
         {
-            List<Location> Location = new List<Location>();
+            BindingList<Location> Location = new BindingList<Location>();
             try
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_location WHERE IsActive = 1", CDatabase.Connection))
@@ -38,9 +39,9 @@ namespace SGI.Controller
             return Location;
         }
 
-        public List<Location> GetAllLocationsInactive()
+        public BindingList<Location> GetAllLocationsInactive()
         {
-            List<Location> Location = new List<Location>();
+            BindingList<Location> Location = new BindingList<Location>();
             try
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_location WHERE IsActive = 0", CDatabase.Connection))
@@ -64,9 +65,9 @@ namespace SGI.Controller
             return Location;
         }
 
-        public List<Location> GetAllLocations()
+        public BindingList<Location> GetAllLocations()
         {
-            List<Location> Location = new List<Location>();
+            BindingList<Location> Location = new BindingList<Location>();
             try
             {
                 using (SqlCommand cmd = new SqlCommand("SELECT * FROM Tbl_location ORDER BY isActive DESC", CDatabase.Connection))

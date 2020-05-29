@@ -17,6 +17,9 @@ namespace SGI.Views.SubViews.Management
     {
         LocationController LocationController;
         Location mCurrentLocation;
+        BindingList<Location> LocationsActive;
+        BindingList<Location> LocationsAll;
+        BindingList<Location> LocationsInactive;
         public Location currentLocation
         {
             get { return mCurrentLocation; }
@@ -100,13 +103,25 @@ namespace SGI.Views.SubViews.Management
 
         private void CBFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
-            List<Location> dataSource = new List<Location>();
+            BindingList<Location> dataSource = new BindingList<Location>();
             if (CBFilter.Text == "Tous")
-                dataSource = LocationController.GetAllLocations();
+            {
+                if (LocationsAll.Count == 0)
+                    LocationsAll = LocationController.GetAllLocations();
+                dataSource = LocationsAll;
+            }
             else if (CBFilter.Text == "Actifs")
-                dataSource = LocationController.GetAllLocationsActive();
+            {
+                if (LocationsActive.Count == 0)
+                    LocationsActive = LocationController.GetAllLocationsActive();
+                dataSource = LocationsActive;
+            }
             else if (CBFilter.Text == "Inactifs")
-                dataSource = LocationController.GetAllLocationsInactive();
+            {
+                if (LocationsInactive.Count == 0)
+                    LocationsInactive = LocationController.GetAllLocationsInactive();
+                dataSource = LocationsInactive;
+            }
             LBLocations.DataBindings.Clear();
             var locations = dataSource;
             LBLocations.DataSource = locations;
@@ -119,10 +134,14 @@ namespace SGI.Views.SubViews.Management
             switch (CurrentState)
             {
                 case State.ADD:
-                    LBLocations.DataBindings.Clear();
-                    List<Location> tempoLocations = LocationController.GetAllLocationsActive();
-                    LBLocations.DataSource = tempoLocations;
-                    if (tempoLocations.Count > 0)
+                    if (CBFilter.Text == "Tous")
+                        LocationsAll.RemoveAt(LocationsAll.Count - 1);
+                    else if (CBFilter.Text == "Actifs")
+                        LocationsActive.RemoveAt(LocationsActive.Count - 1);
+                    else
+                        LocationsInactive.RemoveAt(LocationsInactive.Count - 1);
+
+                    if (LBLocations.Items.Count > 0)
                     {
                         LBLocations.SelectedIndex = 0;
                         ChangeFormEditStatus(true);
@@ -140,10 +159,12 @@ namespace SGI.Views.SubViews.Management
 
         private void UcManagementAction1_NewButtonClicked()
         {
-            List<Location> tempoLocations = LocationController.GetAllLocations();
-            tempoLocations.Add(new Location());
-            LBLocations.DataBindings.Clear();
-            LBLocations.DataSource = tempoLocations;
+            if (CBFilter.Text == "Tous")
+                LocationsAll.Add(new Location());
+            else if (CBFilter.Text == "Actifs")
+                LocationsActive.Add(new Location());
+            else
+                LocationsInactive.Add(new Location());
             LBLocations.SelectedIndex = LBLocations.Items.Count - 1;
             ChangeFormEditStatus(false);
             CurrentState = State.ADD;
@@ -174,25 +195,6 @@ namespace SGI.Views.SubViews.Management
                 if (newLocationWorked)
                 {
                     MessageBox.Show("Enregistrement effectué");
-                    string currentFilter = CBFilter.Text;
-                    List<Location> tempoLocation = new List<Location>();
-                    if (currentFilter == "Actifs")
-                        tempoLocation = LocationController.GetAllLocationsActive();
-                    else if (currentFilter == "Inactifs")
-                        tempoLocation = LocationController.GetAllLocationsInactive();
-                    else
-                        tempoLocation = LocationController.GetAllLocations();
-                    if (tempoLocation.Count <= 0)
-                    {
-                        tempoLocation = LocationController.GetAllLocationsActive();
-                        CBFilter.SelectedIndex = 0;
-                    }
-                    LBLocations.DataBindings.Clear();
-                    LBLocations.DataSource = tempoLocation;
-                    if (LBLocations.Items.Count > 0)
-                        LBLocations.SelectedIndex = last == true ? LBLocations.Items.Count - 1 : 0;
-                    else
-                        LBLocations.SelectedIndex = -1;
                     ChangeFormEditStatus(true);
                     CurrentState = State.VIEW;
                 }
@@ -215,9 +217,9 @@ namespace SGI.Views.SubViews.Management
         {
             LBLocations.DisplayMember = "Name";
             LBLocations.ValueMember = "LocationId";
-            var locations = LocationController.GetAllLocationsActive();
-            LBLocations.DataSource = locations;
-            if (locations.Count > 0)
+            LocationsActive = LocationController.GetAllLocationsActive();
+            LBLocations.DataSource = LocationsActive;
+            if (LocationsActive.Count > 0)
                 LBLocations.SelectedIndex = 0;
         }
 

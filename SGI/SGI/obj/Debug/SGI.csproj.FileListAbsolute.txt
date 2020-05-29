@@ -95,3 +95,4 @@ C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.exe
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.pdb
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Transaction.FInventoryInOut.resources
 C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.Views.SubViews.Visualization.FMovementHistory.resources
+C:\Users\trist\Desktop\ESP\SGI\SGI\obj\Debug\SGI.csprojAssemblyReference.cache
