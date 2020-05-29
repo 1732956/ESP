@@ -88,6 +88,7 @@
             this.TCMain.Name = "TCMain";
             this.TCMain.SelectedIndex = 0;
             this.TCMain.SelectedIndexChanged += new System.EventHandler(this.TCMain_SelectedIndexChanged);
+            this.TCMain.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TCMain_Deselecting);
             // 
             // TPTransaction
             // 
@@ -121,6 +122,7 @@
             this.TCManagement.ImageList = this.ManagementImages;
             this.TCManagement.Name = "TCManagement";
             this.TCManagement.SelectedIndex = 0;
+            this.TCManagement.Deselecting += new System.Windows.Forms.TabControlCancelEventHandler(this.TCManagement_Deselecting);
             // 
             // TPProduct
             // 
@@ -316,7 +318,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FMain";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.Load += new System.EventHandler(this.FMain_Load);
             this.TCMain.ResumeLayout(false);
             this.TPTransaction.ResumeLayout(false);
             this.TPManagement.ResumeLayout(false);

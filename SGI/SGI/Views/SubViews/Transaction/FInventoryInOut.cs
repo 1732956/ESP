@@ -141,6 +141,20 @@ namespace SGI.Views.SubViews.Transaction
             dgvToFill.Refresh();
         }
 
+        public bool Leave()
+        {
+            bool canQuit = true;
+            if (dgvMovement.Rows.Count > 0 || dgvOutMovement.Rows.Count > 0)
+            {
+                DialogResult result = MessageBox.Show("Voulez-vous vraiment quitter? Vous perderez tout vos changements d'inventaire en cours.", "Voulez-vous vraiment quitter?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    canQuit = false;
+            }
+            else
+                canQuit = false;
+            return canQuit;
+        }
+
         #region InventroyIn
 
         private void AddToInMovement()
@@ -386,6 +400,5 @@ namespace SGI.Views.SubViews.Transaction
         }
 
         #endregion
-
     }
 }

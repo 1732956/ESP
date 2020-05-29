@@ -16,15 +16,12 @@ namespace SGI
 {
     public partial class FMain : Form
     {
+        FInventoryInOut fInventoryInOut;
         public FMain(bool pDatabaseConnected)
         {
             InitializeComponent();
             if (!pDatabaseConnected)
                 MessageBox.Show("Votre connection au serveur ne semble pas fonctionner, veuillez contacter votre administrateur système.", "Erreur connection", MessageBoxButtons.OK);
-        }
-        private void FMain_Load(object sender, EventArgs e)
-        {
-            
         }
 
         #region Utilities
@@ -122,8 +119,8 @@ namespace SGI
 
         private void TPTransaction_Enter(object sender, EventArgs e)
         {
-            FInventoryInOut form = new FInventoryInOut();
-            ShowSubForm(form, InventoryInOutPanel);
+            fInventoryInOut = new FInventoryInOut();
+            ShowSubForm(fInventoryInOut, InventoryInOutPanel);
         }
 
         #endregion
@@ -198,6 +195,31 @@ namespace SGI
                     break;
                 case 2: //visualisation
                     TCVisuzalization.SelectedIndex = -1;
+                    break;
+            }
+        }
+
+        private void TCMain_Deselecting(object sender, TabControlCancelEventArgs e)
+        {
+            if(e.TabPageIndex == 0)
+            {
+                e.Cancel = fInventoryInOut.Leave();
+            }
+        }
+
+        private void TCManagement_Deselecting(object sender, TabControlCancelEventArgs e)
+        {
+            switch (e.TabPageIndex)
+            {
+                case 0: //produit
+                    break;
+                case 1: //localisation
+                    break;
+                case 2: //fournisseur
+                    break;
+                case 3: //catégorie
+                    break;
+                case 4://département
                     break;
             }
         }
