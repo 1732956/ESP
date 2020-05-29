@@ -56,6 +56,8 @@
             this.OrdersToDoPanel = new System.Windows.Forms.Panel();
             this.TPItemsTooMuch = new System.Windows.Forms.TabPage();
             this.ItemsTooMuchPanel = new System.Windows.Forms.Panel();
+            this.TPTransactionHistory = new System.Windows.Forms.TabPage();
+            this.MovementHistoryPanel = new System.Windows.Forms.Panel();
             this.VidualizationImages = new System.Windows.Forms.ImageList(this.components);
             this.TPIntegration = new System.Windows.Forms.TabPage();
             this.IntegrationPanel = new System.Windows.Forms.Panel();
@@ -75,6 +77,7 @@
             this.TPStockByLoc.SuspendLayout();
             this.TPOrdersToMake.SuspendLayout();
             this.TPItemsTooMuch.SuspendLayout();
+            this.TPTransactionHistory.SuspendLayout();
             this.TPIntegration.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -218,6 +221,7 @@
             this.TCVisuzalization.Controls.Add(this.TPStockByLoc);
             this.TCVisuzalization.Controls.Add(this.TPOrdersToMake);
             this.TCVisuzalization.Controls.Add(this.TPItemsTooMuch);
+            this.TCVisuzalization.Controls.Add(this.TPTransactionHistory);
             resources.ApplyResources(this.TCVisuzalization, "TCVisuzalization");
             this.TCVisuzalization.ImageList = this.VidualizationImages;
             this.TCVisuzalization.Name = "TCVisuzalization";
@@ -280,6 +284,20 @@
             resources.ApplyResources(this.ItemsTooMuchPanel, "ItemsTooMuchPanel");
             this.ItemsTooMuchPanel.Name = "ItemsTooMuchPanel";
             // 
+            // TPTransactionHistory
+            // 
+            this.TPTransactionHistory.Controls.Add(this.MovementHistoryPanel);
+            resources.ApplyResources(this.TPTransactionHistory, "TPTransactionHistory");
+            this.TPTransactionHistory.Name = "TPTransactionHistory";
+            this.TPTransactionHistory.UseVisualStyleBackColor = true;
+            this.TPTransactionHistory.Enter += new System.EventHandler(this.TPTransactionHistory_Enter);
+            this.TPTransactionHistory.Leave += new System.EventHandler(this.TPTransactionHistory_Leave);
+            // 
+            // MovementHistoryPanel
+            // 
+            resources.ApplyResources(this.MovementHistoryPanel, "MovementHistoryPanel");
+            this.MovementHistoryPanel.Name = "MovementHistoryPanel";
+            // 
             // VidualizationImages
             // 
             this.VidualizationImages.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("VidualizationImages.ImageStream")));
@@ -288,6 +306,7 @@
             this.VidualizationImages.Images.SetKeyName(1, "ItemsTooMuch.png");
             this.VidualizationImages.Images.SetKeyName(2, "LocStock.png");
             this.VidualizationImages.Images.SetKeyName(3, "OrdersToDo.png");
+            this.VidualizationImages.Images.SetKeyName(4, "Report.png");
             // 
             // TPIntegration
             // 
@@ -333,6 +352,7 @@
             this.TPStockByLoc.ResumeLayout(false);
             this.TPOrdersToMake.ResumeLayout(false);
             this.TPItemsTooMuch.ResumeLayout(false);
+            this.TPTransactionHistory.ResumeLayout(false);
             this.TPIntegration.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -370,6 +390,8 @@
         private System.Windows.Forms.TabPage TPIntegration;
         private System.Windows.Forms.Panel IntegrationPanel;
         private System.Windows.Forms.Panel InventoryInOutPanel;
+        private System.Windows.Forms.TabPage TPTransactionHistory;
+        private System.Windows.Forms.Panel MovementHistoryPanel;
     }
 }
 

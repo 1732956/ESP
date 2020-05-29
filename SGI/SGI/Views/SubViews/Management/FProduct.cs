@@ -102,6 +102,19 @@ namespace SGI.Views.SubViews
 
         }
 
+        public bool Leave()
+        {
+            bool canQuit = true;
+            if(CurrentState == State.ADD || CurrentState == State.UPDATE)
+            {
+                DialogResult result = MessageBox.Show("Voulez-vous vraiment quitter? Vous perderez tout vos changements en cours.", "Voulez-vous vraiment quitter?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    canQuit = false;
+            }
+            else
+                canQuit = false;
+            return canQuit;
+        }
         private void LBProducts_SelectedIndexChanged(object sender, EventArgs e)
         {
             currentProduct = (Product)LBProducts.SelectedItem;
@@ -223,8 +236,6 @@ namespace SGI.Views.SubViews
                 returnMessage += "Un département doit être sélectionner " + Environment.NewLine;
             if (CBSupplier.SelectedValue == null)
                 returnMessage += "Le fournisseur ne peut pas être nul." + Environment.NewLine;
-            if (txt_fournisseurcode.Text == "")
-                returnMessage += "Le code de fournisseur ne doit pas être vide. " + Environment.NewLine;
             if (NudMeasuringQty.Value <= 0)
                 returnMessage += "La quantité d'unité doit être positive." + Environment.NewLine;
             if (txt_mesure.Text == "")

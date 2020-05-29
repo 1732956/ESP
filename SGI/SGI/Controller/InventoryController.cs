@@ -143,5 +143,26 @@ namespace SGI.Controller
                 return new DataTable();
             }
         }
+
+        public DataTable GetInventoryLog()
+        {
+            try
+            {
+                using (SqlCommand cmd = new SqlCommand("select IT.QuantityDelta, IT.Date, IT.Movement, L.Name as LocName, P.Name as ProdName from Tbl_InventoryTransaction IT Inner join Tbl_Product P on IT.ProductID = P.ProductID inner join Tbl_Location L on IT.LocationID = L.LocationID", CDatabase.Connection))
+                {
+                    cmd.CommandType = System.Data.CommandType.Text;
+                    SqlDataReader dr = cmd.ExecuteReader();
+                    DataTable dt = new DataTable();
+                    dt.Load(dr);
+                    return dt;
+                }
+            }
+            catch (Exception ex)
+            {
+                if (CDatabase.Connection.State == ConnectionState.Open)
+                    MessageBox.Show(ex.Message);
+                return new DataTable();
+            }
+        }
     }
 }

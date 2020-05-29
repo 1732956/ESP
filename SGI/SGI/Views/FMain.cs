@@ -11,12 +11,18 @@ using SGI.Views.SubViews;
 using SGI.Views.SubViews.Integration;
 using SGI.Views.SubViews.Management;
 using SGI.Views.SubViews.Transaction;
+using SGI.Views.SubViews.Visualization;
 
 namespace SGI
 {
     public partial class FMain : Form
     {
         FInventoryInOut fInventoryInOut;
+        FProduct fProduct;
+        FLocation fLocation;
+        FSupplier fSupplier;
+        FCategory fCategory;
+        FDepartment fDepartment;
         public FMain(bool pDatabaseConnected)
         {
             InitializeComponent();
@@ -44,14 +50,20 @@ namespace SGI
 
         private void TPCategory_Enter(object sender, EventArgs e)
         {
-            FCategory form = new FCategory();
-            ShowSubForm(form, CategoryPanel);
+            fCategory = new FCategory();
+            ShowSubForm(fCategory, CategoryPanel);
         }
 
         private void TPLocation_Enter(object sender, EventArgs e)
         {
-            FLocation form = new FLocation();
-            ShowSubForm(form, LocationPanel);
+            fLocation = new FLocation();
+            ShowSubForm(fLocation, LocationPanel);
+        }
+
+        private void TPTransactionHistory_Enter(object sender, EventArgs e)
+        {
+            FMovementHistory form = new FMovementHistory();
+            ShowSubForm(form, MovementHistoryPanel);
         }
 
         private void TPOrdersToMake_Enter(object sender, EventArgs e)
@@ -62,8 +74,8 @@ namespace SGI
 
         private void TPDepartment_Enter(object sender, EventArgs e)
         {
-            FDepartment form = new FDepartment();
-            ShowSubForm(form, DepartmentPanel);
+            fDepartment = new FDepartment();
+            ShowSubForm(fDepartment, DepartmentPanel);
         }
 
         private void TPStockByLoc_Enter(object sender, EventArgs e)
@@ -97,8 +109,8 @@ namespace SGI
         {
             if (ProductPanel.Controls.Count == 0)
             {
-                FProduct form = new FProduct();
-                ShowSubForm(form, ProductPanel);
+                fProduct = new FProduct();
+                ShowSubForm(fProduct, ProductPanel);
             }
         }
 
@@ -106,8 +118,8 @@ namespace SGI
         {
             if(SupplierPanel.Controls.Count == 0)
             {
-                FSupplier form = new FSupplier();
-                ShowSubForm(form, SupplierPanel);
+                fSupplier = new FSupplier();
+                ShowSubForm(fSupplier, SupplierPanel);
             }
         }
 
@@ -183,7 +195,13 @@ namespace SGI
             ClearSubForm(InventoryInOutPanel);
         }
 
+        private void TPTransactionHistory_Leave(object sender, EventArgs e)
+        {
+            ClearSubForm(MovementHistoryPanel);
+        }
+
         #endregion
+
         private void TCMain_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch(TCMain.SelectedIndex)
@@ -201,7 +219,7 @@ namespace SGI
 
         private void TCMain_Deselecting(object sender, TabControlCancelEventArgs e)
         {
-            if(e.TabPageIndex == 0)
+            if(e.TabPageIndex == 0) //transaction
             {
                 e.Cancel = fInventoryInOut.Leave();
             }
@@ -212,14 +230,19 @@ namespace SGI
             switch (e.TabPageIndex)
             {
                 case 0: //produit
+                    e.Cancel = fProduct.Leave();
                     break;
                 case 1: //localisation
+                    e.Cancel = fLocation.Leave();
                     break;
                 case 2: //fournisseur
+                    e.Cancel = fSupplier.Leave();
                     break;
                 case 3: //catégorie
+                    e.Cancel = fCategory.Leave();
                     break;
                 case 4://département
+                    e.Cancel = fDepartment.Leave();
                     break;
             }
         }

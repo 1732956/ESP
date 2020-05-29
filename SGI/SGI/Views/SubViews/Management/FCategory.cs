@@ -86,6 +86,20 @@ namespace SGI.Views.SubViews
                 ChangeFormEditStatus(true);
         }
 
+        public bool Leave()
+        {
+            bool canQuit = true;
+            if (CurrentState == State.ADD || CurrentState == State.UPDATE)
+            {
+                DialogResult result = MessageBox.Show("Voulez-vous vraiment quitter? Vous perderez tout vos changements en cours.", "Voulez-vous vraiment quitter?", MessageBoxButtons.YesNo);
+                if (result == DialogResult.Yes)
+                    canQuit = false;
+            }
+            else
+                canQuit = false;
+            return canQuit;
+        }
+
         private void CBFilter_SelectedIndexChanged(object sender, EventArgs e)
         {
             List<Category> dataSource = new List<Category>();
